@@ -10,6 +10,10 @@ import bps
 TABLE, METRIC = "BU_KreditdanPembiayaanEntitas", 340
 SEKTOR_NAMA = dict(bps.SEKTOR_NAMA, RT="Rumah Tangga (konsumsi)")
 
+def _is_npl(kualitas: str | None) -> bool:
+    q = (kualitas or "").lower()
+    return "kurang lancar" in q or "diragukan" in q or "macet" in q
+
 def main() -> None:
     bulan = os.environ.get("OJK_BULAN") or ojk.latest_month(
         TABLE, METRIC, ojk.bulan_kandidat(8))
@@ -24,6 +28,7 @@ def main() -> None:
         sys.exit(1)
 
     agg: dict[tuple[str, str], float] = defaultdict(float)
+    npl_agg: dict[tuple[str, str], float] = defaultdict(float)
     tak_dikenal: dict[str, float] = defaultdict(float)
     for r in rows:
         prov = ojk.bersih_provinsi(r.get("DATI1"))
@@ -35,6 +40,8 @@ def main() -> None:
             tak_dikenal[r.get("SektorEkonomi") or "?"] += nilai
             continue
         agg[(prov, kode)] += float(nilai)
+        if _is_npl(r.get("KualitasKredit")):
+            npl_agg[(prov, kode)] += float(nilai)
 
     if tak_dikenal:
         tot_tak = sum(tak_dikenal.values())
@@ -45,7 +52,8 @@ def main() -> None:
     for (prov, kode), nilai in agg.items():
         out.append({"provinsi": prov, "sektor_kode": kode,
                     "sektor": SEKTOR_NAMA.get(kode, kode),
-                    "nilai": round(nilai), "bulan": bulan})
+                    "nilai": round(nilai), "npl": round(npl_agg.get((prov, kode), 0)),
+                    "bulan": bulan})
     out.sort(key=lambda d: (d["provinsi"], d["sektor_kode"]))
 
     kalsel = sum(d["nilai"] for d in out if d["provinsi"] == ojk.KALSEL)
@@ -53,7 +61,7 @@ def main() -> None:
           f"total kredit Kalsel Rp {kalsel/1e12:,.2f} T", file=sys.stderr)
 
     sys.stdout.reconfigure(newline="")
-    w = csv.DictWriter(sys.stdout, fieldnames=["provinsi", "sektor_kode", "sektor", "nilai", "bulan"])
+    w = csv.DictWriter(sys.stdout, fieldnames=["provinsi", "sektor_kode", "sektor", "nilai", "npl", "bulan"])
     w.writeheader()
     w.writerows(out)
 

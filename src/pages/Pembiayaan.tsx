@@ -20,6 +20,7 @@ const KODE17 = SEKTOR.map((s) => s.kode);
 
 interface GapRow {
   kode: string; sektor: string; pdrbShare: number; kreditShare: number; gap: number; kredit: number;
+  npl: number; nplRatio: number;
 }
 
 export function Pembiayaan() {
@@ -41,6 +42,14 @@ export function Pembiayaan() {
   const kalselRT = kalselKredit.get("RT") ?? 0;
   const kalselUsaha = kalselTotal - kalselRT;
 
+  const kalselNpl = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const r of kreditBU) if (r.provinsi === KALSEL) m.set(r.sektor_kode, num(r.npl) ?? 0);
+    return m;
+  }, [kreditBU]);
+  const kalselNplUsaha = [...kalselNpl].filter(([k]) => k !== "RT").reduce((s, [, v]) => s + v, 0);
+  const nplRatio = kalselUsaha ? kalselNplUsaha / kalselUsaha : 0;
+
   const provTotalKredit = useMemo(() => {
     const g = group(kreditBU, (r) => r.provinsi as string);
     return [...g.entries()].map(([provinsi, rows]) => ({ provinsi, kredit: sum(rows, (r) => num(r.nilai) ?? 0) }));
@@ -61,10 +70,12 @@ export function Pembiayaan() {
       const kredit = kalselKredit.get(kode) ?? 0;
       const ks = kalselUsaha ? kredit / kalselUsaha : 0;
       const ps = pdrbShare.get(kode) ?? 0;
-      return { kode, sektor: SEKTOR.find((s) => s.kode === kode)!.nama, pdrbShare: ps, kreditShare: ks, gap: ps - ks, kredit };
+      const npl = kalselNpl.get(kode) ?? 0;
+      return { kode, sektor: SEKTOR.find((s) => s.kode === kode)!.nama, pdrbShare: ps, kreditShare: ks, gap: ps - ks, kredit, npl, nplRatio: kredit ? npl / kredit : 0 };
     });
-  }, [pdrb, kalselKredit, kalselUsaha]);
+  }, [pdrb, kalselKredit, kalselNpl, kalselUsaha]);
   const gapTerbesar = useMemo(() => [...gapRows].sort((a, b) => b.gap - a.gap)[0], [gapRows]);
+  const nplSorot = useMemo(() => [...gapRows].filter((r) => r.kredit >= 5e11).sort((a, b) => b.nplRatio - a.nplRatio)[0], [gapRows]);
 
   function gapOption(): EChartsOption {
     const asc = [...gapRows].sort((a, b) => a.pdrbShare - b.pdrbShare);
@@ -141,6 +152,10 @@ export function Pembiayaan() {
     { key: "kreditShare", header: "Porsi kredit", align: "right", value: (r) => r.kreditShare, render: (r) => pct1(r.kreditShare) },
     { key: "kredit", header: "Nilai kredit", align: "right", value: (r) => r.kredit, render: (r) => rpT(r.kredit) },
     {
+      key: "npl", header: "NPL", align: "right", value: (r) => r.nplRatio,
+      render: (r) => <span style={{ color: r.nplRatio >= 0.05 ? "var(--color-danger-600)" : "var(--color-neutral-600)", fontWeight: r.nplRatio >= 0.05 ? 600 : 400 }}>{(r.nplRatio * 100).toFixed(1)}%</span>,
+    },
+    {
       key: "gap", header: "Selisih", align: "right", value: (r) => r.gap,
       render: (r) => <span style={{ color: r.gap > 0.01 ? "var(--color-danger-600)" : r.gap < -0.01 ? "var(--color-success-600)" : "#71717A", fontWeight: 600 }}>{r.gap > 0 ? "+" : ""}{(r.gap * 100).toFixed(1)} poin</span>,
     },
@@ -177,6 +192,7 @@ export function Pembiayaan() {
         <KpiCard label="Dana Pihak Ketiga" info="Simpanan masyarakat (giro, tabungan, deposito) di Bank Umum Kalsel" value={rpT(kalselDpk)} context="Dana masyarakat yang dihimpun perbankan" />
         <KpiCard label="Rasio kredit terhadap DPK (LDR)" info="Loan to Deposit Ratio. Seberapa besar dana yang dihimpun disalurkan kembali jadi kredit" value={pct1(kalselLDR)} context={`Rata-rata nasional ${pct1(nasLDR)}`} />
         <KpiCard label="Kredit BPR dan BPRS" info="Kredit Bank Perekonomian Rakyat (konvensional dan syariah), banyak melayani UMKM" value={bprKalsel ? rpT(bprKalsel.kredit) : "—"} context={bprKalsel ? `${pct1(bprKalselUmkmShare)} untuk usaha kecil dan menengah. ${fmt0(bprKalsel.kantor)} kantor` : ""} />
+        <KpiCard label="Kredit usaha bermasalah (NPL)" info="Non Performing Loan, yaitu bagian kredit lapangan usaha yang menunggak: kurang lancar, diragukan, atau macet. Batas sehat menurut OJK 5 persen" value={pct1(nplRatio)} context="Dari total kredit lapangan usaha Kalsel" />
       </div>
 
       <h2 className="section-title">
@@ -200,6 +216,13 @@ export function Pembiayaan() {
         <div className="plain-summary">Perhatikan sektor dengan batang abu panjang tetapi batang merah pendek. Itu sektor yang bobot ekonominya besar tetapi pembiayaannya tertinggal</div>
         <EChart option={gapOption()} height={Math.max(360, 28 * gapRows.length + 60)} noZoom />
       </Card>
+      {nplSorot && (
+        <HeroNote>
+          Kualitas kredit usaha Kalsel relatif terjaga di <strong>{pct1(nplRatio)}</strong>, masih di
+          bawah batas sehat 5 persen. Yang perlu dicermati adalah sektor <strong>{nplSorot.sektor}</strong>{" "}
+          dengan kredit bermasalah <strong>{pct1(nplSorot.nplRatio)}</strong>, jauh di atas rata-rata
+        </HeroNote>
+      )}
       <details className="detail-block">
         <summary>Lihat tabel gap pembiayaan per sektor</summary>
         <DataTable rows={gapRows} columns={gapCols} initialSort="gap" initialReverse />
@@ -225,7 +248,7 @@ export function Pembiayaan() {
         Bank Perekonomian Rakyat (konvensional dan syariah) banyak melayani usaha kecil dan menengah
         serta wilayah perdesaan.
         {bprKalsel ? (
-          <> Di Kalsel, BPR dan BPRS menyalurkan kredit {rpT(bprKalsel.kredit)} ({pct1(bprKalselUmkmShare)} untuk UMKM), menghimpun DPK {rpT(bprKalsel.dpk)}, melalui {fmt0(bprKalsel.kantor)} kantor.</>
+          <> Di Kalsel, BPR dan BPRS menyalurkan kredit {rpT(bprKalsel.kredit)} ({pct1(bprKalselUmkmShare)} untuk UMKM), menghimpun DPK {rpT(bprKalsel.dpk)}, melalui {fmt0(bprKalsel.kantor)} kantor</>
         ) : null}
       </HeroNote>
       <Card title="Kredit BPR dan BPRS per provinsi" subtitle="15 provinsi terbesar, dalam triliun rupiah">
