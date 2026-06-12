@@ -1,0 +1,2078 @@
+{
+ "generated_at": "2026-06-09T05:00:03+00:00",
+ "model": "claude-haiku-4-5",
+ "catatan": "Usulan berbantuan AI dua lapis (pasar + ekosistem). Provenans pada tiap item; angka & skor Tier A tidak terpengaruh.",
+ "layer1": [
+  {
+   "komoditas": "Padi",
+   "subsektor": "A",
+   "analisis": {
+    "pasar": "Pasar global melemah dengan cadangan beras rekor Indonesia (5 juta ton Apr 2026). harga serealia FAO naik marginal 0,8% Apr 2026 didominasi gandum. beras yang diperdagangkan internasional tipis sehingga sensitif permintaan lokal.",
+    "kompetisi": "Indonesia memiliki daya saing komparatif sangat rendah (RSCA negatif -0,96 hingga -0,99). status net importir beras. Kalimantan Selatan kontribusi 3% produksi nasional (1,97 jt ton 2008-2012) dengan produksi 2024 naik 11,86% menjadi 579 ribu ton, namun tidak ada indikasi Indikasi Geografis atau keunggulan agroklimat khusus.",
+    "momentum": "Produksi padi nasional 2025 naik 13,29% menjadi 60,21 juta ton GKG. stok pangan aman. namun belum teridentifikasi komitmen investasi BKPM/NSWI spesifik sektor padi di Kalsel untuk 2024-2026."
+   },
+   "verdik_pasar": "Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan ekspor.",
+   "sumber": [
+    {
+     "url": "https://kalsel.bps.go.id/en/pressrelease/2024/11/01/1888/luas-panen-dan-produksi-padi-di-provinsi-kalimantan-selatan-2024--angka-sementara-.html",
+     "tanggal": "2024-11-01",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://www.bps.go.id/id/pressrelease/2026/02/02/2545/luas-panen-padi-pada-tahun-2025-mencapai-sekitar-11-32-juta-hektare-dengan-produksi-padi-sebanyak-60-21-juta-ton-gabah-kering-giling--gkg-.html",
+     "tanggal": "2026-02-02",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://id.tradingeconomics.com/commodity/rice",
+     "tanggal": "2026-05-13",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://www.komdigi.go.id/berita/artikel-gpr/detail/peneliti-indef-sektor-pertanian-jadi-penopang-ketahanan-pangan-di-tengah-gejolak-global",
+     "tanggal": "2026-03-10",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://satudata.pertanian.go.id/assets/docs/publikasi/1A_Analisis_Kinerja_Perdagangan_Beras_2024_-_publish.pdf",
+     "tanggal": "2024-07-01",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://media.neliti.com/media/publications/57000-ID-analisis-keunggulan-komparatif-beras-ind.pdf",
+     "tanggal": "2014-06-01",
+     "jenis": "resmi"
+    }
+   ]
+  },
+  {
+   "komoditas": "Kelapa Sawit (CPO)",
+   "subsektor": "A",
+   "analisis": {
+    "pasar": "Pasar CPO global tetap kuat dengan rata-rata harga USD 1.050–1.100/ton pada 2024 (CIF Rotterdam) dan proyeksi USD 1.050–1.150/ton untuk paruh pertama 2026, didukung permintaan domestik Indonesia melalui program biodiesel B40 yang menyerap ~14 juta ton CPO/tahun sejak 2025 serta potensi ekspansi ke B45–B50 pada 2026–2027. Konsumsi global terus tumbuh terutama di negara berkembang meskipun menghadapi regulasi keberlanjutan (EUDR) dan ketegangan geopolitik.",
+    "kompetisi": "Indonesia memiliki keunggulan komparatif kuat dengan nilai RCA >1 di pasar utama (China, India, Pakistan, USA, Bangladesh) dan pangsa ekspor CPO dunia sebesar 62%. Indonesia adalah produsen terbesar dunia. Kalimantan Selatan menguasai 478,60 ribu hektar lahan sawit (2024) dengan 46 pabrik pengolahan, menghasilkan CPO ~1,56 juta ton/tahun, dan mendukung industri hilir (3 pabrik minyak goreng, 2 pabrik biodiesel).",
+    "momentum": "Indonesia menunjukkan produksi yang kembali tumbuh setelah penurunan 2024 (52,7 juta ton CPO+PKO), dengan proyeksi naik 10% ke 56–57 juta ton pada 2025 dan +4–5% pada 2026 melalui peningkatan produktivitas dan maturasi tanaman bukan ekspansi lahan. Di Kalimantan Selatan, investasi berkelanjutan tercermin dari komitmen replanting sawit rakyat dan hilirisasi (biodiesel, oleokimia) dengan dukungan regulasi ISPO serta strategi optimalisasi pendapatan daerah via PBB dan bagi hasil."
+   },
+   "verdik_pasar": "Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis tinggi, dan keunggulan kompetitif Indonesia yang mapan. namun risiko regulasi keberlanjutan dan ketidakpastian lahan perlu dikelola dengan intensifikasi dan sertifikasi yang lebih ketat.",
+   "sumber": [
+    {
+     "url": "https://gapki.id/news/2025/11/17/outlook-industri-sawit-indonesia-2026-prospek-tantangan-dan-strategi-menghadapi-era-baru-pasar-global/",
+     "tanggal": "2025-11-17",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kalsel.gapki.id/news/2024/03/27/gapki-427-000-ha-luas-perkebunan-kelapa-sawit-di-kalimantan-selatan/",
+     "tanggal": "2024-03-27",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://haisawit.co.id/news/detail/kalimantan-selatan-bidik-optimalisasi-pendapatan-daerah-dari-478-ribu-hektar-sawit",
+     "tanggal": "2026-02-27",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://jepa.ub.ac.id/index.php/jepa/article/view/1957",
+     "tanggal": "2023-11-09",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://eprints2.undip.ac.id/id/eprint/23189/",
+     "tanggal": "2024-01-31",
+     "jenis": "resmi"
+    }
+   ]
+  },
+  {
+   "komoditas": "Karet",
+   "subsektor": "A",
+   "analisis": {
+    "pasar": "Pasar karet global menunjukkan tren positif dengan harga meningkat hingga USD 2,27/kg (RSS3) dan USD 1,73/kg (TSR20) pada November 2024. Permintaan dunia didorong industri otomotif dan inovasi kendaraan listrik yang memerlukan ban khusus dengan hambatan gulir rendah, menjadikan pasar tumbuh meskipun menghadapi tekanan dari substitusi karet sintetis.",
+    "kompetisi": "Indonesia menguasai 27,99% ekspor karet dunia dengan keunggulan komparatif sangat tinggi (RSCA 0,92 untuk TSNR. ISP total 0,86 pada tahap pematangan). Namun, Kalsel (5,92% produksi nasional) bersaing dengan Sumatera Selatan (28,65%), Sumatera Utara (11,80%), dan Jambi (10,43%). Pesaing serius: Thailand (48% bersama Indonesia), Pantai Gading (berkembang pesat sejak 2020), Vietnam, Malaysia.",
+    "momentum": "Harga produsen karet Kalsel/nasional meningkat dari Rp 7.500/kg (2023) ke Rp 9.357/kg (Nov 2024). Penetrasi pasar ke Jepang kuat (75,08% pangsa Indonesia). ekspor ke Amerika Serikat 54,29%. Risiko regulasi: Uni Eropa EUDR 2025 akan membebani 23 negara tujuan ekspor. Investasi BKPM Kalsel untuk hilirisasi karet dan teknologi produktivitas belum terdeteksi sinyal ekspansi signifikan di data publik 2024-2025."
+   },
+   "verdik_pasar": "Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi investasi hilirisasi terukur di provinsi.",
+   "sumber": [
+    {
+     "url": "https://satudata.pertanian.go.id/assets/docs/publikasi/Kinerja_Karet_2024.pdf",
+     "tanggal": "2024-12",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://satudata.pertanian.go.id/assets/docs/publikasi/OUTLOOK_KARET_2025_sign.pdf",
+     "tanggal": "2025-06",
+     "jenis": "resmi"
+    }
+   ]
+  },
+  {
+   "komoditas": "Kelapa",
+   "subsektor": "A",
+   "analisis": {
+    "pasar": "Permintaan global kelapa terus tumbuh didorong tren gaya hidup sehat dan penggunaan produk alami di sektor pangan, kosmetik, dan farmasi. Ekspor kelapa Indonesia pada 2024 mencapai 431.915 ton, naik dari 380.883 ton tahun 2023, dengan Tiongkok sebagai pembeli utama (68 ribu ton dari 71 ribu ton ekspor Jan-Feb 2025). Harga kelapa bulat meningkat tajam sejak akhir 2024 hingga pertengahan 2025. dari Rp3.250/kg menjadi Rp8.000/kg di Riau (Maret 2025). mencerminkan pasokan global yang ketat, meski sejak akhir 2025 harga korektif karena pemulihan produksi Filipina dan siklus pasar normal.",
+    "kompetisi": "Indonesia menguasai 22% pangsa pasar minyak kelapa global pada 2025, posisi kedua setelah Filipina (49%), dengan keunggulan diversifikasi pasar ke >90 negara (Belanda, Tiongkok, Filipina, Malaysia, AS). Analisis RCA menunjukkan kopra Indonesia memiliki keunggulan komparatif kuat (RCA>1) di pasar internasional. Namun di Kalimantan Selatan, produksi kelapa (22.817 ton kopra pada 2022, luas 38.234 ha pada 2021) tertekan penuaan pohon (11,73% tanaman rusak/tua), penurunan lahan, dan rendahnya produktivitas petani swadaya. Kalimantan Selatan menargetkan pengembangan di Kabupaten Hulu Sungai Selatan dan Barito Kuala dengan potensi 2 juta bibit, namun terhambat anggaran.",
+    "momentum": "Pemerintah menjalankan program peremajaan kebun kelapa nasional (realisasi 44.900 ha pada 2024, target ratusan ribu ha untuk 2026–2027) dengan proyeksi pertumbuhan ekspor minyak kelapa 9% pada 2026. Hilirisasi kelapa tercakup dalam 21 komoditas prioritas Roadmap Hilirisasi Investasi Strategis (RLIS) pemerintah, termasuk VCO, santan, desiccated coconut, dan biodiesel. Investasi BKPM Kalimantan Selatan pada 2024 mencapai Rp24,8 triliun (peringkat ke-16), dengan sektor pertanian/perkebunan menyumbang 7,08%, namun data spesifik proyek kelapa di Kalimantan Selatan belum ditemukan dari sumber resmi."
+   },
+   "verdik_pasar": "Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon, lahan yang menyusut, dan produktivitas rendah. memerlukan komitmen investasi pada replanting dan industri hilir agar komoditas ini dapat dimaksimalkan sebagai penggerak ekonomi daerah.",
+   "sumber": [
+    {
+     "url": "https://perkebunan.brmp.pertanian.go.id/berita/mengelola-dinamika-pasar-dan-industri-kelapa-bulat",
+     "tanggal": "2025",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://www.babelinsight.id/indonesia-jadi-eksportir-minyak-kelapa-terbesar-kedua-dunia-kuasai-22-persen-pasar-global-di-2026",
+     "tanggal": "1 Juni 2026",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://kalsel.antaranews.com/berita/349013/kalsel-alami-penurunan-produksi-pertanian-kelapa-hingga-631-ton",
+     "tanggal": "9 November 2022",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://diskominfomc.kalselprov.go.id/2022/11/27/gubernur-kalsel-dukung-pengembangan-kelapa-dalam-di-kalsel/",
+     "tanggal": "27 November 2022",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://bkpm.go.id/id/info/siaran-pers/wamen-investasi-dan-hilirisasi-libatkan-umkm-dan-koperasi-dalam-tarik-investasi-daerah",
+     "tanggal": "13 Maret 2025",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://ppid.bkpm.go.id/storage/file/pdf/1763458678_Pw6rlCkdOT.pdf",
+     "tanggal": "2021",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://satudata.pertanian.go.id/assets/docs/publikasi/OUTLOOK_KELAPA_2025_sign.pdf",
+     "tanggal": "2025",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://www.pertanian.go.id/index_en.php?show=news&act=view&id=7236",
+     "tanggal": "28 Oktober 2025",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://perkebunan.brmp.pertanian.go.id/berita/dinamika-harga-kelapa-antara-kesejahteraan-petani-industri",
+     "tanggal": "2025",
+     "jenis": "resmi"
+    }
+   ]
+  },
+  {
+   "komoditas": "Kopi",
+   "subsektor": "A",
+   "analisis": {
+    "pasar": "Pasar kopi global menunjukkan pertumbuhan permintaan stabil dengan harga tetap tinggi meskipun diproyeksikan menurun 2026-2027. Indonesia mengekspor 276.281 ton kopi pada 2023 dengan nilai ekspor 2024 mencapai 1,63 miliar USD (naik 76,3% YoY), menandakan permintaan global masih kuat untuk kopi Indonesia.",
+    "kompetisi": "Indonesia memiliki keunggulan komparatif dalam ekspor kopi dengan RCA rata-rata 3,64-4,08 (>1), menjadikan kompetitif di pasar dunia. namun kompetitif RCA Indonesia masih lebih rendah dibanding beberapa produsen lain. Kalimantan Selatan memiliki potensi agroklimat untuk kopi dengan luas lahan 2.231 hektar (2024) yang tersebar di Banjar, Balangan, dan kabupaten lain. iklim dan geografi Indonesia sesuai untuk kopi Arabika dan Robusta.",
+    "momentum": "Kalimantan Selatan meluncurkan program BANGKODIN (Pengembangan Kopi Diversifikasi Terintegrasi) Februari 2026 untuk memperkuat hilirisasi, roasting, pengemasan, dan branding kopi lokal. strategi ini melibatkan kemitraan investasi swasta guna meningkatkan nilai tambah dan daya saing kopi Kalsel di pasar regional dan nasional."
+   },
+   "verdik_pasar": "Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk naikkan nilai tambah dan penetrasi pasar.",
+   "sumber": [
+    {
+     "url": "https://blogs.worldbank.org/en/opendata/-beverage-prices-moderate-as-coffee-and-cocoa-supply-recover",
+     "tanggal": "2025-12-02",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://english.news.cn/asiapacific/20251008/db6296ceab064d2a9f72e08479bd190c/c.html",
+     "tanggal": "2025-10-08",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://kalsel.antaranews.com/berita/506942/kalsel-gencarkan-bangkodin-perkuat-pengembangan-kopi-berbasis-diversifikasi-terintegrasi",
+     "tanggal": "2026-02-28",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://satudata.pertanian.go.id/assets/docs/publikasi/31c4b01bc1ec47aa5d735e30afbd4c2f.pdf",
+     "tanggal": "2025-12-15",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://www.academia.edu/105577896/Indonesian_Coffee_Competitiveness_in_the_International_Market_Review_from_the_Demand_Side",
+     "tanggal": "2024-11-26",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
+     "tanggal": "2026-06-09",
+     "jenis": "resmi"
+    }
+   ]
+  },
+  {
+   "komoditas": "Kakao",
+   "subsektor": "A",
+   "analisis": {
+    "pasar": "Pasar kakao global mengalami koreksi tajam setelah lonjakan 2024: harga turun dari US$12.000+ per ton (2024) ke US$3.400-4.200/ton (Mei 2026), didorong surplus global dan lemahnya permintaan industri cokelat. Indonesia masih mengimpor biji kakao (US$1,46 miliar 2024) meski produsen terbesar ketiga, menandakan permintaan lokal belum terpenuhi domestik.",
+    "kompetisi": "Indonesia memiliki keunggulan komparatif dalam kakao olahan (RCA > 1), bukan biji mentah. menguasai 9,17% pasar intermediate products dunia (posisi keempat eksportir cokelat). Namun RCA biji kakao Indonesia menurun karena ketergantungan impor. Ekuador dan Nigeria memiliki RCA lebih tinggi. Kalimantan Selatan bukan sentra produksi kakao. pusat adalah Sulawesi (60%), Sumatera, Kalimantan Timur. tidak ditemukan data signifikan komparatif Kalsel.",
+    "momentum": "Indonesia mencatat ekspor kakao HS 18 sebesar US$2,65 miliar pada 2024 (naik 118% YoY), didorong hilirisasi industri pengolahan. Pemerintah menargetkan produksi naik ke 635 ribu ton 2026 via BPDPKS replanting. investasi hilirisasi berkontribusi Rp31,12 triliun (Q1 2025). Namun investasi Kalsel di perkebunan hanya 7% dari Rp24,8 triliun 2024. belum ditemukan komitmen investasi kakao spesifik Kalimantan Selatan."
+   },
+   "verdik_pasar": "Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak ada sinyal ekspansi kakao regional yang terverifikasi. potensi masih terbuka tapi memerlukan investasi & komitmen lokal eksplisit.",
+   "sumber": [
+    {
+     "url": "https://ditjenbun.pertanian.go.id/nilai-ekspor-kakao-tembus-us-265-miliar-hilirisasi-jadi-kunci/",
+     "tanggal": "2026-02-14",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://www.cnbcindonesia.com/research/20260129110012-128-706301/kabar-buruk-bagi-petani-indonesia-harga-kakao-terguncang-hebat",
+     "tanggal": "2026-01-29",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://id.tradingeconomics.com/commodity/cocoa",
+     "tanggal": "2026-04-24",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://validnews.id/ekonomi/bps-kinerja-ekspor-kakao-indonesia-meroket",
+     "tanggal": "2025-02-17",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://satudata.pertanian.go.id/assets/docs/publikasi/Buku_Kinerja_Perdagangan_Kakao_2024.pdf",
+     "tanggal": "2024-12-31",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://journal.pubmedia.id/index.php/aaj/article/download/5189/4312/14649",
+     "tanggal": "2024-12-31",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://bkpm.go.id/id/info/siaran-pers/wamen-investasi-dan-hilirisasi-libatkan-umkm-dan-koperasi-dalam-tarik-investasi-daerah",
+     "tanggal": "2025-03-15",
+     "jenis": "resmi"
+    }
+   ]
+  },
+  {
+   "komoditas": "Tebu",
+   "subsektor": "A",
+   "analisis": {
+    "pasar": "Pasar global tebu dalam kondisi kontraksi. Produksi gula dunia 2024/2025 diproyeksikan menurun ke 179,29 juta ton (dari hasil yang lebih tinggi sebelumnya), dipicu penurunan produksi India dan Brazil akibat cuaca ekstrem. Harga gula dunia volatil (0,35-0,48 USD/kg Feb 2024), tapi cenderung menurun di semester II 2024. Indonesia masih net importer besar: SSR tebu/gula hanya 31,73% (2023), import dependency ratio 70,82%, mengindikasikan permintaan domestik jauh melampaui produksi lokal.",
+    "kompetisi": "Indonesia memiliki RCA negatif (-0,49 tahun 2023) dan RSCA negatif (-0,49), menunjukkan tidak ada keunggulan komparatif di pasar dunia. Kalimantan Selatan bukan sentra produksi tebu nasional. hanya provinsi Jawa Timur (49,73%), Lampung (28,55%), dan Jawa Tengah (8,57%) yang signifikan. Lahan potensial Kalsel tersedia tapi belum dikembangkan masif. infrastruktur pabrik gula masih tersentralisasi di Jawa. Kompetitor global (Brasil 43,42% ekspor, India 10,25%) jauh lebih efisien.",
+    "momentum": "Investasi tebu di Kalsel belum terlihat jelas di level BKPM resmi hingga June 2024. Investasi besar terkonsentrasi di Papua Selatan (Merauke): USD 5,62 Miliardi untuk 504.373 ha (target 2027). Harga tebu naik tertekan (HPP 2024/2025 tetap Rp 14.500/kg meski BPP naik), mencerminkan tekanan margin petani. Tren ekspansi industri lebih berfokus pada pembangunan pabrik gula baru di daerah sentra lama (Jawa) dan proyek ekstensif di timur, bukan Kalsel."
+   },
+   "verdik_pasar": "Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra tradisional (Jawa) dan ekspansi timur (Merauke), bukan di Kalsel.",
+   "sumber": [
+    {
+     "url": "https://satudata.pertanian.go.id/assets/docs/publikasi/OUTLOOK_TEBU_2025_sign_compressed.pdf",
+     "tanggal": "2025",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://satudata.pertanian.go.id/assets/docs/publikasi/1E_Analisis_Kinerja_Perdagangan_Gula_2024_-_publish.pdf",
+     "tanggal": "2024",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kompas.id/artikel/en-waswas-harga-gula-dunia-dan-indonesia",
+     "tanggal": "2025-03-09",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://www.bkpm.go.id/id/info/siaran-pers/satgas-percepatan-swasembada-gula-dan-bioetanol-gelar-rapat-perdana-di-kantor-kementerian-investasi",
+     "tanggal": "2024-05-02",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://inaagrimap.litbang.pertanian.go.id/index.php/sentra-produksi/tanaman-perkebunan/tebu",
+     "tanggal": "2024",
+     "jenis": "resmi"
+    }
+   ]
+  },
+  {
+   "komoditas": "Perikanan Budidaya",
+   "subsektor": "A",
+   "analisis": {
+    "pasar": "Pasar perikanan budidaya Indonesia menunjukkan tren ekspansi stabil dengan permintaan global terus meningkat. Pada Triwulan I-2025, total ekspor perikanan Indonesia mencapai USD 1,50 miliar dengan pertumbuhan 3,13% (y-on-y), dengan udang sebagai penyumbang terbesar 29,8% dari total ekspor. Proyeksi pasar global untuk udang mencapai USD 64,8 miliar (2024) dan USD 149 miliar (2034), menunjukkan pertumbuhan permintaan jangka panjang yang kuat, terutama dari Amerika Serikat (31,4% nilai ekspor), ASEAN (16,4%), dan Jepang (10,3%).",
+    "kompetisi": "Indonesia menempati posisi produsen perikanan budidaya nomor 2 dunia setelah Tiongkok dengan total produksi 14,8 juta ton (2020). Kalimantan Selatan menunjukkan potensi budidaya dengan garis pantai 373 km dan perairan luas, diperkuat oleh persetujuan Indikasi Geografis untuk beberapa produk perikanan lokal. Namun, ekspor Indonesia masih bergantung pada bahan mentah dengan keunggulan komparatif terhadap Vietnam dan Thailand. Indikasi Geografis terdaftar resmi baru mencakup 6 produk nasional (belum spesifik Kalsel), dan usulan Permen KP tentang IG sedang dipersiapkan untuk peningkatan daya saing melalui produk bernilai tambah.",
+    "momentum": "Realisasi investasi KKP menunjukkan sinyal positif dengan sinergi BKPM-KKP dalam fasilitasi investasi sektor perikanan (2025). Di Kalimantan Selatan khususnya, panen perdana ikan papuyu di Karang Intan (April 2026) dengan harga Grade A Rp100.000/kg menunjukkan diversifikasi komoditas. Tren harga produsen ikan budidaya meningkat pada Triwulan I-2025 (NTPi naik 0,61% q-to-q dan 1,35% y-on-y), didorong operasionalisasi modelling ikan nila dan Budidaya Udang Berbasis Kawasan (BUBK). Produksi ikan budidaya Indonesia tumbuh 2,61% (y-on-y) dengan komitmen pemerintah memperkuat infrastruktur dan hilirisasi melalui kampung perikanan budidaya modern."
+   },
+   "verdik_pasar": "Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata melalui diversifikasi komoditas dan pengembangan nilai tambah, meskipun masih memerlukan penguatan daya saing kompetitif serta perluasan sertifikasi IG untuk meningkatkan akses pasar premium.",
+   "sumber": [
+    {
+     "url": "https://kkp.go.id/news/news-detail/ekspor-perikanan-tembus-usd-627-miliar-di-2025-kkp-komoditas-indonesia-makin-bernilai-di-pasar-global-krB5.html",
+     "tanggal": "2026-02-18",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://ppid.kkp.go.id/media/uploads/document_information_public/Rilis_Data_Kelautan_dan_Perikanan_Triwulan_I__2025.pdf",
+     "tanggal": "2025-04-01",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://diskominfomc.kalselprov.go.id/2026/04/18/panen-perdana-ikan-papuyu-di-karang-intan-dislautkan-kalsel-wujudkan-peningkatan-produksi-perikanan-budidaya-di-daerah/",
+     "tanggal": "2026-04-18",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://kkp.go.id/djpdskp/menteri-trenggono-ajak-sarjana-perikanan-kembangkan-budidaya-lima-komoditas-unggulan-ekspor-GvV7/detail.html",
+     "tanggal": "2024-08-26",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://indonesia.go.id/kategori/editorial/6232/era-emas-budi-daya-udang-di-pasar-global?lang=1",
+     "tanggal": "2022-11-06",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kkp.go.id/djpdskp/indikasi-geografis-produk-kelautan-dan-perikanan-meningkatkan-daya-saing-dan-keberlanjutan-ekonomi-lokal-Y77K/detail.html",
+     "tanggal": "2024-03-01",
+     "jenis": "resmi"
+    }
+   ]
+  },
+  {
+   "komoditas": "Jagung",
+   "subsektor": "A",
+   "analisis": {
+    "pasar": "<cite index=\"1-1,1-28,1-29\">Harga jagung global turun menjadi USD 190,60 per ton pada 2024 dan berfluktuasi rata-rata USD 209,61 di 2025</cite>. <cite index=\"31-1,31-2\">Indonesia mencapai swasembada jagung 2025 dengan kebutuhan jagung dapat dipenuhi sepenuhnya dari produksi petani dalam negeri tanpa impor</cite>. <cite index=\"31-14,31-15\">Penguatan produksi membuka peluang ekspor, dengan proyeksi ekspor jagung 2026 mencapai 52,9 ribu ton</cite>.",
+    "kompetisi": "<cite index=\"11-1,11-2\">Nilai RCA ekspor jagung Indonesia di pasar internasional memiliki rata-rata kurang dari 1, mengindikasikan keunggulan komparatif yang lemah</cite>. <cite index=\"55-2,55-10\">Nilai RSCA ekspor jagung Indonesia menunjukkan hasil negatif, berarti jagung Indonesia tidak mempunyai keunggulan komparatif dalam perdagangan dunia</cite>. <cite index=\"23-1,23-9\">Kalimantan menyumbang 259,10 ribu ton jagung dari total 15,21 juta ton nasional pada 2024, dan <cite index=\"22-1\">produksi jagung Kalsel meningkat dari 109 ribu ton (2024) menjadi 159 ribu ton (2025)</cite>.</cite>",
+    "momentum": "<cite index=\"30-2,30-3\">Pemerintah Provinsi Kalimantan Selatan memberikan dukungan berupa bibit dan pupuk untuk program tanam jagung kuartal I</cite>. <cite index=\"22-12,22-13\">Kalsel menghadapi tantangan infrastruktur pertanian dengan hanya 7 bulan efektif untuk tanam per tahun akibat banjir, menjadi hambatan produktivitas</cite>. <cite index=\"38-2,38-3\">Produksi jagung nasional diproyeksikan 18 juta ton di 2026, mencukupi kebutuhan 17,055 juta ton tanpa impor</cite>."
+   },
+   "verdik_pasar": "Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara momentum Kalsel terbatas oleh infrastruktur dan agroklimat yang rentan banjir.",
+   "sumber": [
+    {
+     "url": "https://satudata.pertanian.go.id/assets/docs/publikasi/Buku_Analisis_Kinerja_Perdagangan_Jagung_2025_-_tte_sign.pdf",
+     "tanggal": "Agustus 2025",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://infopublik.id/kategori/nasional-ekonomi-bisnis/954052/pemerintah-pastikan-tidak-ada-impor-indonesia-capai-swasembada-jagung-pada-2026",
+     "tanggal": "Januari 6, 2026",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://jepa.ub.ac.id/index.php/jepa/article/download/3455/965",
+     "tanggal": "Tidak disebutkan",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://data.goodstats.id/statistic/produksi-jagung-indonesia-naik-3-pada-2024-2QuuO",
+     "tanggal": "Januari 25, 2025",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://diskominfomc.kalselprov.go.id/2026/04/06/musrenbangtan-2027-kalsel-siap-perkuat-sektor-pertanian-berkelanjutan/",
+     "tanggal": "April 6, 2026",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://wasaka.kalselprov.go.id/pemprov-kalsel-dukung-tanam-jagung-serentak-perkuat-swasembada-pangan-nasional__/",
+     "tanggal": "Maret 7, 2026",
+     "jenis": "resmi"
+    }
+   ]
+  },
+  {
+   "komoditas": "Batu Bara",
+   "subsektor": "B",
+   "analisis": {
+    "pasar": "Pasar global berkembang positif dengan harga mencapai US$143,85/ton (Maret 2026), naik 35% sejak awal 2026, didorong krisis LNG Timur Tengah dan permintaan substitusi dari Jepang serta Eropa. Indonesia mendominasi 50% ekspor batu bara global. Namun permintaan dari pembeli utama (China dan India) memperlihatkan tren menurun. impor China turun 23% dan India turun 14% pada Januari-Mei 2025, tercatat sebagai level ekspor terendah 3 tahun terakhir.",
+    "kompetisi": "Indonesia mempertahankan keunggulan komparatif kuat dengan RCA >1 ke 8 negara tujuan utama (2009-2020). posisi sebagai eksportir kedua dunia setelah Australia dengan pangsa pasar 50% tahun 2025. Kalimantan Selatan berkontribusi 237 juta ton atau 28% dari produksi Kalimantan (687 juta ton) tahun 2024. cadangan batu bara Kalsel masih besar (1,67 miliar ton) dengan lokasi endapan utama tersebar di delapan kabupaten. Namun analisis EPD 2012-2022 menunjukkan risiko pergeseran dominasi ke Australia pada produk turunan batu bara.",
+    "momentum": "Investasi manufaktur baru: PT Sumber Daya Energi (Qinfa Group) menggelontorkan Rp4,6 triliun untuk tambang underground kapasitas 30 juta ton/tahun di Kotabaru (periode 2021-2023, operasi komersial Desember 2023). infrastruktur hilirisasi berkembang (proyek metanol Bengalon di Kaltim sebagai PSN menunjukkan signal diversifikasi, bukan ekspansi volume Kalsel). Namun sinyal negatif: pemerintah menetapkan kebijakan pengetatan produksi 2026 (target 600 juta ton dari 790 juta ton 2025), DMO naik jadi 30%, dan pajak ekspor batu bara berlaku sejak 2026. menutup momentum ekspansi klasik, mendorong shift ke hilirisasi."
+   },
+   "verdik_pasar": "Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan produksi dan hilirisasi obligatif (bukan ekspansi volume tambang tradisional), serta perlambatan permintaan dari pembeli utama Asia menekan prospek pertumbuhan jangka menengah di Kalsel. keunggulan komparatif tetap ada namun sedang teruji oleh kebijakan domestik dan kompetisi hilirisasi.",
+   "sumber": [
+    {
+     "url": "https://www.cnbcindonesia.com/research/20260330084416-128-722365/harga-batu-bara-tiba-tiba-kembali-membara",
+     "tanggal": "2026-03-30",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://id.tradingeconomics.com/commodity/coal",
+     "tanggal": "2026-06-05",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://investortrust.id/business/67883/harga-batu-bara-ri-akhir-2025-diproyeksi-terjun-ke-us-110-ini-analisisnya",
+     "tanggal": "2025-05-31",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://www.worldbank.org/en/research/commodity-markets",
+     "tanggal": "2026-06-02",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://databoks.katadata.co.id/en/market/statistics/694bb6c896711/by-the-end-of-2025-the-government-will-raise-the-benchmark-price-for-all-grades-of-indonesian-coal",
+     "tanggal": "2025-12-24",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://etd.repository.ugm.ac.id/penelitian/detail/209228",
+     "tanggal": "2020-11-15",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://pub.nuris.ac.id/journal/jomaa/article/download/187/81",
+     "tanggal": "2025-01-15",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kalimantan.bisnis.com/read/20250710/408/1892046/kementerian-esdm-82-produksi-batu-bara-nasional-dari-kalimantan",
+     "tanggal": "2025-07-10",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://www.cnnindonesia.com/ekonomi/20231220081741-92-1039487/perusahaan-china-gelontorkan-rp46-t-untuk-keruk-batu-bara-di-kalsel",
+     "tanggal": "2023-12-20",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://data.goodstats.id/statistic/indonesia-kuasai-pasar-ekspor-batu-bara-global-2025-OYb4M",
+     "tanggal": "2026-02-13",
+     "jenis": "berita"
+    }
+   ]
+  }
+ ],
+ "layer2": [
+  {
+   "komoditas": "Batu Bara",
+   "wilayah_id": "6302",
+   "tier": "B",
+   "verdik_ekosistem": "Batu bara berpotensi pasar jangka pendek tinggi akibat shock energi global dan momentum pengetatan ekspor. Kotabaru menjadi lokasi tambang bawah tanah terbesar-pertama di Indonesia (PT SDE, 20 juta ton/tahun capacity). Namun ekosistem hanya mencakup ekstraksi. belum ada hilirisasi lokal, akselerasi ketenagakerjaan lokal, dan integrasi UMKM pendukung.",
+   "sketsa": {
+    "hulu": "PT Sumber Daya Energi (SDE) afiliasi Qinfa Group, merupakan pemegang IUP asing (valid hingga 14 Mei 2034) di Sungai Durian Kotabaru seluas 185 km² (18.500 ha). teknologi longwall mining (underground, 180 m depth). cadangan 293 juta ton, sumber daya 589 juta ton.",
+    "offtaker": "Offtaker utama adalah pasar energi domestik (PLTU, industri) dan potensial ekspor batubara. belum ada industri hilir lokal (gasifikasi, limbah pertambangan). Kontribusi terutama ke penerimaan negara pajak tambang dan royalti.",
+    "pembiayaan": "Investasi FDI Qinfa Group USD 300 juta (tahun 2021-2023) untuk konstruksi dan operasi. tidak ada akses pembiayaan terstruktur untuk UMKM pendukung atau program KUR sektor pertambangan lokal yang terpublikasi.",
+    "asistensi": "Program transfer teknologi dan transfer keahlian tenaga kerja asing ke Indonesia melalui BDTBT (Balai Pendidikan dan Pelatihan Pertambangan Bawah Tanah) Kemenkes. pelatihan karyawan dari masyarakat lokal melalui program BPSDM ESDM.",
+    "program": "Program Pengembangan dan Pemberdayaan Masyarakat Sekitar Tambang (diisyaratkan dalam lisensi). kontribusi pembangunan SD Magalau Hulu. koordinasi Kemenkes, Kementerian Investasi (BKPM), pemerintah daerah untuk fasilitasi operasi komersial.",
+    "gap_utama": "Industri hilir dan petrochemistry 0 (nol). seluruh produksi dieksport atau ke pasar domestik mentah. kluster UMKM pendukung (peralatan, logistik, jasa) belum terbentuk. keterseraapan tenaga kerja lokal berkualitas vs TKA belum transparan. dependensi volatilitas harga global tanpa nilai tambah lokal."
+   },
+   "evidence": [
+    {
+     "dimensi": "Basis Produksi Lokal",
+     "teks": "Tambang batu bara bawah tanah pertama di Indonesia, dikelola PT Sumber Daya Energi (SDE) afiliasi Qinfa Group, berlokasi di Sungai Durian Kotabaru dengan konsesi 185 km², diresmikan operasional Desember 2023, kapasitas 20 juta ton/tahun, cadangan 293 juta ton.",
+     "sumber": [
+      {
+       "url": "https://kalsel.antaranews.com/berita/399006/kotabaru-miliki-tambang-batu-bara-bawah-tanah-pertama-di-indonesia",
+       "tanggal": "2023-12-18",
+       "jenis": "berita"
+      },
+      {
+       "url": "https://www.esdm.go.id/id/media-center/arsip-berita/resmikan-produksi-pertama-tambang-batubara-bawah-tanah-pt-sde-pemerintah-pesan-tingkatkan-kesejahteraan-masyarakat-lokal",
+       "tanggal": "2023-12-21",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Investasi dan Kapasitas",
+     "teks": "Investasi FDI Qinfa Group sebesar USD 300 juta tahun 2021-2023. teknologi longwall mining terkini paling efisien dan ramah lingkungan. IUP penanaman modal asing berlaku hingga 14 Mei 2034. umur tambang diproyeksikan 15 tahun.",
+     "sumber": [
+      {
+       "url": "https://www.dunia-energi.com/sumber-daya-energi-mulai-produksi-batu-bara-dari-tambang-bawah-tanah-di-kotabaru/",
+       "tanggal": "2023-12-19",
+       "jenis": "berita"
+      },
+      {
+       "url": "https://regional.kompas.com/read/2023/12/19/063622578/tambang-batu-bara-bawah-tanah-pertama-di-indonesia-resmi-beroperasi",
+       "tanggal": "2023-12-18",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Asistensi dan Program Pengembangan SDM",
+     "teks": "Program transfer teknologi dan transfer keahlian tenaga kerja asing ke Indonesia melalui Balai Pendidikan dan Pelatihan Pertambangan Bawah Tanah (BDTBT) di bawah BPSDM ESDM. PT SDE bekerja sama BDTBT memfasilitasi karyawan program pelatihan. perusahaan berkontribusi pada program pendidikan masyarakat (SD Magalau Hulu).",
+     "sumber": [
+      {
+       "url": "https://bakabar.com/post/pertama-di-indonesia-tambang-batu-bara-bawah-tanah-ada-di-kotabaru-lqbpwr2d",
+       "tanggal": "2023-12-19",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Dukungan Pemerintah dan Koordinasi",
+     "teks": "Kementerian ESDM meresmikan operasi produksi. Kementerian Investasi (BKPM) menyatakan investasi SDE penting untuk target realisasi investasi 2024. pemerintah daerah dan pemerintah pusat melakukan koordinasi regulasi dan penegakan hukum lingkungan.",
+     "sumber": [
+      {
+       "url": "https://www.esdm.go.id/id/media-center/arsip-berita/resmikan-produksi-pertama-tambang-batubara-bawah-tanah-pt-sde-pemerintah-pesan-tingkatkan-kesejahteraan-masyarakat-lokal",
+       "tanggal": "2023-12-21",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://regional.kompas.com/read/2023/12/19/063622578/tambang-batu-bara-bawah-tanah-pertama-di-indonesia-resmi-beroperasi",
+       "tanggal": "2023-12-18",
+       "jenis": "berita"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.esdm.go.id/id/media-center/arsip-berita/resmikan-produksi-pertama-tambang-batubara-bawah-tanah-pt-sde-pemerintah-pesan-tingkatkan-kesejahteraan-masyarakat-lokal",
+     "tanggal": "2023-12-21",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kalsel.antaranews.com/berita/399006/kotabaru-miliki-tambang-batu-bara-bawah-tanah-pertama-di-indonesia",
+     "tanggal": "2023-12-18",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://regional.kompas.com/read/2023/12/19/063622578/tambang-batu-bara-bawah-tanah-pertama-di-indonesia-resmi-beroperasi",
+     "tanggal": "2023-12-18",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://www.dunia-energi.com/sumber-daya-energi-mulai-produksi-batu-bara-dari-tambang-bawah-tanah-di-kotabaru/",
+     "tanggal": "2023-12-19",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://bakabar.com/post/pertama-di-indonesia-tambang-batu-bara-bawah-tanah-ada-di-kotabaru-lqbpwr2d",
+     "tanggal": "2023-12-19",
+     "jenis": "berita"
+    }
+   ],
+   "kategori": [
+    "offtaker_penyerapan",
+    "nilai_tambah_hilir",
+    "kepastian_pasar",
+    "pembiayaan_ljk",
+    "asistensi_teknis",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Ikan Patin",
+   "wilayah_id": "6302",
+   "tier": "C",
+   "verdik_ekosistem": "Ikan patin menunjukkan potensi budidaya di Kotabaru dengan dukungan program KNMP dan ketersediaan kolam air tawar di beberapa kecamatan. Pasar domestik jelas namun akses ekspor dan akselerasi teknologi budidaya berskala masih perlu dipercepat melalui cluster formalisasi.",
+   "sketsa": {
+    "hulu": "133 rumah tangga pembudidaya (RTP) air tawar di Kecamatan Pulau Laut Utara, Timur, Tengah, Pamukan Utara-Barat, Kelumpang Selatan. komoditas prioritas budidaya tematik KNMP (ikan nila, lele). patin masuk dalam diversifikasi. budidaya tradisional kolam/keramba.",
+    "offtaker": "Pasar domestik lokal dan tingkat provinsi. program MBG (Makan Bergizi Gratis) sebagai absorber hasil produksi. pengumpul lokal di desa-desa pesisir. belum ada channel ekspor formal yang terdokumentasi.",
+    "pembiayaan": "Akses pembiayaan melalui program KNMP dari KKP. belum ada data terstruktur KUR atau kredit perbankan khusus budidaya ikan air tawar. koordinasi BI-Pemda-KKP untuk kemandirian dana operasional belum detail di level patin.",
+    "asistensi": "Pelatihan bioflok dan budidaya organik dari Dinas Perikanan. pendampingan KNMP dari KKP. sertifikasi dan standardisasi belum terekspresi dalam rilis resmi lokal untuk komoditas patin spesifik.",
+    "program": "Program Kampung Nelayan Merah Putih (KNMP) dengan 6 calon lokasi. budidaya tematik air tawar dengan komoditas prioritas ikan nila-lele. program MBG (Makan Bergizi Gratis) untuk penyerapan hasil.",
+    "gap_utama": "Infrastruktur cold storage dan pengolahan ikan patin lokal belum berkembang. mayoritas produksi diserap pasar segar/lokal tanpa nilai tambah. akses teknologi budidaya intensif (bioflok, aquaponics) terbatas pada cluster pilot. belum ada asosiasi pembudidaya patin terformalisasi."
+   },
+   "evidence": [
+    {
+     "dimensi": "Basis Produksi Lokal dan Potensi",
+     "teks": "Kotabaru memiliki potensi budidaya air tawar di beberapa kecamatan termasuk Pulau Laut Utara, Timur, Tengah, Pamukan Utara-Barat, Kelumpang Selatan. 133 RTP pembudidaya air tawar dengan komoditas ikan nila, mas, patin. budidaya air tawar masih bersifat tradisional.",
+     "sumber": [
+      {
+       "url": "https://diskan.kotabarukab.go.id/tentang-kami/",
+       "tanggal": "2025-03-13",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Program Pemerintah dan Dukungan",
+     "teks": "Program Kampung Nelayan Merah Putih (KNMP) KKP dengan 6 calon lokasi survei tahap 2. budidaya tematik air tawar dengan prioritas ikan nila-lele. hasil produksi mendukung program Makan Bergizi Gratis (MBG). Dinas Perikanan melaksanakan pelatihan bioflok dan organik.",
+     "sumber": [
+      {
+       "url": "https://www.kalseltoday.com/2026/05/kotabaru-siapkan-kampung-nelayan-merah.html",
+       "tanggal": "2026-05-20",
+       "jenis": "berita"
+      },
+      {
+       "url": "https://diskan.kotabarukab.go.id/tentang-kami/",
+       "tanggal": "2025-03-13",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Infrastruktur dan Sarana Prasarana",
+     "teks": "Balai Benih Ikan (BBI) dan fasilitas kesehatan ikan disediakan Dinas Perikanan. pabrik es dan cold storage dikembangkan untuk produk perikanan. infrastruktur pengolahan dan pengemasan untuk patin belum teridentifikasi sebagai prioritas lokal.",
+     "sumber": [
+      {
+       "url": "https://diskan.kotabarukab.go.id/tentang-kami/",
+       "tanggal": "2025-03-13",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Pasar dan Penyerapan",
+     "teks": "Hasil budidaya air tawar dimaksimalkan untuk program MBG. pasar lokal melalui desa dan pengumpul setempat. belum ada indikasi channel ekspor formal atau kemitraan dengan distributor skala nasional untuk patin spesifik.",
+     "sumber": [
+      {
+       "url": "https://www.kalseltoday.com/2026/05/kotabaru-siapkan-kampung-nelayan-merah.html",
+       "tanggal": "2026-05-20",
+       "jenis": "berita"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://diskan.kotabarukab.go.id/tentang-kami/",
+     "tanggal": "2025-03-13",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://www.kalseltoday.com/2026/05/kotabaru-siapkan-kampung-nelayan-merah.html",
+     "tanggal": "2026-05-20",
+     "jenis": "berita"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "offtaker_penyerapan",
+    "kepastian_pasar",
+    "asistensi_teknis",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Kelapa Sawit",
+   "wilayah_id": "6302",
+   "tier": "B",
+   "verdik_ekosistem": "Kelapa sawit layak dikembangkan di Kotabaru. basis produksi terbesar di Kalsel (156.554 ha) dan pasar global tetap tumbuh dengan dukungan biofuel nasional. Namun pembiayaan petani rakyat dan akselerasi hilirisasi CPO masih perlu diperkuat untuk menutup gap akses kredit dan penguatan industri pengolahan.",
+   "sketsa": {
+    "hulu": "Petani rakyat dan PBS mengelola 80-90% areal sawit. perkebunan rakyat terkoordinasi melalui KUD (KUD Bersama Sejakah Makmur). program PSR (Perkebunan Sawit Rakyat) dari Provinsi menargetkan luas tambah 10.700 ha/tahun di Kotabaru.",
+    "offtaker": "Minimal 2 pabrik CPO operasional (PT MSAM 65 ton/jam, PT Jhonlin Agro Raya di Hampang). tersebar di beberapa kabupaten termasuk Kotabaru dengan total 33 pabrik CPO di Kalsel kapasitas 1.500 ton TBS/jam. industri refinery/oleokimia belum berkembang lokal.",
+    "pembiayaan": "Program BPDPKS (Badan Pengelola Dana Perkebunan Kelapa Sawit) menyediakan dukungan sarana prasarana. akses KUR dan kredit perbankan untuk petani rakyat masih terbatas. penelitian menunjukkan variasi pembiayaan berdasarkan skala lahan dan usia tanaman.",
+    "asistensi": "Dinas Ketahanan Pangan dan Pertanian melaksanakan program PKSP (Peremajaan Kelapa Sawit Pekebun). sosialisasi teknis dan penilaian usaha perkebunan (PUP) dilakukan berkala. pendampingan GAP dan SNI belum terukur sistematis.",
+    "program": "Program Perkebunan Sawit Rakyat (PSR) dari Pemprov Kalsel. Luas Tambah Tanam (LTT) akselerasi di DKPP Kotabaru. Penghargaan Peringkat I Ekspor Pertanian Nasional (2021) mengindikasikan dukungan Kemtan untuk ekspor.",
+    "gap_utama": "Akses pembiayaan untuk petani rakyat masih rendah. mayoritas mengandalkan skema plasma inti-rakyat atau penjualan langsung. diversifikasi hilirisasi (oleokimia, biodiesel) belum menjadi program terstruktur lokal sehingga nilai tambah terkonsentrasi di pabrik."
+   },
+   "evidence": [
+    {
+     "dimensi": "Basis Produksi Lokal",
+     "teks": "Kotabaru memiliki area perkebunan kelapa sawit terluas di Kalimantan Selatan dengan luas 156.554 ha dari total 426.445 ha provinsi dan mampu memproduksi 585.713 ton CPO, meraih peringkat I ekspor pertanian nasional.",
+     "sumber": [
+      {
+       "url": "https://diskominfomc.kalselprov.go.id/2021/09/20/miliki-area-perkebunan-sawit-terluas-kotabaru-raih-peringkat-i-kabupaten-dengan-ekspor-pertanian-tertinggi/",
+       "tanggal": "2021-09-20",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Offtaker dan Penyerapan",
+     "teks": "PT MSAM membangun pabrik CPO 65 ton/jam di Pulau Laut dengan kapasitas penyerapan 2.000 tenaga kerja lokal. PT Jhonlin Agro Raya mendirikan pabrik kepala sawit di Kecamatan Hampang untuk penyerapan tenaga lokal.",
+     "sumber": [
+      {
+       "url": "https://mediaindonesia.com/nusantara/162445/pabrik-cpo-dibangun-di-kotabaru",
+       "tanggal": "2018-05-22",
+       "jenis": "berita"
+      },
+      {
+       "url": "https://kalsel.antaranews.com/berita/322185/bupati-kotabaru-gandeng-perusahaan-tingkatkan-kesejahteraan-masyarakat",
+       "tanggal": "2022-04-11",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Pembiayaan dan LJK",
+     "teks": "Program Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS) menyediakan dukungan sarana prasarana melalui verifikasi Dinas Ketahanan Pangan. petani rakyat mengakses pembiayaan melalui sistem plasma inti-rakyat dan KUD.",
+     "sumber": [
+      {
+       "url": "https://dkppkotabaru.com/perkebunan/",
+       "tanggal": "2023-08-22",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Asistensi Teknis dan Program",
+     "teks": "Program Peremajaan Kelapa Sawit Pekebun (PKSP) dilaksanakan DKPP Kotabaru. penilaian usaha perkebunan (PUP) berkala untuk transparansi dan kepatuhan. program PSR (Perkebunan Sawit Rakyat) Pemprov menargetkan 10.700 ha/tahun.",
+     "sumber": [
+      {
+       "url": "https://dkppkotabaru.com/perkebunan/",
+       "tanggal": "2023-08-22",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://diskominfomc.kalselprov.go.id/2021/09/20/miliki-area-perkebunan-sawit-terluas-kotabaru-raih-peringkat-i-kabupaten-dengan-ekspor-pertanian-tertinggi/",
+       "tanggal": "2021-09-20",
+       "jenis": "resmi"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://diskominfomc.kalselprov.go.id/2021/09/20/miliki-area-perkebunan-sawit-terluas-kotabaru-raih-peringkat-i-kabupaten-dengan-ekspor-pertanian-tertinggi/",
+     "tanggal": "2021-09-20",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://dkppkotabaru.com/perkebunan/",
+     "tanggal": "2023-08-22",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://mediaindonesia.com/nusantara/162445/pabrik-cpo-dibangun-di-kotabaru",
+     "tanggal": "2018-05-22",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://kalsel.antaranews.com/berita/322185/bupati-kotabaru-gandeng-perusahaan-tingkatkan-kesejahteraan-masyarakat",
+     "tanggal": "2022-04-11",
+     "jenis": "berita"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "offtaker_penyerapan",
+    "nilai_tambah_hilir",
+    "kepastian_pasar",
+    "pembiayaan_ljk",
+    "asistensi_teknis",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Udang Vaname",
+   "wilayah_id": "6302",
+   "tier": "B",
+   "verdik_ekosistem": "Udang vaname memiliki pasar ekspor menjanjikan dan Kotabaru menunjukkan momentum kuat dengan panen perdana teknologi modern (Mei 2026). Namun ekosistem masih tergantung pada clustering terbatas dan akses benur berkualitas perlu diformalkan untuk memastikan pertumbuhan berkelanjutan.",
+   "sketsa": {
+    "hulu": "Kelompok pembudidaya udang vaname berbasis teknologi bioflok di Tambak Klaster Sinar Empang (Pulau Laut Timur). Balai Benih Ikan (BBI) dan program kemandirian benur udang difasilitasi DKPP, Bank Indonesia, dan KKP. areal tambak ~6.000 ha di 17 dari 22 kecamatan Kotabaru.",
+    "offtaker": "Pasar ekspor udang terbuka melalui distributor dan eksportir nasional. rencana pembentukan Kampung Nelayan Merah Putih (KNMP) KKP untuk memperkuat sistem pemasaran dan agregasi. pasar domestik melalui pasar ikan dan pengumpul lokal di Pulau Laut Utara.",
+    "pembiayaan": "Bank Indonesia (BI) Perwakilan Kalsel berkoordinasi untuk pembiayaan program kemandirian benur melalui POKDAKAN. akses KUR dan kredit bank untuk pembudidaya belum terstruktur dalam data lokal. diperlukan mapping lebih detail.",
+    "asistensi": "Program kemandirian benih udang dan pakan mandiri melalui BI-Pemda-KKP-POKDAKAN. pelatihan tambak organik dan bioflok. sertifikasi dan pendampingan GAP dari BBPBAP Jepara dan BDTBT Kemenkes.",
+    "program": "Kampung Nelayan Merah Putih (KNMP) dengan 6 calon lokasi survei tahap 2 (Desa Tanjung Seloka, Kerayaan, Tanjung Lalak Selatan, Rampa, Pulau Sebuku, Tanjung Semalantakan, Pantai). program MBG (Makan Bergizi Gratis). budidaya tematik ikan nila-lele juga didorong.",
+    "gap_utama": "Ketersediaan benur berkualitas masih terbatas. BBI baru dioptimalkan 2020. akses pembiayaan untuk petambak rakyat belum tersentralisasi. transportasi dan cold chain dari tambak ke pasar ekspor perlu infrastruktur logistik yang lebih teratur."
+   },
+   "evidence": [
+    {
+     "dimensi": "Basis Produksi Lokal",
+     "teks": "Kotabaru memiliki 6.000 ha tambak dengan ~1.500 petambak di 17 kecamatan. panen perdana udang vaname teknologi modern di Tambak Klaster Sinar Empang (Desa Sungai Limau, Pulau Laut Timur) pada Mei 2026 menandai tonggak pengembangan budidaya modern.",
+     "sumber": [
+      {
+       "url": "https://mediacenter.kotabarukab.go.id/panen-udang-vaname-perdana-jadi-tonggak-baru-perikanan-budidaya-kotabaru/",
+       "tanggal": "2026-05-24",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://kalsel.antaranews.com/berita/216128/balai-benih-dan-kesehatan-ikan-kotabaru-diresmikan",
+       "tanggal": "2020-11-24",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Offtaker dan Penyerapan",
+     "teks": "Ekspor udang melalui distributor dan eksportir nasional. pasar domestik lokal di 1 unit pasar ikan dan 21 perusahaan/pengumpul hasil perikanan di Pulau Laut Utara. rencana KNMP mengindikasikan upaya formalisasi pemasaran.",
+     "sumber": [
+      {
+       "url": "https://www.kalseltoday.com/2026/05/kotabaru-siapkan-kampung-nelayan-merah.html",
+       "tanggal": "2026-05-20",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Pembiayaan dan LJK",
+     "teks": "Bank Indonesia Perwakilan Kalsel berkoordinasi dengan Pemda, KKP, dan POKDAKAN untuk program kemandirian benur dan pakan. struktur pembiayaan KUR dan kredit bank belum terpublikasi dalam dokumen resmi lokal.",
+     "sumber": [
+      {
+       "url": "https://kalsel.antaranews.com/berita/216128/balai-benih-dan-kesehatan-ikan-kotabaru-diresmikan",
+       "tanggal": "2020-11-24",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Asistensi Teknis dan Program",
+     "teks": "Program Kemandirian Benih Udang, Program Pakan Mandiri, dan Pelatihan Tambak Organik dilaksanakan Dinas Perikanan-BI-KKP. KNMP dengan 6 calon lokasi survei tahap 2 untuk pembentukan sentra budidaya tematik dengan komoditas prioritas ikan nila-lele.",
+     "sumber": [
+      {
+       "url": "https://diskan.kotabarukab.go.id/tentang-kami/",
+       "tanggal": "2025-03-13",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://www.kalseltoday.com/2026/05/kotabaru-siapkan-kampung-nelayan-merah.html",
+       "tanggal": "2026-05-20",
+       "jenis": "berita"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://mediacenter.kotabarukab.go.id/panen-udang-vaname-perdana-jadi-tonggak-baru-perikanan-budidaya-kotabaru/",
+     "tanggal": "2026-05-24",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://diskan.kotabarukab.go.id/tentang-kami/",
+     "tanggal": "2025-03-13",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kalsel.antaranews.com/berita/216128/balai-benih-dan-kesehatan-ikan-kotabaru-diresmikan",
+     "tanggal": "2020-11-24",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://www.kalseltoday.com/2026/05/kotabaru-siapkan-kampung-nelayan-merah.html",
+     "tanggal": "2026-05-20",
+     "jenis": "berita"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "offtaker_penyerapan",
+    "kepastian_pasar",
+    "pembiayaan_ljk",
+    "asistensi_teknis",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Ikan Patin",
+   "wilayah_id": "6303",
+   "tier": "B",
+   "verdik_ekosistem": "Ikan patin memiliki pasar menjanjikan dan Banjar adalah produsen perikanan budidaya terbesar di Kalimantan Selatan, tetapi ekosistem closed-loop masih terganggu oleh akses pembiayaan terbatas dan ketiadaan infrastruktur pengolahan nilai tambah yang terkoneksi ke offtaker ekspor.",
+   "sketsa": {
+    "hulu": "Pembenihan dan budidaya kolam/jaring apung tersebar di kecamatan Martapura Kota, Martapura Barat, Karang Intan, dan Aranio. kawasan Minapolitan Cindai Alus sebagai lokasi model industrialisasi.",
+    "offtaker": "Produksi pemasaran lintas provinsi ke Kalimantan Tengah, Timur, dan Barat. pasar domestik regional, tetapi belum ada bukti unit pengolahan/pengalengan terintegrasi di Banjar.",
+    "pembiayaan": "",
+    "asistensi": "BPP Martapura Kota dan BPP Martapura Barat memberikan penyuluhan teknologi. Dinas Ketahanan Pangan dan Perikanan Banjar sebagai pendamping.",
+    "program": "Kawasan Minapolitan Cindai Alus ditetapkan sebagai salah satu dari 10 Lokasi Model Pengembangan Industrialisasi Perikanan Budidaya dan mendapat reward Menteri KKP 2012 atas pencapaian penyiapan kawasan industrialisasi patin.",
+    "gap_utama": "Ketiadaan industri pengolahan ikan patin (fillet, kaleng, produk bernilai tambah) yang terintegrasi dan terhubung langsung ke offtaker ekspor, sehingga nilai tambah tidak tertangkap di tingkat lokal dan daya saing harga ekspor lemah."
+   },
+   "evidence": [
+    {
+     "dimensi": "offtaker_penyerapan",
+     "teks": "Ikan patin dan nila dari Banjar dipasarkan ke beberapa kabupaten/kota di Kalimantan Selatan bahkan ke provinsi tetangga seperti Kalimantan Tengah, Kalimantan Timur, hingga Kalimantan Barat, menunjukkan pasar terbentuk meski belum ada pengolahan lokal.",
+     "sumber": [
+      {
+       "url": "https://newsway.co.id/kabupaten-banjar-raih-peringkat-i-produksi-perikanan-budidaya-tertinggi-se-kalimantan-selatan-2025/",
+       "tanggal": "2026-03-07",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "sarana_prasarana",
+     "teks": "Budidaya ikan patin dengan luas kolam sekitar 791,4 Ha dan jaring apung 1.125 unit serta karamba 2.259 unit tersebar di beberapa kecamatan, dengan total produksi budidaya 30-40 ton/hari.",
+     "sumber": [
+      {
+       "url": "https://home.banjarkab.go.id/profil-daerah/",
+       "tanggal": "2021",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "dukungan_pemerintah_program",
+     "teks": "Kawasan Minapolitan Cindai Alus merupakan salah satu dari 10 Lokasi Model Pengembangan Industrialisasi Perikanan Budidaya dan mendapatkan Reward dari Menteri KKP atas Pencapaian Kinerja Tinggi Atas Penyiapan Kawasan Industrialisasi Patin di Kabupaten Banjar Tahun 2012.",
+     "sumber": [
+      {
+       "url": "https://home.banjarkab.go.id/profil-daerah/",
+       "tanggal": "2021",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "asistensi_teknis",
+     "teks": "Penyuluhan dan informasi teknologi dilakukan oleh BPP Martapura Kota di Desa Cindai Alus dan BPP Martapura Barat di Desa Sungai Rangas dengan dukungan dari Dinas Perikanan dan Kelautan Kabupaten Banjar.",
+     "sumber": []
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://newsway.co.id/kabupaten-banjar-raih-peringkat-i-produksi-perikanan-budidaya-tertinggi-se-kalimantan-selatan-2025/",
+     "tanggal": "2026-03-07",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://home.banjarkab.go.id/profil-daerah/",
+     "tanggal": "2021",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "offtaker_penyerapan",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program",
+    "asistensi_teknis"
+   ]
+  },
+  {
+   "komoditas": "Karet",
+   "wilayah_id": "6303",
+   "tier": "B",
+   "verdik_ekosistem": "Karet adalah komoditas perkebunan dominan di Banjar dengan basis produksi kuat (15 ribu hektar TM, 12 juta kg/tahun), namun ekosistem hilirisasi lemah. mayoritas masih menjual crumb rubber dan sheet mentah, bukan produk bernilai tambah, sehingga potensi pasar internasional yang menjanjikan belum tergali melalui diversifikasi produk hilir di Banjar.",
+   "sketsa": {
+    "hulu": "Perkebunan karet rakyat dominan (68% dari total areal), dengan perkebunan besar negara PTPN XIII Danau Salak dan beberapa perusahaan swasta plasma di Banjar. luas areal mencapai 19.268 Ha dengan produktivitas 846 kg/Ha/tahun.",
+    "offtaker": "Produksi diangkut ke pasar nasional dan internasional sebagai bahan baku industri. produk olahan meliputi lump mangkok/slab, sol sepatu, dan RSS (Rubber Smoker Sheet) dari PTPN XIII, tetapi belum ada bukti unit pengolahan hilir (latex pekat, lem khusus) yang berkelanjutan di Banjar.",
+    "pembiayaan": "",
+    "asistensi": "Dinas Pertanian Kabupaten Banjar melakukan identifikasi komoditas unggulan dengan BSIP Kalimantan Selatan sejak 2023 untuk memetakan prioritas pengembangan.",
+    "program": "Pola Perusahaan Inti Rakyat (PIR) dengan PTPN XIII Danau Salak dan PT. Balimas sebagai inti. pengembangan komoditas berdasarkan keunggulan komparatif dan kompetitif lokal.",
+    "gap_utama": "Ketiadaan unit pengolahan latex pekat dan produk derivatif bernilai tinggi di Banjar menyebabkan margin keuntungan tertangkap di level hilir regional/nasional, bukan lokal. akses teknologi dan modal untuk diversifikasi produk masih sangat terbatas."
+   },
+   "evidence": [
+    {
+     "dimensi": "pelaku_usaha_hulu",
+     "teks": "Karet merupakan komoditas perkebunan yang paling banyak diusahakan oleh penduduk Kabupaten Banjar. areal mencapai 19.268 Ha dengan produksi 10.732 ton/tahun, mayoritas dari perkebunan rakyat (68%) dan perkebunan besar negara PTPN XIII Danau Salak serta PT. Balimas.",
+     "sumber": [
+      {
+       "url": "https://home.banjarkab.go.id/profil-daerah/",
+       "tanggal": "2021",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "nilai_tambah_hilir",
+     "teks": "Produksi olahan karet meliputi lump mangkok/slab, sol sepatu, dan RSS (Rubber Smoker Sheet) dari PTPN XIII Danau Salak, serta kemudian dikembangkan menjadi bahan setengah jadi seperti latex pekat dan lem.",
+     "sumber": [
+      {
+       "url": "https://home.banjarkab.go.id/profil-daerah/",
+       "tanggal": "2021",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "kepastian_pasar",
+     "teks": "Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan meskipun pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi diversifikasi produk hilirisasi khusus di Banjar.",
+     "sumber": [
+      {
+       "url": "https://pertanian.banjarkab.go.id/?page_id=748",
+       "tanggal": "2015",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "dukungan_pemerintah_program",
+     "teks": "Dinas Pertanian Kabupaten Banjar menjalin kerjasama dengan BSIP Kalimantan Selatan dalam kajian identifikasi komoditas unggulan untuk memetakan prioritas pengembangan di wilayah Kabupaten Banjar, menunjukkan upaya lokal untuk akselerasi.",
+     "sumber": [
+      {
+       "url": "https://kalsel.bsip.pertanian.go.id/berita/identifikasi-komoditas-unggulan-dinas-pertanian-kabupaten-banjar-jalin-kerjasama-dengan-bsip-kalsel",
+       "tanggal": "2023-11-12",
+       "jenis": "resmi"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://home.banjarkab.go.id/profil-daerah/",
+     "tanggal": "2021",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://pertanian.banjarkab.go.id/?page_id=748",
+     "tanggal": "2015",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kalsel.bsip.pertanian.go.id/berita/identifikasi-komoditas-unggulan-dinas-pertanian-kabupaten-banjar-jalin-kerjasama-dengan-bsip-kalsel",
+     "tanggal": "2023-11-12",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "nilai_tambah_hilir",
+    "kepastian_pasar",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Kelapa Sawit",
+   "wilayah_id": "6303",
+   "tier": "C",
+   "verdik_ekosistem": "Kelapa sawit adalah salah satu komoditas unggulan yang dikembangkan di Banjar dengan pasar global menjanjikan (dukungan kebijakan biofuel nasional), tetapi basis lokal di Banjar masih terbatas. belum ada sinyal kuat tentang pabrik pengolahan CPO atau unit hilir yang terintegrasi, dan data produksi spesifik Banjar tidak tersedia, mengindikasikan ekosistem yang belum mencukup untuk closed-loop.",
+   "sketsa": {
+    "hulu": "Kelapa sawit dikembangkan di Banjar sebagai komoditas unggulan dengan wilayah utama Banjar bersama Barito Kuala. namun data areal dan produksi spesifik Banjar tidak tersedia dalam sumber yang diperoleh.",
+    "offtaker": "",
+    "pembiayaan": "",
+    "asistensi": "Program tumpang sari kelapa sawit dengan padi diterapkan di lahan peremajaan sawit rakyat di Kalimantan Selatan, menunjukkan upaya diversifikasi namun tidak khusus sinyal Banjar.",
+    "program": "",
+    "gap_utama": "Ketiadaan data produksi spesifik dan sinyal infrastruktur pengolahan CPO atau pabrik di Banjar membuat ekosistem kelapa sawit tidak jelas. basis lokal mungkin masih terlalu dini atau tergantung pada areal perkebunan besar eksternal, sehingga loop ekonomi lokal tidak terbentuk."
+   },
+   "evidence": [
+    {
+     "dimensi": "kepastian_pasar",
+     "teks": "Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis yang menguntungkan.",
+     "sumber": [
+      {
+       "url": "https://home.banjarkab.go.id/profil-daerah/",
+       "tanggal": "2021",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "pelaku_usaha_hulu",
+     "teks": "Kabupaten Barito Kuala dan Banjar menjadi wilayah utama pengembangan sawit di Kalimantan Selatan, meskipun data areal dan produksi spesifik untuk Banjar belum tersedia dalam sumber publik yang mudah diakses.",
+     "sumber": [
+      {
+       "url": "https://tiberman.com/blog/daerah-penghasil-kelapa-sawit-terbesar-di-indonesia/",
+       "tanggal": "2025-07-05",
+       "jenis": "berita"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tiberman.com/blog/daerah-penghasil-kelapa-sawit-terbesar-di-indonesia/",
+     "tanggal": "2025-07-05",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://home.banjarkab.go.id/profil-daerah/",
+     "tanggal": "2021",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "kepastian_pasar",
+    "pelaku_usaha_hulu"
+   ]
+  },
+  {
+   "komoditas": "Ikan Patin",
+   "wilayah_id": "6304",
+   "tier": "B",
+   "verdik_ekosistem": "Budidaya ikan patin menunjukkan tanda-tanda siap berkembang dengan dukungan program pemerintah berkelanjutan dan akses ke pasar lokal, namun membutuhkan pabrik pengolahan/cold storage untuk menangkap nilai tambah dan memperluas jangkauan pasar.",
+   "sketsa": {
+    "hulu": "Dinas Ketahanan Pangan dan Perikanan Barito Kuala menyalurkan benih patin berkualitas dari BPBAT Mandiangin (Kementan) kepada kelompok pembudidaya di Anjir Muara, Anjir Pasar, Mandastana, dan Alalak sejak 2023–2024.",
+    "offtaker": "Belum ada dokumentasi offtaker tetap (industri pengolahan, distributor, atau eksportir penyerap patin lokal). penjualan masih langsung ke pedagang pengumpul tingkat desa tanpa kontrak tetap.",
+    "pembiayaan": "Pendampingan teknis berkelanjutan dari DKPP dengan distribusi bantuan benih dan pakan (kontribusi input capital), namun akses KUR/kredit usaha petani dari perbankan tidak terdata dalam sumber.",
+    "asistensi": "DKPP Barito Kuala melaksanakan pendampingan teknis terstruktur (monitoring, penyuluhan budidaya patin kolam tanah, penyortiran pasca panen) dan melibatkan 13 penyuluh perikanan di tingkat kecamatan.",
+    "program": "Program ketahanan pangan daerah (DKPP prioritas 2024–2025). dukungan Kementan via BPBAT Mandiangin dalam distribusi benih dan transfer teknologi budidaya.",
+    "gap_utama": "Infrastruktur pengolahan dan cold storage tidak ada. produk patin masih dijual segar tanpa nilai tambah olahan, membuat penetapan harga lemah dan ekspor tidak memungkinkan."
+   },
+   "evidence": [
+    {
+     "dimensi": "Hulu & Program",
+     "teks": "Dinas Ketahanan Pangan dan Perikanan Kabupaten Barito Kuala menyalurkan bantuan sarana budidaya ikan patin berupa 45.000 ekor benih patin, pakan apung, dan pakan tenggelam kepada kelompok pembudidaya di Desa Anjir Muara Kota tahun 2025.",
+     "sumber": [
+      {
+       "url": "https://kalimantanpost.com/2025/07/dorong-produktivitas-perikanan-bupati-barito-kuala-serahkan-bantuan-sarana-budidaya-ikan/",
+       "tanggal": "2025-07-15",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Asistensi",
+     "teks": "Dinas Ketahanan Pangan dan Perikanan akan terus melakukan pendampingan teknis secara berkelanjutan guna memastikan pemanfaatan bantuan dapat berjalan optimal dengan hasil signifikan bagi penerima manfaat.",
+     "sumber": [
+      {
+       "url": "https://jurnalkalimantan.com/program-perikanan-batola-sasar-anjir-muara-45-000-benih-patin-disalurkan/",
+       "tanggal": "2025-07-11",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Hulu & Basis Lokal",
+     "teks": "Ikan patin merupakan komoditas perikanan yang memiliki potensi besar di Kabupaten Barito Kuala dengan keunggulan mudah beradaptasi terhadap perubahan lingkungan dan tumbuh normal dalam kolam terbatas.",
+     "sumber": [
+      {
+       "url": "https://digilib.ulm.ac.id/archive/digital/download.php?tkn=e78f8b3bdc5adbba74369e408f9a224e2024060672ee11d0cf7b837d8a872dc517ae5d6c",
+       "tanggal": "2024-06-06",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Program",
+     "teks": "Penelitian menunjukkan 5 kelompok pembudidaya ikan di Desa Beringin Kecamatan Alalak melakukan usaha budidaya pembesaran ikan Patin dengan rata-rata keuntungan Rp 14–15 juta per tahun.",
+     "sumber": [
+      {
+       "url": "https://digilib.ulm.ac.id/archive/digital/download.php?tkn=e78f8b3bdc5adbba74369e408f9a224e2024060672ee11d0cf7b837d8a872dc517ae5d6c",
+       "tanggal": "2024-06-06",
+       "jenis": "resmi"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://kalimantanpost.com/2025/07/dorong-produktivitas-perikanan-bupati-barito-kuala-serahkan-bantuan-sarana-budidaya-ikan/",
+     "tanggal": "2025-07-15",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://jurnalkalimantan.com/program-perikanan-batola-sasar-anjir-muara-45-000-benih-patin-disalurkan/",
+     "tanggal": "2025-07-11",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://digilib.ulm.ac.id/archive/digital/download.php?tkn=e78f8b3bdc5adbba74369e408f9a224e2024060672ee11d0cf7b837d8a872dc517ae5d6c",
+     "tanggal": "2024-06-06",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "asistensi_teknis",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Jeruk Siam",
+   "wilayah_id": "6304",
+   "tier": "B",
+   "verdik_ekosistem": "Jeruk siam adalah komoditas unggulan tunggal terbesar Barito Kuala dengan basis produksi mapan dan kualitas ekspor terukur, namun ekosistem masih sederhana karena offtaker terstruktur dan sarana pengolahan buah pasca-panen belum berkembang untuk tangkap nilai tambah.",
+   "sketsa": {
+    "hulu": "Kabupaten Barito Kuala adalah penghasil jeruk siam banjar terbesar di Kalimantan Selatan dengan standar kualitas tinggi (TPT >10°Brix) memenuhi persyaratan ekspor.",
+    "offtaker": "Saluran pemasaran masih terbatas pada pasar lokal/regional dan beberapa ekspor tidak terstruktur. tidak teridentifikasi agroindustri penyerap jeruk siam atau distributor eksportir resmi berbasis Barito Kuala.",
+    "pembiayaan": "Tidak ada data terstruktur tentang akses KUR/kredit usaha untuk petani jeruk siam di Barito Kuala dalam sumber publik.",
+    "asistensi": "BSIP Kalimantan Selatan (Unit Kementan) melakukan identifikasi standar instrumen pertanian dan pendampingan penerapan budidaya standardisasi untuk jeruk siam Banjar di Barito Kuala (2024 aktif).",
+    "program": "Program identifikasi komoditas unggulan spesifik lokasi BSIP (2024) untuk menyiapkan pendampingan penerapan standar budidaya GAP/SNI. dukungan dari RPJMD Pemprov/Pemkab (status umum, belum spesifik).",
+    "gap_utama": "Sarana dan infrastruktur pengolahan buah pasca-panen (sortir, cuci, grading, pengemasan bermerek) dan akses pasar ekspor terstruktur tidak ada. pasar masih dominan konsumsi lokal/regional tanpa value-added processing."
+   },
+   "evidence": [
+    {
+     "dimensi": "Hulu & Basis Lokal",
+     "teks": "Kabupaten Barito Kuala merupakan kabupaten penghasil jeruk siam banjar terbesar di Kalimantan Selatan dengan tingkat total padatan terlarut >10°Brix yang telah melebihi kadar minimum yang dipersyaratkan untuk ekspor.",
+     "sumber": [
+      {
+       "url": "https://kalsel.bsip.pertanian.go.id/berita/bsip-kalsel-lakukan-identifikasi-standar-instrumen-pertanian-komoditas-jeruk-siam-banjar",
+       "tanggal": "2024",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Asistensi & Dukungan Program",
+     "teks": "BSIP Kalimantan Selatan melakukan identifikasi standar instrumen pertanian komoditas jeruk siam Banjar guna mendata permasalahan dan keunggulan sebagai acuan pendampingan kepada petani agar dapat menerapkan standar budidaya dalam sistem usaha tani.",
+     "sumber": [
+      {
+       "url": "https://kalsel.bsip.pertanian.go.id/berita/bsip-kalsel-lakukan-identifikasi-standar-instrumen-pertanian-komoditas-jeruk-siam-banjar",
+       "tanggal": "2024",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Basis Lokal & Pasar Lokal",
+     "teks": "Jeruk siam Barito Kuala menyumbang 58% dari total produksi jeruk di Kalimantan Selatan, memasuki kategori komoditas unggulan utama dengan potensi pemasaran regional.",
+     "sumber": [
+      {
+       "url": "https://shalokalindonesia.com/pemetaan-komoditas-unggulan-barito-kuala-2025-umkm-jadi-fokus-pengembangan-baru/",
+       "tanggal": "2025-07-09",
+       "jenis": "berita"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://kalsel.bsip.pertanian.go.id/berita/bsip-kalsel-lakukan-identifikasi-standar-instrumen-pertanian-komoditas-jeruk-siam-banjar",
+     "tanggal": "2024",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://shalokalindonesia.com/pemetaan-komoditas-unggulan-barito-kuala-2025-umkm-jadi-fokus-pengembangan-baru/",
+     "tanggal": "2025-07-09",
+     "jenis": "berita"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "kepastian_pasar",
+    "asistensi_teknis",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Kelapa Sawit",
+   "wilayah_id": "6304",
+   "tier": "B",
+   "verdik_ekosistem": "Kelapa sawit memiliki basis produksi besar (3.716 ha, 7.907 ton produksi 2021) dengan offtaker korporat (PT Barito Putera Plantation 13.006 ha), namun ekosistem masih terkonsentrasi pada hulu dan pengolahan. akses petani smallholder ke pembiayaan dan jaringan kemitraan resmi masih terbatas pada kelompok tertentu.",
+   "sketsa": {
+    "hulu": "PT Barito Putera Plantation (Hasnur Group) mengelola 13.006 ha perkebunan sawit di Barito Kuala. petani mandiri dan plasma juga memiliki lahan terukur (data BPK: 3.716 ha produksi resmi tercatat 2021).",
+    "offtaker": "PT Barito Putera Plantation menjadi pemasok bagi pabrik CPO Hasnur Group di Tapin. tidak ada industri pengolahan sawit (pabrik CPO/PKO) berlokasi langsung di Barito Kuala, CPO dipasok keluar wilayah ke Tapin.",
+    "pembiayaan": "PT Barito Putera sebagai inti perkebunan menyediakan dukungan teknis dan akses pasar bagi plasma. data KUR per sektor pertanian/perkebunan tidak terpisah spesifik sawit di sumber.",
+    "asistensi": "Dinas Perkebunan dan Peternakan Barito Kuala melaksanakan program identifikasi dan pendampingan petani sawit. pembentukan Balai Pembibitan Sawit di Desa Sido Mulyo (2026) untuk menyediakan benih unggul dan transfer teknologi.",
+    "program": "Program integrasi sawit–sapi Bali (2025–2026) melalui koordinasi Disbunnak, Pemprov, Kementan untuk pemanfaatan limbah sawit sebagai pakan ternak. Skema plasma kemitraan inti berkembang dengan status hukum variatif (tunggal mandiri, kelompok, GAKOPTAN).",
+    "gap_utama": "Pabrik pengolahan CPO/PKO tidak tersedia lokal. semua TBS (Tandan Buah Segar) dipasok keluar. CPO tidak tertangkap nilai tambahnya di Barito Kuala. akses pembiayaan dan perlindungan hukum bagi petani plasma masih lemah sebagaimana ditemukan dalam riset hukum skema kemitraan."
+   },
+   "evidence": [
+    {
+     "dimensi": "Hulu & Basis Lokal",
+     "teks": "Produksi tanaman perkebunan kelapa sawit di Barito Kuala sebesar 7.907,24 ton dengan luas areal 3.716 ha, menjadikan sawit komoditas perkebunan utama setelah kelapa.",
+     "sumber": [
+      {
+       "url": "https://kalsel.bpk.go.id/profil-kabupaten-barito-kuala/",
+       "tanggal": "2022",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Offtaker & Basis Korporat",
+     "teks": "PT Barito Putera Plantation (Hasnur Group) memiliki areal perkebunan kelapa sawit seluas 13.006 Ha di Kabupaten Barito Kuala Provinsi Kalimantan Selatan.",
+     "sumber": [
+      {
+       "url": "https://www.hasnurgroup.com/page/our-business/agribusiness-forestry",
+       "tanggal": "2024",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Sarana Prasarana & Asistensi",
+     "teks": "Dinas Perkebunan dan Peternakan Barito Kuala merenovasi aset bangunan di Desa Sido Mulyo untuk Balai Pembibitan Kelapa Sawit guna memaksimalkan produksi benih unggul dan meningkatkan Pendapatan Asli Daerah melalui pengelolaan profesional.",
+     "sumber": [
+      {
+       "url": "https://haisawit.co.id/news/detail/kejar-target-pad-batola-sulap-aset-desa-sido-mulyo-jadi-balai-pembibitan-sawit",
+       "tanggal": "2026-02-09",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Program Terintegrasi",
+     "teks": "Pemerintah Kabupaten Barito Kuala melalui Dinas Perkebunan dan Peternakan melakukan koordinasi lintas sektor untuk mempercepat pengembangan integrasi sawit–sapi Bali dengan memanfaatkan areal perkebunan kelapa sawit sebagai sumber pakan ternak.",
+     "sumber": [
+      {
+       "url": "https://haisawit.co.id/news/detail/barito-kuala-dorong-percepatan-integrasi-sawitsapi-bali-untuk-penguatan-peternakan-daerah",
+       "tanggal": "2025-12-21",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Pembiayaan & Status Kemitraan",
+     "teks": "Program kemitraan inti plasma perkebunan sawit di Kabupaten Barito Kuala menunjukkan status pengelolaan yang beragam (individu atau berkelompok melalui Koperasi/GAKOPTAN) dengan kondisi perlindungan hukum yang belum optimal bagi petani plasma.",
+     "sumber": [
+      {
+       "url": "https://repo-dosen.ulm.ac.id/handle/123456789/18047",
+       "tanggal": "2019-11-01",
+       "jenis": "resmi"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://kalsel.bpk.go.id/profil-kabupaten-barito-kuala/",
+     "tanggal": "2022",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://haisawit.co.id/news/detail/kejar-target-pad-batola-sulap-aset-desa-sido-mulyo-jadi-balai-pembibitan-sawit",
+     "tanggal": "2026-02-09",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://www.hasnurgroup.com/page/our-business/agribusiness-forestry",
+     "tanggal": "2024",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://haisawit.co.id/news/detail/barito-kuala-dorong-percepatan-integrasi-sawitsapi-bali-untuk-penguatan-peternakan-daerah",
+     "tanggal": "2025-12-21",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://repo-dosen.ulm.ac.id/handle/123456789/18047",
+     "tanggal": "2019-11-01",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "offtaker_penyerapan",
+    "pembiayaan_ljk",
+    "asistensi_teknis",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Jahe Merah",
+   "wilayah_id": "6305",
+   "tier": "B",
+   "verdik_ekosistem": "Jahe merah merupakan komoditas hortikultura baru di Tapin (60+ ha, Kecamatan Hatungun) dengan dukungan aktif Pemprov Kalsel dan Kementan. Basis pasar jelas (minuman, kosmetik herbal, domestik-ekspor). Infrastruktur pascapanen (Bangsal) tersedia. Namun ekosistem belum matang: kemitraan industri pengolahan masih dalam tahap inisiatif, dan pembiayaan terstruktur petani belum teridentifikasi.",
+   "sketsa": {
+    "hulu": "Kecamatan Hatungun, Tapin: luas tanam 60+ hektar jahe merah, dengan dukungan Pemprov Kalsel dan Kementan. Target peningkatan produksi 20% tahun 2025. Kelompok tani dan penyuluh lapangan terlibat aktif.",
+    "offtaker": "Belum ada offtaker industri pengolahan teridentifikasi spesifik di Tapin. Program Pemprov fokus pada produk turunan (serbuk jahe instan, minuman herbal) namun belum ada MOU dengan industri CPO/FMCG lokal yang teridentifikasi di sumber publik.",
+    "pembiayaan": "",
+    "asistensi": "Pemprov Kalsel menyediakan bibit unggul dan pelatihan berkelanjutan. Kementan memberikan Bangsal Pasca Panen (2022) untuk meningkatkan kualitas pascapanen. Program monitoring rutin melibatkan kelompok tani, penyuluh, dan UMKM lokal.",
+    "program": "Program Pemprov Kalsel untuk pengembangan hortikultura bernilai tambah. Kementan mendukung Bangsal Pasca Panen. Target: Jahe Merah Hatungun menjadi ikon produk unggulan Kalsel.",
+    "gap_utama": "Offtaker industri pengolahan dan distributor untuk produk value-added belum teridentifikasi. Akses pembiayaan petani (KUR, kredit mikro) juga tidak terdokumentasi. Diperlukan mapping industri FMCG/minuman herbal lokal dan realisasi KUR hortikultura Tapin."
+   },
+   "evidence": [
+    {
+     "dimensi": "Hulu (basis produksi & lokasi)",
+     "teks": "Jahe merah di Tapin berkembang di Kecamatan Hatungun dengan luas tanam 60+ hektar menghasilkan puluhan ton per tahun, dengan target peningkatan 20% pada 2025.",
+     "sumber": [
+      {
+       "url": "https://diskominfomc.kalselprov.go.id/2025/06/02/pemprov-kalsel-dukung-langkah-inovatif-untuk-sektor-pertanian/",
+       "tanggal": "2025-06-02",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Sarana prasarana (pascapanen)",
+     "teks": "Kementan memberikan Bangsal Pasca Panen (rumah produksi) pada 2022 untuk mendorong inovasi produk turunan seperti serbuk jahe instan dan minuman herbal serta meningkatkan kualitas produk.",
+     "sumber": [
+      {
+       "url": "https://diskominfomc.kalselprov.go.id/2025/06/02/pemprov-kalsel-dukung-langkah-inovatif-untuk-sektor-pertanian/",
+       "tanggal": "2025-06-02",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Asistensi (bibit, pelatihan, monitoring)",
+     "teks": "Pemprov Kalsel melalui Dinas Pertanian dan Ketahanan Pangan mendorong petani dengan bibit unggul dan pelatihan berkelanjutan. Program monitoring rutin melibatkan kelompok tani, penyuluh lapangan, dan mitra UMKM lokal.",
+     "sumber": [
+      {
+       "url": "https://diskominfomc.kalselprov.go.id/2025/06/02/pemprov-kalsel-dukung-langkah-inovatif-untuk-sektor-pertanian/",
+       "tanggal": "2025-06-02",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Program (dukungan pemerintah & visi pasar)",
+     "teks": "Pemprov Kalsel berambisi menjadikan Jahe Merah Hatungun sebagai ikon produk unggulan Kalsel untuk pasar nasional dan internasional, dengan target industri olahan untuk nilai tambah petani.",
+     "sumber": [
+      {
+       "url": "https://diskominfomc.kalselprov.go.id/2025/06/02/pemprov-kalsel-dukung-langkah-inovatif-untuk-sektor-pertanian/",
+       "tanggal": "2025-06-02",
+       "jenis": "resmi"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://diskominfomc.kalselprov.go.id/2025/06/02/pemprov-kalsel-dukung-langkah-inovatif-untuk-sektor-pertanian/",
+     "tanggal": "2025-06-02",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "nilai_tambah_hilir",
+    "asistensi_teknis",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Karet",
+   "wilayah_id": "6305",
+   "tier": "B",
+   "verdik_ekosistem": "Karet memiliki basis produksi kuat di Tapin dengan 8.138,37 ton (2021) dan program peremajaan plus mutu dari Pemprov Kalsel. Ekosistem terbuka namun belum fully integrated: pabrik pengolahan ada, program UPPB dan peremajaan sudah berjalan, tetapi akses KUR terstruktur dan link ekspor value-added (CR/RSS grade tinggi) dari petani Tapin belum terpetakan jelas.",
+   "sketsa": {
+    "hulu": "Perkebunan karet rakyat dan plasma tersebar di Tapin. areal 12.922 ha dengan produksi 8.138,37 ton (2021). Program peremajaan Pemprov (BANGSIBUN BAKARET) melibatkan Tapin sejak 2017, dengan 300 ha diremajakan 2023-2024.",
+    "offtaker": "Pabrik karet di Tapin teridentifikasi (salah satu dari 9 pabrik karet di Kalsel berdasarkan direktori. lokasi Tapin dikonfirmasi). Produk bokar/karet remah dipasarkan ke pengepul regional (Kalimantan Tengah, Tabalong) per laporan petani. link langsung ke industri hilir (ban, sarung tangan) belum teridentifikasi Tapin-spesifik.",
+    "pembiayaan": "",
+    "asistensi": "Program BANGSIBUN BAKARET mencakup peremajaan karet, intensifikasi pupuk NPK (distribusi 375 ton terencana ke wilayah karet termasuk Tapin), bantuan alat asap cair (35 unit sudah dibagikan ke Tapin), dan pembeku lateks. UPPB (Unit Pengolahan Pemasaran Bokar) di Tapin: 5 unit terencana 2021, total Kalsel 229 unit saat ini.",
+    "program": "Program Peremajaan Karet (BANGSIBUN BAKARET) Pemprov Kalsel sejak 2017. SUPRADIN untuk diversifikasi tanaman karet rakyat. Program UPPB untuk penguatan mutu dan pemasaran bokar.",
+    "gap_utama": "Akses KUR untuk petani karet di Tapin tidak terdokumentasi. Diperlukan data realisasi KUR sektor perkebunan (khususnya karet) Tapin dari SIKP atau Bappeda untuk melengkapi pembiayaan loop."
+   },
+   "evidence": [
+    {
+     "dimensi": "Hulu (basis produksi & program peremajaan)",
+     "teks": "Tapin memiliki areal karet 12.922 ha menghasilkan 8.138,37 ton (2021). Program Peremajaan Karet BANGSIBUN BAKARET dari Pemprov Kalsel sejak 2017 telah meremajakan karet di Tapin, dengan 300 ha direncanakan 2023-2024 tambahan.",
+     "sumber": [
+      {
+       "url": "https://e-starlitbang.tapinkab.go.id/Repository/index/category/view/1",
+       "tanggal": "2022-12-12",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://diskominfomc.kalselprov.go.id/2023/07/10/bangsibun-bakaret-inovasi-kalsel-gelorakan-kembali-industri-karet/",
+       "tanggal": "2023-07-10",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Asistensi (mutu & pemasaran bokar)",
+     "teks": "Program intensifikasi karet Pemprov Kalsel mengalokasikan 375 ton pupuk NPK dan 35 unit alat asap cair (sudah dibagikan ke Tapin), serta pembeku lateks untuk meningkatkan mutu bokar. UPPB (Unit Pengolahan Pemasaran Bokar) di Tapin: 5 unit terencana pembentukan (2021).",
+     "sumber": [
+      {
+       "url": "https://diskominfomc.kalselprov.go.id/2023/07/10/bangsibun-bakaret-inovasi-kalsel-gelorakan-kembali-industri-karet/",
+       "tanggal": "2023-07-10",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://kalsel.antaranews.com/berita/382650/karet-tak-produktif-masyarakat-desa-buniin-jaya-di-tapin-lirik-kopi",
+       "tanggal": "2023-08-11",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Offtaker (pengepul & pabrik)",
+     "teks": "Karet Tapin dipasarkan ke pengepul lokal (Pantai Walang, Desa lain) kemudian ke gudang regional di Kalimantan Tengah dan Tabalong. Pabrik karet di Kalsel (9 unit) mencakup satu di Tapin (posisi geografis dikonfirmasi), mengolah menjadi crumb rubber dan ribbed smoked sheet.",
+     "sumber": [
+      {
+       "url": "https://kalsel.antaranews.com/berita/382650/karet-tak-produktif-masyarakat-desa-buniin-jaya-di-tapin-lirik-kopi",
+       "tanggal": "2023-08-11",
+       "jenis": "berita"
+      },
+      {
+       "url": "https://doktor.pertanian.uma.ac.id/2023/03/menelusuri-potensi-perkebunan/",
+       "tanggal": "2023-03-03",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Produksi (basis lokal)",
+     "teks": "Pada 2021, produksi karet Tapin mencapai 8.138,37 ton dengan luas tanam 12.922 ha.",
+     "sumber": [
+      {
+       "url": "https://e-starlitbang.tapinkab.go.id/Repository/index/category/view/1",
+       "tanggal": "2022-12-12",
+       "jenis": "resmi"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://e-starlitbang.tapinkab.go.id/Repository/index/category/view/1",
+     "tanggal": "2022-12-12",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://diskominfomc.kalselprov.go.id/2023/07/10/bangsibun-bakaret-inovasi-kalsel-gelorakan-kembali-industri-karet/",
+     "tanggal": "2023-07-10",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kalsel.antaranews.com/berita/382650/karet-tak-produktif-masyarakat-desa-buniin-jaya-di-tapin-lirik-kopi",
+     "tanggal": "2023-08-11",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://doktor.pertanian.uma.ac.id/2023/03/menelusuri-potensi-perkebunan/",
+     "tanggal": "2023-03-03",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "offtaker_penyerapan",
+    "nilai_tambah_hilir",
+    "asistensi_teknis",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Kelapa Sawit (CPO)",
+   "wilayah_id": "6305",
+   "tier": "B",
+   "verdik_ekosistem": "Kelapa sawit memiliki basis produksi nyata di Tapin dengan 2 pabrik CPO beroperasi dan pasar domestik menjanjikan. Namun ekosistem belum sepenuhnya tertutup: akses pembiayaan struktural untuk petani plasma kurang terdokumentasi, dan link ke ekspor masih dominan melalui intermediari regional, bukan langsung dari Tapin.",
+   "sketsa": {
+    "hulu": "Perkebunan inti dan plasma tersebar di Tapin, dengan PT Hasnur Citra Terpadu (9.652 ha) dan PT KIU (14.661 ha inti, plasma rakyat) sebagai pemain utama.",
+    "offtaker": "Dua pabrik CPO di Tapin: PT Hasnur Citra Terpadu (45 ton/jam, operasi 2013) dan PT KIU (40 ribu ton CPO/tahun). Produk dialokasikan konsumsi dalam negeri per laporan PT KIU, namun saluran distribusi ke industri hilir oleokimia belum teridentifikasi spesifik Tapin.",
+    "pembiayaan": "",
+    "asistensi": "Program SUPRADIN (Sistem Usahatani Perkebunan Rakyat Diversifikasi Terintegrasi) dari Pemprov Kalsel tersedia sebagai dukungan diversifikasi bagi petani plasma. status realisasi KUR per sektor di Tapin tidak tersedia di sumber publik.",
+    "program": "PT KIU menerapkan ISPO dan RSPO. Pemprov Kalsel memiliki program pembangunan perkebunan sawit rakyat melalui PIR, namun break-down implementasi di Tapin spesifik tidak ditemukan.",
+    "gap_utama": "Akses pembiayaan formal (KUR/bank) bagi petani plasma di Tapin tidak terdokumentasi. Diperlukan verifikasi realisasi KUR per sektor pertanian Tapin melalui SIKP Kemenkeu atau Bappeda Tapin untuk menutup gap ini."
+   },
+   "evidence": [
+    {
+     "dimensi": "Hulu (basis produksi)",
+     "teks": "Tapin memiliki basis perkebunan kelapa sawit nyata dengan dua perusahaan besar: PT Hasnur Citra Terpadu (9.652 ha) dan PT KIU (17.000 ha total, 14.661 ha inti dan plasma rakyat).",
+     "sumber": [
+      {
+       "url": "https://www.hasnurgroup.com/page/our-business/agribusiness-forestry",
+       "tanggal": "2013",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://kalsel.antaranews.com/berita/474109/pt-kiu-latih-120-personel-tangani-karhutla-guna-jaga-produksi-sawit",
+       "tanggal": "2025-07-08",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Offtaker (pengolahan)",
+     "teks": "PT Hasnur Citra Terpadu meresmikan pabrik CPO pertama di Tapin pada Februari 2013 dengan kapasitas 45 ton TBS/jam (dapat ditingkatkan 90 ton/jam). PT KIU menghasilkan rata-rata 40 ribu ton CPO dan 200 ribu ton TBS per tahun dengan seluruh produksi untuk kebutuhan dalam negeri.",
+     "sumber": [
+      {
+       "url": "https://www.hasnurgroup.com/page/our-business/agribusiness-forestry",
+       "tanggal": "2013",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://kalsel.antaranews.com/berita/474109/pt-kiu-latih-120-personel-tangani-karhutla-guna-jaga-produksi-sawit",
+       "tanggal": "2025-07-08",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "Asistensi (program diversifikasi)",
+     "teks": "Program Pemprov Kalsel SUPRADIN mendorong petani plasma sawit untuk melakukan tumpang sari dan diversifikasi termasuk peternakan kambing, mengatasi gap pendapatan selama tanaman belum menghasilkan atau sudah tua.",
+     "sumber": [
+      {
+       "url": "https://diskominfomc.kalselprov.go.id/2023/07/10/bangsibun-bakaret-inovasi-kalsel-gelorakan-kembali-industri-karet/",
+       "tanggal": "2023-07-10",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Produksi (basis lokal)",
+     "teks": "Pada 2021, produksi perkebunan Tapin didominasi kelapa sawit dengan 58.346,83 ton TBS dan 12.836,3 ton CPO.",
+     "sumber": [
+      {
+       "url": "https://e-starlitbang.tapinkab.go.id/Repository/index/category/view/1",
+       "tanggal": "2022-12-12",
+       "jenis": "resmi"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.hasnurgroup.com/page/our-business/agribusiness-forestry",
+     "tanggal": "2013",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kalsel.antaranews.com/berita/474109/pt-kiu-latih-120-personel-tangani-karhutla-guna-jaga-produksi-sawit",
+     "tanggal": "2025-07-08",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://e-starlitbang.tapinkab.go.id/Repository/index/category/view/1",
+     "tanggal": "2022-12-12",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://diskominfomc.kalselprov.go.id/2023/07/10/bangsibun-bakaret-inovasi-kalsel-gelorakan-kembali-industri-karet/",
+     "tanggal": "2023-07-10",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "offtaker_penyerapan",
+    "nilai_tambah_hilir",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Karet",
+   "wilayah_id": "6306",
+   "tier": "B",
+   "verdik_ekosistem": "Karet mempunyai basis produksi solid (12.150 ton/2021) dan pasar stabil dengan permintaan dalam-luar negeri, namun ekosistem ekonomi lokal belum tersambung lengkap: belum ada sinyal pabrik pengolahan di Hulu Sungai Selatan, akses pembiayaan petani karet tidak terdokumentasi, dan program akselerasi hilir karet belum jelas.",
+   "sketsa": {
+    "hulu": "Petani/perkebunan karet tersebar di berbagai kecamatan di Hulu Sungai Selatan menghasilkan produksi 12.150,63 ton pada 2021 (BPK RI 2021).",
+    "offtaker": "",
+    "pembiayaan": "",
+    "asistensi": "Pemerintah daerah memberikan penyuluhan dan pelatihan teknik budidaya modern untuk mempertahankan kualitas karet (Kompasiana 2024).",
+    "program": "",
+    "gap_utama": "Tidak ada pabrik pengolahan karet (crumb rubber, lateks) di Hulu Sungai Selatan. belum teridentifikasi akses kredit usaha karet untuk petani atau pembudidaya."
+   },
+   "evidence": [
+    {
+     "dimensi": "Produksi hulu",
+     "teks": "Kabupaten Hulu Sungai Selatan menghasilkan karet sebesar 12.150,63 ton pada tahun 2021.",
+     "sumber": [
+      {
+       "url": "https://kalsel.bpk.go.id/profil-kabupaten-hulu-sungai-selatan/",
+       "tanggal": "2021",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Basis komparatif pasar",
+     "teks": "Hulu Sungai Selatan dikenal sebagai salah satu daerah penghasil karet berkualitas di Kalimantan Selatan dengan harga karet yang relatif stabil dan permintaan tinggi dari pasar dalam negeri maupun ekspor.",
+     "sumber": []
+    },
+    {
+     "dimensi": "Asistensi teknis",
+     "teks": "Pemerintah daerah aktif memberikan penyuluhan serta bantuan bibit unggul dan pelatihan teknik budidaya modern agar produktivitas dan kualitas komoditas perkebunan tetap optimal.",
+     "sumber": []
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://kalsel.bpk.go.id/profil-kabupaten-hulu-sungai-selatan/",
+     "tanggal": "2021",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "asistensi_teknis"
+   ]
+  },
+  {
+   "komoditas": "Kelapa Sawit",
+   "wilayah_id": "6306",
+   "tier": "B",
+   "verdik_ekosistem": "Kelapa sawit mempunyai basis produksi cukup kuat (9.113 ton/2021) dengan investor swasta aktif dan pasar global menjanjikan, tetapi ekosistem lokal menghadapi hambatan agroekologi lahan lebak yang kompleks dan belum ada sinyal hilir (pabrik CPO/pengolahan) di Hulu Sungai Selatan.",
+   "sketsa": {
+    "hulu": "Perkebunan rakyat dan perkebunan besar swasta seperti PT. Subur Agro Makmur di Desa Bajayau, Kecamatan Daha Barat, menghasilkan produksi 9.113,03 ton pada 2021 (BPK RI 2021), dengan tantangan adaptasi di lahan lebak pasang-surut.",
+    "offtaker": "Tidak teridentifikasi pabrik pengolahan CPO atau distributor downstream di Hulu Sungai Selatan. CPO diperkirakan dijual ke pusat pengolahan regional/provinsi.",
+    "pembiayaan": "",
+    "asistensi": "Pemerintah daerah memberikan penyuluhan, bantuan bibit unggul, dan pelatihan budidaya modern. Balittra (Balai Penelitian Pertanian Lahan Rawa) melakukan riset adaptasi kelapa sawit di lahan lebak Hulu Sungai Selatan sejak 2009.",
+    "program": "",
+    "gap_utama": "Infrastruktur drainase dan irigasi lahan lebak belum optimal untuk mendukung produktivitas berkelanjutan. tidak ada pabrik pengolahan CPO atau fasilitas pengepakan di Hulu Sungai Selatan, sehingga nilai tambah hulu lepas ke wilayah lain."
+   },
+   "evidence": [
+    {
+     "dimensi": "Produksi hulu",
+     "teks": "Kabupaten Hulu Sungai Selatan menghasilkan kelapa sawit sebesar 9.113,03 ton pada tahun 2021.",
+     "sumber": [
+      {
+       "url": "https://kalsel.bpk.go.id/profil-kabupaten-hulu-sungai-selatan/",
+       "tanggal": "2021",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Pelaku usaha swasta",
+     "teks": "PT. Subur Agro Makmur (PT. SAM) berlokasi di Desa Bajayau, Kecamatan Daha Barat, beroperasi sebagai responden dalam Survei Perkebunan untuk komoditas kelapa sawit.",
+     "sumber": [
+      {
+       "url": "https://hulusungaiselatankab.bps.go.id/en/news/2024/01/22/384/kunjungan-kepala-bps-kabupaten-hulu-sungai-selatan-ke-pt--sam.html",
+       "tanggal": "January 22, 2024",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Infrastruktur lahan dan adaptasi agroekologi",
+     "teks": "Kelapa sawit di Hulu Sungai Selatan ditanam di lahan lebak dengan kompleksitas pasang-surut dan genangan. Balai Penelitian Pertanian Lahan Rawa melakukan pemantauan adaptasi sejak 2009-2013.",
+     "sumber": [
+      {
+       "url": "https://balittra.litbang.pertanian.go.id/index.php?Itemid=5&id=1323&option=com_content&view=article",
+       "tanggal": "December 30, 2013",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "Asistensi teknis dan dukungan pemerintah",
+     "teks": "Pemerintah daerah aktif memberikan penyuluhan serta bantuan bibit unggul dan pelatihan teknik budidaya modern agar produktivitas dan kualitas komoditas perkebunan tetap optimal.",
+     "sumber": []
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://kalsel.bpk.go.id/profil-kabupaten-hulu-sungai-selatan/",
+     "tanggal": "2021",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://hulusungaiselatankab.bps.go.id/en/news/2024/01/22/384/kunjungan-kepala-bps-kabupaten-hulu-sungai-selatan-ke-pt--sam.html",
+     "tanggal": "January 22, 2024",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://balittra.litbang.pertanian.go.id/index.php?Itemid=5&id=1323&option=com_content&view=article",
+     "tanggal": "December 30, 2013",
+     "jenis": "resmi"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "sarana_prasarana",
+    "asistensi_teknis",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Ikan Patin",
+   "wilayah_id": "6308",
+   "tier": "C",
+   "verdik_ekosistem": "Budidaya ikan patin menunjukkan potensi pasar menjanjikan dan memiliki sinyal ekosistem nyata di HSU, tetapi kolaborasi dengan offtaker formal dan akses pembiayaan terstruktur masih perlu diperkuat untuk melengkapi loop ekonomi.",
+   "sketsa": {
+    "hulu": "Kelompok Budidaya Ikan (Pokdakan) di berbagai desa seperti Rantau Bujur Darat dan Kayuh Baimbai mengembangkan budidaya patin di sistem keramba kayu dan fish pen di perairan rawa serta sungai.",
+    "offtaker": "Sinyal pasar mengindikasikan HSU sedang disiapkan menjadi pemasok ikan air tawar ke lokasi Ibu Kota Nusantara (IKN) di Kalimantan Timur, meskipun formalitas kontrak belum terlihat dalam data publik.",
+    "pembiayaan": "Data realisasi KUR per sektor perikanan HSU tidak ditemukan di sumber publik. akses kredit petani pembudidaya perlu diverifikasi lebih lanjut.",
+    "asistensi": "Dinas Perikanan HSU secara aktif membimbing nelayan untuk transisi dari penangkapan ke budidaya melalui program perikanan tangkap lestari (sejak 2017) dan pelatihan teknis sistem fish pen, dengan dukungan penyuluh setempat.",
+    "program": "Program pemerintah daerah fokus pada pengembangan perikanan budidaya untuk ketahanan pangan. Dinas Perikanan berkoordinasi dengan Provinsi untuk memperkuat sektor ini sebagai bagian dari persiapan supply IKN.",
+    "gap_utama": "Belum ada struktur pembiayaan formal dan kontrak offtaker yang jelas dengan pembeli skala besar (industri, catering, ekspor) untuk memastikan pasar produk patin stabil dan menguntungkan bagi petani budidaya."
+   },
+   "evidence": [
+    {
+     "dimensi": "hulu",
+     "teks": "Kelompok Budidaya Ikan (Pokdakan) di HSU mengembangkan budidaya ikan patin dengan sistem keramba di perairan rawa dan sungai.",
+     "sumber": [
+      {
+       "url": "https://kalimantanpost.com/2025/07/upaya-tingkatkan-sektor-perikanan-bupati-h-sahrujani-langsung-ke-petani-budidaya/",
+       "tanggal": "2025-07-30",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "offtaker_penyerapan",
+     "teks": "HSU siap menjadi pemasok ikan air tawar ke lokasi Ibu Kota Nusantara (IKN) di Kalimantan Timur, mengindikasikan pasar potensial bagi produk budidaya ikan.",
+     "sumber": [
+      {
+       "url": "https://radarbanjarmasin.jawapos.com/bisnis/1973328209/sambut-ikn-hsu-perkuat-perikanan-budidaya",
+       "tanggal": "2023-11-27",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "asistensi_teknis",
+     "teks": "Dinas Perikanan HSU melakukan sharing program dan pelatihan teknis sistem fish pen dengan kelompok nelayan dan tenaga penyuluh.",
+     "sumber": [
+      {
+       "url": "https://banjarmasin.tribunnews.com/2018/04/27/dinas-perikanan-ajak-manfaatkan-rawa-dan-sungai-untuk-budidaya-ikan-dengan-teknik-ini",
+       "tanggal": "2018-04-27",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "dukungan_pemerintah_program",
+     "teks": "Program perikanan tangkap lestari sejak 2017 mengedukasi nelayan untuk transisi menjadi pembudidaya, dengan target meningkatkan pendapatan dan ketahanan pangan lokal.",
+     "sumber": []
+    },
+    {
+     "dimensi": "sarana_prasarana",
+     "teks": "HSU memiliki lahan rawa seluas 84% dari wilayah kabupaten dengan kedalaman perairan yang cocok untuk budidaya ikan. terdapat sistem keramba kayu dan fish pen yang dikembangkan di berbagai lokasi.",
+     "sumber": [
+      {
+       "url": "https://radarbanjarmasin.jawapos.com/bisnis/1973328209/sambut-ikn-hsu-perkuat-perikanan-budidaya",
+       "tanggal": "2023-11-27",
+       "jenis": "berita"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://kalimantanpost.com/2025/07/upaya-tingkatkan-sektor-perikanan-bupati-h-sahrujani-langsung-ke-petani-budidaya/",
+     "tanggal": "2025-07-30",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://radarbanjarmasin.jawapos.com/bisnis/1973328209/sambut-ikn-hsu-perkuat-perikanan-budidaya",
+     "tanggal": "2023-11-27",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://banjarmasin.tribunnews.com/2018/04/27/dinas-perikanan-ajak-manfaatkan-rawa-dan-sungai-untuk-budidaya-ikan-dengan-teknik-ini",
+     "tanggal": "2018-04-27",
+     "jenis": "berita"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "offtaker_penyerapan",
+    "asistensi_teknis",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Batu Bara",
+   "wilayah_id": "6309",
+   "tier": "B",
+   "verdik_ekosistem": "Batu bara Tabalong menawarkan pasar jangka pendek positif karena shock energi global, dengan kapasitas produksi besar terstruktur (Adaro Indonesia, kontrak jangka panjang hingga 2030), namun gap utama adalah ketergantungan sektoral yang belum dikurangi. ekonomi lokal masih sangat terkonsentrasi pada eksploitasi SDA tanpa diversifikasi value chain lokal.",
+   "sketsa": {
+    "hulu": "PT Adaro Indonesia (operasi terbesar Adaro Energy Tbk) di Tabalong dengan konsesi IUPK-KOP ~23.942 hektar. PT BUMA menjalankan kontrak Tambang Tutupan Selatan dengan proyeksi 9,3 juta ton batu bara tahunan hingga 2030",
+    "offtaker": "Mayoritas pelanggan Adaro adalah perusahaan pembangkit tenaga listrik (PLTU), sektor semen, pemurnian logam domestik. pasokan juga diekspor ke pasar global (Jepang, Korea, Tiongkok). BUMA menerima kontrak dari Adaro Energy tanpa transparansi offtaker hilir penuh",
+    "pembiayaan": "Belum ada data sinyal KUR sektor pertambangan atau realisasi pembiayaan spesifik di sumber. operasi Adaro dan BUMA menggunakan pendanaan internal/instrumen pasar modal",
+    "asistensi": "Adaro menjalankan program pemberdayaan masyarakat di Tabalong (pendidikan, pelatihan keterampilan, dukungan UMKM, program lingkungan). dukungan asistensi teknis pertambangan melalui standar Good Mining Practice KemenESSDM",
+    "program": "Kontrak Adaro-BUMA memperkuat stabilitas operasional hingga 2030. program pemberdayaan masyarakat berbasis kontribusi sosial perusahaan. tidak ada program diversifikasi ekonomi lokal dokumenter dari pemerintah daerah",
+    "gap_utama": "Ketergantungan ekonomi Tabalong pada sektor tambang sangat tinggi. belum ada program pemerintah terukur untuk diversifikasi ekonomi lokal dan hilirisasi produk batu bara di dalam negeri. nilai tambah industri hilir (pembangkit, semen lokal) tidak terlihat di Tabalong"
+   },
+   "evidence": [
+    {
+     "dimensi": "pelaku_usaha_hulu",
+     "teks": "PT Adaro Indonesia (anak usaha PT Adaro Energy Tbk) menjalankan operasi pertambangan batu bara terbesar di Tabalong dengan target produksi 85 juta ton. PT BUMA menandatangani kontrak jangka panjang dengan proyeksi 9,3 juta ton batu bara/tahun dan 50,5 juta bcm overburden hingga 2030",
+     "sumber": [
+      {
+       "url": "https://www.jawapos.com/ekonomi/017235654/buma-kantongi-kontrak-baru-dari-adaro-hingga-2030-jaga-produksi-batu-bara-di-tabalong",
+       "tanggal": "2026-02-25",
+       "jenis": "berita"
+      },
+      {
+       "url": "https://mediaindonesia.com/nusantara/443730/pemkab-tabalong-ingin-lepas-dari-ketergantungan-pada-tambang",
+       "tanggal": "2021-11-01",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "offtaker_penyerapan",
+     "teks": "Mayoritas pelanggan Adaro Indonesia adalah perusahaan pembangkit tenaga listrik, sektor semen, dan pemurnian logam. produk batu bara Adaro (Envirocoal) dipasar domestik dan internasional ke Jepang, Korea Selatan, Tiongkok",
+     "sumber": [
+      {
+       "url": "https://adaroindonesia.com/pages/view/Adaro_Mining.html",
+       "tanggal": "2024-06-30",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "kepastian_pasar",
+     "teks": "Kontrak BUMA-Adaro hingga 2030 memperkuat visibilitas pendapatan dan stabilitas bisnis pertambangan. pasar global tetap aktif dengan ekspor ke multi-negara. volatilitas harga batu bara global masih ada meski momentum jangka pendek positif akibat shock energi",
+     "sumber": [
+      {
+       "url": "https://www.jawapos.com/ekonomi/017235654/buma-kantongi-kontrak-baru-dari-adaro-hingga-2030-jaga-produksi-batu-bara-di-tabalong",
+       "tanggal": "2026-02-25",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "dukungan_pemerintah_program",
+     "teks": "Program pemberdayaan masyarakat Adaro di Tabalong mencakup pendidikan, pelatihan keterampilan, dukungan UMKM, dan program lingkungan. namun pemerintah Tabalong belum memiliki program terukur untuk mengurangi ketergantungan ekonomi pada sektor tambang dan mendorong diversifikasi sektor lokal",
+     "sumber": [
+      {
+       "url": "https://www.jawapos.com/ekonomi/017235654/buma-kantongi-kontrak-baru-dari-adaro-hingga-2030-jaga-produksi-batu-bara-di-tabalong",
+       "tanggal": "2026-02-25",
+       "jenis": "berita"
+      },
+      {
+       "url": "https://mediaindonesia.com/nusantara/443730/pemkab-tabalong-ingin-lepas-dari-ketergantungan-pada-tambang",
+       "tanggal": "2021-11-01",
+       "jenis": "berita"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jawapos.com/ekonomi/017235654/buma-kantongi-kontrak-baru-dari-adaro-hingga-2030-jaga-produksi-batu-bara-di-tabalong",
+     "tanggal": "2026-02-25",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://adaroindonesia.com/pages/view/Adaro_Mining.html",
+     "tanggal": "2024-06-30",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://mediaindonesia.com/nusantara/443730/pemkab-tabalong-ingin-lepas-dari-ketergantungan-pada-tambang",
+     "tanggal": "2021-11-01",
+     "jenis": "berita"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "offtaker_penyerapan",
+    "kepastian_pasar",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Cabai Rawit",
+   "wilayah_id": "6309",
+   "tier": "B",
+   "verdik_ekosistem": "Cabai rawit Tabalong (spesifik Rungun) layak dikembangkan karena permintaan lokal tinggi sebagai pengendali inflasi pangan, kapasitas budidaya sudah terbentuk melalui Kampung Hortikultura, namun gap utama adalah sarana pengolahan/pengemasan dan akses pasar tersegmentasi (kini hanya domestik lokal-IKN, belum regional).",
+   "sketsa": {
+    "hulu": "Produksi dari Kampung Hortikultura di 10 desa target (Haruai, Upau): Masingai I-II, Lokbatu, Catur Karya, Kembang Kuning, Seradang, Bongkang, Nawin, Hayup, Wirang. basis produksi sudah ada dengan pengiriman sayuran ke IKN Kalimantan Timur",
+    "offtaker": "Program pemerintah Tabalong menjadikan cabai rawit Rungun komoditas strategis pengendali inflasi daerah. pengiriman hortikultura (terong, tomat, cabai tiung) ke IKN sudah terjadi dari desa Haruai. offtaker komersial skala regional belum terdokumentasi",
+    "pembiayaan": "Belum ada sinyal KUR sektor hortikultura atau realisasi pembiayaan cabai rawit spesifik di sumber",
+    "asistensi": "DKPPTPH memberikan pelatihan dan pendampingan melalui Kampung Hortikultura. ULM membantu pengembangan cabai tiung Tanjung untuk ekspansi luar daerah asal",
+    "program": "Kampung Hortikultura merupakan program unggulan DKPPTPH 2026 dengan 10 desa sasaran. pengembangan cabai rawit Rungun sebagai komoditas strategis. penguatan produksi tanaman hortikultura unggulan lokal",
+    "gap_utama": "Sarana pengolahan, pengemasan, dan branding produk (dari cabai segar menjadi produk bernilai tambah) serta akses offtaker komersial terstruktur di tingkat regional/nasional belum ada"
+   },
+   "evidence": [
+    {
+     "dimensi": "pelaku_usaha_hulu",
+     "teks": "Produksi cabai rawit dan hortikultura dari 10 Kampung Hortikultura target di desa-desa Haruai dan Upau. pengiriman sayuran (terong, tomat, cabai tiung) dari Kembang Kuning dan Catur Karya ke IKN mencapai 76 kg cabai tiung per pengiriman",
+     "sumber": [
+      {
+       "url": "https://portal.tabalongkab.go.id/post/8-program-unggulan-dkpptph-tabalong-2026-perkuat-ketahanan-pangan-dan-kesejahteraan-petani",
+       "tanggal": "2026-01-13",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://kalsel.antaranews.com/berita/521553/dkp3-tabalong-lanjutkan-program-kampung-hortikultura",
+       "tanggal": "2025-01-02",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "offtaker_penyerapan",
+     "teks": "Pengiriman aneka sayuran termasuk cabai tiung ke Ibukota Nusantara (IKN) dari Desa Kembang Kuning dan Catur Karya. pemerintah menetapkan cabai rawit Rungun sebagai komoditas strategis pengendali inflasi daerah",
+     "sumber": [
+      {
+       "url": "https://kalsel.antaranews.com/berita/521553/dkp3-tabalong-lanjutkan-program-kampung-hortikultura",
+       "tanggal": "2025-01-02",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "asistensi_teknis",
+     "teks": "DKPPTPH Tabalong memberikan pendampingan dan pelatihan melalui program Kampung Hortikultura. ULM bekerjasama dalam pengembangan cabai tiung Tanjung di luar daerah asal",
+     "sumber": [
+      {
+       "url": "https://kalsel.antaranews.com/berita/521553/dkp3-tabalong-lanjutkan-program-kampung-hortikultura",
+       "tanggal": "2025-01-02",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "sarana_prasarana",
+     "teks": "Program pembangunan infrastruktur pertanian termasuk jalan usaha tani, perbaikan irigasi, pembangunan embung, dan peralatan mesin pertanian untuk mendukung produksi Kampung Hortikultura",
+     "sumber": [
+      {
+       "url": "https://portal.tabalongkab.go.id/post/8-program-unggulan-dkpptph-tabalong-2026-perkuat-ketahanan-pangan-dan-kesejahteraan-petani",
+       "tanggal": "2026-01-13",
+       "jenis": "resmi"
+      }
+     ]
+    },
+    {
+     "dimensi": "dukungan_pemerintah_program",
+     "teks": "Kampung Hortikultura merupakan program unggulan DKPPTPH 2026 dengan fokus pengembangan cabai rawit Rungun. anggaran pembangunan diusulkan di APBD Perubahan 2026",
+     "sumber": [
+      {
+       "url": "https://portal.tabalongkab.go.id/post/8-program-unggulan-dkpptph-tabalong-2026-perkuat-ketahanan-pangan-dan-kesejahteraan-petani",
+       "tanggal": "2026-01-13",
+       "jenis": "resmi"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://portal.tabalongkab.go.id/post/8-program-unggulan-dkpptph-tabalong-2026-perkuat-ketahanan-pangan-dan-kesejahteraan-petani",
+     "tanggal": "2026-01-13",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://kalsel.antaranews.com/berita/521553/dkp3-tabalong-lanjutkan-program-kampung-hortikultura",
+     "tanggal": "2025-01-02",
+     "jenis": "berita"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "offtaker_penyerapan",
+    "asistensi_teknis",
+    "sarana_prasarana",
+    "dukungan_pemerintah_program"
+   ]
+  },
+  {
+   "komoditas": "Ikan Air Tawar (Budidaya)",
+   "wilayah_id": "6309",
+   "tier": "B",
+   "verdik_ekosistem": "Perikanan budidaya Tabalong layak dikembangkan karena pasar dalam negeri bertumbuh stabil, kapasitas lokal sudah terbentuk (sentra di 5 kecamatan, Balai Benih Ikan, program MBG), namun gap utama adalah akses offtaker terstruktur dan sarana cold chain yang masih terbatas untuk penetrasi pasar regional.",
+   "sketsa": {
+    "hulu": "Produksi benih lokal melalui Balai Benih Ikan (BBI) di Desa Kambitin Raya Kecamatan Tanjung. sentra budidaya keramba dan kolam di Kecamatan Banua Lawas, Pugaan, Haruai, Jaro, Tanjung dengan ~3.930 unit keramba terdaftar",
+    "offtaker": "Program Makan Bergizi Gratis (MBG) pemerintah menetapkan sentra-sentra budidaya sebagai penyuplai. Universitas Lambung Mangkurat menjalin kemitraan Program Adaro Santri Sejahtera (PASS) dengan pondok pesantren (panen ikan nila, patin). kehadiran offtaker skala regional masih tidak terdokumentasi secara jelas",
+    "pembiayaan": "Belum ada sinyal kredit usaha rakyat (KUR) spesifik perikanan atau realisasi pembiayaan sektor perikanan budidaya di sumber",
+    "asistensi": "DKPPTPH Tabalong melakukan verifikasi benih, sertifikasi, dan pendampingan cara budidaya ikan yang baik dan benar (BUB). ULM memberikan asistensi teknis melalui program kerjasama PASS",
+    "program": "Kampung Ikan Gabus sebagai program unggulan DKPPTPH 2026. Makan Bergizi Gratis (MBG) mendorong peningkatan produksi. program pembangunan sarana budidaya perikanan (keramba, kolam terpal, bioflok)",
+    "gap_utama": "Akses dan jaminan offtaker terstruktur (kontrak stabil dengan pembeli di luar MBG) serta sarana penyimpanan dingin (cold chain) untuk ekspansi pasar lintas kabupaten/regional belum tersedia"
+   },
+   "evidence": [
+    {
+     "dimensi": "pelaku_usaha_hulu",
+     "teks": "Balai Benih Ikan (BBI) Tabalong mengembangkan jenis ikan air tawar lokal. sentra budidaya perikanan tersebar di 5 kecamatan dengan ~3.930 unit keramba yang terdaftar",
+     "sumber": [
+      {
+       "url": "https://portal.tabalongkab.go.id/post/8-program-unggulan-dkpptph-tabalong-2026-perkuat-ketahanan-pangan-dan-kesejahteraan-petani",
+       "tanggal": "2026-01-13",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://kalsel.antaranews.com/berita/359613/dkp2tph-kabupaten-tabalong-kembangkan-budidaya-ikan-keramba",
+       "tanggal": "2023-02-10",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "offtaker_penyerapan",
+     "teks": "Program Makan Bergizi Gratis (MBG) menetapkan sentra budidaya perikanan di Banua Lawas, Pugaan, Haruai, Jaro, Tanjung sebagai penyuplai. Program Adaro Santri Sejahtera menjalin kemitraan dengan ULM dan dua pondok pesantren untuk budidaya nila dan patin dengan hasil panen memuaskan",
+     "sumber": [
+      {
+       "url": "https://portal.tabalongkab.go.id/post/8-program-unggulan-dkpptph-tabalong-2026-perkuat-ketahanan-pangan-dan-kesejahteraan-petani",
+       "tanggal": "2026-01-13",
+       "jenis": "resmi"
+      },
+      {
+       "url": "https://banjarmasin.tribunnews.com/2022/03/30/pesta-panen-ikan-program-adaro-santri-sejahtera-di-dua-ponpes-di-tabalong-hasilnya-memuaskan",
+       "tanggal": "2022-03-30",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "asistensi_teknis",
+     "teks": "DKPPTPH melaksanakan verifikasi benih bersertifikat, pelatihan cara budidaya ikan yang baik dan benar (BUB). ULM memberikan asistensi teknis melalui program kemitraan PASS untuk optimalisasi produksi kolam",
+     "sumber": [
+      {
+       "url": "https://tvtabalong.com/dukung-mbg-dkpptph-tabalong-siapkan-sentra-budidaya-perikanan/",
+       "tanggal": "2025-03-06",
+       "jenis": "berita"
+      }
+     ]
+    },
+    {
+     "dimensi": "dukungan_pemerintah_program",
+     "teks": "DKPPTPH Tabalong menetapkan 8 program unggulan tahun 2026 termasuk Kampung Ikan Gabus, pembangunan sarana budidaya, dan penguatan produksi lokal untuk mendukung ketahanan pangan",
+     "sumber": [
+      {
+       "url": "https://portal.tabalongkab.go.id/post/8-program-unggulan-dkpptph-tabalong-2026-perkuat-ketahanan-pangan-dan-kesejahteraan-petani",
+       "tanggal": "2026-01-13",
+       "jenis": "resmi"
+      }
+     ]
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://portal.tabalongkab.go.id/post/8-program-unggulan-dkpptph-tabalong-2026-perkuat-ketahanan-pangan-dan-kesejahteraan-petani",
+     "tanggal": "2026-01-13",
+     "jenis": "resmi"
+    },
+    {
+     "url": "https://tvtabalong.com/dukung-mbg-dkpptph-tabalong-siapkan-sentra-budidaya-perikanan/",
+     "tanggal": "2025-03-06",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://kalsel.antaranews.com/berita/359613/dkp2tph-kabupaten-tabalong-kembangkan-budidaya-ikan-keramba",
+     "tanggal": "2023-02-10",
+     "jenis": "berita"
+    },
+    {
+     "url": "https://banjarmasin.tribunnews.com/2022/03/30/pesta-panen-ikan-program-adaro-santri-sejahtera-di-dua-ponpes-di-tabalong-hasilnya-memuaskan",
+     "tanggal": "2022-03-30",
+     "jenis": "berita"
+    }
+   ],
+   "kategori": [
+    "pelaku_usaha_hulu",
+    "offtaker_penyerapan",
+    "asistensi_teknis",
+    "dukungan_pemerintah_program"
+   ]
+  }
+ ]
+}

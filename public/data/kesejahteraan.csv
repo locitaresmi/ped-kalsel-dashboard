@@ -1,0 +1,61 @@
+tahun,wilayah_id,wilayah,level,pdrb_kapita,miskin_pct,gini,ipm
+2021,6300,Kalimantan Selatan,provinsi,48066.0,4.83,0.33,73.45
+2021,6301,Tanah Laut,kabkota,43502.0,4.57,0.232,71.86
+2021,6302,Kotabaru,kabkota,80388.0,4.86,0.306,70.94
+2021,6303,Banjar,kabkota,31308.0,3.04,0.344,72.4
+2021,6304,Barito Kuala,kabkota,28971.0,5.11,0.284,69.08
+2021,6305,Tapin,kabkota,49019.0,3.6,0.289,71.9
+2021,6306,Hulu Sungai Selatan,kabkota,30944.0,4.84,0.275,71.93
+2021,6307,Hulu Sungai Tengah,kabkota,28339.0,6.18,0.331,71.67
+2021,6308,Hulu Sungai Utara,kabkota,22931.0,6.83,0.378,69.63
+2021,6309,Tabalong,kabkota,77830.0,6.27,0.288,74.25
+2021,6310,Tanah Bumbu,kabkota,69333.0,4.82,0.281,72.55
+2021,6311,Balangan,kabkota,93645.0,6.07,0.277,71.58
+2021,6371,Kota Banjarmasin,kabkota,52333.0,4.89,0.35,79.09
+2021,6372,Kota Banjarbaru,kabkota,38867.0,4.4,0.361,80.41
+2021,0000,Indonesia,nasional,,10.14,0.384,72.29
+2022,6300,Kalimantan Selatan,provinsi,60213.03,4.49,0.317,74.0
+2022,6301,Tanah Laut,kabkota,53319.34,3.86,0.263,72.33
+2022,6302,Kotabaru,kabkota,99498.21,4.3,0.331,71.57
+2022,6303,Banjar,kabkota,36189.18,2.79,0.3,73.25
+2022,6304,Barito Kuala,kabkota,30692.08,4.75,0.289,69.87
+2022,6305,Tapin,kabkota,65825.78,3.6,0.291,72.61
+2022,6306,Hulu Sungai Selatan,kabkota,36208.0,4.54,0.26,72.47
+2022,6307,Hulu Sungai Tengah,kabkota,30152.48,5.92,0.228,72.32
+2022,6308,Hulu Sungai Utara,kabkota,24459.09,6.49,0.301,70.33
+2022,6309,Tabalong,kabkota,112269.78,5.87,0.337,74.82
+2022,6310,Tanah Bumbu,kabkota,95160.07,4.26,0.292,73.34
+2022,6311,Balangan,kabkota,148028.75,5.83,0.266,72.2
+2022,6371,Kota Banjarmasin,kabkota,57990.83,4.74,0.33,79.46
+2022,6372,Kota Banjarbaru,kabkota,44860.35,4.17,0.341,80.82
+2022,0000,Indonesia,nasional,,9.54,0.384,72.91
+2023,6300,Kalimantan Selatan,provinsi,63754.33,4.29,0.313,74.66
+2023,6301,Tanah Laut,kabkota,55872.29,3.73,0.259,72.98
+2023,6302,Kotabaru,kabkota,103069.17,4.32,0.316,72.01
+2023,6303,Banjar,kabkota,38265.34,2.44,0.297,74.01
+2023,6304,Barito Kuala,kabkota,32389.09,4.6,0.312,70.67
+2023,6305,Tapin,kabkota,69701.82,3.19,0.281,73.52
+2023,6306,Hulu Sungai Selatan,kabkota,38839.33,4.01,0.293,73.21
+2023,6307,Hulu Sungai Tengah,kabkota,32284.61,5.84,0.225,72.76
+2023,6308,Hulu Sungai Utara,kabkota,26132.0,6.25,0.271,71.12
+2023,6309,Tabalong,kabkota,117748.32,5.77,0.284,75.43
+2023,6310,Tanah Bumbu,kabkota,99812.7,4.12,0.28,73.86
+2023,6311,Balangan,kabkota,153371.69,5.22,0.258,72.97
+2023,6371,Kota Banjarmasin,kabkota,63094.95,4.63,0.37,79.98
+2023,6372,Kota Banjarbaru,kabkota,49712.02,3.92,0.321,81.25
+2023,0000,Indonesia,nasional,,9.36,0.388,73.55
+2024,6300,Kalimantan Selatan,provinsi,67122.21,4.11,0.302,75.19
+2024,6301,Tanah Laut,kabkota,58233.29,3.74,0.257,73.42
+2024,6302,Kotabaru,kabkota,108005.49,4.45,0.296,72.42
+2024,6303,Banjar,kabkota,40027.39,2.36,0.258,74.41
+2024,6304,Barito Kuala,kabkota,34289.88,4.36,0.272,71.4
+2024,6305,Tapin,kabkota,72419.91,3.33,0.26,74.06
+2024,6306,Hulu Sungai Selatan,kabkota,41450.36,3.38,0.288,73.95
+2024,6307,Hulu Sungai Tengah,kabkota,34849.14,5.81,0.251,73.33
+2024,6308,Hulu Sungai Utara,kabkota,27909.99,5.75,0.276,71.74
+2024,6309,Tabalong,kabkota,122312.89,5.64,0.3,75.97
+2024,6310,Tanah Bumbu,kabkota,104302.29,3.41,0.309,74.5
+2024,6311,Balangan,kabkota,157578.97,4.87,0.218,73.83
+2024,6371,Kota Banjarmasin,kabkota,68284.69,4.58,0.347,80.53
+2024,6372,Kota Banjarbaru,kabkota,53087.9,3.79,0.3,81.65
+2024,0000,Indonesia,nasional,,9.03,0.379,74.2

@@ -1,0 +1,86 @@
+provinsi,domain,tahun,sektor_kode,sektor,adhk,share_pct,growth_total_pct
+Kalimantan Barat,6100,2024,A,"Pertanian, Kehutanan, dan Perikanan",36150729.5,22.24,4.9
+Kalimantan Barat,6100,2024,B,Pertambangan dan Penggalian,7167791.8,4.41,4.9
+Kalimantan Barat,6100,2024,C,Industri Pengolahan,25034197.0,15.4,4.9
+Kalimantan Barat,6100,2024,D,Pengadaan Listrik dan Gas,211012.2,0.13,4.9
+Kalimantan Barat,6100,2024,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",257969.6,0.16,4.9
+Kalimantan Barat,6100,2024,F,Konstruksi,16665182.7,10.25,4.9
+Kalimantan Barat,6100,2024,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,24810055.2,15.26,4.9
+Kalimantan Barat,6100,2024,H,Transportasi dan Pergudangan,6067073.1,3.73,4.9
+Kalimantan Barat,6100,2024,I,Penyediaan Akomodasi dan Makan Minum,3630464.6,2.23,4.9
+Kalimantan Barat,6100,2024,J,Informasi dan Komunikasi,10401184.3,6.4,4.9
+Kalimantan Barat,6100,2024,K,Jasa Keuangan dan Asuransi,5873801.2,3.61,4.9
+Kalimantan Barat,6100,2024,L,Real Estat,4891490.9,3.01,4.9
+Kalimantan Barat,6100,2024,MN,Jasa Perusahaan,808668.7,0.5,4.9
+Kalimantan Barat,6100,2024,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",7697432.8,4.73,4.9
+Kalimantan Barat,6100,2024,P,Jasa Pendidikan,6448267.5,3.97,4.9
+Kalimantan Barat,6100,2024,Q,Jasa Kesehatan dan Kegiatan Sosial,4643003.9,2.86,4.9
+Kalimantan Barat,6100,2024,RSTU,Jasa Lainnya,1816148.4,1.12,4.9
+Kalimantan Tengah,6200,2024,A,"Pertanian, Kehutanan, dan Perikanan",24138.6,20.34,4.46
+Kalimantan Tengah,6200,2024,B,Pertambangan dan Penggalian,17178.6,14.47,4.46
+Kalimantan Tengah,6200,2024,C,Industri Pengolahan,17829.3,15.02,4.46
+Kalimantan Tengah,6200,2024,D,Pengadaan Listrik dan Gas,128.5,0.11,4.46
+Kalimantan Tengah,6200,2024,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",104.2,0.09,4.46
+Kalimantan Tengah,6200,2024,F,Konstruksi,9996.4,8.42,4.46
+Kalimantan Tengah,6200,2024,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,14604.7,12.31,4.46
+Kalimantan Tengah,6200,2024,H,Transportasi dan Pergudangan,7954.5,6.7,4.46
+Kalimantan Tengah,6200,2024,I,Penyediaan Akomodasi dan Makan Minum,2166.5,1.83,4.46
+Kalimantan Tengah,6200,2024,J,Informasi dan Komunikasi,1747.1,1.47,4.46
+Kalimantan Tengah,6200,2024,K,Jasa Keuangan dan Asuransi,4189.5,3.53,4.46
+Kalimantan Tengah,6200,2024,L,Real Estat,2298.8,1.94,4.46
+Kalimantan Tengah,6200,2024,MN,Jasa Perusahaan,43.4,0.04,4.46
+Kalimantan Tengah,6200,2024,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",7114.9,5.99,4.46
+Kalimantan Tengah,6200,2024,P,Jasa Pendidikan,5503.7,4.64,4.46
+Kalimantan Tengah,6200,2024,Q,Jasa Kesehatan dan Kegiatan Sosial,2597.2,2.19,4.46
+Kalimantan Tengah,6200,2024,RSTU,Jasa Lainnya,1086.3,0.92,4.46
+Kalimantan Selatan,6300,2024,A,"Pertanian, Kehutanan, dan Perikanan",20350.7,12.98,5.06
+Kalimantan Selatan,6300,2024,B,Pertambangan dan Penggalian,37270.5,23.77,5.06
+Kalimantan Selatan,6300,2024,C,Industri Pengolahan,19284.7,12.3,5.06
+Kalimantan Selatan,6300,2024,D,Pengadaan Listrik dan Gas,213.4,0.14,5.06
+Kalimantan Selatan,6300,2024,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",692.0,0.44,5.06
+Kalimantan Selatan,6300,2024,F,Konstruksi,12157.4,7.75,5.06
+Kalimantan Selatan,6300,2024,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,14908.1,9.51,5.06
+Kalimantan Selatan,6300,2024,H,Transportasi dan Pergudangan,10934.1,6.97,5.06
+Kalimantan Selatan,6300,2024,I,Penyediaan Akomodasi dan Makan Minum,3503.2,2.23,5.06
+Kalimantan Selatan,6300,2024,J,Informasi dan Komunikasi,7187.3,4.58,5.06
+Kalimantan Selatan,6300,2024,K,Jasa Keuangan dan Asuransi,5099.8,3.25,5.06
+Kalimantan Selatan,6300,2024,L,Real Estat,3952.9,2.52,5.06
+Kalimantan Selatan,6300,2024,MN,Jasa Perusahaan,1032.8,0.66,5.06
+Kalimantan Selatan,6300,2024,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",7905.8,5.04,5.06
+Kalimantan Selatan,6300,2024,P,Jasa Pendidikan,6985.6,4.46,5.06
+Kalimantan Selatan,6300,2024,Q,Jasa Kesehatan dan Kegiatan Sosial,3399.8,2.17,5.06
+Kalimantan Selatan,6300,2024,RSTU,Jasa Lainnya,1891.8,1.21,5.06
+Kalimantan Timur,6400,2024,A,"Pertanian, Kehutanan, dan Perikanan",35368.7,6.2,6.17
+Kalimantan Timur,6400,2024,B,Pertambangan dan Penggalian,265126.1,46.45,6.17
+Kalimantan Timur,6400,2024,C,Industri Pengolahan,104526.6,18.31,6.17
+Kalimantan Timur,6400,2024,D,Pengadaan Listrik dan Gas,455.6,0.08,6.17
+Kalimantan Timur,6400,2024,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",322.4,0.06,6.17
+Kalimantan Timur,6400,2024,F,Konstruksi,52471.8,9.19,6.17
+Kalimantan Timur,6400,2024,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,34955.1,6.12,6.17
+Kalimantan Timur,6400,2024,H,Transportasi dan Pergudangan,18084.7,3.17,6.17
+Kalimantan Timur,6400,2024,I,Penyediaan Akomodasi dan Makan Minum,5498.5,0.96,6.17
+Kalimantan Timur,6400,2024,J,Informasi dan Komunikasi,11158.9,1.95,6.17
+Kalimantan Timur,6400,2024,K,Jasa Keuangan dan Asuransi,9551.7,1.67,6.17
+Kalimantan Timur,6400,2024,L,Real Estat,4860.6,0.85,6.17
+Kalimantan Timur,6400,2024,MN,Jasa Perusahaan,1101.5,0.19,6.17
+Kalimantan Timur,6400,2024,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",10924.8,1.91,6.17
+Kalimantan Timur,6400,2024,P,Jasa Pendidikan,8482.5,1.49,6.17
+Kalimantan Timur,6400,2024,Q,Jasa Kesehatan dan Kegiatan Sosial,4535.6,0.79,6.17
+Kalimantan Timur,6400,2024,RSTU,Jasa Lainnya,3398.8,0.6,6.17
+Kalimantan Utara,6500,2024,A,"Pertanian, Kehutanan, dan Perikanan",12444238.5,17.02,4.75
+Kalimantan Utara,6500,2024,B,Pertambangan dan Penggalian,18613767.5,25.45,4.75
+Kalimantan Utara,6500,2024,C,Industri Pengolahan,6188512.6,8.46,4.75
+Kalimantan Utara,6500,2024,D,Pengadaan Listrik dan Gas,59449.7,0.08,4.75
+Kalimantan Utara,6500,2024,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",52278.7,0.07,4.75
+Kalimantan Utara,6500,2024,F,Konstruksi,9349773.4,12.78,4.75
+Kalimantan Utara,6500,2024,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,9288152.8,12.7,4.75
+Kalimantan Utara,6500,2024,H,Transportasi dan Pergudangan,4702904.1,6.43,4.75
+Kalimantan Utara,6500,2024,I,Penyediaan Akomodasi dan Makan Minum,1178751.1,1.61,4.75
+Kalimantan Utara,6500,2024,J,Informasi dan Komunikasi,2538044.9,3.47,4.75
+Kalimantan Utara,6500,2024,K,Jasa Keuangan dan Asuransi,973999.2,1.33,4.75
+Kalimantan Utara,6500,2024,L,Real Estat,666003.2,0.91,4.75
+Kalimantan Utara,6500,2024,MN,Jasa Perusahaan,169245.5,0.23,4.75
+Kalimantan Utara,6500,2024,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",3518098.0,4.81,4.75
+Kalimantan Utara,6500,2024,P,Jasa Pendidikan,1977963.0,2.7,4.75
+Kalimantan Utara,6500,2024,Q,Jasa Kesehatan dan Kegiatan Sosial,874505.6,1.2,4.75
+Kalimantan Utara,6500,2024,RSTU,Jasa Lainnya,538718.5,0.74,4.75

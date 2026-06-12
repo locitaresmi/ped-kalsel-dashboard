@@ -1,0 +1,5 @@
+# Normalisasi akhir baris ke LF di repo (loader Python & workflow jalan di Linux CI).
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.geojson text eol=lf

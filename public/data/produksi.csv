@@ -1,0 +1,61 @@
+tahun,wilayah_id,wilayah,komoditas,subsektor_kode,luas_panen_ha,produksi_ton
+2020,6301,Tanah Laut,Padi,A,24729.0,97019.0
+2020,6302,Kotabaru,Padi,A,7152.0,23162.0
+2020,6303,Banjar,Padi,A,50735.0,190762.0
+2020,6304,Barito Kuala,Padi,A,66448.0,237193.0
+2020,6305,Tapin,Padi,A,31098.0,122860.0
+2020,6306,Hulu Sungai Selatan,Padi,A,25862.0,113217.0
+2020,6307,Hulu Sungai Tengah,Padi,A,29922.0,131586.0
+2020,6308,Hulu Sungai Utara,Padi,A,17292.0,94175.0
+2020,6309,Tabalong,Padi,A,15909.0,59067.0
+2020,6310,Tanah Bumbu,Padi,A,12683.0,52553.0
+2020,6311,Balangan,Padi,A,4606.0,16124.0
+2020,6371,Kota Banjarmasin,Padi,A,2377.0,9496.0
+2021,6301,Tanah Laut,Padi,A,21015.0,79662.0
+2021,6302,Kotabaru,Padi,A,5918.0,22080.0
+2021,6303,Banjar,Padi,A,43997.0,169163.0
+2021,6304,Barito Kuala,Padi,A,62782.0,221360.0
+2021,6305,Tapin,Padi,A,28808.0,115062.0
+2021,6306,Hulu Sungai Selatan,Padi,A,22457.0,97037.0
+2021,6307,Hulu Sungai Tengah,Padi,A,24187.0,120731.0
+2021,6308,Hulu Sungai Utara,Padi,A,16084.0,73787.0
+2021,6309,Tabalong,Padi,A,11725.0,52087.0
+2021,6310,Tanah Bumbu,Padi,A,9624.0,36573.0
+2021,6311,Balangan,Padi,A,4338.0,16553.0
+2021,6371,Kota Banjarmasin,Padi,A,2279.0,8882.0
+2022,6301,Tanah Laut,Padi,A,19972.6,73487.2
+2022,6302,Kotabaru,Padi,A,4334.5,17609.8
+2022,6303,Banjar,Padi,A,37163.2,129050.5
+2022,6304,Barito Kuala,Padi,A,57402.6,186867.8
+2022,6305,Tapin,Padi,A,25656.3,101228.0
+2022,6306,Hulu Sungai Selatan,Padi,A,12657.5,58463.6
+2022,6307,Hulu Sungai Tengah,Padi,A,23213.6,109758.3
+2022,6308,Hulu Sungai Utara,Padi,A,5549.0,25622.9
+2022,6309,Tabalong,Padi,A,12347.5,54341.6
+2022,6310,Tanah Bumbu,Padi,A,9848.9,39429.0
+2022,6311,Balangan,Padi,A,4313.6,15548.9
+2022,6371,Kota Banjarmasin,Padi,A,1504.5,4932.7
+2023,6301,Tanah Laut,Padi,A,15062.4,52839.3
+2023,6302,Kotabaru,Padi,A,4126.2,16758.7
+2023,6303,Banjar,Padi,A,31108.8,114278.2
+2023,6304,Barito Kuala,Padi,A,54336.0,188249.9
+2023,6305,Tapin,Padi,A,25161.6,107771.4
+2023,6306,Hulu Sungai Selatan,Padi,A,18224.8,85828.3
+2023,6307,Hulu Sungai Tengah,Padi,A,23153.0,108484.6
+2023,6308,Hulu Sungai Utara,Padi,A,14468.0,80975.2
+2023,6309,Tabalong,Padi,A,12789.0,59184.4
+2023,6310,Tanah Bumbu,Padi,A,9659.5,39071.3
+2023,6311,Balangan,Padi,A,4502.8,16067.6
+2023,6371,Kota Banjarmasin,Padi,A,1140.3,4687.1
+2024,6301,Tanah Laut,Padi,A,25091.9,107210.9
+2024,6302,Kotabaru,Padi,A,4077.1,16264.8
+2024,6303,Banjar,Padi,A,40628.1,153537.9
+2024,6304,Barito Kuala,Padi,A,58873.0,219962.7
+2024,6305,Tapin,Padi,A,27639.4,114594.1
+2024,6306,Hulu Sungai Selatan,Padi,A,19905.3,93771.8
+2024,6307,Hulu Sungai Tengah,Padi,A,24709.6,117444.6
+2024,6308,Hulu Sungai Utara,Padi,A,15163.0,79292.4
+2024,6309,Tabalong,Padi,A,12856.1,60795.2
+2024,6310,Tanah Bumbu,Padi,A,9688.7,39007.1
+2024,6311,Balangan,Padi,A,4728.0,17132.5
+2024,6371,Kota Banjarmasin,Padi,A,1732.5,7376.2

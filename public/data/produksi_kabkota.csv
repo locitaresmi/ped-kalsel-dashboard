@@ -1,0 +1,147 @@
+wilayah_id,wilayah,subsektor,komoditas,tahun,metrik_utama,luas_ha,produksi,satuan_produksi,produktivitas,populasi,pola
+6301,Tanah Laut,Tanaman Pangan,Jagung,2017,produksi,24903.0,179556.0,ton,7.21,,A
+6301,Tanah Laut,Tanaman Pangan,Kacang Hijau,2017,produksi,92.0,77.0,ton,0.84,,A
+6301,Tanah Laut,Tanaman Pangan,Kacang tanah,2017,produksi,565.0,1189.0,ton,2.1,,A
+6301,Tanah Laut,Tanaman Pangan,Kedelai,2017,produksi,233.0,647.0,ton,2.78,,A
+6301,Tanah Laut,Tanaman Pangan,Padi,2017,produksi,56836.0,311988.0,ton,5.49,,A
+6301,Tanah Laut,Tanaman Pangan,Ubi Jalar,2017,produksi,165.0,2252.0,ton,13.65,,A
+6301,Tanah Laut,Tanaman Pangan,Ubi Kayu,2017,produksi,743.0,736.0,ton,0.99,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Bawang Merah,2017,produksi,19.0,207.9,ton,10.94,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Bayam,2017,produksi,89.0,249.3,ton,2.8,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Buncis,2017,produksi,65.0,970.7,ton,14.93,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Cabe,2017,produksi,278.0,11811.0,ton,42.49,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Kacang Panjang,2017,produksi,205.0,864.3,ton,4.22,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Kangkung,2017,produksi,93.0,228.6,ton,2.46,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Ketimun,2017,produksi,141.0,868.1,ton,6.16,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Sawi,2017,produksi,78.0,515.4,ton,6.61,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Terong,2017,produksi,177.0,702.5,ton,3.97,,A
+6301,Tanah Laut,Hortikultura - Sayuran,Tomat,2017,produksi,110.0,587.5,ton,5.34,,A
+6301,Tanah Laut,Hortikultura - Buah,Alpukat,2017,produksi,,60.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Duku,2017,produksi,,176.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Durian,2017,produksi,,5818.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Jambu,2017,produksi,,1848.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Jeruk,2017,produksi,,4524.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Mangga,2017,produksi,,3718.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Nanas,2017,produksi,,674.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Nangka,2017,produksi,,71076.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Pepaya,2017,produksi,,9521.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Pisang,2017,produksi,,10455.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Rambutan,2017,produksi,,7987.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Salak,2017,produksi,,147.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Sawo,2017,produksi,,2272.0,ton,,,A
+6301,Tanah Laut,Hortikultura - Buah,Semangka,2017,produksi,,16294.0,ton,,,A
+6301,Tanah Laut,Perkebunan,Karet,2022,produksi,14894.0,13806.9,ton,0.93,,A
+6301,Tanah Laut,Perkebunan,Kelapa,2022,produksi,840.0,1602.7,ton,1.91,,A
+6301,Tanah Laut,Perkebunan,Kelapa Sawit,2022,produksi,12622.0,76919.5,ton,6.09,,A
+6301,Tanah Laut,Perkebunan,Kopi,2022,produksi,147.0,120.2,ton,0.82,,A
+6301,Tanah Laut,Peternakan - Ternak,Babi,2022,populasi,,,,,85,A
+6301,Tanah Laut,Peternakan - Ternak,Domba,2022,populasi,,,,,33,A
+6301,Tanah Laut,Peternakan - Ternak,Kambing,2022,populasi,,,,,20335,A
+6301,Tanah Laut,Peternakan - Ternak,Kerbau,2022,populasi,,,,,1569,A
+6301,Tanah Laut,Peternakan - Ternak,Kuda,2022,populasi,,,,,56,A
+6301,Tanah Laut,Peternakan - Ternak,Sapi Perah,2022,populasi,,,,,22,A
+6301,Tanah Laut,Peternakan - Ternak,Sapi Potong,2022,populasi,,,,,82463,A
+6301,Tanah Laut,Peternakan - Unggas,Ayam Kampung,2018,populasi,,,,,2584795,A
+6301,Tanah Laut,Peternakan - Unggas,Ayam Pedaging,2018,populasi,,,,,48342321,A
+6301,Tanah Laut,Peternakan - Unggas,Ayam Petelur,2018,populasi,,,,,7394025,A
+6301,Tanah Laut,Peternakan - Unggas,Burung Puyuh,2018,populasi,,,,,136136,A
+6301,Tanah Laut,Peternakan - Unggas,Itik,2018,populasi,,,,,198668,A
+6301,Tanah Laut,Peternakan - Unggas,Itik Manila,2018,populasi,,,,,614,A
+6301,Tanah Laut,Perikanan Budidaya,Jaring Apung,2021,produksi,,34.5,ton,,,A
+6301,Tanah Laut,Perikanan Budidaya,Keramba,2021,produksi,,34.4,ton,,,A
+6301,Tanah Laut,Perikanan Budidaya,Kolam,2021,produksi,,272.4,ton,,,A
+6301,Tanah Laut,Perikanan Budidaya,Tambak,2021,produksi,,1045.5,ton,,,A
+6301,Tanah Laut,Tanaman Pangan,Pangan,2017,produksi,,311988.0,ton,,,B
+6304,Barito Kuala,Tanaman Pangan,Menurut Jenis Pangan,2018,produksi,,369331.0,ton,,,B
+6304,Barito Kuala,Tanaman Pangan,Jagung,2024,produksi,,7153.0,ton,,,B
+6304,Barito Kuala,Perkebunan,Kelapa Sawit,2023,produksi,,17056924.4,ton,,,B
+6304,Barito Kuala,Perkebunan,Kelapa,2023,produksi,,2830195.3,ton,,,B
+6304,Barito Kuala,Perkebunan,Karet,2023,produksi,,1670351.3,ton,,,B
+6304,Barito Kuala,Perikanan Budidaya,Perikanan Laut,2023,produksi,,4117.0,ton,,,B
+6304,Barito Kuala,Perikanan Budidaya,Perikanan Budidaya Tambak,2023,produksi,,11502.1,ton,,,B
+6304,Barito Kuala,Perikanan Budidaya,Perikanan Budidaya Kolam,2023,produksi,,93.4,ton,,,B
+6304,Barito Kuala,Perikanan Budidaya,Perikanan Budidaya Keramba,2022,produksi,,2.9,ton,,,B
+6304,Barito Kuala,Perikanan Budidaya,Perikanan Budidaya Jaring Apung,2023,produksi,,286.0,ton,,,B
+6305,Tapin,Tanaman Pangan,Pangan Per Kecamatan,2017,produksi,,421199.0,ton,,,B
+6306,Hulu Sungai Selatan,Tanaman Pangan,Jagung,2021,produksi,,103.0,ton,,,B
+6307,Hulu Sungai Tengah,Peternakan - Ternak,Babi,2024,populasi,,,,,1068,A
+6307,Hulu Sungai Tengah,Peternakan - Ternak,Domba,2024,populasi,,,,,3953,A
+6307,Hulu Sungai Tengah,Peternakan - Ternak,Kambing,2024,populasi,,,,,3806,A
+6307,Hulu Sungai Tengah,Peternakan - Ternak,Kerbau,2024,populasi,,,,,1538,A
+6307,Hulu Sungai Tengah,Peternakan - Ternak,Sapi Potong,2024,populasi,,,,,4129,A
+6307,Hulu Sungai Tengah,Peternakan - Unggas,Ayam Kampung,2024,populasi,,,,,425981,A
+6307,Hulu Sungai Tengah,Peternakan - Unggas,Ayam Pedaging,2024,populasi,,,,,2107990,A
+6307,Hulu Sungai Tengah,Peternakan - Unggas,Ayam Petelur,2024,populasi,,,,,11045,A
+6307,Hulu Sungai Tengah,Peternakan - Unggas,Itik/Itik Manila,2024,populasi,,,,,845946,A
+6307,Hulu Sungai Tengah,Perikanan Budidaya,Keramba,2024,produksi,,1859.9,ton,,,A
+6307,Hulu Sungai Tengah,Perikanan Budidaya,Kolam,2024,produksi,,1142.4,ton,,,A
+6307,Hulu Sungai Tengah,Perikanan Budidaya,Sawah,2024,produksi,,12.0,ton,,,A
+6307,Hulu Sungai Tengah,Tanaman Pangan,Padi,2024,produksi,,198397.0,ton,,,B
+6307,Hulu Sungai Tengah,Perkebunan,Karet,2024,produksi,,19870.0,ton,,,B
+6307,Hulu Sungai Tengah,Perkebunan,Kelapa,2024,produksi,,4664.0,ton,,,B
+6308,Hulu Sungai Utara,Peternakan - Ternak,Kerbau,2022,populasi,,,,,9143,B
+6308,Hulu Sungai Utara,Peternakan - Ternak,Sapi,2022,populasi,,,,,525,B
+6308,Hulu Sungai Utara,Peternakan - Ternak,Kambing,2022,populasi,,,,,585,B
+6308,Hulu Sungai Utara,Peternakan - Ternak,Domba,2022,populasi,,,,,61,B
+6308,Hulu Sungai Utara,Peternakan - Unggas,Ayam Pedaging,2022,populasi,,,,,2005898,B
+6308,Hulu Sungai Utara,Peternakan - Unggas,Ayam Petelur,2022,populasi,,,,,8231,B
+6308,Hulu Sungai Utara,Peternakan - Unggas,Ayam Buras,2022,populasi,,,,,582403,B
+6308,Hulu Sungai Utara,Peternakan - Unggas,Itik,2022,populasi,,,,,957283,B
+6308,Hulu Sungai Utara,Perikanan Budidaya,Ikan Rawa,2022,produksi,,9571.2,ton,,,B
+6308,Hulu Sungai Utara,Perikanan Budidaya,Ikan Sungai,2022,produksi,,2752.6,ton,,,B
+6309,Tabalong,Peternakan - Ternak,Babi,2019,populasi,,,,,267,A
+6309,Tabalong,Peternakan - Ternak,Domba,2019,populasi,,,,,9,A
+6309,Tabalong,Peternakan - Ternak,Kambing,2019,populasi,,,,,2208,A
+6309,Tabalong,Peternakan - Ternak,Kuda,2019,populasi,,,,,5,A
+6309,Tabalong,Peternakan - Ternak,Sapi Potong,2019,populasi,,,,,3232,A
+6309,Tabalong,Peternakan - Unggas,Ayam Kampung,2019,populasi,,,,,221080,A
+6309,Tabalong,Peternakan - Unggas,Ayam Pedaging,2019,populasi,,,,,591250,A
+6309,Tabalong,Peternakan - Unggas,Ayam Petelur,2019,populasi,,,,,8688,A
+6309,Tabalong,Peternakan - Unggas,Itik/Itik Manila,2019,populasi,,,,,72296,A
+6309,Tabalong,Perikanan Budidaya,Karamba,2019,produksi,,5691.5,ton,,,A
+6309,Tabalong,Perikanan Budidaya,Kolam Air,2019,produksi,,8098.4,ton,,,A
+6309,Tabalong,Perikanan Budidaya,Minapadi Sawah,2019,produksi,,59.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Bawang Daun,2019,produksi,187.0,7552.0,ton,40.39,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Bawang Merah,2019,produksi,1.0,90.0,ton,90.0,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Bayam,2019,produksi,145.0,3538.0,ton,24.4,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Buncis,2019,produksi,10.0,1590.0,ton,159.0,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Cabai,2019,produksi,65.0,7886.0,ton,121.32,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Cabai Besar,2019,produksi,36.0,4281.0,ton,118.92,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Cabai Rawit,2019,produksi,29.0,3605.0,ton,124.31,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Jamur,2019,produksi,336.0,6587.0,ton,19.6,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Kacang Panjang,2019,produksi,34.0,4001.0,ton,117.68,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Kangkung,2019,produksi,128.0,5663.0,ton,44.24,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Ketimun,2019,produksi,28.0,5601.0,ton,200.04,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Melon,2019,produksi,10.0,1807.0,ton,180.7,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Petsai,2019,produksi,153.0,6815.0,ton,44.54,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Terung,2019,produksi,30.0,5370.0,ton,179.0,,A
+6372,Kota Banjarbaru,Hortikultura - Sayuran,Tomat,2019,produksi,36.0,6168.0,ton,171.33,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Bawang Daun,2019,produksi,,7552.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Bawang Merah,2019,produksi,,90.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Bayam,2019,produksi,,3538.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Buncis,2019,produksi,,1590.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Cabai,2019,produksi,,7886.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Cabai Besar,2019,produksi,,4281.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Cabai Rawit,2019,produksi,,3605.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Jamur,2019,produksi,,6587.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Kacang Panjang,2019,produksi,,4001.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Kangkung,2019,produksi,,5663.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Ketimun,2019,produksi,,5601.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Melon,2019,produksi,,1807.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Petsai,2019,produksi,,6815.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Terung,2019,produksi,,5370.0,ton,,,A
+6372,Kota Banjarbaru,Hortikultura - Buah,Tomat,2019,produksi,,6168.0,ton,,,A
+6372,Kota Banjarbaru,Perkebunan,Karet,2023,produksi,1056.0,907.6,ton,0.86,,A
+6372,Kota Banjarbaru,Perkebunan,Kelapa,2023,produksi,101.0,78.6,ton,0.78,,A
+6372,Kota Banjarbaru,Perkebunan,Kelapa Sawit,2023,produksi,159.0,770.0,ton,4.84,,A
+6372,Kota Banjarbaru,Peternakan - Ternak,Ayam Buras,2024,populasi,,,,,66982,A
+6372,Kota Banjarbaru,Peternakan - Ternak,Ayam Ras Pedaging,2024,populasi,,,,,2306770,A
+6372,Kota Banjarbaru,Peternakan - Ternak,Ayam Ras Petelur,2024,populasi,,,,,479727,A
+6372,Kota Banjarbaru,Peternakan - Ternak,Itik,2024,populasi,,,,,50109,A
+6372,Kota Banjarbaru,Peternakan - Ternak,Kambing,2024,populasi,,,,,3297,A
+6372,Kota Banjarbaru,Peternakan - Ternak,Kelinci,2024,populasi,,,,,404,A
+6372,Kota Banjarbaru,Peternakan - Ternak,Kerbau,2024,populasi,,,,,2,A
+6372,Kota Banjarbaru,Peternakan - Ternak,Puyuh,2024,populasi,,,,,65648,A
+6372,Kota Banjarbaru,Peternakan - Ternak,Sapi,2024,populasi,,,,,4736,A
+6372,Kota Banjarbaru,Tanaman Pangan,Padi Dan Beras,2024,produksi,,5621.9,ton,,,B
+6372,Kota Banjarbaru,Perikanan Budidaya,Budidaya Ikan,2024,produksi,,438.7,ton,,,B

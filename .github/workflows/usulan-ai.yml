@@ -1,0 +1,39 @@
+name: Refresh usulan komoditas berbantuan AI (semesteran)
+
+on:
+  schedule:
+    - cron: "0 19 1 2,8 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: usulan-ai
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - name: Jalankan modul AI
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          USULAN_AI_MODEL: claude-haiku-4-5
+        run: python tools/usulan_ai.py
+      - name: Commit hasil bila berubah
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- pipeline/inputs/usulan_ai.json; then
+            git add pipeline/inputs/usulan_ai.json
+            git commit -m "chore: refresh usulan AI dua lapis (semesteran)"
+            git push
+          else
+            echo "Tidak ada perubahan pada usulan_ai.json"
+          fi

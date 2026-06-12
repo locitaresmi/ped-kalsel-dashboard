@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+@import "./styles/custom.css";
+
+@theme {
+  --color-primary-950: #4a0a0a;
+  --color-primary-900: #6b1111;
+  --color-primary-800: #8b1a1a;
+  --color-primary-700: #a52020;
+  --color-primary-600: #c0272d;
+  --color-primary-500: #d32f2f;
+  --color-primary-400: #e05555;
+  --color-primary-200: #f5c6c6;
+  --color-primary-100: #fdf0f0;
+  --color-primary-50: #fff5f5;
+
+  --color-accent-600: #b8860b;
+  --color-accent-500: #d4a017;
+  --color-accent-400: #e8b830;
+  --color-accent-200: #f7e6a8;
+  --color-accent-100: #fdf8e8;
+
+  --color-success-700: #15803d;
+  --color-success-600: #16a34a;
+  --color-success-100: #dcfce7;
+  --color-warning-700: #a16207;
+  --color-warning-600: #ca8a04;
+  --color-warning-100: #fef9c3;
+  --color-danger-700: #b91c1c;
+  --color-danger-600: #dc2626;
+  --color-danger-100: #fee2e2;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+
+  --font-sans: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
+}

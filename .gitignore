@@ -1,0 +1,29 @@
+# Node / Vite
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Modul usulan AI: artefak lokal (backup & dump diagnosa) — bukan untuk commit
+pipeline/inputs/usulan_ai.json.bak
+tools/_debug_*.txt
+tools/usulan_ai.v3-backup.json
+
+# Artefak probe/log lokal
+*.err
+.ojk_test.bin
+.pdftext.txt
+
+# OS
+.DS_Store
+Thumbs.db

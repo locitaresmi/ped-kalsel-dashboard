@@ -1,0 +1,53 @@
+kode,industri,sektor_kode,sektor,bl,fl,kuadran,tahun
+I-01,Pertanian Tanaman Pangan,A,"Pertanian, Kehutanan, dan Perikanan",0.8509,1.2028,3,2016
+I-02,"Pertanian Tanaman Hortikultura Semusim, Hortikultura Tahunan, dan Lainnya",A,"Pertanian, Kehutanan, dan Perikanan",0.8626,0.7794,4,2016
+I-03,Perkebunan Semusim dan Tahunan,A,"Pertanian, Kehutanan, dan Perikanan",0.8997,1.3129,3,2016
+I-04,Peternakan,A,"Pertanian, Kehutanan, dan Perikanan",1.0865,1.122,1,2016
+I-05,Jasa Pertanian dan Perburuan,A,"Pertanian, Kehutanan, dan Perikanan",0.8688,0.8443,4,2016
+I-06,Kehutanan dan Penebangan Kayu,A,"Pertanian, Kehutanan, dan Perikanan",0.8493,0.968,4,2016
+I-07,Perikanan,A,"Pertanian, Kehutanan, dan Perikanan",0.9243,1.0364,3,2016
+I-08,"Pertambangan Minyak, Gas dan Panas Bumi",B,Pertambangan dan Penggalian,0.8611,0.7636,4,2016
+I-09,Pertambangan Batubara dan Lignit,B,Pertambangan dan Penggalian,1.01,1.3003,1,2016
+I-10,Pertambangan Bijih Logam,B,Pertambangan dan Penggalian,1.0181,0.7699,2,2016
+I-11,Pertambangan dan Penggalian Lainnya,B,Pertambangan dan Penggalian,0.8772,0.8331,4,2016
+I-12,Industri Batubara dan Pengilangan Migas,C,Industri Pengolahan,0.7581,0.7581,4,2016
+I-13,Industri Makanan dan Minuman,C,Industri Pengolahan,1.282,2.038,1,2016
+I-14,Industri Pengolahan Tembakau,C,Industri Pengolahan,0.7581,0.7581,4,2016
+I-15,Industri Tekstil dan Pakaian Jadi,C,Industri Pengolahan,1.0104,0.7581,2,2016
+I-16,"Industri Kulit, Barang dari Kulit dan Alas Kaki",C,Industri Pengolahan,1.0373,0.7587,2,2016
+I-17,"Industri Kayu, Barang dari Kayu dan Gabus dan Barang Anyaman dari Bambu, Rotan dan Sejenisnya",C,Industri Pengolahan,1.1734,1.1605,1,2016
+I-18,"Industri Kertas dan Barang dari Kertas, Percetakan dan Reproduksi Media Rekaman",C,Industri Pengolahan,0.9879,0.8268,4,2016
+I-19,"Industri Kimia, Farmasi dan Obat Tradisional",C,Industri Pengolahan,0.9448,0.8793,4,2016
+I-20,"Industri Karet, Barang dari Karet dan Plastik",C,Industri Pengolahan,1.1946,1.0994,1,2016
+I-21,Industri Barang Galian bukan Logam,C,Industri Pengolahan,1.1093,1.008,1,2016
+I-22,Industri Logam Dasar,C,Industri Pengolahan,0.7581,0.7581,4,2016
+I-23,"Industri Barang dari Logam, Komputer, Barang Elektronik, Optik dan Peralatan Listrik",C,Industri Pengolahan,0.9384,0.7694,4,2016
+I-24,Industri Mesin dan Perlengkapan YTDL,C,Industri Pengolahan,0.9067,0.7581,4,2016
+I-25,Industri Alat Angkutan,C,Industri Pengolahan,0.9432,0.7812,4,2016
+I-26,Industri Furnitur,C,Industri Pengolahan,1.1153,0.7615,2,2016
+I-27,"Industri Pengolahan Lainnya, Jasa Reparasi dan Pemasangan Mesin dan Peralatan",C,Industri Pengolahan,0.99,0.7722,4,2016
+I-28,Ketenagalistrikan,D,Pengadaan Listrik dan Gas,1.873,1.8599,1,2016
+I-29,Pengadaan Gas dan Produksi Es,D,Pengadaan Listrik dan Gas,0.848,0.7603,4,2016
+I-30,"Pengadaan Air, Pengelolaan Sampah, Limbah, dan Daur Ulang",E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",1.1547,0.8249,2,2016
+I-31,Konstruksi,F,Konstruksi,1.1075,1.7003,1,2016
+I-32,"Perdagangan Mobil, Sepeda Motor dan Reparasinya",G,"Perdagangan Besar dan Eceran, serta Reparasi Mobil dan Sepeda Motor",0.9295,1.0153,3,2016
+I-33,"Perdagangan Besar dan Eceran, Bukan Mobil dan Sepeda Motor",G,"Perdagangan Besar dan Eceran, serta Reparasi Mobil dan Sepeda Motor",0.9608,1.9251,3,2016
+I-34,Angkutan Rel,H,Transportasi dan Pergudangan,0.7581,0.7581,4,2016
+I-35,Angkutan Darat,H,Transportasi dan Pergudangan,0.9461,1.0127,3,2016
+I-36,Angkutan Laut,H,Transportasi dan Pergudangan,1.1633,0.9284,2,2016
+I-37,Angkutan Sungai Danau dan Penyeberangan,H,Transportasi dan Pergudangan,0.9969,0.7816,4,2016
+I-38,Angkutan Udara,H,Transportasi dan Pergudangan,1.0663,0.9418,2,2016
+I-39,"Pergudangan dan Jasa Penunjang Angkutan, Pos dan Kurir",H,Transportasi dan Pergudangan,1.1112,0.9712,2,2016
+I-40,Penyediaan Akomodasi,I,Penyediaan Akomodasi dan Makan Minum,1.0907,0.7885,2,2016
+I-41,Penyediaan Makan Minum,I,Penyediaan Akomodasi dan Makan Minum,1.281,0.903,2,2016
+I-42,Jasa Informasi dan Komunikasi,J,Informasi dan Komunikasi,1.0422,1.5292,1,2016
+I-43,Jasa Perantara Keuangan Selain Bank Sentral,K,Jasa Keuangan dan Asuransi,0.8854,1.3196,3,2016
+I-44,Asuransi dan Dana Pensiun,K,Jasa Keuangan dan Asuransi,0.9462,0.8071,4,2016
+I-45,Jasa Keuangan Lainnya,K,Jasa Keuangan dan Asuransi,0.9456,0.9637,4,2016
+I-46,Jasa Penunjang Keuangan,K,Jasa Keuangan dan Asuransi,0.9418,0.8021,4,2016
+I-47,Real Estate,L,Real Estat,0.8935,0.9781,4,2016
+I-48,Jasa Perusahaan,MN,Jasa Perusahaan,1.0214,1.4879,1,2016
+I-49,"Administrasi Pemerintahan, Pertahanan dan Jaminan Sosial Wajib",O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",1.0604,0.8342,2,2016
+I-50,Jasa Pendidikan,P,Jasa Pendidikan,0.9425,0.7825,4,2016
+I-51,Jasa Kesehatan dan Kegiatan Sosial,Q,Jasa Kesehatan dan Kegiatan Sosial,1.049,0.7916,2,2016
+I-52,Jasa Lainnya,RSTU,Jasa Lainnya,0.969,0.9545,4,2016
