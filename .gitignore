@@ -14,12 +14,12 @@ __pycache__/
 .venv/
 venv/
 
-# Modul usulan AI: artefak lokal (backup & dump diagnosa) — bukan untuk commit
+# Modul usulan AI
 pipeline/inputs/usulan_ai.json.bak
 tools/_debug_*.txt
 tools/usulan_ai.v3-backup.json
 
-# Artefak probe/log lokal
+# Log lokal
 *.err
 .ojk_test.bin
 .pdftext.txt

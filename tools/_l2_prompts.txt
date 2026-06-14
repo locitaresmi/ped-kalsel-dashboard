@@ -1,0 +1,455 @@
+SYSTEM PROMPT
+======================================================================
+Anda analis ekosistem ekonomi daerah untuk dashboard Potensi Ekonomi Daerah (PED)
+Kalimantan Selatan. Untuk SATU kabupaten/kota, petakan bentuk ekosistem closed-loop PED tiap
+komoditas yang PUNYA BASIS PRODUKSI NYATA di kab/kota itu (diverifikasi dari sumber), dan
+tentukan satu gap utama. Hasil MELENGKAPI data resmi Tier A (dihitung kode dari BPS).
+
+GARIS KERAS (tidak bisa ditawar):
+- Anda MENGOLAH sumber via web_search/web_fetch, BUKAN menjadi sumber fakta. DILARANG memakai
+  pengetahuan internal sebagai fakta. Tiap klaim WAJIB bersandar pada sumber nyata.
+- DILARANG memasok/mengarang angka produksi/ekspor untuk skor Tier A. Angka boleh DIKUTIP dari
+  sumber sebagai bukti (sebut sumbernya), tapi TIDAK PERNAH dipakai untuk skor.
+- DILARANG mengarang item/sumber. Bila tak ada sumber nyata untuk satu komoditas, JANGAN buat item.
+- Tiap item WAJIB minimal satu sumber: URL persis + tanggal + jenis (resmi|berita).
+
+KOMODITAS WAJIB SPESIFIK & PUNYA BASIS LOKAL di kab/kota ini (bukti dari sumber):
+- BENAR: "Karet", "Ikan Patin", "Itik Alabio", "Cabai Rawit", "Kelapa Sawit", "Batu Bara".
+- SALAH: sektor/kategori/gabungan/meta. Bila hanya sinyal sektoral tanpa komoditas spesifik
+  ATAU tanpa basis produksi lokal di kab/kota ini, JANGAN buat item.
+
+TIER (dinilai dari ENTITAS di balik situs, BUKAN dari TLD/domain):
+- Tier B (indikasi resmi): entitas resmi mana pun — K/L, Pemprov/Pemkab/Bappeda/DPMPTSP, DJKI,
+  RPJMD, program pemerintah, asosiasi/unit resmi (.go.id MAUPUN .org/.com resmi, termasuk portal
+  nasional yang memuat info daerah). web_fetch dulu untuk menilai entitas sebelum memberi Tier B.
+- Tier C (sinyal berita/non-statistik): media berita, rilis, liputan inisiatif warga/swasta.
+- BUANG: blog pribadi, konten SEO/daur ulang, marketplace, sumber tak jelas entitasnya.
+
+DIMENSI ekosistem yang dicari (cari LEBAR; jangan dikurung ke .go.id):
+- offtaker: industri pengolahan/distributor/eksportir penyerap hasil (DPMPTSP/BKPMD, profil
+  investasi, berita industri masuk ke kab/kota).
+- pembiayaan: realisasi KUR per sektor (Kemenkeu/SIKP), produk perbankan, akses kredit petani/pembudidaya.
+- infrastruktur/sarana: cold storage, pabrik pengolahan, pengemasan, logistik (berita, RPJMD, dinas teknis).
+- asistensi: pendampingan GAP/GHP/SNI, sertifikasi, pelatihan (Kementan/Kemenperin/dinas).
+- program: RPJMD prioritas, MBG, KDMP, DPP, KaTa, EKI, klaster Banua Enam.
+
+FORMAT WAJIB untuk sinyal Tier C: rangkai Temuan -> Implikasi ekonomi -> Alasan jadi usulan.
+Implikasi = efek langsung yang TERSIRAT (bukan prediksi), bahasa berpagar ("mengindikasikan",
+"berpotensi"); kandidat berita seremonial tanpa implikasi ekonomi jelas WAJIB dibuang.
+
+STRUKTUR tiap item:
+- verdik_ekosistem: 1-2 kalimat ringkas NON-JARGON (orang awam paham). DILARANG kata teknis
+  "LQ", "hilirisasi", "offtaker", "RCA". Langsung: layak/tidak + apa yang KURANG. WAJIB
+  mengintegrasikan sinyal pasar (dari KONTEKS PASAR yang diberikan) dengan kesiapan lokal.
+- sketsa: {hulu, offtaker, pembiayaan, asistensi, program, gap_utama}. Tiap unsur 1 kalimat
+  bersandar sumber. Kosongkan ("") unsur yang tak ada buktinya. gap_utama WAJIB ada (satu hal
+  paling penting yang harus ditutup agar siklus ekonomi komoditas ini lengkap).
+- evidence: array {dimensi, teks (1 kalimat + bukti dari sumber), sumber:[{url,tanggal,jenis}]}.
+- sumber: gabungan sumber utama item {url, tanggal, jenis}.
+- kategori: metadata backend (boleh >1) dari daftar TEPAT: pelaku_usaha_hulu, offtaker_penyerapan,
+  nilai_tambah_hilir, kepastian_pasar, pembiayaan_ljk, asistensi_teknis, sarana_prasarana,
+  dukungan_pemerintah_program.
+
+OUTPUT: HANYA sebuah array JSON (tanpa prosa/markdown/```), tiap elemen PERSIS:
+{"komoditas": str, "wilayah_id": str, "tier": "B"|"C", "verdik_ekosistem": str,
+ "sketsa": {"hulu": str, "offtaker": str, "pembiayaan": str, "asistensi": str, "program": str, "gap_utama": str},
+ "evidence": [{"dimensi": str, "teks": str, "sumber": [{"url": str, "tanggal": str, "jenis": "resmi"|"berita"}]}],
+ "sumber": [{"url": str, "tanggal": str, "jenis": "resmi"|"berita"}],
+ "kategori": [label...]}
+Bila tak ada kandidat valid, kembalikan array kosong [].
+
+GAYA BAHASA WAJIB (untuk semua teks yang ditampilkan ke pengguna awam):
+- DILARANG memakai em dash (—). Pecah jadi dua kalimat terpisah atau pakai tanda kurung biasa.
+- DILARANG memakai titik koma (;). Pecah jadi dua kalimat terpisah.
+- Kalimat maksimal sekitar 30 kata. Jika lebih panjang, pecah menjadi dua kalimat.
+- Hindari istilah bahasa Inggris tanpa terjemahan. Tulis "siklus ekonomi" bukan "loop ekonomi".
+  Bila terpaksa memakai istilah teknis seperti offtaker, beri penjelasan dalam kurung,
+  misalnya "pembeli atau pengolah hasil panen".
+- Bahasa Indonesia lugas, langsung, mudah dipahami orang tanpa latar ekonomi.
+
+======================================================================
+
+PROMPT 6301 Tanah Laut
+----------------------------------------------------------------------
+Kabupaten/Kota: Tanah Laut (wilayah_id 6301), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Tanah Laut (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Jagung Pipilan: Tanah Laut adalah sentra jagung terbesar di Kalimantan Selatan. Pemerintah kabupaten, provinsi, dan Polda Kalsel aktif mendorong perluasan tanam jagung di sini sebagai penyangga pakan ternak regional.
+- Padi Sawah: Tanah Laut adalah salah satu dari tiga lumbung pangan utama Kalimantan Selatan, bersama Barito Kuala dan Tapin. Dinas Pertanian kabupaten menargetkan tanam musim Oktober-Mei 2024/2025 seluas 50.531 hektare yang bisa menghasilkan sekitar 100.160 ton beras.
+- Kelapa Sawit: Tanah Laut masuk dalam lima sentra kelapa sawit terbesar di Kalimantan Selatan. Program Peremajaan Sawit Rakyat aktif dijalankan di sini, dan kabupaten ini termasuk dalam rencana pengembangan sawit rakyat pola kemitraan oleh GAPKI.
+- Karet Alam: Karet dibudidayakan secara turun-temurun oleh petani rakyat Tanah Laut dan disebut sebagai salah satu komoditi unggulan kabupaten ini. Petani karet di desa Tambang Ulang menjual hasil tani ke pabrik karet di Banjarmasin.
+- Udang Tambak (Udang Vannamei): KKP memilih Desa Kuala Tambangan, Kecamatan Takisung, Tanah Laut sebagai lokasi proyek tambak udang berbasis kawasan bernilai investasi ratusan miliar rupiah. Kintap di Tanah Laut juga dipilih sebagai fokus program Udang Estate Provinsi Kalsel.
+- Bijih Besi: Tanah Laut memiliki cadangan bijih besi primer sebesar 185.667 ton menurut data DPMPTSP Kalsel dan disebut sebagai salah satu daerah penambangan bijih besi aktif di Kalimantan. Komoditas ini menjadi daya tarik investasi tambang di kabupaten ini.
+- Bawang Merah: Bawang merah adalah komoditas hortikultura unggulan yang diprioritaskan Dinas Pertanian Tanah Laut untuk dikembangkan. Kebutuhan lokal mencapai 974,8 ton per tahun sementara produksi baru sekitar 91 ton, sehingga menjadi target swasembada pangan yang mendesak.
+- Kerupuk Ikan (Produk Olahan Perikanan Laut): Penelitian ULM menetapkan kerupuk ikan sebagai produk unggulan industri rumah tangga perikanan di wilayah pesisir Tanah Laut. Industri ini menyerap tenaga kerja di empat kecamatan pesisir yaitu Kurau, Jorong, Panyipatan, dan Takisung.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Tanah Laut (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Tanah Laut' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6301" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6302 Kotabaru
+----------------------------------------------------------------------
+Kabupaten/Kota: Kotabaru (wilayah_id 6302), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Kotabaru (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Batubara: Kotabaru adalah sentra batubara utama di Kalimantan Selatan. Terminal batubara internasional NPLCT milik PT Arutmin Indonesia beroperasi di Pulau Laut, Kotabaru, dengan kapasitas kirim 14 juta MT per tahun. Pada Desember 2023, tambang batubara bawah tanah pertama dan terbesar di Indonesia milik PT SDE resmi beroperasi di Kecamatan Kelumpang Barat, Kotabaru, dengan kapasitas hingga 20 juta ton per tahun.
+- Kelapa Sawit (CPO): Kotabaru memiliki luas perkebunan kelapa sawit terbesar di Kalimantan Selatan. Luas kebunnya mencapai 156.554 ha dengan produksi hingga 585.713 ton CPO. Kotabaru meraih peringkat I ekspor komoditas pertanian dari Kementerian Pertanian karena dominasi sawit ini.
+- Udang Laut: Kotabaru menyumbang 60 hingga 70 persen dari total tangkapan udang Kalimantan Selatan yang berkisar antara 11.000 hingga 45.000 ton per tahun. Nelayan udang di Kotabaru mendapat pendampingan Marine Stewardship Council untuk program perbaikan perikanan berkelanjutan.
+- Ikan Laut Tangkap: Kotabaru adalah salah satu dari tiga kabupaten di Kalimantan Selatan yang menghasilkan perikanan laut. Kabupaten ini memiliki 15.961 nelayan laut, garis pantai 923,53 km, dan luas laut 384.900 ha. Dokumen LKj Pemkab Kotabaru menyebut kelautan dan perikanan sebagai potensi unggulan yang didukung sekitar 110 pulau kecil.
+- Bijih Besi: Pulau Sebuku di Kotabaru menyimpan cadangan bijih besi terbesar di Kalimantan Selatan. Badan Geologi mencatat potensi 354 juta ton tertunjuk di Pulau Sebuku. PT Sebuku Iron Lateritic Ores memiliki IUP operasi produksi seluas 8.117 ha yang aktif hingga 2034.
+- Karet: Karet termasuk komoditas perkebunan rakyat yang diusahakan di Kotabaru, bersama kelapa sawit. Provinsi Kalimantan Selatan menjadikan karet sebagai komoditas unggulan dengan luas 271.969 ha secara provinsi, dan Kotabaru menjadi salah satu wilayah pengembangannya.
+- Hilirisasi Kelapa Sawit (Biodiesel): Kotabaru memiliki satu unit pabrik biodiesel berbasis CPO, menjadikannya salah satu dari dua kabupaten di Kalimantan Selatan yang memiliki industri pengolahan biodiesel. KEK Mekar Putih yang direncanakan di Kotabaru juga menargetkan hilirisasi kelapa sawit sebagai komoditas unggulan rantai nilai.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Kotabaru (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Kotabaru' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6302" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6303 Banjar
+----------------------------------------------------------------------
+Kabupaten/Kota: Banjar (wilayah_id 6303), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Banjar (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Intan dan Batu Permata (Kerajinan Gosokan Martapura): Martapura adalah ibu kota Kabupaten Banjar dan dikenal sebagai pusat perdagangan intan terbesar di Indonesia. Pasar CBS menjadi pusat transaksi intan dan batu mulia setiap hari, menyerap banyak pengrajin di kawasan Pasayangan.
+- Ikan Papuyu (Betok) Budidaya: Kabupaten Banjar ditetapkan oleh Kementerian Kelautan dan Perikanan sebagai Kampung Perikanan Budidaya Ikan Papuyu, berpusat di Kecamatan Karang Intan. Potensi ekonominya mencapai Rp600 miliar per tahun jika dikembangkan optimal, dan Pemkab aktif mendorong lewat program Gerbang Kakapayu sejak 2024.
+- Karet Rakyat: Karet adalah komoditas perkebunan yang paling banyak diusahakan warga Kabupaten Banjar, dengan luas areal 19.268 hektare dan produksi 10.732 ton. Kabupaten Banjar menempati urutan ketiga penghasil karet di Kalimantan Selatan, didukung PTPN XIII Kebun Danau Salak di Kecamatan Mataraman.
+- Ikan Patin Budidaya: Perikanan menyumbang sekitar 5 persen PDRB Kabupaten Banjar, dengan ikan patin sebagai komoditas utama di kawasan Agrominapolitan Martapura. Produksi ikan budidaya terbesar berasal dari Kecamatan Martapura dengan sistem keramba dan kolam yang melibatkan ribuan pembudidaya.
+- Jeruk Siam Banjar: Jeruk Siam Banjar adalah varietas asli dari Kecamatan Sungai Tabuk, Kabupaten Banjar, yang sudah terdaftar varietasnya oleh Kementerian Pertanian. Sentra produksi berada di Kecamatan Astambul dan Sungai Tabuk, dengan lebih dari 550.000 pohon berproduksi.
+- Batu Bara (PT Baramarta): Kabupaten Banjar memiliki BUMD tambang batu bara yaitu PT Baramarta yang beroperasi di Kecamatan Sungai Pinang dengan lahan konsesi 2.035 hektare. Batu bara Banjar diekspor ke Jepang dan Tiongkok, dan bagi hasilnya menjadi sumber PAD yang signifikan bagi daerah.
+- Padi Sawah: Kabupaten Banjar masuk dalam target cetak sawah nasional seluas 26.103 hektare dan menjadi lokasi program optimalisasi lahan yang dijalankan langsung oleh TNI bersama Kementerian Pertanian pada 2024-2025. Lahan sawah Banjar seluas 60.115 hektare menjadikannya salah satu lumbung pangan penting Kalimantan Selatan.
+- Kain Sasirangan: Kabupaten Banjar memiliki banyak pengrajin dan pengusaha sasirangan yang terdaftar di Dinas Koperasi UMKM setempat. Kain khas Banjar ini telah menembus pasar ekspor ke Australia, Singapura, dan Malaysia, dan menjadi prioritas promosi Pemprov Kalimantan Selatan ke pasar global.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Banjar (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Banjar' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6303" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6304 Barito Kuala
+----------------------------------------------------------------------
+Kabupaten/Kota: Barito Kuala (wilayah_id 6304), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Barito Kuala (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Padi Sawah (Beras Siam Anjir): Barito Kuala adalah sentra produksi padi terbesar di Kalimantan Selatan, menyumbang sekitar 30 persen pasokan beras provinsi. Kabupaten ini masuk dalam 45 Kawasan Transmigrasi Prioritas Nasional RPJMN 2025-2029 karena perannya sebagai lumbung pangan.
+- Jeruk Siam Banjar: Barito Kuala adalah kabupaten penghasil Jeruk Siam Banjar terbesar di Kalimantan Selatan, dengan lahan 7.022 hektare di 17 kecamatan. Lebih dari 80 persen produksinya dikirim ke luar provinsi terutama Pulau Jawa, dan kualitasnya memenuhi standar ekspor.
+- Nenas (Ananas comosus): Barito Kuala menghasilkan sekitar 97 persen produksi nenas Kalimantan Selatan dengan volume 130.120 ton. Dinas Pertanian Batola aktif mendorong hilirisasi nenas menjadi produk olahan untuk meningkatkan nilai ekonomi petani.
+- Ikan Haruan (Gabus): Ikan haruan adalah produk lokal unggulan Barito Kuala yang tercatat sebagai penyebab inflasi daerah di Kalimantan Selatan karena tingginya permintaan. Pemerintah provinsi menetapkan ikan ini sebagai maskot inflasi dan mendorong pengembangan budidayanya di Barito Kuala.
+- Kelapa Dalam: Kelapa adalah komoditas perkebunan dengan lahan terluas di Barito Kuala yaitu 10.460 hektare, melebihi kelapa sawit. Kalimantan Selatan menargetkan penanaman kelapa dalam jenis Genjah Entok di Barito Kuala sebagai salah satu dari tiga wilayah prioritas provinsi.
+- Jagung: Jagung disebut langsung oleh Wakil Menteri Transmigrasi sebagai komoditas unggulan Barito Kuala di Kawasan Transmigrasi Cahaya Baru. Pemerintah pusat mendorong hilirisasi jagung dari kawasan ini untuk pasar ekspor.
+- Ikan Bandeng (Chanos chanos): Ikan bandeng dibudidayakan di tambak pesisir Kecamatan Tabunganen yang menjadi sentra perikanan tambak Barito Kuala. Dinas Kelautan dan Perikanan Provinsi Kalimantan Selatan menyerahkan bantuan benih bandeng kepada kelompok pembudidaya di kabupaten ini.
+- Kelapa Sawit: Barito Kuala adalah salah satu wilayah utama pengembangan kelapa sawit di Kalimantan Selatan bersama Kabupaten Banjar. Program Peremajaan Sawit Rakyat aktif berjalan di kabupaten ini meski masih menghadapi kendala progres.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Barito Kuala (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Barito Kuala' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6304" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6305 Tapin
+----------------------------------------------------------------------
+Kabupaten/Kota: Tapin (wilayah_id 6305), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Tapin (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Padi Sawah: Tapin adalah salah satu lumbung padi utama Kalimantan Selatan, dengan produksi 410.274 ton padi sawah pada 2021. Pada 2025, pemerintah mencetak 9.300 hektare sawah baru di Tapin dan menargetkan panen dua hingga tiga kali setahun.
+- Kelapa Sawit: Kelapa sawit adalah komoditas perkebunan terbesar di Tapin, dengan produksi TBS mencapai 58.347 ton dan CPO 12.836 ton pada 2021. PT Hasnur Citra Terpadu mengoperasikan pabrik CPO berkapasitas 45 ton TBS per jam di Kabupaten Tapin.
+- Batubara: Tapin tercatat sebagai salah satu kabupaten penghasil batubara di Kalimantan Selatan dan menerima royalti dari sektor ini. Batubara dari Kalsel diekspor ke China, India, Jepang, dan Malaysia.
+- Karet: Karet adalah komoditas perkebunan rakyat terbesar kedua di Tapin, dengan lahan mencapai 12.922 hektare dan produksi 8.138 ton pada 2021. Kabupaten Tapin masuk program peremajaan karet provinsi Kalsel karena banyak petani bergantung pada komoditas ini.
+- Jeruk Siam Banjar (Jeruk Margasari): Jeruk Siam Banjar asal Tapin dinobatkan sebagai juara kedua jeruk termanis nasional oleh Kementerian Pertanian. Sentra produksinya berada di Kecamatan Candi Laras Utara dan Candi Laras Selatan, dan pemerintah daerah aktif mendorong pengembangannya.
+- Sapi Potong: Tapin ditetapkan sebagai daerah pusat pembibitan dan pengembangan sapi potong di Kalimantan Selatan. Populasi sapi mencapai 8.330 ekor pada 2021, dan Tapin bahkan menyuplai sapi ke kabupaten tetangga seperti HSS dan Tabalong.
+- Ikan Gabus (Haruan): Ikan gabus atau haruan adalah ikan tangkapan sungai yang penting secara ekonomi dan budaya di Tapin. Pemerintah kabupaten membangun sentral budidaya ikan gabus dan aktif melakukan penebaran benih karena populasinya menurun.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Tapin (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Tapin' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6305" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6306 Hulu Sungai Selatan
+----------------------------------------------------------------------
+Kabupaten/Kota: Hulu Sungai Selatan (wilayah_id 6306), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Hulu Sungai Selatan (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Batubara: Pertambangan dan penggalian menjadi sektor PDRB terbesar di Hulu Sungai Selatan pada 2023 dengan kontribusi 20,53 persen, melampaui sektor pertanian. Hulu Sungai Selatan termasuk wilayah penghasil batubara di Kalimantan Selatan, dengan operasi tambang aktif di Kecamatan Padang Batung dan Sungai Raya.
+- Padi Sawah: Produksi padi Hulu Sungai Selatan tahun 2021 mencapai 100.534 ton. Kabupaten ini aktif dalam program perluasan areal tanam nasional, dengan luas tanam 2023 mencapai 37.976 hektare dan ditargetkan terus meningkat.
+- Ikan Air Tawar (Tangkap dan Budidaya): Total produksi ikan tangkap dan budidaya Hulu Sungai Selatan tahun 2023 mencapai 21.340 ton, terdiri dari 14.240 ton ikan tangkap dan 7.100 ton budidaya. Ribuan keluarga nelayan menggantungkan penghidupan dari perairan rawa dan sungai di kabupaten ini.
+- Karet: Karet adalah komoditas perkebunan utama di Hulu Sungai Selatan, dengan produksi 12.150 ton pada 2021. Pemerintah provinsi mendistribusikan pupuk intensifikasi karet di HSS untuk mendukung produktivitas petani kebun rakyat.
+- Ikan Gabus Haruan: Desa Asam di Kecamatan Sungai Raya ditetapkan sebagai Kampung Gabus Haruan pertama di Indonesia oleh Kementerian Kelautan dan Perikanan. Ikan ini menjadi bahan baku lauk khas ketupat Kandangan dan salah satu penyumbang inflasi regional Kalimantan Selatan.
+- Kelapa Sawit: Kelapa sawit menjadi komoditas perkebunan dengan produksi tertinggi kedua di HSS sebesar 9.113 ton pada 2021. Dua perusahaan perkebunan besar beroperasi di wilayah ini yaitu PT Subur Agro Makmur dan PT Surya Langgeng Sejahtera.
+- Kerajinan Bambu: Hulu Sungai Selatan diakui sebagai sentra IKM kerajinan berbasis bambu. Kementerian Perindustrian secara langsung membina 35 perajin bambu di kabupaten ini pada Mei 2026, bekerja sama dengan Pemkab HSS dan Dekranasda, untuk meningkatkan daya saing produk di pasar ekspor.
+- Wisata Bamboo Rafting Loksado: Festival Loksado terpilih masuk Karisma Event Nusantara Kementerian Pariwisata untuk ketiga kalinya pada 2023. Bupati HSS menyatakan festival ini langsung menggerakkan ekonomi masyarakat, dan bamboo rafting diarahkan menjadi ikon pariwisata kabupaten.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Hulu Sungai Selatan (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Hulu Sungai Selatan' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6306" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6307 Hulu Sungai Tengah
+----------------------------------------------------------------------
+Kabupaten/Kota: Hulu Sungai Tengah (wilayah_id 6307), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Hulu Sungai Tengah (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Karet Alam (Karet Remah): Karet adalah komoditas perkebunan terbesar di HST dengan produksi 20.083 ton pada 2021. Delapan dari 11 kecamatan adalah daerah penghasil karet. Ada pabrik pengolah karet remah PT Darma Kalimantan Jaya di Kecamatan Haruyan yang mengekspor produk dan menyerap tenaga kerja lokal secara nyata.
+- Padi Sawah: HST menduduki peringkat pertama produktivitas padi di wilayah Banua Enam Kalimantan Selatan. Produksi padi meningkat dari 108.485 ton pada 2023 menjadi 117.444 ton pada 2024, dengan luas lahan baku sawah sekitar 25.671 hektare.
+- Ikan Haruan (Ikan Gabus): HST ditetapkan Kementerian Kelautan dan Perikanan sebagai salah satu Kampung Haruan nasional sejak 2021. Ikan haruan adalah produk unggulan kabupaten ini dan menjadi salah satu penyumbang inflasi Kalsel karena tingginya permintaan.
+- Ayam Pedaging (Broiler): Populasi ayam pedaging di HST mencapai hampir 2 juta ekor pada 2021, menjadikannya komoditas peternakan unggas terbesar di kabupaten ini. Industri ini menyerap ratusan tenaga kerja lokal dan memasok kebutuhan protein hewani masyarakat.
+- Itik (Ternak Itik Petelur): HST memiliki populasi itik lebih dari 620.000 ekor dan menjadi pemasok telur itik ke kabupaten tetangga seperti HSU. Pemprov Kalsel mengembangkan program integrasi itik di lahan rawa bersama Dinas Pertanian HST secara resmi.
+- Kelapa Dalam: Kelapa adalah komoditas perkebunan terbesar kedua di HST setelah karet, dengan produksi 4.425 ton pada 2021. Pemprov Kalsel memasukkan HST sebagai wilayah target pengembangan kelapa dalam dalam program APBD.
+- Ikan Tangkap Air Tawar (Perikanan Rawa): Total produksi perikanan tangkap HST mencapai 8.047,7 ton pada 2021, jauh melebihi budidaya. Ikan seperti gabus, toman, sepat siam, dan betok ditangkap dari rawa dan sungai oleh ribuan nelayan lokal.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Hulu Sungai Tengah (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Hulu Sungai Tengah' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6307" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6308 Hulu Sungai Utara
+----------------------------------------------------------------------
+Kabupaten/Kota: Hulu Sungai Utara (wilayah_id 6308), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Hulu Sungai Utara (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Itik Alabio (Telur dan Daging): Itik Alabio berasal dari Kecamatan Alabio di HSU dan sudah diakui sebagai komoditas unggulan tingkat nasional. Populasinya di Kalsel kini mencapai 3,3 juta ekor, didukung program khusus provinsi bernama Siti Hawa Lari, dan sedang diproses menjadi produk Indikasi Geografis.
+- Padi Sawah Lebak: HSU memproduksi lebih dari 103.000 ton padi per tahun dari lahan rawa lebak seluas hampir 20.000 hektar. Daerah ini sedang disiapkan sebagai lumbung pangan penyangga IKN Nusantara dengan dukungan investasi infrastruktur Polder Alabio.
+- Kelapa Sawit: Kelapa sawit adalah komoditas perkebunan terbesar di HSU berdasarkan volume produksi, mencapai 39.223 ton dari areal 3.800 hektar. Sekitar dua pertiga produksi berasal dari perkebunan besar swasta di tiga kecamatan.
+- Ikan Haruan (Gabus): Dinas Perikanan HSU secara resmi membudidayakan ikan haruan untuk menekan inflasi daerah. Ikan ini bernilai ekonomi tinggi dan menjadi komoditas tangkap utama di perairan rawa HSU yang mencakup 65 persen wilayah kabupaten.
+- Kerbau Rawa: HSU adalah salah satu dari lima kabupaten basis kerbau rawa di Kalsel berdasarkan analisis LQ lebih dari 1. Sentra terbesar ada di Kecamatan Danau Panggang, dengan harga jual seekor betina bisa mencapai Rp 25 juta.
+- Anyaman Purun: Kecamatan Haur Gading di HSU adalah sentra anyaman tikar purun terbesar di Amuntai. Kerajinan ini menjadi komoditas utama ibu rumah tangga setempat dan produknya sudah diekspor ke luar negeri melalui jaringan pengepul.
+- Ikan Papuyu (Betok): Ikan papuyu adalah ikan air tawar lokal bernilai ekonomi tinggi yang dibudidayakan oleh nelayan keramba di HSU. Kabupaten ini masuk dalam jaringan distribusi benih papuyu Kalimantan Selatan dan menjadi fokus penguatan perikanan budidaya untuk mendukung pasokan pangan IKN.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Hulu Sungai Utara (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Hulu Sungai Utara' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6308" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6309 Tabalong
+----------------------------------------------------------------------
+Kabupaten/Kota: Tabalong (wilayah_id 6309), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Tabalong (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Batubara Termal (Envirocoal): Kabupaten Tabalong adalah lokasi utama tambang batubara PT Adaro Indonesia, yang mengoperasikan tambang satu lokasi terbesar di belahan bumi selatan dengan produksi sekitar 110.000 ton per hari. Sektor pertambangan dan penggalian menyumbang 48,7 persen dari total PDRB Tabalong senilai Rp31,02 triliun pada 2023.
+- Karet Alam (Hevea brasiliensis): Karet adalah komoditas perkebunan terluas di Tabalong dengan areal 69.443 hektare dan produksi 57.450 ton, menjadikannya mata pencaharian utama ratusan ribu petani rakyat. Tabalong termasuk dalam program peremajaan karet BANGSIBUN BAKARET prioritas Pemprov Kalsel sejak 2017.
+- Minyak Bumi (Lapangan Tanjung dan Warukin): Tabalong menyimpan sejarah produksi minyak sejak 1898 dan masih aktif dieksploitasi Pertamina EP Tanjung Field dengan produksi sekitar 2.100 barel per hari dari 134 sumur aktif. Lapangan Tanjung memiliki cadangan proven 620 juta barel dan menjadi sumber penerimaan royalti untuk PAD Tabalong.
+- Ikan Haruan (Ikan Gabus, Channa striata): Ikan haruan adalah komoditas perikanan unggulan lokal Tabalong dengan produksi budidaya 13.900 ton pada 2025 dan harga jual Rp80.000 per kilogram di pasar lokal. Pemkab Tabalong mendirikan Kampung Haruan di Kecamatan Pugaan dan Balai Benih Ikan Kambitin sebagai pusat pembenihan yang kini dilirik daerah lain di Kalsel.
+- Padi Sawah: Tabalong disebut sebagai salah satu lumbung pangan utama Kalsel dengan produksi 36.207 ton beras dari luas tanam 7.731 hektare pada 2023 dan sudah surplus memasok kabupaten tetangga. Pemkab aktif memperluas lahan lewat Program Cetak Sawah Rakyat untuk mendukung ketahanan pangan kawasan penyangga IKN.
+- Sapi Potong (Integrasi Sawit-Sapi SISKA): Tabalong memiliki dua klaster program integrasi sapi-sawit yang mendapat bantuan langsung dari APBD 2023 sebesar 203 ekor sapi untuk kelompok tani. Disbunnak Kalsel menjadikan Tabalong sebagai lokasi monitoring klaster SISKA sebagai bagian dari program pengembangan peternakan sapi berkelanjutan prioritas provinsi.
+- Rotan: Tabalong termasuk dalam wilayah penghasil rotan mentah utama di Kalimantan Selatan bersama kawasan Hulu Sungai, dengan rotan sebagai komoditas hasil hutan bukan kayu basis yang dikonfirmasi analisis LQ oleh jurnal ilmiah berbasis data BPS. Produk kerajinan rotan Tanjung Tabalong juga telah dikenal sebagai produk khas daerah.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Tabalong (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Tabalong' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6309" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6310 Tanah Bumbu
+----------------------------------------------------------------------
+Kabupaten/Kota: Tanah Bumbu (wilayah_id 6310), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Tanah Bumbu (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Batubara: Batubara adalah tulang punggung ekonomi Tanah Bumbu. Ekspor batubara dari kabupaten ini pada 2023 mencapai 14,6 juta ton dengan nilai lebih dari Rp28 triliun. Pelabuhan Batulicin punya 33 dermaga khusus batubara dan CPO, menjadikan kabupaten ini pusat ekspor batubara terbesar di Kalimantan Selatan.
+- Kelapa Sawit (Tandan Buah Segar): Kelapa sawit disebut langsung oleh Bupati sebagai sektor unggulan Tanah Bumbu. Total luas perkebunan inti dan plasma mencapai lebih dari 67.000 hektare. Produksi TBS tahun 2020 melampaui 1,5 juta ton dan ada pabrik biodiesel di kabupaten ini.
+- Padi Sawah: Tanah Bumbu menetapkan Perda Lahan Pertanian Pangan Berkelanjutan dan menargetkan 2.280 hektare cetak sawah baru. Lebih dari 40 persen penduduk bergantung pada sektor ini. Pemkab menyiapkan kabupaten ini sebagai penyangga pangan IKN Kalimantan Timur.
+- Karet: Bupati menyebut karet sebagai komoditas andalan bersama sawit. Produksi karet mentah tahun 2020 mencapai 22.386 ton. Perkebunan karet rakyat dominan di Kecamatan Sungai Loban dan Karang Bintang, menyerap banyak petani lokal.
+- Ikan Gabus Haruan: Tanah Bumbu dipilih KKP sebagai lokasi pengembangan Kampung Gabus Haruan berbasis kearifan lokal. Ikan ini bernilai tinggi karena kaya albumin untuk kesehatan dan program nasional penurunan stunting. Dinas Perikanan Tanah Bumbu menyusun masterplan kampung budidaya khusus komoditas ini.
+- Udang Galah: Dinas Perikanan Tanah Bumbu menyebut udang galah sebagai produk unggulan kabupaten. Balai Benih Ikan Pulau Salak sudah memproduksi benih udang galah untuk mendukung budidaya. Daerah lain dari Kalimantan Timur datang ke Tanah Bumbu untuk belajar teknik pembenihan ini.
+- Sapi Potong: Populasi sapi di Tanah Bumbu mencapai hampir 20.000 ekor dan terus ditingkatkan lewat program SISKA KU INTIP yang mengintegrasikan sapi dengan perkebunan sawit. Peternakan sapi disiapkan untuk memenuhi kebutuhan daging IKN Kalimantan Timur.
+- Udang Laut (Perikanan Tangkap Pesisir): DKP Kalimantan Selatan menyebut Tanah Bumbu sebagai salah satu dari tiga kabupaten sentra udang tangkap laut di Kalsel. Nelayan di Pagatan dan pesisir Tanah Bumbu menjadi pemasok bahan baku bagi perusahaan kerupuk udang besar dari Jawa Timur.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Tanah Bumbu (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Tanah Bumbu' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6310" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6311 Balangan
+----------------------------------------------------------------------
+Kabupaten/Kota: Balangan (wilayah_id 6311), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Balangan (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Batubara: Batubara adalah tulang punggung ekonomi Kabupaten Balangan. Tambang PT Adaro Indonesia yang beroperasi di kecamatan-kecamatan Balangan menjadikan kabupaten ini salah satu penerima royalti terbesar di Kalimantan Selatan, mencapai Rp918 miliar pada 2016.
+- Karet Rakyat: Karet adalah tanaman perkebunan terluas di Balangan, mencapai 37.482 hektare dengan produksi 30.959 ton pada 2021. Luas areal ini menempatkan Balangan di urutan kedua terbesar penghasil karet rakyat di Kalimantan Selatan setelah Kabupaten Tabalong.
+- Padi Sawah: Balangan tercatat konsisten swasembada beras sejak 2004 dan menjadi penopang surplus beras nasional. Produksi padi pada 2017 mencapai 216.893 ton, dengan Kecamatan Awayan sebagai sentra terbesar. Sektor pertanian adalah penyumbang ekonomi terbesar kedua setelah pertambangan.
+- Ikan Nila (Budidaya Kolam): Ikan nila adalah komoditas perikanan budidaya terbesar di Balangan, dengan produksi mencapai 390 ton dari total produksi kolam dan keramba sebesar 665 ton. Pemerintah daerah aktif mendukung budidaya ikan melalui program bantuan kolam dari Dinas Ketahanan Pangan Pertanian dan Perikanan.
+- Ikan Patin (Budidaya Kolam): Budidaya ikan patin mulai dikembangkan secara aktif oleh Pemkab Balangan sebagai program ekonomi desa. Panen perdana di Desa Matang Lurus menghasilkan sekitar enam ton per kolam per panen, dan dihadiri langsung oleh Wakil Bupati pada Juni 2025.
+- Kelapa Sawit: Balangan termasuk dalam sembilan kabupaten di Kalimantan Selatan yang mengembangkan perkebunan kelapa sawit. Data BPK Profil Balangan 2022 mencatat luas areal sawit sebesar 1.085 hektare dengan produksi 369,3 ton, dan terus didorong sebagai komoditas perkebunan pendukung.
+- Bijih Besi: Kabupaten Balangan memiliki potensi cadangan bijih besi sebesar 5.062.900 ton berdasarkan data DPMPTSP Kalimantan Selatan. Potensi ini menjadikan Balangan salah satu kabupaten penghasil bijih besi di provinsi, di samping batubara sebagai komoditas tambang utama.
+- Itik (Ternak Unggas): Populasi itik di Balangan mencapai 28.499 ekor pada 2017, dengan Kecamatan Lampihong sebagai sentra terbesar. Itik merupakan bagian dari program peternakan rakyat yang didorong oleh pemerintah daerah dan Pemprov Kalimantan Selatan melalui program SITI HAWA LARI.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Balangan (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Balangan' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6311" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6371 Kota Banjarmasin
+----------------------------------------------------------------------
+Kabupaten/Kota: Kota Banjarmasin (wilayah_id 6371), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Kota Banjarmasin (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Kain Sasirangan: Kain tradisional khas Banjar ini merupakan produk ekspor dari Banjarmasin ke Amerika Serikat dan pasar internasional. Pada Juni 2024 kain ini resmi mendapat sertifikat Indikasi Geografis dari DJKI, menandai pengakuan hukum nasional atas kekhasan produk ini. Disperdagin Banjarmasin menyebutnya sebagai salah satu produk unggulan dengan potensi ekspor di atas Rp1 triliun.
+- Ikan Haruan (Ikan Gabus): Ikan endemik khas Kalimantan Selatan ini menjadi komoditas pemicu inflasi di Banjarmasin karena tingginya permintaan lokal. BPS Kalsel mencatat ikan haruan menempati urutan teratas di antara 10 komoditas pendorong inflasi di Kalsel. Pemprov Kalsel menetapkan pengembangan budidaya haruan sebagai program prioritas Gubernur.
+- Lampit Rotan: Banjarmasin menjadi pusat industri pengolahan lampit rotan yang diekspor ke Jepang, Taiwan, Korea, Belanda, dan China. Permintaan ekspor produk rotan Kalimantan Selatan melonjak hingga 878 persen pada periode Agustus-September 2024. Bea Cukai Banjarmasin secara aktif mendampingi UMKM lampit rotan untuk menembus pasar ekspor.
+- Udang dan Kepiting Bakau: Banjarmasin menjadi titik ekspor utama udang dan kepiting Kalimantan Selatan ke China, Jepang, dan Malaysia. Disdag Kalsel bersama BKIPM Banjarmasin melepas 47.000 kg udang dan kepiting senilai Rp6 miliar ke China dalam satu program ekspor.
+- Perdagangan dan Distribusi Batubara (jasa pelabuhan): Banjarmasin berperan sebagai hub distribusi batubara Kalimantan Selatan melalui Pelabuhan Trisakti. Nilai ekspor batubara Kalsel mencapai hampir USD1 miliar per bulan pada 2024, dan Banjarmasin menjadi kota yang paling diuntungkan dari rantai perdagangan dan logistik ini.
+- Wisata Berbasis Sungai (jasa pariwisata sungai): Pariwisata sungai adalah prioritas pembangunan Kota Banjarmasin dalam RPJMD 2021-2026 dan Rencana Umum Penanaman Modal. Pasar terapung, susur sungai, dan kelotok menjadi daya tarik ekonomi utama kota ini, dengan kunjungan ke Banjarmasin tumbuh sekitar 8 persen per tahun.
+- Tas Purun: Kerajinan tas berbahan tumbuhan purun dari Kalimantan Selatan diekspor perdana dari Banjarmasin ke Amerika Serikat pada Juli 2022, dengan 2.000 buah terjual habis dalam sepekan di harga 25-30 dolar AS per buah. APINDO Kalsel menargetkan pengiriman berikutnya mencapai 5.000 buah.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Kota Banjarmasin (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Kota Banjarmasin' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6371" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+
+PROMPT 6372 Kota Banjarbaru
+----------------------------------------------------------------------
+Kabupaten/Kota: Kota Banjarbaru (wilayah_id 6372), Provinsi Kalimantan Selatan.
+
+KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):
+- Padi: Pasar padi kurang menjanjikan untuk ekspansi Kalsel. posisi komparatif Indonesia lemah di pasar dunia, cadangan beras global meningkat, dan fokus nasional pada swasembada konsumsi domestik, bukan…
+- Kelapa Sawit (CPO): Kelapa sawit menawarkan pasar menjanjikan jangka menengah-panjang karena kombinasi permintaan global yang tetap bertumbuh, dukungan kebijakan biofuel domestik (B40-B50), harga di level historis…
+- Karet: Pasar karet menjanjikan dengan momentum harga naik dan permintaan global bertahan, tetapi pertumbuhan Kalsel terhambat oleh volatilitas regulasi Eropa, dominasi Sumatera, dan belum ada akselerasi…
+- Kelapa: Pasar kelapa menjanjikan untuk Kalimantan Selatan dengan permintaan global yang tumbuh, khususnya dari Tiongkok, dan momentum hilirisasi nasional yang kuat. namun tantangan struktural. penuaan pohon,…
+- Kopi: Pasar kopi menjanjikan bagi Kalimantan Selatan karena permintaan global stabil/tumbuh, Indonesia sudah terbukti kompetitif di pasar ekspor, dan Kalsel sedang mengakselerasi investasi hilirisasi untuk…
+- Kakao: Kakao menjanjikan bagi Indonesia (pasar manufaktur tumbuh, RCA olahan kuat), namun Kalimantan Selatan menghadapi hambatan: bukan sentra produksi tradisional, investasi perkebunan rendah, dan tidak…
+- Tebu: Pasar tebu tidak menjanjikan bagi Kalsel dalam jangka dekat: permintaan global menurun, harga tertekan, Indonesia tidak kompetitif global (RCA negatif), dan investasi tersentralisasi di zona sentra…
+- Perikanan Budidaya: Pasar perikanan budidaya menjanjikan dengan pertumbuhan stabil (3-5% tahunan) dan permintaan global yang ekspansif, terutama untuk produk bernilai tambah. Kalimantan Selatan memiliki peluang nyata…
+- Jagung: Pasar jagung nasional menunjukkan sinyal positif menuju swasembada dengan produksi yang tumbuh, namun secara kompetitif jagung Indonesia tetap lemah di pasar dunia dengan RCA di bawah 1, sementara…
+- Batu Bara: Pasar menjanjikan jangka pendek akibat shock energi global (krisis LNG Timur Tengah) dengan harga tinggi, tetapi momentum muara ekspor berlaku di levelKeputusan strategis Indonesia untuk pengetatan…
+
+KANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal di Kota Banjarbaru (berdasarkan sumber yang ditemukan pada tahap sebelumnya):
+- Intan Cempaka (pendulangan rakyat): Kawasan Cempaka di Kota Banjarbaru adalah sentra pendulangan intan tradisional yang berlangsung sejak abad ke-16. Kegiatan ini menjadi mata pencaharian turun-temurun ratusan keluarga dan menjadi identitas utama kota, termasuk situs Geopark Meratus yang diakui UNESCO.
+- Ikan Nila Budidaya Kampung Mentaos: Kampung Iwak di Kelurahan Mentaos ditetapkan Pemkot Banjarbaru sebagai kampung tematik wisata perikanan sejak 2017. Kawasan ini memiliki sekitar 205 petak kolam dengan produksi 421 ton per tahun, menjadi pusat pembibitan dan pembesaran ikan yang menyerap banyak tenaga kerja lokal.
+- Karet Rakyat (Kecamatan Cempaka): Karet adalah komoditas perkebunan terluas di Kota Banjarbaru dengan lahan 1.123 hektar, terutama di Kecamatan Cempaka. Portal resmi Pemkot mencatat karet sebagai komoditas perkebunan unggulan dan mendapat perhatian pembinaan dari Disbunnak Provinsi Kalsel.
+- Sayuran Hortikultura Landasan Ulin: Portal resmi Humas Pemkot Banjarbaru menyebut sayuran sebagai komoditas pertanian paling unggul di kota ini, terutama di Kecamatan Landasan Ulin. Portal investasi kota juga mencatat cabai, tomat, dan pete sebagai komoditas pertanian dominan di Liang Anggang.
+- Kerajinan Rotan Olahan: Banjarbaru memiliki industri pengolahan rotan yang sudah menembus pasar ekspor ke Jepang, Taiwan, dan Korea. Perusahaan seperti PT Sarikaya Sega Utama di Banjarbaru menjadi bukti nyata bahwa rotan olahan adalah komoditas ekspor aktif dari kota ini.
+- Kayu Ulin Olahan (Liang Anggang): Kelurahan Landasan Ulin Selatan di Kecamatan Liang Anggang adalah satu-satunya sentra pengolahan kayu ulin di Kota Banjarbaru. Produknya berupa kusen, papan, dan balok ulin dipasarkan ke seluruh Kalimantan Selatan hingga ke Pulau Jawa.
+- Tanaman Hias (bunga-bungaan): Portal resmi Pemkot Banjarbaru menyebut tanaman hias sebagai komoditas unggulan di Kecamatan Banjarbaru Utara dan Banjarbaru Selatan. Tanaman hias dari wilayah Banjarbaru juga tercatat pernah diekspor ke Amerika Serikat melalui Bandara Syamsuddin Noor.
+- Industri Makanan dan Minuman (kuliner UMKM): Portal investasi resmi Pemkot Banjarbaru mengklasifikasikan sektor makanan dan minuman sebagai sektor unggulan dengan daya saing komparatif tinggi. Terdapat 140 industri rumah tangga makanan dan minuman hanya di Kecamatan Banjarbaru Selatan, menjadikannya sektor penyerap tenaga kerja terbesar.
+
+PRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol.
+
+Pilih 4 komoditas PALING KUAT yang punya basis produksi/budidaya nyata di Kota Banjarbaru (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, pembiayaan/KUR, infrastruktur pengolahan, asistensi, program) dan buat SATU item. Lebih baik 2-3 item ber-sumber kuat daripada array kosong; kosongkan HANYA bila benar-benar tak ada satupun komoditas yang bisa di-sumber-kan. Sebut 'Kota Banjarbaru' dalam kueri. Gunakan web_fetch untuk memverifikasi entitas sebelum memberi tier. Set wilayah_id = "6372" pada tiap item. Kembalikan HANYA array JSON sesuai skema.
+

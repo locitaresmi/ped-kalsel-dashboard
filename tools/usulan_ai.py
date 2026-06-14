@@ -14,6 +14,7 @@ OUTPUT = os.path.join(os.path.dirname(__file__), "..", "pipeline", "inputs", "us
 
 SUPPORTS_THINKING = not MODEL.startswith("claude-haiku")
 
+MAX_TOKENS_L0 = int(os.environ.get("USULAN_AI_MAX_TOKENS_L0", "4000"))
 MAX_TOKENS_L1 = int(os.environ.get("USULAN_AI_MAX_TOKENS_L1", "5000"))
 MAX_TOKENS_L2 = int(os.environ.get("USULAN_AI_MAX_TOKENS_L2", "16000"))
 
@@ -96,6 +97,68 @@ GAYA BAHASA WAJIB (untuk semua teks yang ditampilkan ke pengguna awam):
   Bila terpaksa memakai istilah teknis seperti offtaker, beri penjelasan dalam kurung,
   misalnya "pembeli atau pengolah hasil panen".
 - Bahasa Indonesia lugas, langsung, mudah dipahami orang tanpa latar ekonomi."""
+
+SYSTEM_L0 = """Anda analis ekonomi daerah untuk dashboard Potensi Ekonomi Daerah (PED) \
+Kalimantan Selatan.
+Tugas: temukan komoditas yang paling signifikan secara ekonomi di SATU kabupaten/kota,
+TANPA dibatasi daftar komoditas manapun. Cari secara bebas dan terbuka.
+
+GARIS KERAS (tidak bisa ditawar):
+- DILARANG memakai pengetahuan internal sebagai fakta. Tiap klaim WAJIB bersandar pada sumber nyata.
+- DILARANG mengarang sumber. Bila tak ada sumber untuk suatu komoditas, JANGAN masukkan.
+- Tiap item WAJIB minimal satu sumber: URL persis + tanggal + jenis (resmi|berita).
+- BUANG blog pribadi, konten SEO generik, marketplace, sumber tak jelas entitasnya.
+
+SUMBER YANG DICARI (urut prioritas — gunakan web_fetch untuk membaca isi sebelum mengutip):
+1. RPJMD, Renja Dinas, APBD kabupaten/kota (komoditas apa yang dapat alokasi anggaran?)
+2. Portal pemkab, Bappeda, DPMPTSP setempat (investasi dan prioritas daerah)
+3. Website Dinas Pertanian, Perikanan, Perdagangan, Perindustrian setempat
+4. BPS publikasi kabupaten (Kabupaten Dalam Angka, profil komoditas, data sektoral)
+5. Berita ekonomi lokal yang menyebut nama kabupaten/kota secara eksplisit
+6. DJKI (Indikasi Geografis terdaftar dari kab/kota ini)
+
+KRITERIA SIGNIFIKANSI (minimal satu harus terpenuhi berdasarkan sumber):
+- Menyerap banyak tenaga kerja lokal (petani/nelayan/peternak)
+- Disebut dalam RPJMD/Renstra sebagai komoditas prioritas
+- Ada investasi pengolahan/industri yang masuk atau direncanakan
+- Menjadi produk ekspor atau produk khas daerah (GI, OVOP, KaTa)
+- Nilai ekonominya signifikan dalam konteks lokal
+
+PENTING: Komoditas khas lokal yang mungkin tidak masuk statistik nasional tapi penting
+secara lokal (seperti Itik Alabio, Jeruk Siam, Ikan Haruan, Intan, Rotan, Galam, dll.)
+SANGAT DISAMBUT bila ada bukti dari sumber. Jangan hanya mengkonfirmasi komoditas
+nasional umum — cari kekhasan daerah ini.
+
+OUTPUT: HANYA sebuah array JSON (tanpa prosa/markdown/```), tiap elemen PERSIS:
+{"komoditas": str (nama spesifik, bukan kategori/sektor),
+ "signifikansi": str (1-2 kalimat lugas: mengapa penting di kab/kota ini, bahasa awam),
+ "sumber": [{"url": str, "tanggal": str, "jenis": "resmi"|"berita"}]}
+Kembalikan 5-8 item. Urut dari yang paling signifikan. Array kosong [] bila tak ada yang bisa disourced.""" + GAYA_BAHASA
+
+def _prompt_l0(wid: str, nama: str) -> str:
+    return (
+        f"Kabupaten/Kota: {nama} (kode BPS {wid}), Provinsi Kalimantan Selatan.\n\n"
+        f"Temukan 5-8 komoditas paling penting secara ekonomi di {nama}. "
+        f"Cari: RPJMD {nama}, portal pemkab/bappeda {nama}, Dinas Pertanian/Perikanan/"
+        f"Perdagangan {nama}, berita ekonomi lokal yang menyebut '{nama}', dan BPS "
+        f"publikasi kabupaten. Gunakan web_fetch untuk membaca isi halaman sebelum mengutip. "
+        f"Sebut '{nama}' dan 'Kalimantan Selatan' dalam setiap kueri pencarian. "
+        f"Kembalikan HANYA array JSON sesuai skema."
+    )
+
+def validasi_l0(item: dict, wid: str) -> dict | None:
+    if not isinstance(item, dict):
+        return None
+    komoditas = str(item.get("komoditas", "")).strip()
+    if not _komoditas_valid(komoditas):
+        return None
+    sumber = _bersih_sumber(item.get("sumber"))
+    if not sumber:
+        return None
+    signifikansi = _bersih_teks(item.get("signifikansi"))
+    if not signifikansi:
+        return None
+    return {"wilayah_id": wid, "komoditas": komoditas, "signifikansi": signifikansi, "sumber": sumber}
 
 SYSTEM_L1 = """Anda analis pasar untuk dashboard Potensi Ekonomi Daerah (PED) Kalimantan Selatan.
 Tugas: menilai apakah SATU komoditas punya (a) pasar yang tumbuh, (b) keunggulan komparatif
@@ -211,12 +274,24 @@ def _konteks_pasar(layer1: list[dict]) -> str:
         return "(belum ada konteks pasar Layer 1)"
     return "\n".join(baris)
 
-def _prompt_l2(wid: str, nama: str, konteks_pasar: str) -> str:
+def _prompt_l2(wid: str, nama: str, konteks_pasar: str, kandidat_l0: list[dict] | None = None) -> str:
+    if kandidat_l0:
+        kandidat_str = (
+            f"\n\nKANDIDAT dari Layer 0 — komoditas yang sudah terverifikasi ada basis lokal "
+            f"di {nama} (berdasarkan sumber yang ditemukan pada tahap sebelumnya):\n"
+            + "\n".join(f"- {k['komoditas']}: {k['signifikansi']}" for k in kandidat_l0)
+            + f"\n\nPRIORITASKAN kandidat di atas. Boleh tambahkan komoditas lain bila "
+            f"menemukan bukti yang sangat kuat, tapi tidak perlu mencari dari nol."
+        )
+    else:
+        kandidat_str = ""
+
     return (
         f"Kabupaten/Kota: {nama} (wilayah_id {wid}), Provinsi Kalimantan Selatan.\n\n"
         f"KONTEKS PASAR (ringkasan verdik Layer 1 per komoditas Kalsel — pakai untuk "
         f"mengintegrasikan ke verdik ekosistem; JANGAN dikutip mentah sebagai sumber):\n"
-        f"{konteks_pasar}\n\n"
+        f"{konteks_pasar}"
+        f"{kandidat_str}\n\n"
         f"Pilih {MAX_ITEM_L2} komoditas PALING KUAT yang punya basis produksi/budidaya nyata di "
         f"{nama} (cukup ada indikasi ber-sumber bahwa komoditas itu memang diproduksi/dibudidayakan "
         f"di sana — TIDAK perlu angka pasti). Untuk tiap komoditas, cari sinyal ekosistem (offtaker, "
@@ -480,8 +555,35 @@ def main() -> None:
                 lama = json.load(f)
         except (OSError, json.JSONDecodeError):
             lama = {}
+    lama_l0 = lama.get("layer0") or []
     lama_l1 = lama.get("layer1") or []
     lama_l2 = lama.get("layer2") or []
+
+    layer0: list[dict] = []
+    if only in ("", "0"):
+        wilayah_l0 = [(w, n) for w, n in WILAYAH.items() if not wil_filter or w in wil_filter]
+        run_wid_l0 = {w for w, _ in wilayah_l0}
+        layer0 = [it for it in lama_l0 if str(it.get("wilayah_id")) not in run_wid_l0]
+        for idx, (wid, nama) in enumerate(wilayah_l0):
+            print(f"[usulan_ai] L0 {wid} {nama} ...", file=sys.stderr)
+            resp = _jalankan(client, SYSTEM_L0, _prompt_l0(wid, nama), MAX_TOKENS_L0, f"L0 {wid}")
+            if resp is None:
+                continue
+            _dump(f"l0_{wid}", resp)
+            arr = ekstrak_array(resp)
+            valid = [v for it in arr if (v := validasi_l0(it, wid)) is not None]
+            layer0.extend(valid)
+            extra = "" if valid else f" [{_resp_meta(resp)}]"
+            print(f"[usulan_ai]   parsed {len(arr)}, {len(valid)} kandidat valid{extra}", file=sys.stderr)
+            if idx < len(wilayah_l0) - 1 and PACE_SECONDS > 0:
+                time.sleep(PACE_SECONDS)
+    elif only in ("1", "2"):
+        layer0 = list(lama_l0)
+
+    # Index L0 per wilayah for quick lookup in L2
+    l0_per_wil: dict[str, list[dict]] = {}
+    for it in layer0:
+        l0_per_wil.setdefault(str(it.get("wilayah_id")), []).append(it)
 
     layer1 = list(lama_l1) if only == "2" else []
     if only in ("", "1"):
@@ -514,7 +616,8 @@ def main() -> None:
         layer2 = [it for it in lama_l2 if str(it.get("wilayah_id")) not in run_wid]
         for idx, (wid, nama) in enumerate(wilayah_items):
             print(f"[usulan_ai] L2 {wid} {nama} ...", file=sys.stderr)
-            resp = _jalankan(client, SYSTEM_L2, _prompt_l2(wid, nama, konteks),
+            kandidat_l0 = l0_per_wil.get(wid)
+            resp = _jalankan(client, SYSTEM_L2, _prompt_l2(wid, nama, konteks, kandidat_l0),
                              MAX_TOKENS_L2, f"L2 {wid}")
             if resp is None:
                 continue
@@ -532,6 +635,9 @@ def main() -> None:
             if idx < len(wilayah_items) - 1 and PACE_SECONDS > 0:
                 time.sleep(PACE_SECONDS)
 
+    if only in ("", "0") and not layer0 and lama_l0:
+        print("[usulan_ai] PERINGATAN: Layer 0 hasil 0 — PERTAHANKAN data lama.", file=sys.stderr)
+        layer0 = lama_l0
     if only in ("", "1") and not layer1 and lama_l1:
         print("[usulan_ai] PERINGATAN: Layer 1 hasil 0 — PERTAHANKAN data lama (cek diagnosa di atas).",
               file=sys.stderr)
@@ -542,14 +648,16 @@ def main() -> None:
         layer2 = lama_l2
 
     urut_kom = {k["nama"]: i for i, k in enumerate(KOMODITAS)}
+    layer0.sort(key=lambda it: (str(it.get("wilayah_id")), it.get("komoditas") or ""))
     layer1.sort(key=lambda it: urut_kom.get(it.get("komoditas"), 999))
     layer2.sort(key=lambda it: (str(it.get("wilayah_id")), it.get("komoditas") or ""))
 
     output = {
         "generated_at": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
         "model": MODEL,
-        "catatan": ("Usulan berbantuan AI dua lapis (pasar + ekosistem). Provenans pada tiap "
-                    "item; angka & skor Tier A tidak terpengaruh."),
+        "catatan": ("Usulan berbantuan AI tiga lapis (L0 penemuan lokal + L1 pasar + L2 ekosistem). "
+                    "Provenans pada tiap item; angka & skor Tier A tidak terpengaruh."),
+        "layer0": layer0,
         "layer1": layer1,
         "layer2": layer2,
     }
@@ -565,8 +673,8 @@ def main() -> None:
             pass
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=1)
-    print(f"[usulan_ai] L1={len(output['layer1'])} komoditas, L2={len(output['layer2'])} item "
-          f"-> {OUTPUT}", file=sys.stderr)
+    print(f"[usulan_ai] L0={len(output['layer0'])} kandidat, L1={len(output['layer1'])} komoditas, "
+          f"L2={len(output['layer2'])} item -> {OUTPUT}", file=sys.stderr)
 
 if __name__ == "__main__":
     main()

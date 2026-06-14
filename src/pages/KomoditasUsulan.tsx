@@ -1,14 +1,13 @@
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo } from "react";
 import { group } from "d3-array";
 import { format } from "d3-format";
 import { useDataset } from "../hooks/useDataset";
 import { useFilters } from "../hooks/useFilters";
-import { isSemua, WILAYAH, type Wilayah } from "../lib/sektor";
-import { skorKomoditas, skorKomoditasProvinsi, type Usulan, type Kriteria } from "../lib/komoditas";
-import { Card, InfoTip, HeroNote, BadgeTier } from "../components/ui";
+import { isSemua, WILAYAH } from "../lib/sektor";
+import { skorKomoditas, skorKomoditasProvinsi, type Usulan } from "../lib/komoditas";
+import { Card, HeroNote } from "../components/ui";
 import { DataTable, type Column } from "../components/DataTable";
 import { FilterBar } from "../components/FilterBar";
-import { EcoIcon } from "../components/icons";
 import { ErrorBlock } from "./Ringkasan";
 import type { Row } from "../lib/data";
 
@@ -41,207 +40,244 @@ const L1_BUCKET: [RegExp, string][] = [
   [/kelapa/, "kelapa"],
 ];
 
-function ikonKriteria(s: boolean | "na" | null): ReactNode {
-  if (s === true) return <span className="ikon-ya" title="kriteria terpenuhi">✓</span>;
-  if (s === false) return <span className="ikon-tidak" title="kriteria tidak terpenuhi">✕</span>;
-  return <span className="ikon-na" title="kriteria ini tidak berlaku / data belum tersedia">—</span>;
+interface MergedKomoditas {
+  komoditas: string;
+  tierA?: Usulan;
+  ai?: Row;
+  tierB?: Row;
+  l1?: Row | null;
 }
 
-function LencanaKriteria({ k, label }: { k: Kriteria; label: string }) {
-  const cls = k.status === true ? "pass" : k.status === false ? "fail" : "na";
-  const ikon = k.status === true ? "✓" : k.status === false ? "✕" : "—";
-  return <span className={`badge ${cls}`} data-tip={bersih(k.alasan)}>{ikon} {label}</span>;
+interface BuktiBullet {
+  tipe: "bps" | "resmi" | "berita";
+  teks: string;
+  sumber?: Array<{ url: string; tanggal: string; jenis: string }>;
+  url?: string;
 }
 
-function detailProduksi(u: Usulan): string {
-  if (u.level === "provinsi") {
-    if (u.produksi_kalsel == null) return `${u.subsektor} · data produksi BPS belum tersedia (sumber ada di ESDM)`;
-    return `${u.subsektor} · produksi ${fmtN(u.produksi_kalsel)} ${u.satuan} · peringkat ke-${u.peringkat_nasional} nasional (${u.tahunProduksi})`;
+function kekuatan(m: MergedKomoditas): number {
+  if (m.tierA && m.tierA.skor >= 2) return 4;
+  if (m.tierA && m.tierA.skor === 1) return 3;
+  if (m.ai?.tier === "B" || m.tierB) return 2;
+  if (m.ai?.tier === "C") return 1;
+  return 0;
+}
+
+function mergePerWilayah(
+  tierAList: Usulan[],
+  aiList: Row[],
+  tierBList: Row[],
+  cariL1: (k: string) => Row | null
+): MergedKomoditas[] {
+  const order: string[] = [];
+  const merged = new Map<string, MergedKomoditas>();
+
+  const upsert = (key: string, nama: string, patch: Partial<MergedKomoditas>) => {
+    if (!merged.has(key)) {
+      order.push(key);
+      merged.set(key, { komoditas: nama });
+    }
+    Object.assign(merged.get(key)!, patch);
+  };
+
+  for (const u of tierAList) {
+    const key = normKom(u.komoditas);
+    upsert(key, u.komoditas, { tierA: u });
+    merged.get(key)!.l1 ??= cariL1(u.komoditas);
   }
-  return `${u.subsektor} · produksi ${fmtN(u.produksi_ton ?? 0)} ton (${u.tahunProduksi})`;
+  for (const u of aiList) {
+    const key = normKom(u.komoditas);
+    upsert(key, u.komoditas, { ai: u });
+    merged.get(key)!.l1 ??= cariL1(u.komoditas);
+  }
+  for (const t of tierBList) {
+    const key = normKom(t.komoditas);
+    upsert(key, t.komoditas, { tierB: t });
+    merged.get(key)!.l1 ??= cariL1(t.komoditas);
+  }
+
+  return order.map((k) => merged.get(k)!).sort((a, b) => kekuatan(b) - kekuatan(a));
 }
 
-function KartuTierA({ u }: { u: Usulan }) {
-  return (
-    <div className="usulan tier-a-prominent">
-      <div style={{ display: "flex", gap: "0.4rem", alignItems: "center", flexWrap: "wrap" }}>
-        <span className="rekom-utama">★ Rekomendasi Utama OJK</span>
-        <BadgeTier tier="A" />
-      </div>
-      <div className="komoditas-name">{u.komoditas}</div>
-      <div className="komoditas-meta">{detailProduksi(u)}</div>
-      <div className="skor-baris">
-        <span className="skor">Skor {u.skor}/{u.skorMax}</span>
-        <span className="skor-jelas">kriteria OJK terpenuhi (produksi, ekspor, subsektor unggulan)</span>
-      </div>
-      <div className="lencana">
-        <LencanaKriteria k={u.kriteria.produksi} label="Produksi" />
-        <LencanaKriteria k={u.kriteria.ekspor} label="Ekspor" />
-        <LencanaKriteria k={u.kriteria.subsektor} label="Subsektor" />
-      </div>
-      <ul className="alasan">
-        {(["produksi", "subsektor", "ekspor"] as const).map((k) => (
-          <li key={k}>{bersih(u.kriteria[k].alasan)}</li>
-        ))}
-      </ul>
-    </div>
+
+function KartuKomoditas({ item, invMatch }: { item: MergedKomoditas; invMatch: Row[] }) {
+  const { komoditas, tierA, ai, tierB, l1 } = item;
+
+  const bukti: BuktiBullet[] = [];
+
+  if (tierA) {
+    if (tierA.kriteria.produksi.status === true)
+      bukti.push({ tipe: "bps", teks: tierA.kriteria.produksi.alasan });
+    if (tierA.kriteria.ekspor.status === true)
+      bukti.push({ tipe: "bps", teks: tierA.kriteria.ekspor.alasan });
+    if (tierA.kriteria.subsektor.status === true)
+      bukti.push({ tipe: "bps", teks: tierA.kriteria.subsektor.alasan });
+  }
+
+  for (const ev of ai?.evidence ?? []) {
+    if (!ev.teks) continue;
+    bukti.push({
+      tipe: ai?.tier === "B" ? "resmi" : "berita",
+      teks: bersih(ev.teks),
+      sumber: ev.sumber,
+    });
+  }
+
+  if (tierB) {
+    bukti.push({
+      tipe: "resmi",
+      teks: tierB.sumber
+        ? `Tercantum dalam dokumen resmi: ${bersih(tierB.sumber)}`
+        : "Tercantum dalam dokumen pemerintah resmi",
+      url: tierB.url,
+    });
+  }
+
+  const ringkasan = bersih(
+    ai?.verdik_ekosistem ??
+    (tierA
+      ? `${tierA.subsektor}. Data statistik BPS tersedia${tierA.level === "provinsi" ? " di tingkat provinsi" : ""}`
+      : "")
   );
-}
 
-function EcoTile({ icon, label, value, gap }: { icon: string; label: string; value: unknown; gap?: boolean }) {
-  return (
-    <div className={`eco-tile ${gap ? "gap" : ""}`}>
-      <div className="et-head"><EcoIcon name={icon} /> {label}</div>
-      <div className="et-val">{bersih(value)}</div>
-    </div>
-  );
-}
+  const gap = ai?.sketsa?.gap_utama ? bersih(ai.sketsa.gap_utama) : null;
 
-function BarisEvidence({ dimensi, teks, sumber }: { dimensi: string; teks: string; sumber?: Row[] }) {
-  return (
-    <div className="ev-row">
-      <span className="ev-dim">{bersih(dimensi)}</span>
-      <span className="ev-teks">{bersih(teks)}</span>
-      {(sumber ?? []).length ? (
-        <span className="ev-src">
-          {(sumber ?? []).map((s, i) => (
-            <a key={i} href={s.url} target="_blank" rel="noopener">{s.jenis} ({s.tanggal})</a>
-          ))}
-        </span>
-      ) : null}
-    </div>
-  );
-}
+  const hasBPSKuat = !!tierA && tierA.skor >= 2;
+  const hasBPSParsial = !!tierA && tierA.skor === 1;
+  const hasGovDoc = !!(ai?.tier === "B" || tierB);
 
-function KartuAITab({ u, invMatch, cariL1 }: { u: Row; invMatch: Row[]; cariL1: (k: string) => Row | null }) {
-  const [tab, setTab] = useState<"ringkasan" | "databps" | "analisis">("ringkasan");
-  const tierC = u.tier === "C";
-  const sk = u.sketsa ?? {};
-  const l1 = cariL1(u.komoditas);
-  const evL1: [string, string, Row[]][] = l1
-    ? ([
-        ["Pasar", l1.analisis?.pasar],
-        ["Daya saing", l1.analisis?.kompetisi],
-        ["Momentum", l1.analisis?.momentum],
-      ].filter(([, t]) => t) as [string, string][]).map(([dim, teks]) => [dim, teks, l1.sumber])
-    : [];
-  const evidence: Row[] = u.evidence ?? [];
+  const basisKelas = hasBPSKuat ? "kuat" : hasBPSParsial || hasGovDoc ? "sedang" : "awal";
+  const basisLabel = hasBPSKuat
+    ? "Data statistik resmi"
+    : hasBPSParsial
+    ? "Sebagian data resmi"
+    : hasGovDoc
+    ? "Dokumen pemerintah"
+    : "Indikasi awal";
+
+  const limitasiNote = (() => {
+    if (!hasBPSKuat && !hasBPSParsial && !hasGovDoc)
+      return "Belum ada data statistik atau dokumen resmi yang mengkonfirmasi. Sinyal dari media, perlu verifikasi lapangan";
+    if (tierA?.kriteria.produksi.status === null && tierA.skor < 2)
+      return bersih(tierA.kriteria.produksi.alasan);
+    return null;
+  })();
+
+  const invRel = invMatch.filter((r) => {
+    const rk = normKom(r.komoditas);
+    const k = normKom(komoditas);
+    return rk.includes(k) || k.includes(rk);
+  });
 
   return (
-    <div className={`tcard ${tierC ? "tierc" : "tierb"}`}>
-      <div className="tcard-head">
-        <span>
-          <BadgeTier tier={u.tier} />{" "}
-          <span className="muted">{tierC ? "sinyal awal" : "indikasi resmi"}</span>
-        </span>
-        <div className="komoditas-name">{u.komoditas}</div>
+    <div className={`kk-card basis-${basisKelas}`}>
+      <div className="kk-head">
+        <span className="kk-nama">{komoditas}</span>
+        <span className={`kk-tag basis-${basisKelas}`}>{basisLabel}</span>
       </div>
-      <div className="tcard-tabs">
-        <button className={`tcard-tab ${tab === "ringkasan" ? "active" : ""}`} onClick={() => setTab("ringkasan")}>Ringkasan</button>
-        <button className={`tcard-tab ${tab === "databps" ? "active" : ""}`} onClick={() => setTab("databps")}>Data BPS</button>
-        <button className={`tcard-tab ${tab === "analisis" ? "active" : ""}`} onClick={() => setTab("analisis")}>Analisis AI</button>
-      </div>
-      <div className="tcard-body">
-        {tab === "ringkasan" && (
-          <>
-            <div className="tcard-verdik">{bersih(u.verdik_ekosistem)}</div>
-            <div className="eco-tiles">
-              <EcoTile icon="hulu" label="Hulu" value={sk.hulu || "—"} />
-              <EcoTile icon="gap" label="Gap utama" value={sk.gap_utama || "—"} gap />
-              <EcoTile icon="program" label="Program" value={sk.program || "—"} />
-            </div>
-            {tierC && (
-              <p className="disclaimer">⚠ Sebagian sinyal dari berita/laporan. Perlu verifikasi; tidak memengaruhi skor Tier A</p>
-            )}
-          </>
-        )}
-        {tab === "databps" && (
-          invMatch.length ? (
-            <table className="inv-tab">
-              <thead><tr><th>Komoditas</th><th>Tahun</th><th>Produksi / populasi</th></tr></thead>
-              <tbody>
-                {invMatch.map((it, i) => (
-                  <tr key={i}>
-                    <td>{it.komoditas}</td>
-                    <td>{it.tahun}</td>
-                    <td>{it.metrik_utama === "populasi" ? `${fmtN(it.populasi)} ekor` : `${fmtN(it.produksi)} ${it.satuan_produksi}`}</td>
-                  </tr>
+
+      {ringkasan && <p className="kk-ringkasan">{ringkasan}</p>}
+
+      {bukti.length > 0 && (
+        <ul className="kk-bukti">
+          {bukti.map((b, i) => (
+            <li key={i} className={`bukti-item tipe-${b.tipe}`}>
+              <span className="bukti-teks">{b.teks}</span>
+              <span className="bukti-srcs">
+                {(b.sumber ?? []).map((s, j) => (
+                  <a key={j} href={s.url} target="_blank" rel="noopener" className="bukti-src">
+                    {s.jenis === "resmi" ? "dok. resmi" : "berita"} · {s.tanggal}
+                  </a>
                 ))}
-              </tbody>
-            </table>
-          ) : (
-            <p className="muted">Data produksi BPS tingkat kab/kota untuk komoditas ini belum tersedia (umumnya hanya tingkat provinsi, atau sumber ESDM untuk batu bara). Lihat inventaris BPS lengkap di bawah</p>
-          )
-        )}
-        {tab === "analisis" && (
-          <>
-            <div className="eco-tiles">
-              <EcoTile icon="hulu" label="Hulu (produsen)" value={sk.hulu || "—"} />
-              <EcoTile icon="offtaker" label="Pembeli / pengolah" value={sk.offtaker || "—"} />
-              <EcoTile icon="pembiayaan" label="Akses modal" value={sk.pembiayaan || "—"} />
-              <EcoTile icon="asistensi" label="Asistensi teknis" value={sk.asistensi || "—"} />
-              <EcoTile icon="program" label="Program / dukungan" value={sk.program || "—"} />
-              <EcoTile icon="gap" label="Gap utama" value={sk.gap_utama || "—"} gap />
-            </div>
-            {(evL1.length || evidence.length) ? (
-              <details className="evidence" style={{ marginTop: "0.6rem" }}>
-                <summary>Bukti dan sumber per dimensi</summary>
-                {evL1.map(([dim, teks, src], i) => <BarisEvidence key={"l1" + i} dimensi={dim} teks={teks} sumber={src} />)}
-                {evidence.map((e, i) => <BarisEvidence key={"e" + i} dimensi={e.dimensi} teks={e.teks} sumber={e.sumber} />)}
-                {l1?.verdik_pasar && (
-                  <div className="muted" style={{ marginTop: "0.4rem" }}>Ringkasan pasar (seluruh Kalsel): {bersih(l1.verdik_pasar)}</div>
+                {b.url && (
+                  <a href={b.url} target="_blank" rel="noopener" className="bukti-src">
+                    lihat sumber
+                  </a>
                 )}
-              </details>
-            ) : null}
-          </>
-        )}
-      </div>
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {l1?.verdik_pasar && (
+        <details className="kk-pasar">
+          <summary>Konteks pasar (seluruh Kalsel)</summary>
+          <p>{bersih(l1.verdik_pasar)}</p>
+          <span className="bukti-srcs">
+            {(l1.sumber ?? []).map((s: Row, i: number) => (
+              <a key={i} href={s.url} target="_blank" rel="noopener" className="bukti-src">
+                {s.jenis} · {s.tanggal}
+              </a>
+            ))}
+          </span>
+        </details>
+      )}
+
+      {gap && (
+        <div className="kk-gap">
+          <strong>Yang masih dibutuhkan:</strong> {gap}
+        </div>
+      )}
+
+      {limitasiNote && <p className="kk-limitation">{limitasiNote}</p>}
+
+      {invRel.length > 0 && (
+        <details className="kk-inventaris">
+          <summary>Data produksi BPS kab/kota untuk komoditas ini</summary>
+          <table className="inv-tab">
+            <thead>
+              <tr><th>Komoditas</th><th>Tahun</th><th>Nilai</th></tr>
+            </thead>
+            <tbody>
+              {invRel.map((it, i) => (
+                <tr key={i}>
+                  <td>{it.komoditas}</td>
+                  <td>{it.tahun}</td>
+                  <td>
+                    {it.metrik_utama === "populasi"
+                      ? `${fmtN(it.populasi)} ekor`
+                      : `${fmtN(it.produksi)} ${it.satuan_produksi}`}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </details>
+      )}
     </div>
   );
 }
 
-function KartuTierB({ t }: { t: Row }) {
-  return (
-    <div className="tcard tierb">
-      <div className="tcard-head">
-        <span><BadgeTier tier="B" /> <span className="muted">indikasi resmi pemerintah</span></span>
-        <div className="komoditas-name">{t.komoditas}</div>
-      </div>
-      <div className="tcard-body">
-        <div className="muted">{bersih(t.kategori)} · {bersih(t.status)}</div>
-        <div className="alasan-sumber">Sumber: <a href={t.url} target="_blank" rel="noopener">{t.sumber}</a></div>
-      </div>
-    </div>
-  );
-}
 
-function InventarisDetails({ rows }: { rows: Row[] }) {
+function InventarisLengkap({ rows }: { rows: Row[] }) {
   if (!rows.length) return null;
   const bySub = group(rows, (d) => d.subsektor as string);
-  const nilaiSort = (d: Row) => d.produksi ?? d.populasi ?? 0;
   const nilaiSel = (it: Row) =>
     it.metrik_utama === "populasi"
       ? `${fmtN(it.populasi)} ekor`
       : `${fmtN(it.produksi)} ${it.satuan_produksi}` +
         (it.produktivitas != null && it.produktivitas !== "" ? ` · ${it.produktivitas} t/ha` : "");
   return (
-    <details className="usulan inventaris">
+    <details className="inventaris-lengkap">
       <summary>
-        <strong>Inventaris produksi BPS (semua komoditas kab/kota)</strong>{" "}
-        <span className="muted">{rows.length} komoditas tercatat (tahun bervariasi)</span>
+        <strong>Seluruh komoditas tercatat di BPS kab/kota ini</strong>
+        <span className="muted"> ({rows.length} jenis, tarikan otomatis BPS WebAPI)</span>
       </summary>
-      <div className="muted" style={{ margin: ".3rem 0 .5rem" }}>
-        Tarikan otomatis BPS WebAPI. Sebagian data lama (lihat kolom Tahun)
-      </div>
+      <p className="muted" style={{ margin: ".3rem 0 .5rem", fontSize: "0.8rem" }}>
+        Daftar ini mencakup semua komoditas yang datanya ada di BPS, termasuk yang belum memenuhi kriteria rekomendasi. Tahun data bervariasi
+      </p>
       {[...bySub].map(([sub, items]) => (
         <div key={sub}>
           <div className="inv-sub">{sub}</div>
           <table className="inv-tab">
             <thead><tr><th>Komoditas</th><th>Tahun</th><th>Produksi / populasi</th></tr></thead>
             <tbody>
-              {[...items].sort((a, b) => nilaiSort(b) - nilaiSort(a)).map((it, i) => (
-                <tr key={i}><td>{it.komoditas}</td><td>{it.tahun}</td><td>{nilaiSel(it)}</td></tr>
-              ))}
+              {[...items]
+                .sort((a, b) => (b.produksi ?? b.populasi ?? 0) - (a.produksi ?? a.populasi ?? 0))
+                .map((it, i) => (
+                  <tr key={i}><td>{it.komoditas}</td><td>{it.tahun}</td><td>{nilaiSel(it)}</td></tr>
+                ))}
             </tbody>
           </table>
         </div>
@@ -249,6 +285,7 @@ function InventarisDetails({ rows }: { rows: Row[] }) {
     </details>
   );
 }
+
 
 export function KomoditasUsulan() {
   const f = useFilters();
@@ -262,107 +299,113 @@ export function KomoditasUsulan() {
   const wilayahCsv = csv.wilayah ?? [];
   const ekspor = csv.ekspor ?? [];
   const komoditasProv = csv.komoditas_provinsi ?? [];
-  const tierB = csv.tier_b ?? [];
+  const tierBCsv = csv.tier_b ?? [];
   const inisiatif = csv.inisiatif ?? [];
   const produksiKK = csv.produksi_kabkota ?? [];
   const usulanAI = (json.usulan_ai ?? {}) as { layer1?: Row[]; layer2?: Row[] };
 
-  const { perWilayah, usulanProvinsi, tierBPerWilayah, aiL2PerWilayah, produksiKKPerWilayah, cariL1 } = useMemo(() => {
+  const { perWilayah, usulanProvinsi, tierBPerWilayah, aiL2PerWilayah, prodKKPerWilayah, cariL1 } = useMemo(() => {
     const skor = skorKomoditas({ produksi, pdrb, wilayah: wilayahCsv, ekspor, tahun: f.tahun, basisEkspor: "kalsel" });
     const usulanProvinsi = skorKomoditasProvinsi({ komoditasProv, ekspor, pdrb, wilayah: wilayahCsv, tahun: f.tahun, topProv: 10, basisEkspor: "kalsel" });
-    const tierBPerWilayah = group(tierB, (d) => String(d.wilayah_id));
+    const tierBPerWilayah = group(tierBCsv, (d) => String(d.wilayah_id));
     const aiL2PerWilayah = group(usulanAI.layer2 ?? [], (d) => String(d.wilayah_id));
     const aiL1ByKom = new Map((usulanAI.layer1 ?? []).map((d) => [normKom(d.komoditas), d]));
-    const produksiKKPerWilayah = group(produksiKK ?? [], (d) => String(d.wilayah_id));
+    const prodKKPerWilayah = group(produksiKK ?? [], (d) => String(d.wilayah_id));
+
     const cariL1 = (komoditas: string): Row | null => {
       const k = normKom(komoditas);
       if (aiL1ByKom.has(k)) return aiL1ByKom.get(k)!;
       for (const [re, bucket] of L1_BUCKET) if (re.test(k)) return aiL1ByKom.get(bucket) ?? null;
       return null;
     };
-    return { perWilayah: skor.perWilayah, usulanProvinsi, tierBPerWilayah, aiL2PerWilayah, produksiKKPerWilayah, cariL1 };
-  }, [produksi, pdrb, wilayahCsv, ekspor, komoditasProv, tierB, usulanAI, produksiKK, f.tahun]);
+
+    return { perWilayah: skor.perWilayah, usulanProvinsi, tierBPerWilayah, aiL2PerWilayah, prodKKPerWilayah, cariL1 };
+  }, [produksi, pdrb, wilayahCsv, ekspor, komoditasProv, tierBCsv, usulanAI, produksiKK, f.tahun]);
 
   const semuaUsulan = useMemo(() => {
     const out: Row[] = [];
-    const kstat = (s: boolean | null) => (s === true ? true : s === false ? false : "na");
-    for (const [, list] of perWilayah)
-      for (const u of list)
-        out.push({ komoditas: u.komoditas, wilayah: u.wilayah, tier: "A", skor: u.skor, k_produksi: kstat(u.kriteria.produksi.status), k_ekspor: kstat(u.kriteria.ekspor.status), k_subsektor: kstat(u.kriteria.subsektor.status) });
+    const src = (m: MergedKomoditas) =>
+      (m.tierA?.skor ?? 0) >= 2 ? "Data statistik resmi"
+      : (m.tierA?.skor ?? 0) === 1 ? "Sebagian data resmi"
+      : m.ai?.tier === "B" || m.tierB ? "Dokumen pemerintah"
+      : "Indikasi awal";
+
+    for (const [wid, tierAList] of perWilayah) {
+      const aiList = aiL2PerWilayah.get(String(wid)) ?? [];
+      const tbList = tierBPerWilayah.get(String(wid)) ?? [];
+      const merged = mergePerWilayah(tierAList, aiList, tbList, cariL1);
+      for (const m of merged)
+        out.push({ komoditas: m.komoditas, wilayah: tierAList[0]?.wilayah ?? namaWilayah(wid), dasar: src(m) });
+    }
     for (const u of usulanProvinsi)
-      out.push({ komoditas: u.komoditas, wilayah: "Provinsi Kalsel", tier: "A", skor: u.skor, k_produksi: kstat(u.kriteria.produksi.status), k_ekspor: kstat(u.kriteria.ekspor.status), k_subsektor: kstat(u.kriteria.subsektor.status) });
-    for (const [wid, list] of tierBPerWilayah)
-      for (const t of list)
-        out.push({ komoditas: t.komoditas, wilayah: t.wilayah || namaWilayah(wid), tier: "B", skor: "—", k_produksi: "na", k_ekspor: "na", k_subsektor: "na" });
-    for (const [wid, list] of aiL2PerWilayah)
-      for (const u of list)
-        out.push({ komoditas: u.komoditas, wilayah: namaWilayah(wid), tier: u.tier, skor: "—", k_produksi: "na", k_ekspor: "na", k_subsektor: "na" });
+      out.push({ komoditas: u.komoditas, wilayah: "Provinsi Kalsel", dasar: u.skor >= 2 ? "Data statistik resmi" : "Sebagian data resmi" });
     for (const d of inisiatif)
-      out.push({ komoditas: d.komoditas, wilayah: "Seluruh Kalsel (program pemerintah)", tier: "B", skor: "—", k_produksi: "na", k_ekspor: "na", k_subsektor: "na" });
+      out.push({ komoditas: d.komoditas, wilayah: "Seluruh Kalsel (program pemerintah)", dasar: "Dokumen pemerintah" });
     return out;
-  }, [perWilayah, usulanProvinsi, tierBPerWilayah, aiL2PerWilayah, inisiatif]);
+  }, [perWilayah, usulanProvinsi, aiL2PerWilayah, tierBPerWilayah, inisiatif, cariL1]);
 
   const cols: Column<Row>[] = [
-    { key: "komoditas", header: "Komoditas", width: 150 },
-    { key: "wilayah", header: "Kabupaten/kota", width: 180 },
-    { key: "tier", header: "Tier", render: (r) => <BadgeTier tier={r.tier} /> },
-    {
-      key: "skor", header: "Skor", value: (r) => (typeof r.skor === "number" ? r.skor : -1),
-      render: (r) =>
-        typeof r.skor === "number" ? (
-          <>
-            <span className="skor-bar" title={`${r.skor} dari 3 kriteria`}><span className="skor-bar-fill" style={{ width: `${(r.skor / 3) * 100}%` }} /></span>
-            <span className="skor-num">{r.skor}/3</span>
-          </>
-        ) : <span className="ikon-na" title="Tier B/C tidak memiliki skor numerik">—</span>,
-    },
-    { key: "k_produksi", header: "Produksi", align: "center", value: (r) => String(r.k_produksi), render: (r) => ikonKriteria(r.k_produksi) },
-    { key: "k_ekspor", header: "Ekspor", align: "center", value: (r) => String(r.k_ekspor), render: (r) => ikonKriteria(r.k_ekspor) },
-    { key: "k_subsektor", header: "Subsektor", align: "center", value: (r) => String(r.k_subsektor), render: (r) => ikonKriteria(r.k_subsektor) },
+    { key: "komoditas", header: "Komoditas", width: 160 },
+    { key: "wilayah", header: "Kabupaten/kota", width: 190 },
+    { key: "dasar", header: "Dasar usulan", width: 180 },
   ];
 
   const defaultWid = useMemo(() => {
-
     const count = (wid: string) =>
-      (perWilayah.get(wid)?.length || 0) * 3 + (aiL2PerWilayah.get(wid)?.length || 0) * 2 +
-      (tierBPerWilayah.get(wid)?.length || 0) * 2 + ((produksiKKPerWilayah.get(wid)?.length || 0) > 0 ? 1 : 0);
+      (perWilayah.get(wid)?.length ?? 0) * 3 +
+      (aiL2PerWilayah.get(wid)?.length ?? 0) * 2 +
+      (tierBPerWilayah.get(wid)?.length ?? 0) +
+      ((prodKKPerWilayah.get(wid)?.length ?? 0) > 0 ? 1 : 0);
     return [...kabList].map((w) => w.id).sort((a, b) => count(b) - count(a))[0];
-  }, [perWilayah, tierBPerWilayah, aiL2PerWilayah, produksiKKPerWilayah]);
+  }, [perWilayah, tierBPerWilayah, aiL2PerWilayah, prodKKPerWilayah]);
+
   const selectedWid = !isSemua(f.wilayah) && f.wilayah.id !== "6300" ? f.wilayah.id : defaultWid;
 
-  function invMatchFor(wid: string, komoditas: string): Row[] {
-    const k = normKom(komoditas);
-    return (produksiKKPerWilayah.get(wid) ?? []).filter((r) => {
-      const rk = normKom(r.komoditas);
-      return rk.includes(k) || k.includes(rk);
-    });
-  }
+  function BlokWilayah({ wid }: { wid: string }) {
+    const w = WILAYAH.find((x) => x.id === wid)!;
+    const tierAList = perWilayah.get(wid) ?? [];
+    const aiList = aiL2PerWilayah.get(wid) ?? [];
+    const tbList = tierBPerWilayah.get(wid) ?? [];
+    const inv = prodKKPerWilayah.get(wid) ?? [];
 
-  function BlokProvinsi() {
-    if (!usulanProvinsi.length) return null;
+    const items = mergePerWilayah(tierAList, aiList, tbList, cariL1);
+
     return (
-      <Card title="Tingkat provinsi (berlaku lintas kabupaten/kota)" subtitle="Komoditas unggulan se-Kalsel dari data produksi tingkat provinsi. Sebagian data (ekspor, produksi ikan/perkebunan) memang hanya tersedia di tingkat provinsi">
-        <div className="grid-2">
-          {usulanProvinsi.map((u, i) => <KartuTierA key={i} u={u} />)}
-        </div>
+      <Card title={w.nama} subtitle="Komoditas yang diusulkan untuk kabupaten/kota ini">
+        {items.map((item, i) => (
+          <KartuKomoditas key={i} item={item} invMatch={inv} />
+        ))}
+        {items.length > 0 && inv.length > 0 && <InventarisLengkap rows={inv} />}
+        {!items.length && !inv.length && (
+          <p className="empty">Belum ada data untuk wilayah ini</p>
+        )}
+        {!items.length && inv.length > 0 && (
+          <>
+            <p className="muted" style={{ fontSize: "0.85rem" }}>
+              Belum ada komoditas yang memenuhi kriteria rekomendasi, tapi BPS mencatat data produksi berikut
+            </p>
+            <InventarisLengkap rows={inv} />
+          </>
+        )}
       </Card>
     );
   }
 
-  function BlokWilayah({ wid }: { wid: string }) {
-    const w = WILAYAH.find((x) => x.id === wid)!;
-    const list = perWilayah.get(wid) ?? [];
-    const ai = aiL2PerWilayah.get(wid) ?? [];
-    const tb = tierBPerWilayah.get(wid) ?? [];
-    const inv = produksiKKPerWilayah.get(wid) ?? [];
-    const kosong = !list.length && !ai.length && !tb.length && !inv.length;
+  function BlokProvinsi() {
+    if (!usulanProvinsi.length) return null;
+    const items = usulanProvinsi.map((u): MergedKomoditas => ({
+      komoditas: u.komoditas,
+      tierA: u,
+      l1: cariL1(u.komoditas),
+    }));
     return (
-      <Card title={w.nama} subtitle="Rekomendasi & indikasi komoditas untuk kabupaten/kota ini">
-        {list.map((u, i) => <KartuTierA key={"a" + i} u={u} />)}
-        {ai.map((u, i) => <KartuAITab key={"ai" + i} u={u} invMatch={invMatchFor(wid, u.komoditas)} cariL1={cariL1} />)}
-        {tb.map((t, i) => <KartuTierB key={"b" + i} t={t} />)}
-        <InventarisDetails rows={inv} />
-        {kosong && <p className="empty">Belum ada indikasi komoditas dari sumber lain untuk wilayah ini</p>}
+      <Card
+        title="Tingkat provinsi Kalsel"
+        subtitle="Komoditas unggulan berdasarkan data produksi tingkat provinsi. Sebagian data (ekspor, produksi ikan/perkebunan) memang hanya tersedia di tingkat provinsi, bukan per kabupaten/kota."
+      >
+        <div className="grid-2">
+          {items.map((item, i) => <KartuKomoditas key={i} item={item} invMatch={[]} />)}
+        </div>
       </Card>
     );
   }
@@ -373,21 +416,26 @@ export function KomoditasUsulan() {
     <div>
       <h1 className="page-title">Komoditas usulan</h1>
       <p className="page-lede">
-        Komoditas apa yang direkomendasikan, dan di mana? Rekomendasi disusun dari kriteria resmi OJK
-        dengan skoring transparan. Tiap usulan membawa lencana alasan yang bisa ditelusuri. Pilih
-        kabupaten/kota di bawah untuk melihat rekomendasinya
+        Komoditas apa yang direkomendasikan, dan di mana? Setiap rekomendasi disertai dasar bukti
+        yang bisa ditelusuri: data statistik, dokumen pemerintah, atau laporan.
+        Pilih kabupaten/kota di bawah untuk melihat rekomendasinya
       </p>
 
       <FilterBar showSektor={false} />
 
-      <div className="card info-tier">
-        <strong>Cara membaca tingkat keyakinan (tier)</strong>
-        <p>
-          Tier A paling kuat (data resmi BPS, skor 0–3 dari kriteria produksi/ekspor/subsektor). Tier B
-          dari dokumen resmi pemerintah. Tier C sinyal awal yang perlu diverifikasi. Komoditas skor 0
-          tidak ditampilkan
+      <div className="card info-dasar">
+        <strong>Cara membaca dasar usulan</strong>
+        <div className="dasar-legend">
+          <span className="kk-tag basis-kuat">Data statistik resmi</span>
+          <span>Data BPS (produksi, ekspor) dan analisis subsektor unggulan</span>
+          <span className="kk-tag basis-sedang">Dokumen pemerintah</span>
+          <span>RPJMD, Bappeda, atau portal dinas, belum ada data statistik</span>
+          <span className="kk-tag basis-awal">Indikasi awal</span>
+          <span>Sinyal dari berita atau laporan, perlu konfirmasi lapangan</span>
+        </div>
+        <p style={{ margin: "0.5rem 0 0", fontSize: "0.8rem", color: "var(--color-neutral-500)" }}>
+          Urutan kartu mencerminkan kekuatan bukti, yang paling kuat di atas. Klik "Konteks pasar" untuk melihat analisis pasar global komoditas tersebut
         </p>
-        <p><BadgeTier tier="A" /> <BadgeTier tier="B" /> <BadgeTier tier="C" /></p>
       </div>
 
       {loading ? (
@@ -398,7 +446,11 @@ export function KomoditasUsulan() {
             <span className="muted">Pilih kabupaten/kota:</span>
             <div className="kab-chips">
               {kabList.map((w) => (
-                <button key={w.id} className={`chip ${w.id === selectedWid ? "active" : ""}`} onClick={() => f.setWilayah(w.id)}>
+                <button
+                  key={w.id}
+                  className={`chip ${w.id === selectedWid ? "active" : ""}`}
+                  onClick={() => f.setWilayah(w.id)}
+                >
                   {w.nama}
                 </button>
               ))}
@@ -413,23 +465,22 @@ export function KomoditasUsulan() {
             <DataTable
               rows={semuaUsulan}
               columns={cols}
-              initialSort="skor"
-              initialReverse
+              initialSort="dasar"
               searchable
               searchPlaceholder="Cari komoditas atau kabupaten/kota…"
-              maxRows={40}
+              maxRows={50}
             />
           </details>
         </>
       )}
 
       <HeroNote>
-        <strong>Keterbatasan data produksi per kabupaten/kota.</strong> Di sumber BPS, produksi per
-        kabupaten/kota hanya tersedia untuk padi. Komoditas lain hanya tersedia di tingkat provinsi
-        (ditampilkan pada blok tingkat provinsi). Data per kab/kota sebetulnya ada di{" "}
-        <a href="https://bdsp2.pertanian.go.id/" target="_blank" rel="noopener">BDSP Kementan</a>, namun
-        belum punya antarmuka data resmi yang andal, sehingga tidak diotomasi. Ditandai jujur sebagai
-        keterbatasan
+        <strong>Keterbatasan data produksi per kabupaten/kota</strong>. Di sumber BPS, data produksi
+        per kabupaten/kota hanya tersedia untuk padi. Komoditas lain (sawit, karet, perikanan, dll.)
+        hanya tersedia di tingkat provinsi. Data per kab/kota sebetulnya ada di{" "}
+        <a href="https://bdsp2.pertanian.go.id/" target="_blank" rel="noopener">BDSP Kementan</a>,
+        namun belum punya antarmuka data yang stabil. Rekomendasi berbasis dokumen pemerintah atau
+        penelusuran AI mengisi celah ini, ditandai jujur sesuai sumbernya
       </HeroNote>
     </div>
   );
