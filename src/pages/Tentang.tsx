@@ -1,13 +1,13 @@
 export function Tentang() {
   return (
     <div>
-      <h1 className="page-title">Tentang dashboard ini</h1>
+      <h1 className="page-title">Tentang dasbor ini</h1>
       <p className="page-lede">
         Dibuat untuk pemerintah daerah, lembaga jasa keuangan, akademisi, dan siapa pun yang butuh
         gambaran cepat namun berdasar tentang kekuatan ekonomi tiap kabupaten/kota di Kalimantan
         Selatan. Pendekatannya mengikuti metode Kajian Program Pengembangan Ekonomi Daerah (PED) OJK.
-        Semua angka diperbarui otomatis dari BPS, jadi yang kamu lihat selalu mengikuti rilis data
-        terbaru
+        Semua angka diperbarui otomatis dari sumber resmi seperti BPS dan OJK, jadi yang kamu lihat
+        selalu mengikuti rilis data terbaru
       </p>
 
       <h2 className="section-title">Cara membaca rekomendasi komoditas</h2>
@@ -17,35 +17,36 @@ export function Tentang() {
         terpenuhi, makin tinggi posisinya dalam daftar. Komoditas yang tidak memenuhi satu pun tidak
         ditampilkan
       </p>
-      <p>Tiap usulan diberi label tingkat keyakinan supaya jelas seberapa kuat dasarnya:</p>
-      <ul>
+      <p>Tiap usulan diberi penanda dasar usulan supaya jelas seberapa kuat buktinya:</p>
+      <ul className="daftar">
         <li>
-          <strong>Tier A</strong> paling kuat. Didukung angka produksi dan ekspor resmi dari BPS
+          <strong>Data statistik resmi</strong> paling kuat, dari angka produksi dan ekspor BPS
+          serta analisis subsektor unggulan
         </li>
         <li>
-          <strong>Tier B</strong> berupa indikasi dari dokumen pemerintah, misalnya RPJMD, Indikasi
-          Geografis, atau program KUR. Belum ada angka produksi resmi yang menyertainya
+          <strong>Dokumen pemerintah</strong> berupa indikasi dari RPJMD, Bappeda, portal dinas,
+          Indikasi Geografis, atau program KUR, belum ada angka statistik yang menyertainya
         </li>
         <li>
-          <strong>Tier C</strong> masih sinyal awal dari berita atau laporan. Perlu dicek lebih jauh
-          sebelum dijadikan dasar keputusan
+          <strong>Indikasi awal</strong> masih sinyal dari berita atau laporan, perlu dikonfirmasi di
+          lapangan sebelum dijadikan dasar keputusan
         </li>
       </ul>
       <p>
-        Khusus Tier B dan C, sinyalnya dikumpulkan dengan bantuan AI yang menelusuri dokumen
-        pemerintah dan berita, lalu menautkan tiap usulan ke sumber aslinya yang bisa kamu buka
-        sendiri. Bagian ini hanya melengkapi gambaran, dan tidak pernah mengubah skor Tier A yang
-        murni dari angka resmi
+        Kartu diurutkan dari bukti paling kuat di atas. Khusus dasar dokumen pemerintah dan indikasi
+        awal, sinyalnya dikumpulkan dengan bantuan AI yang menelusuri dokumen pemerintah dan berita,
+        lalu menautkan tiap usulan ke sumber aslinya yang bisa kamu buka sendiri. Bagian ini hanya
+        melengkapi gambaran, dan tidak pernah mengubah usulan yang bersumber dari angka resmi
       </p>
 
       <h2 className="section-title">Cakupan metode Kajian PED</h2>
       <p>
-        Dashboard ini mengikuti tahapan Kajian PED OJK (Bab 3.1). Sebagian besar sudah tercakup
+        Dasbor ini mengikuti tahapan Kajian PED OJK (Bab 3.1). Sebagian besar sudah tercakup
         otomatis, sebagian belum, dan yang belum ditandai apa adanya
       </p>
       <details className="detail-block">
         <summary>Lihat rincian cakupan per tahapan</summary>
-        <ul>
+        <ul className="daftar">
           <li>
             <strong>3.1.1 Kondisi sosio-ekonomi</strong>: ✓ PDRB dan struktur ekonomi, posisi Kalsel
             dibanding nasional dan se-Kalimantan, kesejahteraan (kemiskinan, Rasio Gini, IPM),
@@ -59,7 +60,7 @@ export function Tentang() {
           </li>
           <li>
             <strong>3.1.3 Pemilihan fokus</strong>: ✓ Agrikultur (skoring komoditas dan indikasi
-            Tier B). ⚠ Pariwisata dan ekonomi kreatif menyusul
+            dari dokumen pemerintah). ⚠ Pariwisata dan ekonomi kreatif menyusul
           </li>
           <li>
             <strong>3.1.4 Kesesuaian inisiatif pemerintah</strong>: ✓ keselarasan komoditas unggulan
@@ -67,8 +68,9 @@ export function Tentang() {
           </li>
           <li>
             <strong>3.1.5 Kinerja lembaga jasa keuangan dan pembiayaan</strong>: ✓ kredit Bank Umum
-            per sektor, DPK, rasio kredit terhadap DPK, serta BPR dan BPRS dari portal data OJK
-            (halaman Pembiayaan). ⚠ Bank Umum Syariah belum dirinci per sektor
+            per sektor beserta kualitas kreditnya (NPL), DPK, rasio kredit terhadap DPK, serta BPR
+            dan BPRS dari portal data OJK (halaman Pembiayaan). ⚠ Bank Umum Syariah belum dirinci per
+            sektor
           </li>
           <li>
             <strong>3.1.6 Skema ekosistem</strong>: ⚠ bersifat kualitatif (tahap diskusi), di luar
@@ -79,28 +81,32 @@ export function Tentang() {
 
       <h2 className="section-title">Sumber data</h2>
       <p>Datanya dari sumber resmi dan diperbarui otomatis:</p>
-      <ul>
+      <ul className="daftar">
         <li>
           <strong>BPS</strong> untuk PDRB dan struktur ekonomi, kesejahteraan, inflasi,
           ketenagakerjaan, ekspor, serta produksi pangan
+        </li>
+        <li>
+          <strong>OJK</strong> (portal data SJKPublic) untuk kredit Bank Umum per sektor, kualitas
+          kredit (NPL), DPK, serta BPR dan BPRS
         </li>
         <li>
           <strong>KKP, Kementan, dan Ditjenbun</strong> untuk produksi perikanan dan perkebunan
         </li>
         <li>
           <strong>Dokumen pemerintah daerah</strong> (Indikasi Geografis DJKI, RPJMD, program KUR)
-          untuk indikasi Tier B
+          sebagai indikasi dari dokumen pemerintah
         </li>
       </ul>
       <p>
-        Hanya indikasi Tier B (Indikasi Geografis) yang dikurasi manual karena registrinya belum
+        Hanya data Indikasi Geografis yang dikurasi manual karena registrinya belum
         punya antarmuka data yang bisa ditarik otomatis. Bagian itu diverifikasi per Juni 2026 dan
         diperbarui saat ada penetapan baru. Sisanya berjalan sendiri: saat BPS merilis tahun data
-        baru, dashboard ikut terbarui tanpa disentuh
+        baru, dasbor ikut terbarui tanpa disentuh
       </p>
 
       <h2 className="section-title">Keterbatasan</h2>
-      <ul>
+      <ul className="daftar">
         <li>
           Versi ini fokus pada <strong>agrikultur</strong>. Pariwisata dan ekonomi kreatif menyusul
         </li>
@@ -130,22 +136,23 @@ export function Tentang() {
 
       <h2 className="section-title">Masukan</h2>
       <p>
-        Dashboard ini terus disempurnakan, dan koreksi dari pembaca sangat membantu. Kalau menemukan
+        Dasbor ini terus disempurnakan, dan koreksi dari pembaca sangat membantu. Kalau menemukan
         data yang keliru, punya pertanyaan, atau ingin memberi masukan, hubungi tim penyusun melalui{" "}
         <a href="mailto:wening.dyah@ojk.go.id">wening.dyah@ojk.go.id</a>
       </p>
 
       <h2 className="section-title">Atribusi</h2>
       <p>
-        Data © Badan Pusat Statistik (BPS) dan kementerian/lembaga terkait. Dashboard ini bukan
+        Data © Badan Pusat Statistik (BPS) dan kementerian/lembaga terkait. Dasbor ini bukan
         produk resmi BPS atau OJK. Metodenya mengacu pada panduan Kajian PED OJK
       </p>
       <details className="detail-block">
         <summary>Catatan teknis untuk pengembang</summary>
         <div>
           <p>
-            Situs statis dibangun dengan React + Vite. Data ditarik lewat loader Python (stdlib) dan
-            diperbarui terjadwal melalui GitHub Actions. Kode domain BPS yang dipakai:
+            Situs statis dibangun dengan React + Vite dan di-host di Netlify. Data ditarik lewat
+            loader Python (stdlib), di-commit ke repositori, lalu diperbarui terjadwal melalui GitHub
+            Actions yang memicu build ulang Netlify. Kode domain BPS yang dipakai:
           </p>
           <table className="data-table">
             <thead>
