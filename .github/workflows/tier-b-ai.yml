@@ -1,0 +1,54 @@
+name: Refresh Tier B IG Kalsel (tahunan)
+
+on:
+  schedule:
+    - cron: "0 19 1 1 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: tier-b-ai
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - name: Jalankan refresh Tier B
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TIER_B_MODEL: claude-haiku-4-5
+        run: python tools/tier_b_ai.py
+      - name: Buat PR bila ada perubahan
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! git diff --quiet -- pipeline/inputs/tier_b.csv; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            BRANCH="refresh/tier-b-$(date +%Y%m%d)"
+            git checkout -b "$BRANCH"
+            git add pipeline/inputs/tier_b.csv
+            git commit -m "chore: refresh Tier B IG Kalsel (tahunan)"
+            git push origin "$BRANCH"
+            gh pr create \
+              --title "Refresh Tier B: produk IG Kalimantan Selatan" \
+              --body "Dihasilkan otomatis oleh tier_b_ai.py. Mohon periksa sebelum merge:
+          - Cek status IG (terdaftar vs dalam proses) sudah akurat
+          - Cek URL sumber masih bisa diakses
+          - Cek wilayah_id sudah sesuai kab/kota yang benar
+          - Cek tidak ada entri lama yang hilang" \
+              --base main \
+              --head "$BRANCH"
+          else
+            echo "Tidak ada perubahan pada tier_b.csv."
+          fi

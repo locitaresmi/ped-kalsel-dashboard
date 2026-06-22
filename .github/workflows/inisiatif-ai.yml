@@ -1,0 +1,55 @@
+name: Refresh inisiatif program pemerintah Kalsel (tahunan)
+
+on:
+  schedule:
+    - cron: "0 20 2 1 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: inisiatif-ai
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - name: Jalankan refresh inisiatif
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          INISIATIF_MODEL: claude-haiku-4-5
+        run: python tools/inisiatif_ai.py
+      - name: Buat PR bila ada perubahan
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! git diff --quiet -- pipeline/inputs/inisiatif.csv; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            BRANCH="refresh/inisiatif-$(date +%Y%m%d)"
+            git checkout -b "$BRANCH"
+            git add pipeline/inputs/inisiatif.csv
+            git commit -m "chore: refresh inisiatif program pemerintah Kalsel (tahunan)"
+            git push origin "$BRANCH"
+            gh pr create \
+              --title "Refresh inisiatif: program pemerintah komoditas Kalsel" \
+              --body "Dihasilkan otomatis oleh inisiatif_ai.py. Mohon periksa sebelum merge:
+          - Cek program yang ditambahkan memang nyata dan berjalan (bukan rencana tanpa realisasi)
+          - Cek deskripsi akurat dan tidak menyesatkan
+          - Cek URL sumber masih bisa diakses
+          - Cek tidak ada entri lama yang hilang
+          - Cek subsektor_kode sudah benar (A = pertanian/perikanan, B = tambang, C = industri)" \
+              --base main \
+              --head "$BRANCH"
+          else
+            echo "Tidak ada perubahan pada inisiatif.csv."
+          fi
