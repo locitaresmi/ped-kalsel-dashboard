@@ -1,10 +1,14 @@
 import csv
+import datetime
 import os
 import sys
 from collections import defaultdict
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 import bps
+
+_Y = datetime.date.today().year
+_PROBE = (_Y, _Y - 1, _Y - 2)
 
 PROV_KALSEL = "KALIMANTAN SELATAN"
 
@@ -56,7 +60,7 @@ PERKEBUNAN = {
 def main() -> None:
     rows = []
 
-    for th in (2024, 2023, 2022):
+    for th in _PROBE:
         try:
             perk = _provinsi_x_jenis(2566, th)
         except Exception:
@@ -75,7 +79,7 @@ def main() -> None:
                      "satuan": sat, "tahun": th, "produksi_kalsel": round(nilai, 1),
                      "peringkat_nasional": rank, "n_provinsi": n})
 
-    for th in (2024, 2023, 2022):
+    for th in _PROBE:
         try:
             ikan = _provinsi_jumlah(1509, th)
         except Exception:
@@ -90,7 +94,7 @@ def main() -> None:
                          "produksi_kalsel": round(nilai, 1),
                          "peringkat_nasional": rank, "n_provinsi": n})
 
-    for th in (2024, 2023, 2022):
+    for th in _PROBE:
         try:
             jag = _provinsi_jumlah(2204, th, turvar_sub="produksi")
         except Exception:

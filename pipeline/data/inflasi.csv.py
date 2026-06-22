@@ -1,4 +1,5 @@
 import csv
+import datetime
 import os
 import sys
 
@@ -6,7 +7,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 import bps
 
 SUBJECT_INFLASI = 3
-TAHUN = (2023, 2024, 2025)
+TAHUN = range(2023, datetime.date.today().year + 1)
 
 BULAN_ID = {
     "januari": 1, "februari": 2, "maret": 3, "april": 4, "mei": 5, "juni": 6,

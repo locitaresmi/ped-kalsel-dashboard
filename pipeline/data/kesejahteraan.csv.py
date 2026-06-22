@@ -1,4 +1,5 @@
 import csv
+import datetime
 import os
 import re
 import sys
@@ -7,7 +8,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 import bps
 
-TAHUN = range(2021, 2025)
+TAHUN = range(2021, datetime.date.today().year + 1)
 KK_VARS = {"pdrb_kapita": 375, "miskin_pct": 103, "gini": 152, "ipm": 356}
 
 NAS_VARS = {

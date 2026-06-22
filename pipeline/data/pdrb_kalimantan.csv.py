@@ -1,4 +1,5 @@
 import csv
+import datetime
 import os
 import sys
 
@@ -10,7 +11,8 @@ PROVINSI = {
     "6300": "Kalimantan Selatan", "6400": "Kalimantan Timur",
     "6500": "Kalimantan Utara",
 }
-PROBE = (2024, 2023, 2022)
+_Y = datetime.date.today().year
+PROBE = (_Y, _Y - 1, _Y - 2)
 
 def main() -> None:
     rows = []

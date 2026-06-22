@@ -1,4 +1,5 @@
 import csv
+import datetime
 import os
 import re
 import sys
@@ -7,7 +8,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 import bps
 
 SUBJECT_TK = 6
-TAHUN = (2023, 2024, 2025)
+TAHUN = range(2023, datetime.date.today().year + 1)
 PERIODE_PRIORITAS = ("agustus", "februari", "november")
 
 NAMA_TAMPIL = {

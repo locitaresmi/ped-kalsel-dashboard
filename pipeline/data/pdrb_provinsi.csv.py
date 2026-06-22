@@ -1,11 +1,12 @@
 import csv
+import datetime
 import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 import bps
 
-TAHUN = range(2021, 2025)
+TAHUN = range(2021, datetime.date.today().year + 1)
 
 def _per_provinsi(var: int, tahun: int) -> dict[str, float]:
     resp = bps.data_table("0000", var, tahun)

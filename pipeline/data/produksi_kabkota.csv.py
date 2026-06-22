@@ -1,4 +1,5 @@
 import csv
+import datetime
 import os
 import re
 import sys
@@ -13,7 +14,7 @@ KABKOTA = {
     "6310": "Tanah Bumbu", "6311": "Balangan", "6371": "Banjarmasin", "6372": "Banjarbaru",
 }
 NAMA_TAMPIL = dict(KABKOTA, **{"6371": "Kota Banjarmasin", "6372": "Kota Banjarbaru"})
-PROBE = (2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017)
+PROBE = tuple(range(datetime.date.today().year, 2016, -1))
 
 POLA_A = [
     ("53", "Tanaman Pangan", "crop", "ton",

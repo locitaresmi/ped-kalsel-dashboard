@@ -1,11 +1,12 @@
 import csv
+import datetime
 import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 import bps
 
-TAHUN = range(2020, 2026)
+TAHUN = range(2020, datetime.date.today().year + 1)
 VAR_PROV = ("6300", 322)
 VAR_NAS = ("0000", 65)
 

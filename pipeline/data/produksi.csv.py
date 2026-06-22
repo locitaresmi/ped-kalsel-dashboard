@@ -1,4 +1,5 @@
 import csv
+import datetime
 import os
 import re
 import sys
@@ -6,7 +7,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "lib"))
 import bps
 
-TAHUN = range(2020, 2025)
+TAHUN = range(2020, datetime.date.today().year + 1)
 
 NAMA_KE_ID = {
     "TANAH LAUT": "6301", "KOTABARU": "6302", "BANJAR": "6303",
