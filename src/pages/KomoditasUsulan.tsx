@@ -3,7 +3,7 @@ import { group } from "d3-array";
 import { format } from "d3-format";
 import { useDataset } from "../hooks/useDataset";
 import { useFilters } from "../hooks/useFilters";
-import { isSemua, WILAYAH, TAHUN } from "../lib/sektor";
+import { isSemua, WILAYAH, TAHUN, SEMUA } from "../lib/sektor";
 import { skorKomoditas, skorKomoditasProvinsi, type Usulan } from "../lib/komoditas";
 import { Card, HeroNote, LangkahLanjut } from "../components/ui";
 import { DataTable, type Column } from "../components/DataTable";
@@ -351,16 +351,7 @@ export function KomoditasUsulan() {
     { key: "dasar", header: "Dasar usulan", width: 180 },
   ];
 
-  const defaultWid = useMemo(() => {
-    const count = (wid: string) =>
-      (perWilayah.get(wid)?.length ?? 0) * 3 +
-      (aiL2PerWilayah.get(wid)?.length ?? 0) * 2 +
-      (tierBPerWilayah.get(wid)?.length ?? 0) +
-      ((prodKKPerWilayah.get(wid)?.length ?? 0) > 0 ? 1 : 0);
-    return [...kabList].map((w) => w.id).sort((a, b) => count(b) - count(a))[0];
-  }, [perWilayah, tierBPerWilayah, aiL2PerWilayah, prodKKPerWilayah]);
-
-  const selectedWid = !isSemua(f.wilayah) && f.wilayah.id !== "6300" ? f.wilayah.id : defaultWid;
+  const selectedKab = !isSemua(f.wilayah) && f.wilayah.id !== "6300" ? f.wilayah.id : null;
 
   function BlokWilayah({ wid }: { wid: string }) {
     const w = WILAYAH.find((x) => x.id === wid)!;
@@ -443,13 +434,13 @@ export function KomoditasUsulan() {
       ) : (
         <>
           <div>
-            <span className="muted">Pilih kabupaten/kota:</span>
+            <span className="muted">Pilih kabupaten/kota untuk melihat usulan spesifik daerah:</span>
             <div className="kab-chips">
               {kabList.map((w) => (
                 <button
                   key={w.id}
-                  className={`chip ${w.id === selectedWid ? "active" : ""}`}
-                  onClick={() => f.setWilayah(w.id)}
+                  className={`chip ${w.id === selectedKab ? "active" : ""}`}
+                  onClick={() => f.setWilayah(w.id === selectedKab ? SEMUA : w.id)}
                 >
                   {w.nama}
                 </button>
@@ -457,7 +448,7 @@ export function KomoditasUsulan() {
             </div>
           </div>
 
-          <BlokWilayah wid={selectedWid} />
+          {selectedKab && <BlokWilayah wid={selectedKab} />}
           <BlokProvinsi />
 
           <details className="detail-block">
