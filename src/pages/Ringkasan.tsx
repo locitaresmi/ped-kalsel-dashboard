@@ -8,7 +8,7 @@ import { skorKomoditas } from "../lib/komoditas";
 import { fmtRp, fmt2, pctSigned } from "../lib/format";
 import { KalselMap } from "../components/KalselMap";
 import { EChart } from "../components/EChart";
-import { Card, KpiCard, InfoTip } from "../components/ui";
+import { Card, KpiCard, InfoTip, LangkahLanjut } from "../components/ui";
 import { FilterBar } from "../components/FilterBar";
 import type { EChartsOption } from "../lib/echarts";
 import type { Row } from "../lib/data";
@@ -130,6 +130,11 @@ export function Ringkasan() {
   return (
     <div>
       <h1 className="page-title">Potensi Ekonomi Daerah Kalimantan Selatan</h1>
+      <p className="page-lede">
+        Temukan komoditas unggulan tiap kabupaten/kota Kalimantan Selatan dari data resmi BPS yang
+        diperbarui otomatis. Rekomendasi mengikuti metode Kajian Program Pengembangan Ekonomi Daerah
+        (PED) OJK, program yang mendorong pengembangan ekonomi berbasis keunggulan daerah
+      </p>
 
       <details className="detail-block">
         <summary>Cara pakai dasbor ini (3 langkah)</summary>
@@ -159,15 +164,72 @@ export function Ringkasan() {
         </div>
       </details>
 
-      <div className="hero-note">
-        Dasbor ini membantu kamu menemukan komoditas unggulan di setiap kabupaten/kota Kalimantan
-        Selatan berdasarkan data resmi yang diperbarui otomatis. Rekomendasi mengikuti metode Kajian
-        Program Pengembangan Ekonomi Daerah (PED) OJK, yaitu program yang mendorong pengembangan
-        ekonomi berbasis keunggulan daerah
-      </div>
+      <h2 className="section-title">Angka kunci Provinsi Kalimantan Selatan</h2>
+      {loading ? (
+        <div className="loading-block">Memuat angka kunci…</div>
+      ) : (
+        <div className="kpi-grid">
+          <KpiCard
+            label="PDRB harga konstan"
+            info="PDRB adalah total nilai barang dan jasa yang diproduksi daerah dalam setahun. Harga konstan artinya sudah disesuaikan inflasi, sehingga bisa dibandingkan antar tahun."
+            value={`Rp ${fmtRp(kpi.pdrbTotal)}`}
+            context={`miliar Rp, tahun ${tahun}.${pdrbRank ? ` Peringkat ke-${pdrbRank.rank} dari ${pdrbRank.n} provinsi se-Indonesia.` : ""} Sudah disesuaikan inflasi`}
+          >
+            {kpi.pertumbuhan != null && (
+              <div className={`kpi-trend ${kpi.pertumbuhan >= 0 ? "up" : "down"}`}>
+                {kpi.pertumbuhan >= 0 ? "▲" : "▼"} {pctSigned(kpi.pertumbuhan)}% dari {tahun - 1}
+              </div>
+            )}
+            <Sparkline values={pdrbSpark} color="#0D9488" />
+          </KpiCard>
+
+          <KpiCard
+            label="Pertumbuhan ekonomi"
+            value={kpi.pertumbuhan == null ? "—" : `${pctSigned(kpi.pertumbuhan)}%`}
+            context={`Dibanding tahun ${tahun - 1}. Rata-rata nasional ${kpi.pertumbuhanNas == null ? "—" : pctSigned(kpi.pertumbuhanNas) + "%"}`}
+          >
+            {kpi.pertumbuhan != null && kpi.pertumbuhanNas != null && (
+              <span className={`kpi-badge ${kpi.pertumbuhan >= kpi.pertumbuhanNas ? "good" : "bad"}`}>
+                {kpi.pertumbuhan >= kpi.pertumbuhanNas ? "▲ di atas" : "▼ di bawah"} rata-rata nasional
+              </span>
+            )}
+          </KpiCard>
+
+          <KpiCard
+            label={
+              <>
+                Sektor unggulan (LQ &gt; 1){" "}
+                <InfoTip teks="Sektor yang lebih kuat di Kalsel dibanding rata-rata nasional. LQ lebih dari 1 menandai sektor basis." />
+              </>
+            }
+            value={
+              <>
+                {kpi.nSektorBasis || "—"}
+                <span style={{ fontSize: "1.1rem", fontWeight: 600, color: "var(--color-neutral-400)" }}>
+                  {" "}
+                  / 17
+                </span>
+              </>
+            }
+            context="Sektor yang lebih kuat di Kalsel dibanding rata-rata nasional"
+          />
+
+          <KpiCard
+            label="Komoditas terverifikasi"
+            info="Komoditas dengan data produksi atau ekspor resmi BPS yang tersedia."
+            value={usulan.totalUsulan || "—"}
+            context={
+              <>
+                Berdasar data BPS, tersebar di {usulan.nWilayahUsulan} kab/kota ·{" "}
+                <Link to="/komoditas-usulan">lihat daftar</Link>
+              </>
+            }
+          />
+        </div>
+      )}
 
       <div className="quickstart">
-        <span className="qs-text">Langsung mau lihat rekomendasi komoditas untuk kabupaten/kota tertentu?</span>
+        <span className="qs-text">Langsung ke rekomendasi komoditas per kabupaten/kota?</span>
         <select className="input-control" value={qsWil} onChange={(e) => setQsWil(e.target.value)} aria-label="Pilih kabupaten/kota">
           {WILAYAH_OPSI.map((w) => (
             <option key={w.id} value={w.id}>{w.id === SEMUA ? "Pilih daerah…" : w.nama}</option>
@@ -181,112 +243,57 @@ export function Ringkasan() {
         </button>
       </div>
 
-      <FilterBar hint="Atau jelajahi peta: pilih satu kabupaten/kota untuk melihat detail sektor dan komoditas unggulannya" />
+      <h2 className="section-title">Jelajahi peta dan angka daerah</h2>
+      <FilterBar hint="Pilih satu kabupaten/kota untuk melihat detail sektor dan komoditas unggulannya, atau pilih satu sektor untuk mewarnai peta dengan LQ-nya" />
 
       {loading ? (
-        <div className="loading-block">Memuat data Kalsel…</div>
+        <div className="loading-block">Memuat peta Kalsel…</div>
       ) : (
-        <>
-          <div className="grid-2">
-            <Card
-              title={
-                <>
-                  Peta potensi kabupaten/kota{" "}
-                  <InfoTip teks="LQ (Location Quotient) menunjukkan seberapa terspesialisasi suatu daerah di sektor tertentu dibanding rata-rata nasional. LQ lebih dari 1 berarti sektor itu lebih kuat di daerah ini." />
-                </>
-              }
-              subtitle={`Tahun ${tahun} · ${petaLabel}. Makin gelap warnanya, makin banyak sektor unggulannya`}
-            >
-              {kalsel && (
-                <KalselMap
-                  geojson={kalsel}
-                  valueByWid={valueByWid}
-                  ramp={petaMode === "lq" ? RAMP_LQ : RAMP_BASIS}
-                  formatValue={(v) =>
-                    v == null
-                      ? "data belum tersedia"
-                      : petaMode === "basis"
-                        ? `${v} sektor unggulan (LQ > 1)`
-                        : `LQ ${fmt2(v)}`
-                  }
-                  downloadName="peta-ped-kalsel"
-                />
-              )}
-            </Card>
-
-            <Card title={isSemua(f.wilayah) ? "Ringkasan Provinsi Kalsel" : "Wilayah terpilih"}>
-              <DetailWilayah
-                w={f.wilayah}
-                tahun={tahun}
-                wilayahLQ={wilayahLQ}
-                nSektorBasis={kpi.nSektorBasis}
-                totalUsulan={usulan.totalUsulan}
-                nWilayahUsulan={usulan.nWilayahUsulan}
+        <div className="grid-2">
+          <Card
+            title={
+              <>
+                Peta potensi kabupaten/kota{" "}
+                <InfoTip teks="LQ (Location Quotient) menunjukkan seberapa terspesialisasi suatu daerah di sektor tertentu dibanding rata-rata nasional. LQ lebih dari 1 berarti sektor itu lebih kuat di daerah ini." />
+              </>
+            }
+            subtitle={`Tahun ${tahun} · ${petaLabel}. Makin gelap warnanya, makin banyak sektor unggulannya`}
+          >
+            {kalsel && (
+              <KalselMap
+                geojson={kalsel}
+                valueByWid={valueByWid}
+                ramp={petaMode === "lq" ? RAMP_LQ : RAMP_BASIS}
+                formatValue={(v) =>
+                  v == null
+                    ? "data belum tersedia"
+                    : petaMode === "basis"
+                      ? `${v} sektor unggulan (LQ > 1)`
+                      : `LQ ${fmt2(v)}`
+                }
+                downloadName="peta-ped-kalsel"
               />
-            </Card>
-          </div>
+            )}
+          </Card>
 
-          <h2 className="section-title">Angka kunci Provinsi Kalsel</h2>
-          <div className="kpi-grid">
-            <KpiCard
-              label="PDRB harga konstan"
-              info="PDRB adalah total nilai barang dan jasa yang diproduksi daerah dalam setahun. Harga konstan artinya sudah disesuaikan inflasi, sehingga bisa dibandingkan antar tahun."
-              value={`Rp ${fmtRp(kpi.pdrbTotal)}`}
-              context={`miliar Rp, tahun ${tahun}.${pdrbRank ? ` Peringkat ke-${pdrbRank.rank} dari ${pdrbRank.n} provinsi se-Indonesia.` : ""} Sudah disesuaikan inflasi`}
-            >
-              {kpi.pertumbuhan != null && (
-                <div className={`kpi-trend ${kpi.pertumbuhan >= 0 ? "up" : "down"}`}>
-                  {kpi.pertumbuhan >= 0 ? "▲" : "▼"} {pctSigned(kpi.pertumbuhan)}% dari {tahun - 1}
-                </div>
-              )}
-              <Sparkline values={pdrbSpark} color="#0D9488" />
-            </KpiCard>
-
-            <KpiCard
-              label="Pertumbuhan ekonomi"
-              value={kpi.pertumbuhan == null ? "—" : `${pctSigned(kpi.pertumbuhan)}%`}
-              context={`Dibanding tahun ${tahun - 1}. Rata-rata nasional ${kpi.pertumbuhanNas == null ? "—" : pctSigned(kpi.pertumbuhanNas) + "%"}`}
-            >
-              {kpi.pertumbuhan != null && kpi.pertumbuhanNas != null && (
-                <span className={`kpi-badge ${kpi.pertumbuhan >= kpi.pertumbuhanNas ? "good" : "bad"}`}>
-                  {kpi.pertumbuhan >= kpi.pertumbuhanNas ? "▲ di atas" : "▼ di bawah"} rata-rata nasional
-                </span>
-              )}
-            </KpiCard>
-
-            <KpiCard
-              label={
-                <>
-                  Sektor unggulan (LQ &gt; 1){" "}
-                  <InfoTip teks="Sektor yang lebih kuat di Kalsel dibanding rata-rata nasional. LQ lebih dari 1 menandai sektor basis." />
-                </>
-              }
-              value={
-                <>
-                  {kpi.nSektorBasis || "—"}
-                  <span style={{ fontSize: "1.1rem", fontWeight: 600, color: "var(--color-neutral-400)" }}>
-                    {" "}
-                    / 17
-                  </span>
-                </>
-              }
-              context="Sektor yang lebih kuat di Kalsel dibanding rata-rata nasional"
+          <Card title={isSemua(f.wilayah) ? "Ringkasan Provinsi Kalsel" : "Wilayah terpilih"}>
+            <DetailWilayah
+              w={f.wilayah}
+              tahun={tahun}
+              wilayahLQ={wilayahLQ}
+              nSektorBasis={kpi.nSektorBasis}
+              totalUsulan={usulan.totalUsulan}
+              nWilayahUsulan={usulan.nWilayahUsulan}
             />
-
-            <KpiCard
-              label="Komoditas terverifikasi"
-              info="Tier A: komoditas dengan data produksi dan ekspor resmi yang tersedia dari BPS."
-              value={usulan.totalUsulan || "—"}
-              context={
-                <>
-                  Tier A, tersebar di {usulan.nWilayahUsulan} kab/kota ·{" "}
-                  <Link to="/komoditas-usulan">lihat daftar</Link>
-                </>
-              }
-            />
-          </div>
-        </>
+          </Card>
+        </div>
       )}
+
+      <LangkahLanjut
+        teks={<>Sudah lihat gambaran umumnya? Pelajari seberapa besar dan sehat ekonomi tiap daerah</>}
+        aksi="Buka Kondisi Ekonomi"
+        to="/kondisi-ekonomi"
+      />
     </div>
   );
 }

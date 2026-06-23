@@ -1,4 +1,18 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
+import { useFilters } from "../hooks/useFilters";
+
+export function LangkahLanjut({ teks, aksi, to }: { teks: ReactNode; aksi: string; to: string }) {
+  const { carry } = useFilters();
+  return (
+    <div className="langkah-lanjut">
+      <span className="ll-teks">{teks}</span>
+      <Link className="btn-cta" to={`${to}${carry}`}>
+        {aksi}
+      </Link>
+    </div>
+  );
+}
 
 export function InfoTip({ teks }: { teks: string }) {
   return (

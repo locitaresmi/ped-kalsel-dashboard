@@ -5,7 +5,7 @@ import { useDataset } from "../hooks/useDataset";
 import { useFilters } from "../hooks/useFilters";
 import { isSemua, WILAYAH } from "../lib/sektor";
 import { skorKomoditas, skorKomoditasProvinsi, type Usulan } from "../lib/komoditas";
-import { Card, HeroNote } from "../components/ui";
+import { Card, HeroNote, LangkahLanjut } from "../components/ui";
 import { DataTable, type Column } from "../components/DataTable";
 import { FilterBar } from "../components/FilterBar";
 import { ErrorBlock } from "./Ringkasan";
@@ -421,7 +421,7 @@ export function KomoditasUsulan() {
         Pilih kabupaten/kota di bawah untuk melihat rekomendasinya
       </p>
 
-      <FilterBar showSektor={false} />
+      <FilterBar showWilayah={false} showSektor={false} />
 
       <div className="card info-dasar">
         <strong>Cara membaca dasar usulan</strong>
@@ -471,6 +471,12 @@ export function KomoditasUsulan() {
               maxRows={50}
             />
           </details>
+
+          <LangkahLanjut
+            teks={<>Sudah tahu komoditas unggulannya? Cek sektor mana yang masih kurang dibiayai perbankan</>}
+            aksi="Buka Pembiayaan"
+            to="/pembiayaan"
+          />
         </>
       )}
 

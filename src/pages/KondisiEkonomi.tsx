@@ -8,7 +8,7 @@ import { fmt0, fmt1, fmt2, pctSigned, num } from "../lib/format";
 import { format } from "d3-format";
 import { EChart } from "../components/EChart";
 import { KalselMap } from "../components/KalselMap";
-import { Card, InfoTip, HeroNote, KpiCard } from "../components/ui";
+import { Card, InfoTip, HeroNote, KpiCard, LangkahLanjut } from "../components/ui";
 import { DataTable, type Column } from "../components/DataTable";
 import { FilterBar } from "../components/FilterBar";
 import { ErrorBlock } from "./Ringkasan";
@@ -675,6 +675,12 @@ export function KondisiEkonomi() {
       <Card title="PDRB per kapita antar kab/kota" subtitle={`Ribu rupiah per orang per tahun, ${ksYear}${!isProv ? ` · ${namaW} disorot` : ""}. Kab/kota tambang biasanya jauh lebih tinggi`}>
         <EChart option={rankOption("pdrb_kapita", "PDRB per kapita (ribu Rp)")} height={Math.max(340, 24 * ksKab.length + 50)} noZoom />
       </Card>
+
+      <LangkahLanjut
+        teks={<>Sudah memahami kondisi ekonominya? Lihat sektor mana yang paling kuat dan layak dikembangkan</>}
+        aksi="Buka Subsektor Unggulan"
+        to="/subsektor-unggulan"
+      />
     </div>
   );
 }

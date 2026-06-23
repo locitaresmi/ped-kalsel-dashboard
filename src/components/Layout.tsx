@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { useFilters } from "../hooks/useFilters";
 
 const NAV = [
   { to: "/", label: "Ringkasan", end: true },
@@ -12,6 +13,7 @@ const NAV = [
 
 export function Layout() {
   const [open, setOpen] = useState(false);
+  const { carry } = useFilters();
   return (
     <div className="app-shell">
       <header className="app-header">
@@ -39,7 +41,7 @@ export function Layout() {
             {NAV.map((n) => (
               <NavLink
                 key={n.to}
-                to={n.to}
+                to={`${n.to}${carry}`}
                 end={n.end}
                 className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
                 onClick={() => setOpen(false)}

@@ -310,6 +310,25 @@ select.input-control:focus, input.input-control:focus { outline: none; border-co
 .context-inline { font-size: 0.82rem; color: var(--color-neutral-500); margin: 0 0 var(--space-4); }
 .context-inline strong { color: var(--color-neutral-700); }
 
+select.input-control.aktif {
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-800);
+  font-weight: 600;
+}
+
+.langkah-lanjut {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: var(--space-4);
+  background: var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+  margin: var(--space-8) 0 var(--space-4);
+}
+.langkah-lanjut .ll-teks { font-size: 0.9rem; color: var(--color-neutral-700); flex: 1 1 280px; }
+.langkah-lanjut .ll-teks strong { color: var(--color-neutral-900); }
+.langkah-lanjut .btn-cta { margin-top: 0; flex: none; }
+
 .chip.active { background: var(--color-primary-600); color: #fff; border-color: var(--color-primary-700); font-weight: 600; }
 .kab-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 1rem; }
 

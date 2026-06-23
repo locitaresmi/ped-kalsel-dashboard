@@ -6,7 +6,7 @@ import { hitungAnalisis, type SektorMetrik } from "../lib/analisis";
 import { OJK_COLORS, safeAxisMax, type EChartsOption } from "../lib/echarts";
 import { pctFrac, fmt0, fmt2 } from "../lib/format";
 import { EChart } from "../components/EChart";
-import { Card, InfoTip, HeroNote } from "../components/ui";
+import { Card, InfoTip, HeroNote, LangkahLanjut } from "../components/ui";
 import { DataTable, type Column } from "../components/DataTable";
 import { FilterBar } from "../components/FilterBar";
 import { ErrorBlock } from "./Ringkasan";
@@ -275,25 +275,24 @@ export function SubsektorUnggulan() {
 
       <FilterBar hint="Pilih kabupaten/kota atau tahun untuk memperbarui semua grafik" />
 
-      <HeroNote>
-        Wilayah: <strong>{namaWilayah}</strong> · periode{" "}
-        <strong>{analisis.base ?? "—"} sampai {analisis.akhir ?? "—"}</strong> · {rows.length} sektor
-        dianalisis · ditemukan <strong>{rows.filter((d) => d.unggul).length}</strong> sektor unggulan
-        (sektor basis yang juga tumbuh). Periode dimulai dari 2021 untuk menghindari distorsi akibat
-        tahun pandemi COVID-19
-      </HeroNote>
-
       {loading ? (
         <div className="loading-block">Memuat data…</div>
       ) : rows.length === 0 ? (
         <Card>
           <p className="muted">
-            Butuh rentang ≥ 1 tahun. Pilih tahun ≥ {(analisis.base ?? 2020) + 1}, atau wilayah dengan
-            data PDRB tersedia
+            Pilih tahun untuk melihat analisis sektor. Butuh rentang minimal 1 tahun, jadi pilih
+            tahun ≥ {(analisis.base ?? 2020) + 1}, atau wilayah dengan data PDRB tersedia
           </p>
         </Card>
       ) : (
         <>
+          <HeroNote>
+            Wilayah: <strong>{namaWilayah}</strong> · periode{" "}
+            <strong>{analisis.base ?? "—"} sampai {analisis.akhir ?? "—"}</strong> · {rows.length} sektor
+            dianalisis · ditemukan <strong>{rows.filter((d) => d.unggul).length}</strong> sektor unggulan
+            (sektor basis yang juga tumbuh). Periode dimulai dari 2021 untuk menghindari distorsi akibat
+            tahun pandemi COVID-19
+          </HeroNote>
           <div className="chart-grid-2">
             <Card
               title={
@@ -409,6 +408,12 @@ export function SubsektorUnggulan() {
             Catatan: perhitungan memakai tahun dasar 2021 (setelah pandemi) untuk menghindari distorsi
             akibat titik terendah pandemi 2020
           </p>
+
+          <LangkahLanjut
+            teks={<>Sudah tahu sektor unggulannya? Lihat komoditas yang direkomendasikan per kabupaten/kota</>}
+            aksi="Buka Komoditas Usulan"
+            to="/komoditas-usulan"
+          />
         </>
       )}
     </div>
