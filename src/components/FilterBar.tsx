@@ -5,12 +5,22 @@ interface Props {
   showWilayah?: boolean;
   showSektor?: boolean;
   showTahun?: boolean;
+  showReset?: boolean;
   hint?: string;
 }
 
-export function FilterBar({ showWilayah = true, showSektor = true, showTahun = true, hint }: Props) {
+export function FilterBar({ showWilayah = true, showSektor = true, showTahun = true, showReset = false, hint }: Props) {
   const f = useFilters();
   const cls = (aktif: boolean) => `input-control${aktif ? " aktif" : ""}`;
+  const adaFilterAktif =
+    (showWilayah && f.wilayah.id !== SEMUA) ||
+    (showSektor && f.sektor.kode !== SEMUA) ||
+    (showTahun && f.tahun !== TAHUN[TAHUN.length - 1]);
+  const reset = () => {
+    if (showWilayah) f.setWilayah(SEMUA);
+    if (showSektor) f.setSektor(SEMUA);
+    if (showTahun) f.setTahun(TAHUN[TAHUN.length - 1]);
+  };
   return (
     <>
       <div className="filter-bar">
@@ -66,6 +76,12 @@ export function FilterBar({ showWilayah = true, showSektor = true, showTahun = t
               ))}
             </select>
           </div>
+        )}
+
+        {showReset && adaFilterAktif && (
+          <button type="button" className="filter-reset" onClick={reset}>
+            Atur ulang filter
+          </button>
         )}
       </div>
       {hint && <div className="filter-hint">{hint}</div>}

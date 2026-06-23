@@ -3,11 +3,10 @@ import { group } from "d3-array";
 import { format } from "d3-format";
 import { useDataset } from "../hooks/useDataset";
 import { useFilters } from "../hooks/useFilters";
-import { isSemua, WILAYAH } from "../lib/sektor";
+import { isSemua, WILAYAH, TAHUN } from "../lib/sektor";
 import { skorKomoditas, skorKomoditasProvinsi, type Usulan } from "../lib/komoditas";
 import { Card, HeroNote, LangkahLanjut } from "../components/ui";
 import { DataTable, type Column } from "../components/DataTable";
-import { FilterBar } from "../components/FilterBar";
 import { ErrorBlock } from "./Ringkasan";
 import type { Row } from "../lib/data";
 
@@ -287,6 +286,8 @@ function InventarisLengkap({ rows }: { rows: Row[] }) {
 }
 
 
+const tahunTerbaru = TAHUN[TAHUN.length - 1];
+
 export function KomoditasUsulan() {
   const f = useFilters();
   const { csv, json, loading, error } = useDataset({
@@ -305,8 +306,8 @@ export function KomoditasUsulan() {
   const usulanAI = (json.usulan_ai ?? {}) as { layer1?: Row[]; layer2?: Row[] };
 
   const { perWilayah, usulanProvinsi, tierBPerWilayah, aiL2PerWilayah, prodKKPerWilayah, cariL1 } = useMemo(() => {
-    const skor = skorKomoditas({ produksi, pdrb, wilayah: wilayahCsv, ekspor, tahun: f.tahun, basisEkspor: "kalsel" });
-    const usulanProvinsi = skorKomoditasProvinsi({ komoditasProv, ekspor, pdrb, wilayah: wilayahCsv, tahun: f.tahun, topProv: 10, basisEkspor: "kalsel" });
+    const skor = skorKomoditas({ produksi, pdrb, wilayah: wilayahCsv, ekspor, tahun: tahunTerbaru, basisEkspor: "kalsel" });
+    const usulanProvinsi = skorKomoditasProvinsi({ komoditasProv, ekspor, pdrb, wilayah: wilayahCsv, tahun: tahunTerbaru, topProv: 10, basisEkspor: "kalsel" });
     const tierBPerWilayah = group(tierBCsv, (d) => String(d.wilayah_id));
     const aiL2PerWilayah = group(usulanAI.layer2 ?? [], (d) => String(d.wilayah_id));
     const aiL1ByKom = new Map((usulanAI.layer1 ?? []).map((d) => [normKom(d.komoditas), d]));
@@ -320,7 +321,7 @@ export function KomoditasUsulan() {
     };
 
     return { perWilayah: skor.perWilayah, usulanProvinsi, tierBPerWilayah, aiL2PerWilayah, prodKKPerWilayah, cariL1 };
-  }, [produksi, pdrb, wilayahCsv, ekspor, komoditasProv, tierBCsv, usulanAI, produksiKK, f.tahun]);
+  }, [produksi, pdrb, wilayahCsv, ekspor, komoditasProv, tierBCsv, usulanAI, produksiKK]);
 
   const semuaUsulan = useMemo(() => {
     const out: Row[] = [];
@@ -417,11 +418,10 @@ export function KomoditasUsulan() {
       <h1 className="page-title">Komoditas usulan</h1>
       <p className="page-lede">
         Komoditas apa yang direkomendasikan, dan di mana? Setiap rekomendasi disertai dasar bukti
-        yang bisa ditelusuri: data statistik, dokumen pemerintah, atau laporan.
-        Pilih kabupaten/kota di bawah untuk melihat rekomendasinya
+        yang bisa ditelusuri: data statistik, dokumen pemerintah, atau laporan. Rekomendasi memakai
+        data tarikan terbaru secara otomatis. Pilih kabupaten/kota di bawah untuk melihat
+        rekomendasinya
       </p>
-
-      <FilterBar showWilayah={false} showSektor={false} />
 
       <div className="card info-dasar">
         <strong>Cara membaca dasar usulan</strong>

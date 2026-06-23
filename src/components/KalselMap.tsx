@@ -18,6 +18,7 @@ interface Props {
   formatValue: (v: number | null) => string;
   downloadName?: string;
   height?: number;
+  onPilihWilayah?: (wilayahId: string) => void;
 }
 
 export function KalselMap({
@@ -27,8 +28,15 @@ export function KalselMap({
   formatValue,
   downloadName = "peta-kalsel",
   height = 440,
+  onPilihWilayah,
 }: Props) {
   registerKalselMap(geojson);
+
+  const idByNama = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const f of geojson.features) m.set(f.properties.nama, String(f.properties.wilayah_id));
+    return m;
+  }, [geojson]);
 
   const option = useMemo<EChartsOption>(() => {
     const data = geojson.features.map((f) => ({
@@ -89,5 +97,27 @@ export function KalselMap({
     };
   }, [geojson, valueByWid, ramp, formatValue, downloadName]);
 
-  return <EChart option={option} height={height} renderer="canvas" noZoom />;
+  const events = useMemo(
+    () =>
+      onPilihWilayah
+        ? {
+            click: (p: any) => {
+              const id = idByNama.get(p?.name);
+              if (id) onPilihWilayah(id);
+            },
+          }
+        : undefined,
+    [onPilihWilayah, idByNama]
+  );
+
+  return (
+    <EChart
+      option={option}
+      height={height}
+      renderer="canvas"
+      noZoom
+      onEvents={events}
+      className={onPilihWilayah ? "peta-klikable" : undefined}
+    />
+  );
 }

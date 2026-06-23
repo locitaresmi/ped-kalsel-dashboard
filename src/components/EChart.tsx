@@ -6,6 +6,7 @@ interface Props extends ChartOpts {
   height?: number;
   renderer?: "svg" | "canvas";
   className?: string;
+  onEvents?: Record<string, (params: any) => void>;
 }
 
 export function EChart({
@@ -15,6 +16,7 @@ export function EChart({
   noToolbox,
   noZoom,
   className,
+  onEvents,
 }: Props) {
   return (
     <ReactECharts
@@ -24,6 +26,7 @@ export function EChart({
       style={{ height, width: "100%" }}
       opts={{ renderer }}
       className={className}
+      onEvents={onEvents}
     />
   );
 }

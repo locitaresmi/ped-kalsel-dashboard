@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { sum, rollups } from "d3-array";
 import { useDataset } from "../hooks/useDataset";
 import { useFilters, WILAYAH_OPSI } from "../hooks/useFilters";
-import { isSemua, namaPendek, SEMUA, type Wilayah } from "../lib/sektor";
+import { isSemua, namaPendek, SEMUA, WILAYAH, type Wilayah } from "../lib/sektor";
 import { skorKomoditas } from "../lib/komoditas";
 import { fmtRp, fmt2, pctSigned } from "../lib/format";
 import { KalselMap } from "../components/KalselMap";
@@ -125,6 +125,27 @@ export function Ringkasan() {
       ? "Jumlah sektor unggulan (LQ > 1)"
       : `LQ sektor ${namaPendek(f.sektor.kode, f.sektor.nama)}`;
 
+  const topDaerah = useMemo(() => {
+    if (!wilayahLQ.length) return [];
+    return WILAYAH.filter((w) => w.id !== "6300")
+      .map((w) => ({
+        id: w.id,
+        nama: w.nama,
+        n: wilayahLQ.filter(
+          (d) => String(d.wilayah_id) === w.id && d.tahun === tahun && (d.lq as number) >= 1
+        ).length,
+      }))
+      .filter((d) => d.n > 0)
+      .sort((a, b) => b.n - a.n);
+  }, [wilayahLQ, tahun]);
+
+  const selWil = !isSemua(f.wilayah) && f.wilayah.id !== "6300" ? f.wilayah : null;
+  const selBasisN = selWil
+    ? wilayahLQ.filter(
+        (d) => String(d.wilayah_id) === selWil.id && d.tahun === tahun && (d.lq as number) >= 1
+      ).length
+    : 0;
+
   if (error) return <ErrorBlock error={error} />;
 
   return (
@@ -144,7 +165,7 @@ export function Ringkasan() {
             <div>
               <strong>Lihat gambaran umum</strong>
               <br />
-              <span className="muted">Peta dan angka kunci Kalsel ada di halaman ini</span>
+              <span className="muted">Peta dan indikator utama Kalsel ada di halaman ini</span>
             </div>
           </div>          <div className="langkah">
             <span className="no">2</span>
@@ -164,9 +185,9 @@ export function Ringkasan() {
         </div>
       </details>
 
-      <h2 className="section-title">Angka kunci Provinsi Kalimantan Selatan</h2>
+      <h2 className="section-title">Indikator utama Provinsi Kalimantan Selatan</h2>
       {loading ? (
-        <div className="loading-block">Memuat angka kunci…</div>
+        <div className="loading-block">Memuat indikator utama…</div>
       ) : (
         <div className="kpi-grid">
           <KpiCard
@@ -244,7 +265,7 @@ export function Ringkasan() {
       </div>
 
       <h2 className="section-title">Jelajahi peta dan angka daerah</h2>
-      <FilterBar hint="Pilih satu kabupaten/kota untuk melihat detail sektor dan komoditas unggulannya, atau pilih satu sektor untuk mewarnai peta dengan LQ-nya" />
+      <FilterBar showReset hint="Klik daerah di peta atau pilih di filter untuk melihat detail sektor dan komoditas unggulannya, atau pilih satu sektor untuk mewarnai peta dengan LQ-nya" />
 
       {loading ? (
         <div className="loading-block">Memuat peta Kalsel…</div>
@@ -257,7 +278,7 @@ export function Ringkasan() {
                 <InfoTip teks="LQ (Location Quotient) menunjukkan seberapa terspesialisasi suatu daerah di sektor tertentu dibanding rata-rata nasional. LQ lebih dari 1 berarti sektor itu lebih kuat di daerah ini." />
               </>
             }
-            subtitle={`Tahun ${tahun} · ${petaLabel}. Makin gelap warnanya, makin banyak sektor unggulannya`}
+            subtitle={`Tahun ${tahun} · ${petaLabel}. Makin gelap warnanya, makin banyak sektor unggulannya. Klik daerah untuk melihat detailnya`}
           >
             {kalsel && (
               <KalselMap
@@ -272,15 +293,20 @@ export function Ringkasan() {
                       : `LQ ${fmt2(v)}`
                 }
                 downloadName="peta-ped-kalsel"
+                onPilihWilayah={(id) => f.setWilayah(id)}
               />
             )}
           </Card>
 
-          <Card title={isSemua(f.wilayah) ? "Ringkasan Provinsi Kalsel" : "Wilayah terpilih"}>
+          <Card
+            title={selWil ? selWil.nama : "Ringkasan Provinsi Kalimantan Selatan"}
+            subtitle={selWil ? `Tahun ${tahun} · ${selBasisN} sektor unggulan (LQ > 1)` : undefined}
+          >
             <DetailWilayah
               w={f.wilayah}
               tahun={tahun}
               wilayahLQ={wilayahLQ}
+              topDaerah={topDaerah}
               nSektorBasis={kpi.nSektorBasis}
               totalUsulan={usulan.totalUsulan}
               nWilayahUsulan={usulan.nWilayahUsulan}
@@ -298,82 +324,111 @@ export function Ringkasan() {
   );
 }
 
+function dotBasis(n: number, max: number): string {
+  const r = max ? n / max : 0;
+  return r >= 0.75 ? RAMP_BASIS[3] : r >= 0.5 ? RAMP_BASIS[2] : r >= 0.25 ? RAMP_BASIS[1] : RAMP_BASIS[0];
+}
+
 function DetailWilayah({
-  w, tahun, wilayahLQ, nSektorBasis, totalUsulan, nWilayahUsulan,
+  w, tahun, wilayahLQ, topDaerah, nSektorBasis, totalUsulan, nWilayahUsulan,
 }: {
-  w: Wilayah; tahun: number; wilayahLQ: Row[];
+  w: Wilayah; tahun: number; wilayahLQ: Row[]; topDaerah: { id: string; nama: string; n: number }[];
   nSektorBasis: number; totalUsulan: number; nWilayahUsulan: number;
 }) {
-  if (isSemua(w)) {
+  if (isSemua(w) || w.id === "6300") {
+    const maxN = topDaerah[0]?.n ?? 0;
     return (
       <div>
-        <p>
-          Provinsi Kalimantan Selatan terdiri dari <strong>13 kabupaten/kota</strong>. Pada tahun{" "}
-          {tahun}, provinsi ini memiliki <strong>{nSektorBasis || "—"} sektor unggulan</strong>{" "}
-          (sektor yang lebih kuat di Kalsel dibanding rata-rata nasional)
+        <p className="muted" style={{ marginTop: 0 }}>
+          13 kabupaten/kota, <strong>{nSektorBasis || "—"} sektor unggulan</strong> di tingkat
+          provinsi, dan <strong>{totalUsulan || "—"} komoditas terverifikasi</strong> tersebar di{" "}
+          {nWilayahUsulan} kab/kota
         </p>
-        <p>
-          Sudah ada <strong>{totalUsulan || "—"} komoditas terverifikasi</strong> yang
-          direkomendasikan di {nWilayahUsulan} kabupaten/kota
-        </p>
-        <p className="muted">
-          Pilih satu kabupaten/kota pada filter di atas untuk melihat sektor unggulan dan komoditas
-          usulannya. Atau pilih satu sektor untuk mewarnai peta dengan LQ-nya
-        </p>
-        <p>
-          <Link className="btn-cta" to="/komoditas-usulan">
-            Lihat komoditas usulan
-          </Link>
-        </p>
+
+        {topDaerah.length > 0 && (
+          <div className="top-daerah">
+            <div className="top-daerah-title">Daerah dengan sektor unggulan terbanyak</div>
+            {topDaerah.slice(0, 5).map((d, i) => (
+              <Link key={d.id} className="td-item" to={`/komoditas-usulan?wilayah=${d.id}`}>
+                <span className="td-dot" style={{ background: dotBasis(d.n, maxN) }} />
+                <span className="td-name">{d.nama}</span>
+                <span className="td-val" style={{ opacity: i < 3 ? 1 : 0.6 }}>
+                  {d.n} sektor
+                </span>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        <Link className="btn-cta btn-block" to="/komoditas-usulan">
+          Lihat komoditas usulan Kalsel
+        </Link>
       </div>
     );
   }
-  if (w.id === "6300") {
+
+  const rows = wilayahLQ.filter((d) => String(d.wilayah_id) === w.id && d.tahun === tahun);
+  if (!rows.length) {
     return (
-      <div>
-        <p>
-          Level provinsi. Lihat angka kunci dan grafik di bawah, atau pilih satu kabupaten/kota untuk
-          melihat detailnya
-        </p>
-        <p>
-          <Link className="btn-cta" to="/komoditas-usulan">
-            Lihat komoditas usulan
-          </Link>
-        </p>
-      </div>
+      <p className="muted" style={{ marginTop: 0 }}>
+        Data rincian sektor (PDRB 17 sektor) belum tersedia untuk wilayah ini di sumber BPS. Bagian
+        ini sengaja dikosongkan dan ditandai sebagai keterbatasan
+      </p>
     );
   }
-  const basis = wilayahLQ
-    .filter((d) => String(d.wilayah_id) === w.id && d.tahun === tahun && (d.lq as number) >= 1)
+
+  const basis = rows
+    .filter((d) => (d.lq as number) >= 1)
     .sort((a, b) => (b.lq as number) - (a.lq as number));
-  if (!basis.length) {
-    return (
-      <div>
-        <p>
-          Data rincian sektor (PDRB 17 sektor) belum tersedia untuk wilayah ini di sumber BPS,
-          misalnya Kotabaru. Bagian ini sengaja dikosongkan dan ditandai sebagai keterbatasan
-        </p>
-      </div>
-    );
-  }
+  const pdrbWil = sum(rows, (d) => d.pdrb_wil as number);
+  const prev = wilayahLQ.filter((d) => String(d.wilayah_id) === w.id && d.tahun === tahun - 1);
+  const pdrbPrev = sum(prev, (d) => d.pdrb_wil as number);
+  const growth = pdrbPrev ? (pdrbWil / pdrbPrev - 1) * 100 : null;
+  const maxLq = basis[0] ? (basis[0].lq as number) : 1;
+
   return (
     <div>
-      <p className="muted">
-        Tahun {tahun} · {basis.length} sektor unggulan (LQ &gt; 1)
-      </p>
-      <p>Sektor terkuat di {w.nama} (LQ tertinggi):</p>
-      <ul style={{ margin: "0.25rem 0", paddingLeft: "1.1rem" }}>
-        {basis.slice(0, 5).map((d) => (
-          <li key={String(d.sektor_kode)}>
-            {String(d.sektor)} <strong>(LQ {fmt2(d.lq as number)})</strong>
-          </li>
-        ))}
-      </ul>
-      <p>
-        <Link className="btn-cta" to={`/komoditas-usulan?wilayah=${w.id}`}>
-          Komoditas usulan {w.nama}
-        </Link>
-      </p>
+      <div className="mini-stats">
+        <div className="mini-stat">
+          <div className="ms-val">{pdrbWil ? fmtRp(pdrbWil) : "—"}</div>
+          <div className="ms-lbl">PDRB (miliar Rp)</div>
+        </div>
+        <div className="mini-stat">
+          <div className={`ms-val ${growth != null ? (growth >= 0 ? "pos" : "neg") : ""}`}>
+            {growth == null ? "—" : `${pctSigned(growth)}%`}
+          </div>
+          <div className="ms-lbl">Pertumbuhan</div>
+        </div>
+        <div className="mini-stat">
+          <div className="ms-val">{basis.length}/17</div>
+          <div className="ms-lbl">Sektor unggulan</div>
+        </div>
+      </div>
+
+      {basis.length > 0 ? (
+        <div className="lq-list">
+          <div className="top-daerah-title">Sektor terkuat (LQ)</div>
+          {basis.slice(0, 5).map((d) => (
+            <div key={String(d.sektor_kode)} className="lq-row">
+              <span className="lq-name">{namaPendek(String(d.sektor_kode), String(d.sektor))}</span>
+              <span className="lq-track">
+                <span
+                  className="lq-fill"
+                  style={{ width: `${Math.max(8, ((d.lq as number) / maxLq) * 100)}%` }}
+                />
+              </span>
+              <span className="lq-val">{fmt2(d.lq as number)}</span>
+            </div>
+          ))}
+          <div className="lq-note">LQ &gt; 1 = lebih kuat dari rata-rata nasional</div>
+        </div>
+      ) : (
+        <p className="muted">Belum ada sektor dengan LQ di atas 1 untuk wilayah ini pada {tahun}</p>
+      )}
+
+      <Link className="btn-cta btn-block" to={`/komoditas-usulan?wilayah=${w.id}`}>
+        Komoditas usulan {w.nama}
+      </Link>
     </div>
   );
 }

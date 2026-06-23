@@ -1,7 +1,10 @@
 import { useSearchParams } from "react-router-dom";
 import { WILAYAH, SEKTOR, TAHUN, SEMUA, type Wilayah, type Sektor } from "../lib/sektor";
 
-export const WILAYAH_OPSI: Wilayah[] = [{ id: SEMUA, nama: "Semua wilayah" }, ...WILAYAH];
+export const WILAYAH_OPSI: Wilayah[] = [
+  { id: SEMUA, nama: "Semua wilayah" },
+  ...WILAYAH.filter((w) => w.id !== "6300"),
+];
 export const SEKTOR_OPSI: Sektor[] = [{ kode: SEMUA, nama: "Semua sektor" }, ...SEKTOR];
 
 export interface Filters {
