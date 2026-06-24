@@ -430,10 +430,12 @@ export function KondisiEkonomi() {
   ];
 
   const apbd = csv.apbd ?? [];
-  const apbdTahun = apbd[0]?.tahun;
-  const apbdKab = apbd.filter((d) => String(d.wilayah_id) !== "6300");
-  const apbdWil = apbd.find((d) => String(d.wilayah_id) === wid);
-  const apbdProv = apbd.find((d) => String(d.wilayah_id) === "6300");
+  const apbdYears = [...new Set(apbd.map((d) => d.tahun as number))].sort((a, b) => a - b);
+  const apbdTahun = apbdYears.includes(thisYear) ? thisYear : apbdYears[apbdYears.length - 1];
+  const apbdTh = apbd.filter((d) => d.tahun === apbdTahun);
+  const apbdKab = apbdTh.filter((d) => String(d.wilayah_id) !== "6300");
+  const apbdWil = apbdTh.find((d) => String(d.wilayah_id) === wid);
+  const apbdProv = apbdTh.find((d) => String(d.wilayah_id) === "6300");
   const realisasiBelanja = (r: Row | undefined) =>
     r && num(r.belanja) ? (num(r.belanja_real) ?? 0) / (num(r.belanja) as number) : null;
 
@@ -742,7 +744,7 @@ export function KondisiEkonomi() {
           </Card>
           <details className="detail-block">
             <summary>Lihat tabel APBD per wilayah</summary>
-            <DataTable rows={apbd} columns={apbdCols} initialSort="rasio_tkd" initialReverse />
+            <DataTable rows={apbdTh} columns={apbdCols} initialSort="rasio_tkd" initialReverse />
           </details>
         </>
       )}
