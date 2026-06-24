@@ -288,7 +288,7 @@ export function SubsektorUnggulan() {
         <>
           <HeroNote>
             Wilayah: <strong>{namaWilayah}</strong> · periode{" "}
-            <strong>{analisis.base ?? "—"} sampai {analisis.akhir ?? "—"}</strong> · {rows.length} sektor
+            <strong>{analisis.base ?? "-"} sampai {analisis.akhir ?? "-"}</strong> · {rows.length} sektor
             dianalisis · ditemukan <strong>{rows.filter((d) => d.unggul).length}</strong> sektor unggulan
             (sektor basis yang juga tumbuh). Periode dimulai dari 2021 untuk menghindari distorsi akibat
             tahun pandemi COVID-19
@@ -302,6 +302,7 @@ export function SubsektorUnggulan() {
                 </>
               }
               subtitle="Sumbu mendatar: seberapa cepat sektor tumbuh. Sumbu tegak: LQ, porsi sektor dibanding rata-rata nasional. Sektor di kanan atas paling kuat"
+              sumber={{ sumber: "BPS, PDRB lapangan usaha", periode: `${analisis.base ?? "-"}-${analisis.akhir ?? "-"}`, tipe: "otomatis" }}
             >
               <div className="plain-summary">Sektor di kanan atas = paling menjanjikan untuk dikembangkan (porsinya besar sekaligus tumbuh cepat)</div>
               <EChart option={klassenOption} height={460} noZoom />
@@ -314,6 +315,7 @@ export function SubsektorUnggulan() {
                 </>
               }
               subtitle="Hijau: tumbuh lebih cepat dari rata-rata nasional di bidang yang sama. Merah: lebih lambat"
+              sumber={{ sumber: "BPS, PDRB lapangan usaha", periode: `${analisis.base ?? "-"}-${analisis.akhir ?? "-"}`, tipe: "otomatis" }}
             >
               <div className="plain-summary">Batang hijau ke kanan = sektor daerah unggul dari rata-rata nasional. Merah ke kiri = tertinggal</div>
               <EChart option={dayaSaingOption} height={Math.max(360, 28 * rows.length + 60)} noZoom />
@@ -370,6 +372,7 @@ export function SubsektorUnggulan() {
               <Card
                 title="Posisi 52 subsektor berdasarkan keterkaitannya"
                 subtitle="Sumbu mendatar: seberapa banyak sektor membutuhkan input dari sektor lain. Sumbu tegak: seberapa banyak hasilnya dipakai sektor lain. Garis putus-putus adalah rata-rata"
+                sumber={{ sumber: "BPS, Tabel Input-Output Kalimantan Selatan", periode: `Tahun ${tahunIO}`, tipe: "berkala" }}
               >
                 <div className="plain-summary">
                   Subsektor di kanan atas adalah sektor kunci. Mengembangkannya memberi efek domino

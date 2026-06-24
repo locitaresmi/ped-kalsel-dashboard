@@ -15,7 +15,7 @@ const rpT = (v: number) => `Rp ${fmt1(v / 1e12)} T`;
 const pct1 = (f: number) => (f * 100).toFixed(1) + "%";
 
 const fmtBulan = (v: unknown): string =>
-  v instanceof Date ? `${v.getFullYear()}-${String(v.getMonth() + 1).padStart(2, "0")}` : String(v ?? "—");
+  v instanceof Date ? `${v.getFullYear()}-${String(v.getMonth() + 1).padStart(2, "0")}` : String(v ?? "-");
 const KODE17 = SEKTOR.map((s) => s.kode);
 
 interface GapRow {
@@ -181,7 +181,7 @@ export function Pembiayaan() {
 
       <HeroNote variant="warning">
         <strong>Catatan data.</strong> Angka kredit dan DPK adalah posisi bulan{" "}
-        <strong>{bulan ?? "—"}</strong> (Bank Umum) dan <strong>{bprBulan ?? "—"}</strong> (BPR/BPRS),
+        <strong>{bulan ?? "-"}</strong> (Bank Umum) dan <strong>{bprBulan ?? "-"}</strong> (BPR/BPRS),
         ditarik otomatis dari portal data OJK. Portal sesekali perlu beberapa kali percobaan, jadi
         pembaruan dijadwalkan dan jika gagal data terakhir tetap dipakai. Bank Umum Syariah belum
         dirinci per sektor di sini
@@ -191,7 +191,7 @@ export function Pembiayaan() {
         <KpiCard label="Kredit Bank Umum" info="Baki debet kredit Bank Umum yang disalurkan di Kalimantan Selatan" value={rpT(kalselTotal)} context={`Posisi ${bulan ?? ""}. Termasuk kredit usaha dan konsumsi rumah tangga`} />
         <KpiCard label="Dana Pihak Ketiga" info="Simpanan masyarakat (giro, tabungan, deposito) di Bank Umum Kalsel" value={rpT(kalselDpk)} context="Dana masyarakat yang dihimpun perbankan" />
         <KpiCard label="Rasio kredit terhadap DPK (LDR)" info="Loan to Deposit Ratio. Seberapa besar dana yang dihimpun disalurkan kembali jadi kredit" value={pct1(kalselLDR)} context={`Rata-rata nasional ${pct1(nasLDR)}`} />
-        <KpiCard label="Kredit BPR dan BPRS" info="Kredit Bank Perekonomian Rakyat (konvensional dan syariah), banyak melayani UMKM" value={bprKalsel ? rpT(bprKalsel.kredit) : "—"} context={bprKalsel ? `${pct1(bprKalselUmkmShare)} untuk usaha kecil dan menengah. ${fmt0(bprKalsel.kantor)} kantor` : ""} />
+        <KpiCard label="Kredit BPR dan BPRS" info="Kredit Bank Perekonomian Rakyat (konvensional dan syariah), banyak melayani UMKM" value={bprKalsel ? rpT(bprKalsel.kredit) : "-"} context={bprKalsel ? `${pct1(bprKalselUmkmShare)} untuk usaha kecil dan menengah. ${fmt0(bprKalsel.kantor)} kantor` : ""} />
         <KpiCard label="Kredit usaha bermasalah (NPL)" info="Non Performing Loan, yaitu bagian kredit lapangan usaha yang menunggak: kurang lancar, diragukan, atau macet. Batas sehat menurut OJK 5 persen" value={pct1(nplRatio)} context="Dari total kredit lapangan usaha Kalsel" />
       </div>
 
@@ -212,6 +212,7 @@ export function Pembiayaan() {
       <Card
         title="Porsi kredit usaha vs porsi PDRB per sektor"
         subtitle="Batang abu = porsi sektor dalam ekonomi (PDRB). Batang merah = porsi sektor dalam kredit usaha. Bila merah jauh lebih pendek, sektor itu kurang dibiayai"
+        sumber={{ sumber: "OJK (kredit Bank Umum) dan BPS (PDRB)", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis" }}
       >
         <div className="plain-summary">Perhatikan sektor dengan batang abu panjang tetapi batang merah pendek. Itu sektor yang bobot ekonominya besar tetapi pembiayaannya tertinggal</div>
         <EChart option={gapOption()} height={Math.max(360, 28 * gapRows.length + 60)} noZoom />
@@ -235,10 +236,10 @@ export function Pembiayaan() {
         kembali disalurkan sebagai kredit di daerah
       </HeroNote>
       <div className="chart-grid-2">
-        <Card title="Total kredit Bank Umum per provinsi" subtitle="15 provinsi terbesar, dalam triliun rupiah">
+        <Card title="Total kredit Bank Umum per provinsi" subtitle="15 provinsi terbesar, dalam triliun rupiah" sumber={{ sumber: "OJK, statistik perbankan", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis" }}>
           <EChart option={provOption("kredit")} height={420} noZoom />
         </Card>
-        <Card title="Rasio kredit terhadap DPK (LDR) per provinsi" subtitle="15 provinsi tertinggi. Garis putus-putus = rata-rata nasional">
+        <Card title="Rasio kredit terhadap DPK (LDR) per provinsi" subtitle="15 provinsi tertinggi. Garis putus-putus = rata-rata nasional" sumber={{ sumber: "OJK, statistik perbankan", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis" }}>
           <EChart option={provOption("ldr")} height={420} noZoom />
         </Card>
       </div>
@@ -251,7 +252,7 @@ export function Pembiayaan() {
           <> Di Kalsel, BPR dan BPRS menyalurkan kredit {rpT(bprKalsel.kredit)} ({pct1(bprKalselUmkmShare)} untuk UMKM), menghimpun DPK {rpT(bprKalsel.dpk)}, melalui {fmt0(bprKalsel.kantor)} kantor</>
         ) : null}
       </HeroNote>
-      <Card title="Kredit BPR dan BPRS per provinsi" subtitle="15 provinsi terbesar, dalam triliun rupiah">
+      <Card title="Kredit BPR dan BPRS per provinsi" subtitle="15 provinsi terbesar, dalam triliun rupiah" sumber={{ sumber: "OJK, statistik BPR/BPRS", periode: `Posisi ${bprBulan ?? "-"}`, tipe: "otomatis" }}>
         <EChart option={bprOption()} height={420} noZoom />
       </Card>
     </div>

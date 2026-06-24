@@ -41,8 +41,9 @@ export function Tentang() {
 
       <h2 className="section-title">Cakupan metode Kajian PED</h2>
       <p>
-        Dasbor ini mengikuti tahapan Kajian PED OJK (Bab 3.1). Sebagian besar sudah tercakup
-        otomatis, sebagian belum, dan yang belum ditandai apa adanya
+        Dasbor ini mengikuti tahapan panduan Kajian PED OJK tahun 2026 (Bab 3.1). Bila panduannya
+        diperbarui di kemudian hari, acuan dasbor ini tetap edisi 2026 sampai disesuaikan. Sebagian
+        besar tahapan sudah tercakup otomatis, sebagian belum, dan yang belum ditandai apa adanya
       </p>
       <details className="detail-block">
         <summary>Lihat rincian cakupan per tahapan</summary>
@@ -144,7 +145,7 @@ export function Tentang() {
       <h2 className="section-title">Atribusi</h2>
       <p>
         Data © Badan Pusat Statistik (BPS) dan kementerian/lembaga terkait. Dasbor ini bukan
-        produk resmi BPS atau OJK. Metodenya mengacu pada panduan Kajian PED OJK
+        produk resmi BPS atau OJK. Metodenya mengacu pada panduan Kajian PED OJK tahun 2026
       </p>
       <details className="detail-block">
         <summary>Catatan teknis untuk pengembang</summary>
@@ -164,7 +165,7 @@ export function Tentang() {
             <tbody>
               <tr>
                 <td>PDRB lapangan usaha</td>
-                <td>6300, 6301–6311/6371/6372, nasional 0000, + 5 provinsi Kalimantan</td>
+                <td>6300, 6301-6311/6371/6372, nasional 0000, + 5 provinsi Kalimantan</td>
               </tr>
               <tr>
                 <td>Kesejahteraan</td>
@@ -192,7 +193,7 @@ export function Tentang() {
               </tr>
               <tr>
                 <td>Produksi per kab/kota</td>
-                <td>6301–6311/6371/6372 (sebagian data lama)</td>
+                <td>6301-6311/6371/6372 (sebagian data lama)</td>
               </tr>
               <tr>
                 <td>Produksi tingkat provinsi</td>

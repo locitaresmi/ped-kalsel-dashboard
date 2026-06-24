@@ -206,8 +206,8 @@ export function Ringkasan() {
 
           <KpiCard
             label="Pertumbuhan ekonomi"
-            value={kpi.pertumbuhan == null ? "—" : `${pctSigned(kpi.pertumbuhan)}%`}
-            context={`Dibanding tahun ${tahun - 1}. Rata-rata nasional ${kpi.pertumbuhanNas == null ? "—" : pctSigned(kpi.pertumbuhanNas) + "%"}`}
+            value={kpi.pertumbuhan == null ? "-" : `${pctSigned(kpi.pertumbuhan)}%`}
+            context={`Dibanding tahun ${tahun - 1}. Rata-rata nasional ${kpi.pertumbuhanNas == null ? "-" : pctSigned(kpi.pertumbuhanNas) + "%"}`}
           >
             {kpi.pertumbuhan != null && kpi.pertumbuhanNas != null && (
               <span className={`kpi-badge ${kpi.pertumbuhan >= kpi.pertumbuhanNas ? "good" : "bad"}`}>
@@ -225,7 +225,7 @@ export function Ringkasan() {
             }
             value={
               <>
-                {kpi.nSektorBasis || "—"}
+                {kpi.nSektorBasis || "-"}
                 <span style={{ fontSize: "1.1rem", fontWeight: 600, color: "var(--color-neutral-400)" }}>
                   {" "}
                   / 17
@@ -238,7 +238,7 @@ export function Ringkasan() {
           <KpiCard
             label="Komoditas terverifikasi"
             info="Komoditas dengan data produksi atau ekspor resmi BPS yang tersedia."
-            value={usulan.totalUsulan || "—"}
+            value={usulan.totalUsulan || "-"}
             context={
               <>
                 Berdasar data BPS, tersebar di {usulan.nWilayahUsulan} kab/kota ·{" "}
@@ -279,6 +279,7 @@ export function Ringkasan() {
               </>
             }
             subtitle={`Tahun ${tahun} · ${petaLabel}. Makin gelap warnanya, makin banyak sektor unggulannya. Klik daerah untuk melihat detailnya`}
+            sumber={{ sumber: "BPS, PDRB lapangan usaha kab/kota", periode: `Tahun ${tahun}`, tipe: "otomatis" }}
           >
             {kalsel && (
               <KalselMap
@@ -340,8 +341,8 @@ function DetailWilayah({
     return (
       <div>
         <p className="muted" style={{ marginTop: 0 }}>
-          13 kabupaten/kota, <strong>{nSektorBasis || "—"} sektor unggulan</strong> di tingkat
-          provinsi, dan <strong>{totalUsulan || "—"} komoditas terverifikasi</strong> tersebar di{" "}
+          13 kabupaten/kota, <strong>{nSektorBasis || "-"} sektor unggulan</strong> di tingkat
+          provinsi, dan <strong>{totalUsulan || "-"} komoditas terverifikasi</strong> tersebar di{" "}
           {nWilayahUsulan} kab/kota
         </p>
 
@@ -390,12 +391,12 @@ function DetailWilayah({
     <div>
       <div className="mini-stats">
         <div className="mini-stat">
-          <div className="ms-val">{pdrbWil ? fmtRp(pdrbWil) : "—"}</div>
+          <div className="ms-val">{pdrbWil ? fmtRp(pdrbWil) : "-"}</div>
           <div className="ms-lbl">PDRB (miliar Rp)</div>
         </div>
         <div className="mini-stat">
           <div className={`ms-val ${growth != null ? (growth >= 0 ? "pos" : "neg") : ""}`}>
-            {growth == null ? "—" : `${pctSigned(growth)}%`}
+            {growth == null ? "-" : `${pctSigned(growth)}%`}
           </div>
           <div className="ms-lbl">Pertumbuhan</div>
         </div>

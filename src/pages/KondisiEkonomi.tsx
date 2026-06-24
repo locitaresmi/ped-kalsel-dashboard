@@ -278,7 +278,7 @@ export function KondisiEkonomi() {
     { key: "komoditas", header: "Komoditas", value: (r) => namaKomEkspor(r), render: (r) => namaKomEkspor(r) },
     { key: "kalsel", header: "Ekspor Kalsel", align: "right", value: (r) => r.kalsel as number, render: (r) => fmtUSD(r.kalsel as number) },
     { key: "nas", header: "Ekspor nasional", align: "right", value: (r) => r.nas as number, render: (r) => fmtUSD(r.nas as number) },
-    { key: "share", header: "Porsi Kalsel", align: "right", value: (r) => shareNas(r), render: (r) => (r.nas ? fmtShare(shareNas(r)) : "—") },
+    { key: "share", header: "Porsi Kalsel", align: "right", value: (r) => shareNas(r), render: (r) => (r.nas ? fmtShare(shareNas(r)) : "-") },
     { key: "peringkat_nasional", header: "Peringkat nasional", align: "right", value: (r) => num(r.peringkat_nasional), render: (r) => "#" + r.peringkat_nasional },
   ];
 
@@ -455,8 +455,8 @@ export function KondisiEkonomi() {
 
       <div className="kpi-grid">
         <KpiCard label="PDRB harga konstan" info="PDRB adalah total nilai barang dan jasa yang diproduksi daerah dalam setahun. Harga konstan artinya sudah disesuaikan inflasi" value={fmt0(totalThis)} context={`${isProv ? "miliar Rp" : "skala tabel kab/kota BPS"}, tahun ${thisYear}`} />
-        <KpiCard label="Pertumbuhan ekonomi" value={growth == null ? "—" : `${pctSigned(growth)}%`} context={`Dibanding tahun ${prevYear}. Makin tinggi, makin cepat ekonomi tumbuh`} />
-        <KpiCard label="Sektor terbesar" value={<span style={{ fontSize: "1.15rem" }}>{dominan?.sektor ?? "—"}</span>} context={dominan ? `Menyumbang ${fpct1(dominan.share * 100)}% dari total ekonomi${dominan.sektor_kode === "B" ? ". Ketergantungan pada tambang menunjukkan pentingnya diversifikasi" : ""}` : ""} />
+        <KpiCard label="Pertumbuhan ekonomi" value={growth == null ? "-" : `${pctSigned(growth)}%`} context={`Dibanding tahun ${prevYear}. Makin tinggi, makin cepat ekonomi tumbuh`} />
+        <KpiCard label="Sektor terbesar" value={<span style={{ fontSize: "1.15rem" }}>{dominan?.sektor ?? "-"}</span>} context={dominan ? `Menyumbang ${fpct1(dominan.share * 100)}% dari total ekonomi${dominan.sektor_kode === "B" ? ". Ketergantungan pada tambang menunjukkan pentingnya diversifikasi" : ""}` : ""} />
         <KpiCard label="Sektor unggulan" info="Sektor yang lebih kuat di wilayah ini dibanding rata-rata nasional (LQ > 1)" value={nBasis} context="Dari 17 sektor ekonomi, lebih kuat dari rata-rata nasional (LQ > 1)" />
       </div>
 
@@ -473,15 +473,15 @@ export function KondisiEkonomi() {
       </HeroNote>
 
       <div className="chart-grid-2">
-        <Card title="Kontribusi PDB provinsi Kalimantan" subtitle={`% terhadap PDB nasional, ${ppYear} (Kalsel disorot)`}>
+        <Card title="Kontribusi PDB provinsi Kalimantan" subtitle={`% terhadap PDB nasional, ${ppYear} (Kalsel disorot)`} sumber={{ sumber: "BPS, PDRB provinsi", periode: `Tahun ${ppYear}`, tipe: "otomatis" }}>
           <EChart option={barProvinsiOption([...kalProv].sort((a, b) => a.share_pdrb_pct - b.share_pdrb_pct), "share_pdrb_pct", "%")} height={240} noZoom />
         </Card>
-        <Card title="Pertumbuhan ekonomi Kalimantan dan nasional" subtitle={`% yoy, ${ppYear}. Garis putus-putus = rata-rata nasional ${fpct2(gNas ?? 0)}%`}>
+        <Card title="Pertumbuhan ekonomi Kalimantan dan nasional" subtitle={`% yoy, ${ppYear}. Garis putus-putus = rata-rata nasional ${fpct2(gNas ?? 0)}%`} sumber={{ sumber: "BPS, PDRB provinsi", periode: `Tahun ${ppYear}`, tipe: "otomatis" }}>
           <EChart option={barProvinsiOption([...kalProv].sort((a, b) => a.growth_pct - b.growth_pct), "growth_pct", "%", gNas ?? null)} height={240} noZoom />
         </Card>
       </div>
 
-      <Card title="Struktur ekonomi komparatif 5 provinsi Kalimantan" subtitle={`Pangsa tiap lapangan usaha terhadap total PDRB ADHK provinsi, ${pkYear ?? "—"}. Kaltim & Kalsel bertumpu pertambangan, Kalbar & Kalteng lebih ke pertanian`}>
+      <Card title="Struktur ekonomi komparatif 5 provinsi Kalimantan" subtitle={`Pangsa tiap lapangan usaha terhadap total PDRB ADHK provinsi, ${pkYear ?? "-"}. Kaltim & Kalsel bertumpu pertambangan, Kalbar & Kalteng lebih ke pertanian`} sumber={{ sumber: "BPS, PDRB lapangan usaha provinsi", periode: `Tahun ${pkYear ?? "-"}`, tipe: "otomatis" }}>
         {pkRows.length ? <EChart option={kalStrukturOption()} height={300} noZoom /> : <p className="muted">Data struktur Kalimantan belum tersedia</p>}
       </Card>
 
@@ -503,16 +503,16 @@ export function KondisiEkonomi() {
         ))}
       </div>
       <HeroNote>
-        Indeks Harga Konsumen (IHK) bulanan kota IHK Kalimantan Selatan (BPS, {infYears[0]}–{infYears[infYears.length - 1]}).
+        Indeks Harga Konsumen (IHK) bulanan kota IHK Kalimantan Selatan (BPS, {infYears[0]}-{infYears[infYears.length - 1]}).
         Banjarmasin dan Tanjung adalah dua kota IHK utama. IHK mengukur tingkat harga, bukan laju
         kenaikannya. Tiap kota punya tahun dasar masing-masing, jadi bandingkan <em>arah tren</em>,
         bukan selisih nilai absolutnya
       </HeroNote>
       <div className="chart-grid-2">
-        <Card title="Tren IHK bulanan" subtitle="Indeks harga konsumen per kota. Geser slider untuk memperbesar rentang waktu">
+        <Card title="Tren IHK bulanan" subtitle="Indeks harga konsumen per kota. Geser slider untuk memperbesar rentang waktu" sumber={{ sumber: "BPS, IHK kota", periode: `${infYears[0]}-${infYears[infYears.length - 1]}`, tipe: "otomatis" }}>
           {infView.length ? <EChart option={lineKotaOption("ihk")} height={320} /> : <p className="muted">Pilih minimal satu kota</p>}
         </Card>
-        <Card title="Inflasi bulanan" subtitle="% perubahan IHK dibanding bulan sebelumnya">
+        <Card title="Inflasi bulanan" subtitle="% perubahan IHK dibanding bulan sebelumnya" sumber={{ sumber: "BPS, IHK kota", periode: `${infYears[0]}-${infYears[infYears.length - 1]}`, tipe: "otomatis" }}>
           {infView.some((d) => (d as any).inflasi_mtm !== "") ? <EChart option={lineKotaOption("inflasi_mtm", { zeroLine: true, fmt: "{value}%", suffix: "%" })} height={320} /> : <p className="muted">Data inflasi belum tersedia</p>}
         </Card>
       </div>
@@ -525,7 +525,7 @@ export function KondisiEkonomi() {
         <>
           <HeroNote>
             Nilai ekspor, impor, dan neraca perdagangan <strong>seluruh Provinsi Kalimantan Selatan</strong>{" "}
-            per bulan, dalam juta US$ (BPS, {eximYears[0]}–{eximYears[eximYears.length - 1]}). Angka ini
+            per bulan, dalam juta US$ (BPS, {eximYears[0]}-{eximYears[eximYears.length - 1]}). Angka ini
             adalah total resmi tingkat provinsi untuk semua komoditas. Rincian per komoditas ada di
             halaman Komoditas Usulan. Karena berlaku se-provinsi, datanya sama untuk semua pilihan
             kabupaten/kota
@@ -559,6 +559,7 @@ export function KondisiEkonomi() {
           <Card
             title="Tren ekspor, impor, dan neraca perdagangan bulanan"
             subtitle="Juta US$ per bulan. Geser slider untuk memperbesar rentang waktu. Jarak antara garis ekspor dan impor adalah surplus"
+            sumber={{ sumber: "BPS, ekspor-impor provinsi", periode: `${eximYears[0]}-${eximYears[eximYears.length - 1]}`, tipe: "otomatis" }}
           >
             <div className="plain-summary">
               Ekspor Kalsel jauh di atas impor sehingga neraca perdagangannya surplus besar, ditopang
@@ -586,6 +587,7 @@ export function KondisiEkonomi() {
           <Card
             title="Komoditas ekspor: Kalsel dibanding nasional"
             subtitle={`Nilai ekspor per golongan barang, ${eksporTahun ?? ""}. Batang merah = Kalsel, batang abu = nasional. Skala mendatar logaritmik karena nilainya berentang sangat lebar`}
+            sumber={{ sumber: "BPS, ekspor menurut golongan barang (HS 2 digit)", periode: `Tahun ${eksporTahun ?? "-"}`, tipe: "otomatis" }}
           >
             <div className="plain-summary">
               Untuk batu bara, Kalsel menyumbang porsi besar dari ekspor nasional. Untuk komoditas
@@ -614,16 +616,16 @@ export function KondisiEkonomi() {
         {tkWil ? (
           <>
             {" "}
-            <strong>{namaW}</strong>: TPT {num(tkWil.tpt) ?? "—"}%, TPAK {num(tkWil.tpak) ?? "—"}%.
-            {!isProv && tkProv ? ` Pembanding provinsi Kalsel: TPT ${num(tkProv.tpt) ?? "—"}%, TPAK ${num(tkProv.tpak) ?? "—"}%` : ""}
+            <strong>{namaW}</strong>: TPT {num(tkWil.tpt) ?? "-"}%, TPAK {num(tkWil.tpak) ?? "-"}%.
+            {!isProv && tkProv ? ` Pembanding provinsi Kalsel: TPT ${num(tkProv.tpt) ?? "-"}%, TPAK ${num(tkProv.tpak) ?? "-"}%` : ""}
           </>
         ) : null}
       </HeroNote>
       <div className="chart-grid-2">
-        <Card title="Peta TPT kabupaten/kota" subtitle={`% pengangguran terbuka, ${tkPeriode} ${tkYear} (makin gelap makin tinggi)`}>
+        <Card title="Peta TPT kabupaten/kota" subtitle={`% pengangguran terbuka, ${tkPeriode} ${tkYear} (makin gelap makin tinggi)`} sumber={{ sumber: "BPS, Sakernas", periode: `${tkPeriode} ${tkYear}`, tipe: "otomatis" }}>
           {kalsel && <KalselMap geojson={kalsel} valueByWid={tptByWid} ramp={TPT_RAMP} formatValue={(v) => (v == null ? "data belum tersedia" : `TPT ${fmt2(v)}%`)} downloadName="peta-tpt-kalsel" />}
         </Card>
-        <Card title="TPT dan TPAK antar kab/kota" subtitle={`${tkPeriode} ${tkYear}. Titik merah = TPT (pengangguran), titik biru = TPAK (partisipasi kerja)`}>
+        <Card title="TPT dan TPAK antar kab/kota" subtitle={`${tkPeriode} ${tkYear}. Titik merah = TPT (pengangguran), titik biru = TPAK (partisipasi kerja)`} sumber={{ sumber: "BPS, Sakernas", periode: `${tkPeriode} ${tkYear}`, tipe: "otomatis" }}>
           <EChart option={tptTpakOption()} height={Math.max(360, 26 * tkKab.length + 60)} noZoom />
         </Card>
       </div>
@@ -635,15 +637,15 @@ export function KondisiEkonomi() {
 
       <h2 className="section-title">Struktur sektoral</h2>
       <div className="chart-grid-2">
-        <Card title="Struktur PDRB menurut lapangan usaha" subtitle={`Pangsa tiap sektor, ${thisYear}${!isSemua(f.sektor) ? ` · sorot ${namaPendek(f.sektor.kode, f.sektor.nama)}` : ""}`}>
+        <Card title="Struktur PDRB menurut lapangan usaha" subtitle={`Pangsa tiap sektor, ${thisYear}${!isSemua(f.sektor) ? ` · sorot ${namaPendek(f.sektor.kode, f.sektor.nama)}` : ""}`} sumber={{ sumber: `BPS, PDRB lapangan usaha (${namaW})`, periode: `Tahun ${thisYear}`, tipe: "otomatis" }}>
           <div className="plain-summary">Tiap batang = porsi satu sektor terhadap total ekonomi daerah. Makin panjang, makin besar sumbangannya</div>
           <EChart option={strukturOption()} height={Math.max(360, 26 * strukturThis.length + 40)} noZoom />
         </Card>
-        <Card title="Tren PDRB total" subtitle={`${tahunAda[0]}–${tahunAda[tahunAda.length - 1]} (harga konstan)`}>
+        <Card title="Tren PDRB total" subtitle={`${tahunAda[0]}-${tahunAda[tahunAda.length - 1]} (harga konstan)`} sumber={{ sumber: `BPS, PDRB lapangan usaha (${namaW})`, periode: `${tahunAda[0]}-${tahunAda[tahunAda.length - 1]}`, tipe: "otomatis" }}>
           <EChart option={trenOption()} height={300} noZoom />
         </Card>
       </div>
-      <Card title="Pergeseran komposisi ekonomi dari tahun ke tahun" subtitle="Pangsa (%) tiap sektor per tahun. Arahkan kursor ke salah satu lapisan untuk melihat nama sektor dan persentasenya">
+      <Card title="Pergeseran komposisi ekonomi dari tahun ke tahun" subtitle="Pangsa (%) tiap sektor per tahun. Arahkan kursor ke salah satu lapisan untuk melihat nama sektor dan persentasenya" sumber={{ sumber: `BPS, PDRB lapangan usaha (${namaW})`, periode: `${tahunAda[0]}-${tahunAda[tahunAda.length - 1]}`, tipe: "otomatis" }}>
         <EChart option={komposisiOption()} height={380} noZoom />
       </Card>
 
@@ -661,18 +663,18 @@ export function KondisiEkonomi() {
       <div className="kpi-grid">
         <KartuMetrik label="PDRB per kapita" val={ksWil?.pdrb_kapita} pemb={ksKalsel?.pdrb_kapita} pembLabel="Kalsel" fmtFn={(v) => "Rp " + fmt1(v / 1000) + " jt"} lebihTinggiBaik info="Rata-rata pendapatan per orang per tahun. Makin tinggi, makin sejahtera secara rata-rata" />
         <KartuMetrik label="Tingkat kemiskinan" val={ksWil?.miskin_pct} pemb={ksNas?.miskin_pct} pembLabel="nasional" fmtFn={(v) => fpct2(v) + "%"} info="Persentase penduduk di bawah garis kemiskinan (indikator P0 BPS)" />
-        <KartuMetrik label="Rasio Gini" val={ksWil?.gini} pemb={ksNas?.gini} pembLabel="nasional" fmtFn={(v) => format(".3f")(v)} info="Angka 0–1 yang mengukur ketimpangan pendapatan. Mendekati 0 = merata" gini />
-        <KartuMetrik label="IPM (Indeks Pembangunan Manusia)" val={ksWil?.ipm} pemb={ksNas?.ipm} pembLabel="nasional" fmtFn={(v) => fpct2(v)} lebihTinggiBaik info="Gabungan kesehatan, pendidikan, dan pendapatan. Skala 0–100" />
+        <KartuMetrik label="Rasio Gini" val={ksWil?.gini} pemb={ksNas?.gini} pembLabel="nasional" fmtFn={(v) => format(".3f")(v)} info="Angka 0-1 yang mengukur ketimpangan pendapatan. Mendekati 0 = merata" gini />
+        <KartuMetrik label="IPM (Indeks Pembangunan Manusia)" val={ksWil?.ipm} pemb={ksNas?.ipm} pembLabel="nasional" fmtFn={(v) => fpct2(v)} lebihTinggiBaik info="Gabungan kesehatan, pendidikan, dan pendapatan. Skala 0-100" />
       </div>
       <div className="chart-grid-2">
-        <Card title="IPM antar kab/kota" subtitle={`${ksYear}${!isProv ? ` · ${namaW} disorot` : ""}. Garis putus-putus = rata-rata nasional`}>
+        <Card title="IPM antar kab/kota" subtitle={`${ksYear}${!isProv ? ` · ${namaW} disorot` : ""}. Garis putus-putus = rata-rata nasional`} sumber={{ sumber: "BPS, Indeks Pembangunan Manusia", periode: `Tahun ${ksYear}`, tipe: "otomatis" }}>
           <EChart option={rankOption("ipm", "IPM")} height={Math.max(340, 24 * ksKab.length + 50)} noZoom />
         </Card>
-        <Card title="Kemiskinan (P0) antar kab/kota" subtitle={`% penduduk miskin, ${ksYear} (lebih rendah lebih baik)`}>
+        <Card title="Kemiskinan (P0) antar kab/kota" subtitle={`% penduduk miskin, ${ksYear} (lebih rendah lebih baik)`} sumber={{ sumber: "BPS, kemiskinan kab/kota", periode: `Tahun ${ksYear}`, tipe: "otomatis" }}>
           <EChart option={rankOption("miskin_pct", "% miskin")} height={Math.max(340, 24 * ksKab.length + 50)} noZoom />
         </Card>
       </div>
-      <Card title="PDRB per kapita antar kab/kota" subtitle={`Ribu rupiah per orang per tahun, ${ksYear}${!isProv ? ` · ${namaW} disorot` : ""}. Kab/kota tambang biasanya jauh lebih tinggi`}>
+      <Card title="PDRB per kapita antar kab/kota" subtitle={`Ribu rupiah per orang per tahun, ${ksYear}${!isProv ? ` · ${namaW} disorot` : ""}. Kab/kota tambang biasanya jauh lebih tinggi`} sumber={{ sumber: "BPS, PDRB per kapita kab/kota", periode: `Tahun ${ksYear}`, tipe: "otomatis" }}>
         <EChart option={rankOption("pdrb_kapita", "PDRB per kapita (ribu Rp)")} height={Math.max(340, 24 * ksKab.length + 50)} noZoom />
       </Card>
 
@@ -694,7 +696,7 @@ function KartuMetrik({
   const v = num(val);
   const p = num(pemb);
   if (v == null) {
-    return <KpiCard label={label} info={info} value="—" context="data tidak tersedia" />;
+    return <KpiCard label={label} info={info} value="-" context="data tidak tersedia" />;
   }
   const baik = p == null ? null : lebihTinggiBaik ? v >= p : v <= p;
   const warna = baik == null ? "var(--color-neutral-500)" : baik ? "var(--color-success-600)" : "var(--color-danger-600)";

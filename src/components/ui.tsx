@@ -22,22 +22,70 @@ export function InfoTip({ teks }: { teks: string }) {
   );
 }
 
+export type Freshness = "otomatis" | "berkala" | "ai";
+
+const FRESH_INFO: Record<Freshness, [string, string]> = {
+  otomatis: [
+    "Diperbarui otomatis",
+    "Ditarik otomatis dari API resmi dan ikut diperbarui setiap sumber merilis data baru",
+  ],
+  berkala: [
+    "Rilis berkala",
+    "Ditarik otomatis dari BPS, tetapi tabel ini hanya dirilis secara berkala sehingga tahun datanya bisa lama. Yang ditampilkan adalah rilis terbaru yang tersedia",
+  ],
+  ai: [
+    "Dirangkum otomatis (AI)",
+    "Diekstraksi otomatis dari dokumen resmi (RPJMD, Bappeda, Indikasi Geografis) lewat GitHub Actions dan model AI, lalu disegarkan terjadwal",
+  ],
+};
+
+export interface SumberInfo {
+  sumber: string;
+  periode?: string;
+  tipe?: Freshness;
+  url?: string;
+  urlLabel?: string;
+}
+
+export function SumberData({ sumber, periode, tipe = "otomatis", url, urlLabel }: SumberInfo) {
+  const [badge, tip] = FRESH_INFO[tipe];
+  return (
+    <div className="sumber-data">
+      <span className="sd-src">
+        Sumber: <strong>{sumber}</strong>
+        {periode ? ` · ${periode}` : ""}
+      </span>
+      <span className={`sd-fresh ${tipe}`} data-tip={tip}>
+        {badge}
+      </span>
+      {url && (
+        <a className="sd-link" href={url} target="_blank" rel="noopener">
+          {urlLabel ?? "Lihat sumber"}
+        </a>
+      )}
+    </div>
+  );
+}
+
 export function Card({
   title,
   subtitle,
   children,
   className = "",
+  sumber,
 }: {
   title?: ReactNode;
   subtitle?: ReactNode;
   children: ReactNode;
   className?: string;
+  sumber?: SumberInfo;
 }) {
   return (
     <div className={`card ${className}`}>
       {title != null && <div className="card-title">{title}</div>}
       {subtitle != null && <div className="card-subtitle">{subtitle}</div>}
       {children}
+      {sumber && <SumberData {...sumber} />}
     </div>
   );
 }

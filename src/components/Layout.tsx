@@ -59,7 +59,7 @@ export function Layout() {
       </main>
 
       <footer className="app-footer">
-        Sumber: BPS, Kementan, DJKI · Mengikuti metode Kajian PED OJK ·{" "}
+        Sumber: BPS, Kementan, DJKI · Mengikuti panduan Kajian PED OJK 2026 ·{" "}
         <NavLink to="/tentang">Metodologi dan atribusi</NavLink>
       </footer>
     </div>
