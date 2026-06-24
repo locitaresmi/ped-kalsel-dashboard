@@ -41,7 +41,7 @@ interface RegRow { tahun: number; sektor_kode: string; sektor: string; nilai: nu
 export function KondisiEkonomi() {
   const f = useFilters();
   const { csv, geo, loading, error } = useDataset({
-    csv: ["pdrb", "wilayah", "pdrb_provinsi", "kesejahteraan", "inflasi", "ketenagakerjaan", "pdrb_kalimantan", "exim_kalsel", "ekspor"],
+    csv: ["pdrb", "wilayah", "pdrb_provinsi", "kesejahteraan", "inflasi", "ketenagakerjaan", "pdrb_kalimantan", "exim_kalsel", "ekspor", "apbd"],
     geo: ["kalsel"],
   });
 
@@ -429,6 +429,43 @@ export function KondisiEkonomi() {
     },
   ];
 
+  const apbd = csv.apbd ?? [];
+  const apbdTahun = apbd[0]?.tahun;
+  const apbdKab = apbd.filter((d) => String(d.wilayah_id) !== "6300");
+  const apbdWil = apbd.find((d) => String(d.wilayah_id) === wid);
+  const apbdProv = apbd.find((d) => String(d.wilayah_id) === "6300");
+  const realisasiBelanja = (r: Row | undefined) =>
+    r && num(r.belanja) ? (num(r.belanja_real) ?? 0) / (num(r.belanja) as number) : null;
+
+  function apbdOption(): EChartsOption {
+    const data = apbdKab
+      .map((d) => ({ wilayah: d.wilayah, id: String(d.wilayah_id), val: (num(d.rasio_tkd) ?? 0) * 100 }))
+      .sort((a, b) => b.val - a.val);
+    const provVal = apbdProv ? (num(apbdProv.rasio_tkd) ?? 0) * 100 : null;
+    return {
+      grid: { top: 12, right: 44, bottom: 36, left: 8, containLabel: true },
+      xAxis: { type: "value", name: "Ketergantungan transfer pusat", nameLocation: "middle", nameGap: 26, nameTextStyle: { fontSize: 10, color: "#71717A" }, axisLabel: { formatter: "{value}%", color: "#52525B" }, splitLine: { lineStyle: { color: "#F4F4F5" } } },
+      yAxis: { type: "category", data: data.map((d) => d.wilayah), axisLabel: { fontSize: 11, color: "#52525B" }, axisTick: { show: false } },
+      tooltip: { trigger: "item", formatter: (p: any) => `<div style="font-weight:600">${p.name}</div><div>Ketergantungan transfer: ${(+p.value).toFixed(1)}%</div>` },
+      series: [
+        {
+          type: "bar", barMaxWidth: 15,
+          data: data.map((d) => ({ value: d.val, itemStyle: { borderRadius: [0, 4, 4, 0], color: !isProv && d.id === wid ? OJK_COLORS.accent : "#E4A8AB" } })),
+          label: { show: true, position: "right", fontSize: 9, color: "#52525B", formatter: (p: any) => (+p.value).toFixed(0) + "%" },
+          markLine: provVal == null ? undefined : { silent: true, symbol: "none", lineStyle: { type: "dashed", color: "#A1A1AA" }, data: [{ xAxis: provVal }], label: { show: false } },
+        },
+      ],
+    };
+  }
+
+  const apbdCols: Column<Row>[] = [
+    { key: "wilayah", header: "Wilayah", value: (r) => r.wilayah, render: (r) => r.wilayah },
+    { key: "pendapatan", header: "Pendapatan", align: "right", value: (r) => num(r.pendapatan), render: (r) => "Rp " + fmt1((num(r.pendapatan) ?? 0) / 1e12) + " T" },
+    { key: "rasio_pad", header: "PAD", align: "right", value: (r) => num(r.rasio_pad), render: (r) => fpct1((num(r.rasio_pad) ?? 0) * 100) + "%" },
+    { key: "rasio_tkd", header: "Transfer pusat", align: "right", value: (r) => num(r.rasio_tkd), render: (r) => fpct1((num(r.rasio_tkd) ?? 0) * 100) + "%" },
+    { key: "realisasi", header: "Realisasi belanja", align: "right", value: (r) => realisasiBelanja(r) ?? 0, render: (r) => { const x = realisasiBelanja(r); return x == null ? "-" : fpct1(x * 100) + "%"; } },
+  ];
+
   if (error) return <ErrorBlock error={error} />;
   if (loading) return (
     <div>
@@ -676,6 +713,39 @@ export function KondisiEkonomi() {
       <Card title="PDRB per kapita antar kab/kota" subtitle={`Ribu rupiah per orang per tahun, ${ksYear}${!isProv ? ` · ${namaW} disorot` : ""}. Kab/kota tambang biasanya jauh lebih tinggi`} sumber={{ sumber: "BPS, PDRB per kapita kab/kota", periode: `Tahun ${ksYear}`, tipe: "otomatis" }}>
         <EChart option={rankOption("pdrb_kapita", "PDRB per kapita (ribu Rp)")} height={Math.max(340, 24 * ksKab.length + 50)} noZoom />
       </Card>
+
+      {apbd.length > 0 && (
+        <>
+          <h2 className="section-title">
+            Keuangan daerah: ketergantungan pada transfer pusat{" "}
+            <InfoTip teks="Rasio Transfer ke Daerah (TKD) terhadap pendapatan daerah. Makin tinggi, makin bergantung pada dana dari pemerintah pusat. Sisi sebaliknya, porsi Pendapatan Asli Daerah (PAD) menunjukkan kemandirian fiskal" />
+          </h2>
+          <HeroNote>
+            Kajian PED 3.1.1 menilai kondisi keuangan daerah lewat rasio Transfer ke Daerah terhadap
+            APBD, untuk mengukur seberapa besar daerah bergantung pada dana pemerintah pusat. Data APBD{" "}
+            <strong>{apbdTahun}</strong> bersumber dari DJPK Kemenkeu (SIKD). Rasio dihitung dari
+            anggaran, realisasi masih berjalan
+          </HeroNote>
+          <div className="kpi-grid">
+            <KpiCard label="Pendapatan daerah" info="Total anggaran pendapatan daerah pada APBD" value={apbdWil ? "Rp " + fmt1((num(apbdWil.pendapatan) ?? 0) / 1e12) + " T" : "-"} context={`APBD ${apbdTahun} · ${namaW}`} />
+            <KpiCard label="Ketergantungan transfer pusat" info="Rasio Transfer ke Daerah (TKD) terhadap pendapatan. Makin tinggi, makin bergantung pada pemerintah pusat" value={apbdWil ? fpct1((num(apbdWil.rasio_tkd) ?? 0) * 100) + "%" : "-"} context="Indikator Kajian PED 3.1.1" />
+            <KpiCard label="Kemandirian fiskal (PAD)" info="Porsi Pendapatan Asli Daerah terhadap total pendapatan. Makin tinggi, makin mandiri membiayai daerahnya" value={apbdWil ? fpct1((num(apbdWil.rasio_pad) ?? 0) * 100) + "%" : "-"} context="Sisi sebaliknya dari ketergantungan transfer" />
+            <KpiCard label="Realisasi belanja" info="Bagian anggaran belanja yang sudah terealisasi sampai data terakhir" value={realisasiBelanja(apbdWil) == null ? "-" : fpct1((realisasiBelanja(apbdWil) as number) * 100) + "%"} context="Penyerapan anggaran berjalan" />
+          </div>
+          <Card
+            title="Ketergantungan transfer pusat per kab/kota"
+            subtitle={`Rasio TKD terhadap pendapatan, APBD ${apbdTahun}. Garis putus-putus = provinsi${!isProv ? ` · ${namaW} disorot` : ""}`}
+            sumber={{ sumber: "DJPK Kemenkeu, SIKD", periode: `APBD ${apbdTahun}`, tipe: "otomatis" }}
+          >
+            <div className="plain-summary">Hampir semua kabupaten/kota sangat bergantung pada transfer pusat, sementara provinsi jauh lebih mandiri karena punya sumber pajak sendiri</div>
+            <EChart option={apbdOption()} height={Math.max(340, 24 * apbdKab.length + 50)} noZoom />
+          </Card>
+          <details className="detail-block">
+            <summary>Lihat tabel APBD per wilayah</summary>
+            <DataTable rows={apbd} columns={apbdCols} initialSort="rasio_tkd" initialReverse />
+          </details>
+        </>
+      )}
 
       <LangkahLanjut
         teks={<>Sudah memahami kondisi ekonominya? Lihat sektor mana yang paling kuat dan layak dikembangkan</>}

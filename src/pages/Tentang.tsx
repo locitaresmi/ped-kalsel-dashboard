@@ -51,7 +51,8 @@ export function Tentang() {
           <li>
             <strong>3.1.1 Kondisi sosio-ekonomi</strong>: ✓ PDRB dan struktur ekonomi, posisi Kalsel
             dibanding nasional dan se-Kalimantan, kesejahteraan (kemiskinan, Rasio Gini, IPM),
-            inflasi, dan ketenagakerjaan (TPT/TPAK). ⚠ Keuangan daerah (APBD/TKD) belum dicakup
+            inflasi, ketenagakerjaan (TPT/TPAK), serta keuangan daerah (rasio Transfer ke Daerah
+            terhadap APBD, dari DJPK Kemenkeu)
           </li>
           <li>
             <strong>3.1.2 Sub-sektor unggulan</strong>: ✓ LQ-DLQ dan Shift-Share yang dipetakan ke
@@ -90,6 +91,10 @@ export function Tentang() {
         <li>
           <strong>OJK</strong> (portal data SJKPublic) untuk kredit Bank Umum per sektor, kualitas
           kredit (NPL), DPK, serta BPR dan BPRS
+        </li>
+        <li>
+          <strong>DJPK Kemenkeu</strong> (portal SIKD) untuk postur APBD daerah dan rasio
+          ketergantungan pada transfer pusat
         </li>
         <li>
           <strong>KKP, Kementan, dan Ditjenbun</strong> untuk produksi perikanan dan perkebunan
