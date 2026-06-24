@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 
 export interface Column<T> {
   key: string;
@@ -39,6 +39,7 @@ export function DataTable<T>({
   const [sortKey, setSortKey] = useState<string | undefined>(initialSort);
   const [reverse, setReverse] = useState(initialReverse);
   const [query, setQuery] = useState("");
+  const [page, setPage] = useState(0);
 
   const filtered = useMemo(() => {
     if (!query.trim()) return rows;
@@ -67,7 +68,14 @@ export function DataTable<T>({
     return reverse ? arr.reverse() : arr;
   }, [filtered, columns, sortKey, reverse]);
 
-  const shown = maxRows ? sorted.slice(0, maxRows) : sorted;
+  const totalPages = maxRows ? Math.max(1, Math.ceil(sorted.length / maxRows)) : 1;
+  const safePage = Math.min(page, totalPages - 1);
+  const start = maxRows ? safePage * maxRows : 0;
+  const shown = maxRows ? sorted.slice(start, start + maxRows) : sorted;
+
+  useEffect(() => {
+    setPage(0);
+  }, [query, sortKey, reverse]);
 
   function onSort(key: string) {
     if (sortKey === key) setReverse((r) => !r);
@@ -118,9 +126,32 @@ export function DataTable<T>({
         </table>
       </div>
       {maxRows && sorted.length > maxRows && (
-        <p className="muted" style={{ marginTop: "0.5rem" }}>
-          Menampilkan {maxRows} dari {sorted.length} baris.
-        </p>
+        <div className="table-pagination">
+          <span className="muted">
+            Menampilkan {start + 1}-{Math.min(start + maxRows, sorted.length)} dari {sorted.length} baris
+          </span>
+          <div className="tp-controls">
+            <button
+              type="button"
+              className="tp-btn"
+              disabled={safePage === 0}
+              onClick={() => setPage((p) => Math.max(0, p - 1))}
+            >
+              Sebelumnya
+            </button>
+            <span className="tp-page">
+              Halaman {safePage + 1} dari {totalPages}
+            </span>
+            <button
+              type="button"
+              className="tp-btn"
+              disabled={safePage >= totalPages - 1}
+              onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+            >
+              Berikutnya
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

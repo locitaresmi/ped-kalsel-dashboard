@@ -27,7 +27,7 @@ export type Freshness = "otomatis" | "berkala" | "ai";
 const FRESH_INFO: Record<Freshness, [string, string]> = {
   otomatis: [
     "Diperbarui otomatis",
-    "Ditarik otomatis dari API resmi dan ikut diperbarui setiap sumber merilis data baru",
+    "Ditarik otomatis dari sumber data resmi (API BPS atau portal data OJK/DJPK) dan diperbarui terjadwal mengikuti rilis terbaru",
   ],
   berkala: [
     "Rilis berkala",
@@ -35,7 +35,7 @@ const FRESH_INFO: Record<Freshness, [string, string]> = {
   ],
   ai: [
     "Dirangkum otomatis (AI)",
-    "Diekstraksi otomatis dari dokumen resmi (RPJMD, Bappeda, Indikasi Geografis) lewat GitHub Actions dan model AI, lalu disegarkan terjadwal",
+    "Diekstraksi otomatis dari dokumen resmi (RPJMD, Bappeda, Indikasi Geografis) lewat GitHub Actions dan model AI, lalu diperbarui terjadwal",
   ],
 };
 

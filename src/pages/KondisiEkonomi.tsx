@@ -4,7 +4,7 @@ import { useDataset } from "../hooks/useDataset";
 import { useFilters } from "../hooks/useFilters";
 import { isSemua, namaPendek, SEKTOR_WARNA } from "../lib/sektor";
 import { OJK_COLORS, type EChartsOption } from "../lib/echarts";
-import { fmt0, fmt1, fmt2, pctSigned, num } from "../lib/format";
+import { fmt0, fmt1, fmt2, pctSigned, num, koma } from "../lib/format";
 import { format } from "d3-format";
 import { EChart } from "../components/EChart";
 import { KalselMap } from "../components/KalselMap";
@@ -106,7 +106,7 @@ export function KondisiEkonomi() {
       grid: { top: 12, right: 48, bottom: 36, left: 8, containLabel: true },
       xAxis: { type: "value", axisLabel: { formatter: `{value}${satuan}`, color: "#52525B" }, splitLine: { lineStyle: { color: "#F4F4F5" } } },
       yAxis: { type: "category", data: rowsAsc.map((d) => d.provinsi), axisLabel: { fontSize: 11, color: "#52525B" }, axisTick: { show: false } },
-      tooltip: { trigger: "item", formatter: (p: any) => `<div style="font-weight:600">${p.name}</div><div>${p.value.toFixed(2)}${satuan}</div>` },
+      tooltip: { trigger: "item", formatter: (p: any) => `<div style="font-weight:600">${p.name}</div><div>${koma(p.value)}${satuan}</div>` },
       series: [
         {
           type: "bar", barMaxWidth: 18,
@@ -114,7 +114,7 @@ export function KondisiEkonomi() {
             value: d[valKey],
             itemStyle: { color: /kalimantan selatan/i.test(d.provinsi) ? OJK_COLORS.primary : "#E4A8AB", borderRadius: [0, 4, 4, 0] },
           })),
-          label: { show: true, position: "right", fontSize: 10, color: "#52525B", formatter: (p: any) => p.value.toFixed(2) + satuan },
+          label: { show: true, position: "right", fontSize: 10, color: "#52525B", formatter: (p: any) => koma(p.value) + satuan },
           markLine: ruleAt == null ? undefined : {
             silent: true, symbol: "none", lineStyle: { type: "dashed", color: OJK_COLORS.negative, width: 1 },
             data: [{ xAxis: ruleAt }], label: { show: false },
@@ -148,7 +148,7 @@ export function KondisiEkonomi() {
       grid: { top: 16, right: 24, bottom: 44, left: 8, containLabel: true },
       xAxis: { type: "value", axisLabel: { formatter: "{value}%", color: "#52525B" }, splitLine: { lineStyle: { color: "#F4F4F5" } } },
       yAxis: { type: "category", data: orderProv, axisLabel: { fontSize: 11, color: "#52525B" }, axisTick: { show: false } },
-      tooltip: { trigger: "item", formatter: (p: any) => `<div style="font-weight:600">${p.seriesName}</div><div>${p.name}: ${(+p.value).toFixed(1)}%</div>` },
+      tooltip: { trigger: "item", formatter: (p: any) => `<div style="font-weight:600">${p.seriesName}</div><div>${p.name}: ${koma(+p.value, 1)}%</div>` },
       series,
     };
   }
@@ -186,7 +186,7 @@ export function KondisiEkonomi() {
       grid: { top: 40, right: 20, bottom: 56, left: 8, containLabel: true },
       xAxis: { type: "time", axisLabel: { color: "#52525B" }, splitLine: { show: false } },
       yAxis: { type: "value", scale: true, axisLabel: { color: "#52525B", formatter: opts.fmt || "{value}" }, splitLine: { lineStyle: { color: "#F4F4F5" } } },
-      tooltip: { trigger: "axis", valueFormatter: (v: any) => (v == null ? "" : (+v).toFixed(2) + (opts.suffix || "")) },
+      tooltip: { trigger: "axis", valueFormatter: (v: any) => (v == null ? "" : koma(+v) + (opts.suffix || "")) },
       series,
     };
   }
@@ -324,7 +324,7 @@ export function KondisiEkonomi() {
         trigger: "item",
         formatter: (p: any) => {
           const d = asc[p.dataIndex];
-          return `<div style="font-weight:600">${d.sektor}</div><div>Pangsa: ${(d.share * 100).toFixed(2)}%</div><div>LQ: ${d.lq.toFixed(2)}</div>`;
+          return `<div style="font-weight:600">${d.sektor}</div><div>Pangsa: ${koma(d.share * 100)}%</div><div>LQ: ${koma(d.lq)}</div>`;
         },
       },
       series: [
@@ -339,7 +339,7 @@ export function KondisiEkonomi() {
                 : d.lq >= 1 ? OJK_COLORS.primary : "#E4A8AB",
             },
           })),
-          label: { show: true, position: "right", fontSize: 10, color: "#52525B", formatter: (p: any) => (p.value * 100).toFixed(1) + "%" },
+          label: { show: true, position: "right", fontSize: 10, color: "#52525B", formatter: (p: any) => koma(p.value * 100, 1) + "%" },
         },
       ],
     };
@@ -379,7 +379,7 @@ export function KondisiEkonomi() {
       grid: { top: 16, right: 24, bottom: 48, left: 8, containLabel: true },
       xAxis: { type: "category", data: tahunAda.map(String), axisLabel: { color: "#52525B" } },
       yAxis: { type: "value", max: 100, axisLabel: { formatter: "{value}%", color: "#52525B" }, splitLine: { lineStyle: { color: "#F4F4F5" } } },
-      tooltip: { trigger: "item", formatter: (p: any) => `<div style="font-weight:600">${p.seriesName} (${p.name})</div><div>${(+p.value).toFixed(2)}%</div>` },
+      tooltip: { trigger: "item", formatter: (p: any) => `<div style="font-weight:600">${p.seriesName} (${p.name})</div><div>${koma(+p.value)}%</div>` },
       series,
     };
   }
@@ -448,7 +448,7 @@ export function KondisiEkonomi() {
       grid: { top: 12, right: 44, bottom: 36, left: 8, containLabel: true },
       xAxis: { type: "value", name: "Ketergantungan transfer pusat", nameLocation: "middle", nameGap: 26, nameTextStyle: { fontSize: 10, color: "#71717A" }, axisLabel: { formatter: "{value}%", color: "#52525B" }, splitLine: { lineStyle: { color: "#F4F4F5" } } },
       yAxis: { type: "category", data: data.map((d) => d.wilayah), axisLabel: { fontSize: 11, color: "#52525B" }, axisTick: { show: false } },
-      tooltip: { trigger: "item", formatter: (p: any) => `<div style="font-weight:600">${p.name}</div><div>Ketergantungan transfer: ${(+p.value).toFixed(1)}%</div>` },
+      tooltip: { trigger: "item", formatter: (p: any) => `<div style="font-weight:600">${p.name}</div><div>Ketergantungan transfer: ${koma(+p.value, 1)}%</div>` },
       series: [
         {
           type: "bar", barMaxWidth: 15,
@@ -462,7 +462,7 @@ export function KondisiEkonomi() {
 
   const apbdCols: Column<Row>[] = [
     { key: "wilayah", header: "Wilayah", value: (r) => r.wilayah, render: (r) => r.wilayah },
-    { key: "pendapatan", header: "Pendapatan", align: "right", value: (r) => num(r.pendapatan), render: (r) => "Rp " + fmt1((num(r.pendapatan) ?? 0) / 1e12) + " T" },
+    { key: "pendapatan", header: "Pendapatan", align: "right", value: (r) => num(r.pendapatan), render: (r) => "Rp" + fmt1((num(r.pendapatan) ?? 0) / 1e12) + " T" },
     { key: "rasio_pad", header: "PAD", align: "right", value: (r) => num(r.rasio_pad), render: (r) => fpct1((num(r.rasio_pad) ?? 0) * 100) + "%" },
     { key: "rasio_tkd", header: "Transfer pusat", align: "right", value: (r) => num(r.rasio_tkd), render: (r) => fpct1((num(r.rasio_tkd) ?? 0) * 100) + "%" },
     { key: "realisasi", header: "Realisasi belanja", align: "right", value: (r) => realisasiBelanja(r) ?? 0, render: (r) => { const x = realisasiBelanja(r); return x == null ? "-" : fpct1(x * 100) + "%"; } },
@@ -699,7 +699,7 @@ export function KondisiEkonomi() {
         nasional (kemiskinan, Gini, IPM) & rata-rata provinsi (PDRB/kapita)
       </HeroNote>
       <div className="kpi-grid">
-        <KartuMetrik label="PDRB per kapita" val={ksWil?.pdrb_kapita} pemb={ksKalsel?.pdrb_kapita} pembLabel="Kalsel" fmtFn={(v) => "Rp " + fmt1(v / 1000) + " jt"} lebihTinggiBaik info="Rata-rata pendapatan per orang per tahun. Makin tinggi, makin sejahtera secara rata-rata" />
+        <KartuMetrik label="PDRB per kapita" val={ksWil?.pdrb_kapita} pemb={ksKalsel?.pdrb_kapita} pembLabel="Kalsel" fmtFn={(v) => "Rp" + fmt1(v / 1000) + " jt"} lebihTinggiBaik info="Rata-rata pendapatan per orang per tahun. Makin tinggi, makin sejahtera secara rata-rata" />
         <KartuMetrik label="Tingkat kemiskinan" val={ksWil?.miskin_pct} pemb={ksNas?.miskin_pct} pembLabel="nasional" fmtFn={(v) => fpct2(v) + "%"} info="Persentase penduduk di bawah garis kemiskinan (indikator P0 BPS)" />
         <KartuMetrik label="Rasio Gini" val={ksWil?.gini} pemb={ksNas?.gini} pembLabel="nasional" fmtFn={(v) => format(".3f")(v)} info="Angka 0-1 yang mengukur ketimpangan pendapatan. Mendekati 0 = merata" gini />
         <KartuMetrik label="IPM (Indeks Pembangunan Manusia)" val={ksWil?.ipm} pemb={ksNas?.ipm} pembLabel="nasional" fmtFn={(v) => fpct2(v)} lebihTinggiBaik info="Gabungan kesehatan, pendidikan, dan pendapatan. Skala 0-100" />
@@ -729,7 +729,7 @@ export function KondisiEkonomi() {
             anggaran, realisasi masih berjalan
           </HeroNote>
           <div className="kpi-grid">
-            <KpiCard label="Pendapatan daerah" info="Total anggaran pendapatan daerah pada APBD" value={apbdWil ? "Rp " + fmt1((num(apbdWil.pendapatan) ?? 0) / 1e12) + " T" : "-"} context={`APBD ${apbdTahun} · ${namaW}`} />
+            <KpiCard label="Pendapatan daerah" info="Total anggaran pendapatan daerah pada APBD" value={apbdWil ? "Rp" + fmt1((num(apbdWil.pendapatan) ?? 0) / 1e12) + " T" : "-"} context={`APBD ${apbdTahun} · ${namaW}`} />
             <KpiCard label="Ketergantungan transfer pusat" info="Rasio Transfer ke Daerah (TKD) terhadap pendapatan. Makin tinggi, makin bergantung pada pemerintah pusat" value={apbdWil ? fpct1((num(apbdWil.rasio_tkd) ?? 0) * 100) + "%" : "-"} context="Indikator Kajian PED 3.1.1" />
             <KpiCard label="Kemandirian fiskal (PAD)" info="Porsi Pendapatan Asli Daerah terhadap total pendapatan. Makin tinggi, makin mandiri membiayai daerahnya" value={apbdWil ? fpct1((num(apbdWil.rasio_pad) ?? 0) * 100) + "%" : "-"} context="Sisi sebaliknya dari ketergantungan transfer" />
             <KpiCard label="Realisasi belanja" info="Bagian anggaran belanja yang sudah terealisasi sampai data terakhir" value={realisasiBelanja(apbdWil) == null ? "-" : fpct1((realisasiBelanja(apbdWil) as number) * 100) + "%"} context="Penyerapan anggaran berjalan" />

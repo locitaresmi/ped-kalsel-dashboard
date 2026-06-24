@@ -3,7 +3,7 @@ import { sum, group, max } from "d3-array";
 import { useDataset } from "../hooks/useDataset";
 import { SEKTOR, namaPendek } from "../lib/sektor";
 import { OJK_COLORS, type EChartsOption } from "../lib/echarts";
-import { fmt0, fmt1, num } from "../lib/format";
+import { fmt0, fmt1, num, koma } from "../lib/format";
 import { EChart } from "../components/EChart";
 import { Card, KpiCard, InfoTip, HeroNote } from "../components/ui";
 import { DataTable, type Column } from "../components/DataTable";
@@ -11,8 +11,8 @@ import { ErrorBlock } from "./Ringkasan";
 import type { Row } from "../lib/data";
 
 const KALSEL = "Kalimantan Selatan";
-const rpT = (v: number) => `Rp ${fmt1(v / 1e12)} T`;
-const pct1 = (f: number) => (f * 100).toFixed(1) + "%";
+const rpT = (v: number) => `Rp${fmt1(v / 1e12)} T`;
+const pct1 = (f: number) => koma(f * 100, 1) + "%";
 
 const fmtBulan = (v: unknown): string =>
   v instanceof Date ? `${v.getFullYear()}-${String(v.getMonth() + 1).padStart(2, "0")}` : String(v ?? "-");
@@ -152,7 +152,7 @@ export function Pembiayaan() {
     { key: "kredit", header: "Nilai kredit", align: "right", value: (r) => r.kredit, render: (r) => rpT(r.kredit) },
     {
       key: "npl", header: "NPL", align: "right", value: (r) => r.nplRatio,
-      render: (r) => <span style={{ color: r.nplRatio >= 0.05 ? "var(--color-danger-600)" : "var(--color-neutral-600)", fontWeight: r.nplRatio >= 0.05 ? 600 : 400 }}>{(r.nplRatio * 100).toFixed(1)}%</span>,
+      render: (r) => <span style={{ color: r.nplRatio >= 0.05 ? "var(--color-danger-600)" : "var(--color-neutral-600)", fontWeight: r.nplRatio >= 0.05 ? 600 : 400 }}>{koma(r.nplRatio * 100, 1)}%</span>,
     },
   ];
 

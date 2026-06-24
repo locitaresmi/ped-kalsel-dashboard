@@ -4,7 +4,7 @@ import { useFilters } from "../hooks/useFilters";
 import { isSemua, namaPendek } from "../lib/sektor";
 import { hitungAnalisis, type SektorMetrik } from "../lib/analisis";
 import { OJK_COLORS, safeAxisMax, type EChartsOption } from "../lib/echarts";
-import { pctFrac, fmt0, fmt2 } from "../lib/format";
+import { pctFrac, fmt0, fmt2, koma } from "../lib/format";
 import { EChart } from "../components/EChart";
 import { Card, InfoTip, HeroNote, LangkahLanjut } from "../components/ui";
 import { DataTable, type Column } from "../components/DataTable";
@@ -110,8 +110,8 @@ export function SubsektorUnggulan() {
         trigger: "item",
         formatter: (p: any) =>
           `<div style="font-weight:600;margin-bottom:4px">${p.data.sektorFull}</div>` +
-          `<div>LQ: <strong>${p.data.lq.toFixed(2)}</strong></div>` +
-          `<div>DLQ: <strong>${p.data.dlq.toFixed(2)}</strong></div>` +
+          `<div>LQ: <strong>${koma(p.data.lq)}</strong></div>` +
+          `<div>DLQ: <strong>${koma(p.data.dlq)}</strong></div>` +
           `<div>Pertumbuhan: <strong>${pctFrac(p.data.growth)}</strong></div>` +
           `<div style="font-size:11px;margin-top:4px;color:#D4A017">${p.data.kelompok}</div>`,
       },
@@ -122,7 +122,7 @@ export function SubsektorUnggulan() {
   const dayaSaingOption = useMemo<EChartsOption>(() => {
     const data = [...rows].filter((d) => Number.isFinite(d.ss?.ds)).sort((a, b) => a.ss.ds - b.ss.ds);
     const { axisMax, outlierThreshold } = safeAxisMax(data.map((d) => d.ss.ds));
-    const fmtVal = (v: number) => (Math.abs(v) >= 1000 ? (v / 1000).toFixed(1) + "k" : v.toFixed(0));
+    const fmtVal = (v: number) => (Math.abs(v) >= 1000 ? koma(v / 1000, 1) + "k" : v.toFixed(0));
     return {
       grid: { top: 24, right: 28, bottom: 40, left: 8, containLabel: true },
       xAxis: {
@@ -206,21 +206,21 @@ export function SubsektorUnggulan() {
       xAxis: {
         type: "value", name: "Butuh input dari sektor lain (Backward) →", nameLocation: "middle",
         nameGap: 30, nameTextStyle: { fontSize: 10, color: "#71717A" },
-        axisLabel: { formatter: (v: number) => v.toFixed(1), color: "#52525B" },
+        axisLabel: { formatter: (v: number) => koma(v, 1), color: "#52525B" },
         splitLine: { lineStyle: { color: "#F4F4F5" } },
       },
       yAxis: {
         type: "value", name: "↑ Memasok sektor lain (Forward)", nameLocation: "end",
         nameTextStyle: { fontSize: 10, color: "#71717A" },
-        axisLabel: { formatter: (v: number) => v.toFixed(1), color: "#52525B" },
+        axisLabel: { formatter: (v: number) => koma(v, 1), color: "#52525B" },
         splitLine: { lineStyle: { color: "#F4F4F5" } },
       },
       tooltip: {
         trigger: "item",
         formatter: (p: any) =>
           `<div style="font-weight:600;margin-bottom:4px;max-width:240px;white-space:normal">${p.data.industri}</div>` +
-          `<div>Backward Linkage: <strong>${p.data.bl.toFixed(2)}</strong></div>` +
-          `<div>Forward Linkage: <strong>${p.data.fl.toFixed(2)}</strong></div>` +
+          `<div>Backward Linkage: <strong>${koma(p.data.bl)}</strong></div>` +
+          `<div>Forward Linkage: <strong>${koma(p.data.fl)}</strong></div>` +
           `<div style="font-size:11px;margin-top:4px;color:#D4A017">${p.data.kelompok}</div>`,
       },
       series: perKuadran,

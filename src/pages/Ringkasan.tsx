@@ -193,7 +193,7 @@ export function Ringkasan() {
           <KpiCard
             label="PDRB harga konstan"
             info="PDRB adalah total nilai barang dan jasa yang diproduksi daerah dalam setahun. Harga konstan artinya sudah disesuaikan inflasi, sehingga bisa dibandingkan antar tahun."
-            value={`Rp ${fmtRp(kpi.pdrbTotal)}`}
+            value={`Rp${fmtRp(kpi.pdrbTotal)}`}
             context={`miliar Rp, tahun ${tahun}.${pdrbRank ? ` Peringkat ke-${pdrbRank.rank} dari ${pdrbRank.n} provinsi se-Indonesia.` : ""} Sudah disesuaikan inflasi`}
           >
             {kpi.pertumbuhan != null && (

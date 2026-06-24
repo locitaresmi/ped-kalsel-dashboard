@@ -15,5 +15,7 @@ export const pctFrac = (x: number | null | undefined): string =>
 export const pctPlain = (x: number | null | undefined): string =>
   x == null ? "-" : format(".1%")(x);
 
+export const koma = (v: number, n = 2): string => v.toFixed(n).replace(".", ",");
+
 export const num = (v: unknown): number | null =>
   v === "" || v == null || Number.isNaN(+(v as number)) ? null : +(v as number);
