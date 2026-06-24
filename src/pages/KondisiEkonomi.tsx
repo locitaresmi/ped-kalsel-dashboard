@@ -631,8 +631,7 @@ export function KondisiEkonomi() {
       </div>
       <HeroNote variant="warning">
         <strong>Keterbatasan.</strong> Struktur pekerja per lapangan usaha tingkat kabupaten/kota tidak
-        tersedia sebagai tabel dinamis di BPS WebAPI, sehingga tidak diotomasi di sini. Ditandai jujur
-        sesuai prinsip dashboard
+        tersedia sebagai tabel dinamis di BPS WebAPI, sehingga tidak diotomasi di sini
       </HeroNote>
 
       <h2 className="section-title">Struktur sektoral</h2>

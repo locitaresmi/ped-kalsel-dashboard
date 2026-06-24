@@ -19,7 +19,7 @@ const fmtBulan = (v: unknown): string =>
 const KODE17 = SEKTOR.map((s) => s.kode);
 
 interface GapRow {
-  kode: string; sektor: string; pdrbShare: number; kreditShare: number; gap: number; kredit: number;
+  kode: string; sektor: string; pdrbShare: number; kreditShare: number; kredit: number;
   npl: number; nplRatio: number;
 }
 
@@ -71,10 +71,9 @@ export function Pembiayaan() {
       const ks = kalselUsaha ? kredit / kalselUsaha : 0;
       const ps = pdrbShare.get(kode) ?? 0;
       const npl = kalselNpl.get(kode) ?? 0;
-      return { kode, sektor: SEKTOR.find((s) => s.kode === kode)!.nama, pdrbShare: ps, kreditShare: ks, gap: ps - ks, kredit, npl, nplRatio: kredit ? npl / kredit : 0 };
+      return { kode, sektor: SEKTOR.find((s) => s.kode === kode)!.nama, pdrbShare: ps, kreditShare: ks, kredit, npl, nplRatio: kredit ? npl / kredit : 0 };
     });
   }, [pdrb, kalselKredit, kalselNpl, kalselUsaha]);
-  const gapTerbesar = useMemo(() => [...gapRows].sort((a, b) => b.gap - a.gap)[0], [gapRows]);
   const nplSorot = useMemo(() => [...gapRows].filter((r) => r.kredit >= 5e11).sort((a, b) => b.nplRatio - a.nplRatio)[0], [gapRows]);
 
   function gapOption(): EChartsOption {
@@ -88,7 +87,7 @@ export function Pembiayaan() {
         trigger: "item",
         formatter: (p: any) => {
           const d = asc[p.dataIndex];
-          const arah = d.gap > 0 ? "porsi kredit di bawah porsi ekonomi" : "porsi kredit di atas porsi ekonomi";
+          const arah = d.pdrbShare > d.kreditShare ? "porsi kredit di bawah porsi ekonomi" : "porsi kredit di atas porsi ekonomi";
           return `<div style="font-weight:600">${d.sektor}</div><div>Porsi ekonomi (PDRB): <strong>${pct1(d.pdrbShare)}</strong></div><div>Porsi kredit: <strong>${pct1(d.kreditShare)}</strong></div><div style="font-size:11px;margin-top:2px;color:#D4A017">${arah}</div>`;
         },
       },
@@ -155,10 +154,6 @@ export function Pembiayaan() {
       key: "npl", header: "NPL", align: "right", value: (r) => r.nplRatio,
       render: (r) => <span style={{ color: r.nplRatio >= 0.05 ? "var(--color-danger-600)" : "var(--color-neutral-600)", fontWeight: r.nplRatio >= 0.05 ? 600 : 400 }}>{(r.nplRatio * 100).toFixed(1)}%</span>,
     },
-    {
-      key: "gap", header: "Selisih", align: "right", value: (r) => r.gap,
-      render: (r) => <span style={{ color: r.gap > 0.01 ? "var(--color-danger-600)" : r.gap < -0.01 ? "var(--color-success-600)" : "#71717A", fontWeight: 600 }}>{r.gap > 0 ? "+" : ""}{(r.gap * 100).toFixed(1)} poin</span>,
-    },
   ];
 
   if (error) return <ErrorBlock error={error} />;
@@ -174,9 +169,9 @@ export function Pembiayaan() {
       <h1 className="page-title">Pembiayaan dan sektor keuangan</h1>
       <p className="page-lede">
         Halaman ini menjawab pertanyaan: seberapa besar pembiayaan perbankan mengalir ke tiap sektor
-        ekonomi Kalimantan Selatan, dan sektor unggulan mana yang masih kurang dibiayai. Tahap ini
-        melengkapi Kajian PED dengan kinerja lembaga jasa keuangan dan indikasi gap pembiayaan.
-        Semua angka berasal dari portal data resmi OJK
+        ekonomi Kalimantan Selatan, dan bagaimana sebaran kredit dibanding bobot ekonomi tiap sektor.
+        Tahap ini melengkapi Kajian PED dengan kinerja lembaga jasa keuangan. Semua angka berasal dari
+        portal data resmi OJK
       </p>
 
       <HeroNote variant="warning">
@@ -196,25 +191,21 @@ export function Pembiayaan() {
       </div>
 
       <h2 className="section-title">
-        Gap pembiayaan: kredit per sektor vs bobot ekonominya{" "}
-        <InfoTip teks="Membandingkan porsi kredit yang diterima tiap sektor dengan porsi sektor itu dalam PDRB. Bila porsi kredit jauh di bawah porsi ekonomi, sektor itu berpotensi kurang dibiayai" />
+        Kredit per sektor dibanding bobot ekonominya{" "}
+        <InfoTip teks="Membandingkan porsi kredit yang diterima tiap sektor dengan porsi sektor itu dalam PDRB. Perlu diingat tidak semua sektor mengandalkan kredit bank, jadi porsi kredit yang kecil belum tentu berarti kurang dibiayai" />
       </h2>
-      {gapTerbesar && (
-        <HeroNote>
-          Sektor <strong>{gapTerbesar.sektor}</strong> menyumbang{" "}
-          <strong>{pct1(gapTerbesar.pdrbShare)}</strong> ekonomi Kalsel namun hanya menerima{" "}
-          <strong>{pct1(gapTerbesar.kreditShare)}</strong> kredit usaha. Selisih sebesar{" "}
-          <strong>{(gapTerbesar.gap * 100).toFixed(1)} poin</strong> ini menjadi indikasi sektor yang
-          paling layak didorong pembiayaannya. Kredit konsumsi rumah tangga ({rpT(kalselRT)}) tidak
-          dihitung di sini karena bukan kredit ke lapangan usaha
-        </HeroNote>
-      )}
+      <HeroNote>
+        Grafik ini membandingkan porsi tiap sektor dalam ekonomi (PDRB) dengan porsinya dalam kredit
+        usaha. Tidak semua sektor mengandalkan kredit bank, misalnya administrasi pemerintahan,
+        sehingga porsi kredit yang kecil tidak selalu berarti kurang dibiayai. Kredit konsumsi rumah
+        tangga ({rpT(kalselRT)}) tidak dihitung di sini karena bukan kredit ke lapangan usaha
+      </HeroNote>
       <Card
         title="Porsi kredit usaha vs porsi PDRB per sektor"
-        subtitle="Batang abu = porsi sektor dalam ekonomi (PDRB). Batang merah = porsi sektor dalam kredit usaha. Bila merah jauh lebih pendek, sektor itu kurang dibiayai"
+        subtitle="Batang abu = porsi sektor dalam ekonomi (PDRB). Batang merah = porsi sektor dalam kredit usaha"
         sumber={{ sumber: "OJK (kredit Bank Umum) dan BPS (PDRB)", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis" }}
       >
-        <div className="plain-summary">Perhatikan sektor dengan batang abu panjang tetapi batang merah pendek. Itu sektor yang bobot ekonominya besar tetapi pembiayaannya tertinggal</div>
+        <div className="plain-summary">Bandingkan tinggi batang abu (porsi ekonomi) dengan batang merah (porsi kredit) tiap sektor untuk melihat sebaran pembiayaannya</div>
         <EChart option={gapOption()} height={Math.max(360, 28 * gapRows.length + 60)} noZoom />
       </Card>
       {nplSorot && (
@@ -225,8 +216,8 @@ export function Pembiayaan() {
         </HeroNote>
       )}
       <details className="detail-block">
-        <summary>Lihat tabel gap pembiayaan per sektor</summary>
-        <DataTable rows={gapRows} columns={gapCols} initialSort="gap" initialReverse />
+        <summary>Lihat tabel kredit per sektor</summary>
+        <DataTable rows={gapRows} columns={gapCols} initialSort="pdrbShare" initialReverse />
       </details>
 
       <h2 className="section-title">Posisi Kalsel dibanding provinsi lain</h2>
