@@ -117,6 +117,7 @@ export function KalselMap({
       renderer="canvas"
       noZoom
       onEvents={events}
+      scrollOnMobile={false}
       className={onPilihWilayah ? "peta-klikable" : undefined}
     />
   );

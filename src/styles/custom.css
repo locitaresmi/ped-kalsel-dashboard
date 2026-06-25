@@ -119,6 +119,7 @@ body {
 .chart-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); margin: var(--space-5) 0; }
 .chart-grid-2 > .card { margin-bottom: 0; }
 .chart-container { width: 100%; min-height: 260px; }
+.echart-scroll { width: 100%; }
 
 .filter-bar {
   display: flex; gap: var(--space-5); align-items: flex-end; flex-wrap: wrap;
@@ -278,6 +279,7 @@ select.input-control:focus, input.input-control:focus { outline: none; border-co
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+.chart-grid-2 > *, .grid-2 > *, .grid-3 > * { min-width: 0; }
 
 .loading-block { display: grid; place-items: center; min-height: 200px; color: var(--color-neutral-400); font-size: 0.85rem; }
 .skeleton {
@@ -303,6 +305,8 @@ select.input-control:focus, input.input-control:focus { outline: none; border-co
   .filter-bar { flex-direction: column; align-items: stretch; gap: var(--space-3); }
   .filter-field { min-width: 0; }
   .filter-field select.input-control, .filter-field input.input-control { width: 100%; }
+  .echart-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .echart-scroll > div { min-width: 480px; }
 }
 @media (max-width: 480px) {
   .kpi-grid { grid-template-columns: 1fr; }
@@ -511,6 +515,22 @@ select.input-control.aktif {
   background: var(--color-neutral-50);
 }
 .inventaris-lengkap summary { cursor: pointer; font-weight: 600; color: var(--color-neutral-700); }
+
+.notfound { max-width: 60ch; margin: 0 auto; padding: var(--space-12) 0; text-align: center; }
+.notfound .page-lede { margin-left: auto; margin-right: auto; }
+.notfound-kode {
+  display: inline-block; font-family: "Plus Jakarta Sans", var(--font-sans);
+  font-size: 3.5rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em;
+  color: var(--color-primary-600); margin-bottom: var(--space-2);
+}
+.notfound .page-lede code {
+  background: var(--color-neutral-100); border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-sm); padding: 1px 6px; font-family: var(--font-mono); font-size: 0.85em;
+}
+.notfound-tautan { margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid var(--color-neutral-200); }
+.notfound-tautan ul { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2) var(--space-5); }
+.notfound-tautan a { color: var(--color-primary-600); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+.notfound-tautan a:hover { text-decoration: underline; }
 
 .sumber-data {
   display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.75rem;

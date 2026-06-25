@@ -7,6 +7,7 @@ interface Props extends ChartOpts {
   renderer?: "svg" | "canvas";
   className?: string;
   onEvents?: Record<string, (params: any) => void>;
+  scrollOnMobile?: boolean;
 }
 
 export function EChart({
@@ -17,8 +18,9 @@ export function EChart({
   noZoom,
   className,
   onEvents,
+  scrollOnMobile = true,
 }: Props) {
-  return (
+  const chart = (
     <ReactECharts
       option={mergeOption(option, { noToolbox, noZoom })}
       notMerge
@@ -29,4 +31,6 @@ export function EChart({
       onEvents={onEvents}
     />
   );
+  if (!scrollOnMobile) return chart;
+  return <div className="echart-scroll">{chart}</div>;
 }

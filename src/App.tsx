@@ -6,6 +6,7 @@ import { SubsektorUnggulan } from "./pages/SubsektorUnggulan";
 import { KomoditasUsulan } from "./pages/KomoditasUsulan";
 import { Pembiayaan } from "./pages/Pembiayaan";
 import { Tentang } from "./pages/Tentang";
+import { NotFound } from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="komoditas-usulan" element={<KomoditasUsulan />} />
           <Route path="pembiayaan" element={<Pembiayaan />} />
           <Route path="tentang" element={<Tentang />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </HashRouter>

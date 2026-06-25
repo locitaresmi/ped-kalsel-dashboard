@@ -39,7 +39,7 @@ function Sparkline({ values, color }: { values: number[]; color: string }) {
       },
     ],
   };
-  return <EChart option={option} height={34} noToolbox noZoom />;
+  return <EChart option={option} height={34} noToolbox noZoom scrollOnMobile={false} />;
 }
 
 export function Ringkasan() {
