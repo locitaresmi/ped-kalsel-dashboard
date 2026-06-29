@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "error_type": null,
+  "api_provider": "anthropic",
+  "model": "claude-haiku-4-5",
+  "generated_at": "2026-06-14T03:24:20+00:00",
+  "checked_at": "2026-06-14T03:24:20+00:00",
+  "failed_at": null,
+  "total": 13,
+  "ok_count": 13,
+  "failed_count": 0,
+  "last_successful_run": "2026-06-14T03:24:20+00:00",
+  "action_required": null,
+  "topup_url": null
+}

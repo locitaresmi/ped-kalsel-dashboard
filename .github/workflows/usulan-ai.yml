@@ -30,10 +30,23 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- pipeline/inputs/usulan_ai.json; then
-            git add pipeline/inputs/usulan_ai.json
+          git add pipeline/inputs/usulan_ai.json pipeline/inputs/ai_status.json
+          if ! git diff --cached --quiet; then
             git commit -m "chore: refresh usulan AI dua lapis (semesteran)"
             git push
           else
-            echo "Tidak ada perubahan pada usulan_ai.json"
+            echo "Tidak ada perubahan"
           fi
+
+      - name: Periksa status pembuatan AI
+        run: |
+          python - <<'PY'
+          import json, sys
+          s = json.load(open("pipeline/inputs/ai_status.json"))
+          if s.get("status") != "ok":
+              print(f"::error::Pembuatan analisis AI {s.get('status')} "
+                    f"({s.get('error_type')}). Gagal {s.get('failed_count')}/{s.get('total')}. "
+                    f"Tindakan: {s.get('action_required')} {s.get('topup_url') or ''}")
+              sys.exit(1)
+          print("Status pembuatan AI ok")
+          PY

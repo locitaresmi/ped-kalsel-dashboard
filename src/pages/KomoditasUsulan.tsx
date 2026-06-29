@@ -7,6 +7,7 @@ import { isSemua, WILAYAH, TAHUN, SEMUA } from "../lib/sektor";
 import { skorKomoditas, skorKomoditasProvinsi, type Usulan } from "../lib/komoditas";
 import { Card, HeroNote, LangkahLanjut } from "../components/ui";
 import { DataTable, type Column } from "../components/DataTable";
+import { AiStatusBanner, AiInlinePlaceholder, aiKeadaan, useAiStatus } from "../components/AiStatus";
 import { ErrorBlock } from "./Ringkasan";
 import type { Row } from "../lib/data";
 
@@ -99,7 +100,7 @@ function mergePerWilayah(
 }
 
 
-function KartuKomoditas({ item, invMatch }: { item: MergedKomoditas; invMatch: Row[] }) {
+function KartuKomoditas({ item, invMatch, aiGagal }: { item: MergedKomoditas; invMatch: Row[]; aiGagal?: boolean }) {
   const { komoditas, tierA, ai, tierB, l1 } = item;
 
   const bukti: BuktiBullet[] = [];
@@ -219,6 +220,8 @@ function KartuKomoditas({ item, invMatch }: { item: MergedKomoditas; invMatch: R
         </div>
       )}
 
+      {aiGagal && !ai?.verdik_ekosistem && !l1?.verdik_pasar && !gap && <AiInlinePlaceholder />}
+
       {limitasiNote && <p className="kk-limitation">{limitasiNote}</p>}
 
       {invRel.length > 0 && (
@@ -290,6 +293,8 @@ const tahunTerbaru = TAHUN[TAHUN.length - 1];
 
 export function KomoditasUsulan() {
   const f = useFilters();
+  const aiStatus = useAiStatus();
+  const aiGagal = aiKeadaan(aiStatus) === "gagal";
   const { csv, json, loading, error } = useDataset({
     csv: ["produksi", "pdrb", "wilayah", "ekspor", "komoditas_provinsi", "tier_b", "inisiatif", "produksi_kabkota"],
     json: ["usulan_ai"],
@@ -365,7 +370,7 @@ export function KomoditasUsulan() {
     return (
       <Card title={w.nama} subtitle="Komoditas yang diusulkan untuk kabupaten/kota ini">
         {items.map((item, i) => (
-          <KartuKomoditas key={i} item={item} invMatch={inv} />
+          <KartuKomoditas key={i} item={item} invMatch={inv} aiGagal={aiGagal} />
         ))}
         {items.length > 0 && inv.length > 0 && <InventarisLengkap rows={inv} />}
         {!items.length && !inv.length && (
@@ -396,7 +401,7 @@ export function KomoditasUsulan() {
         subtitle="Komoditas unggulan berdasarkan data produksi tingkat provinsi. Sebagian data (ekspor, produksi ikan/perkebunan) memang hanya tersedia di tingkat provinsi, bukan per kabupaten/kota."
       >
         <div className="grid-2">
-          {items.map((item, i) => <KartuKomoditas key={i} item={item} invMatch={[]} />)}
+          {items.map((item, i) => <KartuKomoditas key={i} item={item} invMatch={[]} aiGagal={aiGagal} />)}
         </div>
       </Card>
     );
@@ -428,6 +433,8 @@ export function KomoditasUsulan() {
           Urutan kartu mencerminkan kekuatan bukti, yang paling kuat di atas. Klik "Konteks pasar" untuk melihat analisis pasar global komoditas tersebut
         </p>
       </div>
+
+      <AiStatusBanner status={aiStatus} />
 
       {loading ? (
         <div className="loading-block">Memuat data…</div>

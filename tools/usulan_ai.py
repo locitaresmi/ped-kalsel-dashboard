@@ -11,6 +11,30 @@ import anthropic
 
 MODEL = os.environ.get("USULAN_AI_MODEL", "claude-haiku-4-5")
 OUTPUT = os.path.join(os.path.dirname(__file__), "..", "pipeline", "inputs", "usulan_ai.json")
+STATUS_OUT = os.path.join(os.path.dirname(OUTPUT), "ai_status.json")
+
+_ERRORS: list[dict] = []
+_CALLS = {"ok": 0, "fail": 0}
+
+
+def _klasifikasi_error(e: Exception) -> str:
+    s = str(e).lower()
+    name = type(e).__name__.lower()
+    if "ratelimit" in name or "rate_limit" in s or " 429" in s:
+        return "rate_limit"
+    if "timeout" in name or "timed out" in s:
+        return "timeout"
+    if "credit balance" in s or "quota" in s or "insufficient" in s or "billing" in s or " 402" in s:
+        return "insufficient_quota"
+    return "other"
+
+
+def _catat_error(e: Exception) -> None:
+    _CALLS["fail"] += 1
+    _ERRORS.append({
+        "type": _klasifikasi_error(e),
+        "at": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+    })
 
 SUPPORTS_THINKING = not MODEL.startswith("claude-haiku")
 
@@ -514,27 +538,37 @@ def _dump(label: str, resp) -> None:
 
 def _jalankan(client, system, prompt, max_tokens, label):
     try:
-        return panggil(client, system, prompt, max_tokens)
+        r = panggil(client, system, prompt, max_tokens)
+        _CALLS["ok"] += 1
+        return r
     except anthropic.BadRequestError as e:
         if "prompt is too long" in str(e).lower():
-            print(f"[usulan_ai]   konteks overflow — ulang {label} dgn tool minimal", file=sys.stderr)
+            print(f"[usulan_ai]   konteks overflow, ulang {label} dgn tool minimal", file=sys.stderr)
             try:
-                return panggil(client, system, prompt, max_tokens, tools=TOOLS_MIN)
+                r = panggil(client, system, prompt, max_tokens, tools=TOOLS_MIN)
+                _CALLS["ok"] += 1
+                return r
             except Exception as e2:
                 print(f"[usulan_ai] {label} gagal (overflow): {e2}", file=sys.stderr)
+                _catat_error(e2)
                 return None
         print(f"[usulan_ai] {label} gagal (400): {e}", file=sys.stderr)
+        _catat_error(e)
         return None
-    except anthropic.RateLimitError:
-        print(f"[usulan_ai]   429 — tunggu 60s lalu ulang {label}", file=sys.stderr)
+    except anthropic.RateLimitError as e:
+        print(f"[usulan_ai]   429, tunggu 60s lalu ulang {label}", file=sys.stderr)
         time.sleep(60)
         try:
-            return panggil(client, system, prompt, max_tokens)
-        except Exception as e:
-            print(f"[usulan_ai] {label} gagal setelah ulang: {e}", file=sys.stderr)
+            r = panggil(client, system, prompt, max_tokens)
+            _CALLS["ok"] += 1
+            return r
+        except Exception as e2:
+            print(f"[usulan_ai] {label} gagal setelah ulang: {e2}", file=sys.stderr)
+            _catat_error(e2)
             return None
     except Exception as e:
         print(f"[usulan_ai] {label} gagal: {e}", file=sys.stderr)
+        _catat_error(e)
         return None
 
 def main() -> None:
@@ -635,25 +669,72 @@ def main() -> None:
             if idx < len(wilayah_items) - 1 and PACE_SECONDS > 0:
                 time.sleep(PACE_SECONDS)
 
+    fb0 = fb1 = fb2 = False
     if only in ("", "0") and not layer0 and lama_l0:
-        print("[usulan_ai] PERINGATAN: Layer 0 hasil 0 — PERTAHANKAN data lama.", file=sys.stderr)
+        print("[usulan_ai] PERINGATAN: Layer 0 hasil 0, PERTAHANKAN data lama.", file=sys.stderr)
         layer0 = lama_l0
+        fb0 = True
     if only in ("", "1") and not layer1 and lama_l1:
-        print("[usulan_ai] PERINGATAN: Layer 1 hasil 0 — PERTAHANKAN data lama (cek diagnosa di atas).",
+        print("[usulan_ai] PERINGATAN: Layer 1 hasil 0, PERTAHANKAN data lama (cek diagnosa di atas).",
               file=sys.stderr)
         layer1 = lama_l1
+        fb1 = True
     if only in ("", "2") and not layer2 and lama_l2:
-        print("[usulan_ai] PERINGATAN: Layer 2 hasil 0 — PERTAHANKAN data lama (cek diagnosa di atas).",
+        print("[usulan_ai] PERINGATAN: Layer 2 hasil 0, PERTAHANKAN data lama (cek diagnosa di atas).",
               file=sys.stderr)
         layer2 = lama_l2
+        fb2 = True
 
     urut_kom = {k["nama"]: i for i, k in enumerate(KOMODITAS)}
     layer0.sort(key=lambda it: (str(it.get("wilayah_id")), it.get("komoditas") or ""))
     layer1.sort(key=lambda it: urut_kom.get(it.get("komoditas"), 999))
     layer2.sort(key=lambda it: (str(it.get("wilayah_id")), it.get("komoditas") or ""))
 
+    now_iso = _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds")
+    lama_gen = lama.get("generated_at")
+
+    ran = [only in ("", "0"), only in ("", "1"), only in ("", "2")]
+    fb_ran = [f for f, r in zip((fb0, fb1, fb2), ran) if r]
+    semua_fallback = bool(fb_ran) and all(fb_ran)
+    status = ("failed" if semua_fallback else "partial") if _ERRORS else "ok"
+
+    error_type = None
+    for pref in ("insufficient_quota", "rate_limit", "timeout", "other"):
+        if any(e["type"] == pref for e in _ERRORS):
+            error_type = pref
+            break
+
+    gen_at = lama_gen if (status == "failed" and lama_gen) else now_iso
+    action_required = topup_url = None
+    if error_type == "insufficient_quota":
+        action_required = "Isi ulang kredit API Anthropic"
+        topup_url = "console.anthropic.com/settings/billing"
+
+    status_obj = {
+        "status": status,
+        "error_type": error_type,
+        "api_provider": "anthropic",
+        "model": MODEL,
+        "generated_at": gen_at,
+        "checked_at": now_iso,
+        "failed_at": _ERRORS[-1]["at"] if _ERRORS else None,
+        "total": _CALLS["ok"] + _CALLS["fail"],
+        "ok_count": _CALLS["ok"],
+        "failed_count": _CALLS["fail"],
+        "last_successful_run": now_iso if status == "ok" else lama_gen,
+        "action_required": action_required,
+        "topup_url": topup_url,
+    }
+    try:
+        with open(STATUS_OUT, "w", encoding="utf-8") as f:
+            json.dump(status_obj, f, ensure_ascii=False, indent=2)
+        print(f"[usulan_ai] status={status} ok={_CALLS['ok']} gagal={_CALLS['fail']} -> {STATUS_OUT}",
+              file=sys.stderr)
+    except OSError as e:
+        print(f"[usulan_ai] gagal tulis status: {e}", file=sys.stderr)
+
     output = {
-        "generated_at": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+        "generated_at": gen_at,
         "model": MODEL,
         "catatan": ("Usulan berbantuan AI tiga lapis (L0 penemuan lokal + L1 pasar + L2 ekosistem). "
                     "Provenans pada tiap item; angka & skor Tier A tidak terpengaruh."),

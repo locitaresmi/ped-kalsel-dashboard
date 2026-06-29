@@ -8,7 +8,7 @@ DATA_DIR = os.path.join(ROOT, "pipeline", "data")
 INPUTS_DIR = os.path.join(ROOT, "pipeline", "inputs")
 OUT_DIR = os.path.join(ROOT, "public", "data")
 
-STATIC_INPUTS = ["tier_b.csv", "inisiatif.csv", "usulan_ai.json"]
+STATIC_INPUTS = ["tier_b.csv", "inisiatif.csv", "usulan_ai.json", "ai_status.json"]
 GEOJSON_SRC = os.path.join(ROOT, "kalsel.geojson")
 
 def jalankan_loader(path: str, keluaran: str) -> bool:
