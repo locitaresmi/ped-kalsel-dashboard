@@ -36,3 +36,18 @@ jobs:
           else
             echo "Tidak ada perubahan data."
           fi
+
+      - name: Periksa kesehatan data
+        run: |
+          python - <<'PY'
+          import json, sys
+          d = json.load(open("public/data/data_status.json"))
+          bad = {k: v for k, v in (d.get("sources") or {}).items() if v.get("status") != "ok"}
+          if bad:
+              for k, v in bad.items():
+                  print(f"::error::Sumber '{k}' {v.get('status')}: {v.get('reason')}")
+              print(f"::error::{len(bad)} sumber data bermasalah. Dashboard memakai data lama (fallback). "
+                    f"Perlu diperbaiki sebelum refresh berikutnya.")
+              sys.exit(1)
+          print("Semua sumber data ok")
+          PY

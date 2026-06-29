@@ -1,6 +1,15 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { useFilters } from "../hooks/useFilters";
+import { useSourceStatus } from "./DataStatus";
+
+const _BULAN_SINGKAT = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+function tglID(iso?: string | null): string {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  return `${d.getDate()} ${_BULAN_SINGKAT[d.getMonth()]} ${d.getFullYear()}`;
+}
 
 export function LangkahLanjut({ teks, aksi, to }: { teks: ReactNode; aksi: string; to: string }) {
   const { carry } = useFilters();
@@ -45,20 +54,47 @@ export interface SumberInfo {
   tipe?: Freshness;
   url?: string;
   urlLabel?: string;
+  kunci?: string;
+  takResmi?: boolean;
 }
 
-export function SumberData({ sumber, periode, tipe = "otomatis", url, urlLabel }: SumberInfo) {
-  const [badge, tip] = FRESH_INFO[tipe];
+export function SumberData({ sumber, periode, tipe = "otomatis", url, urlLabel, kunci, takResmi }: SumberInfo) {
+  const ss = useSourceStatus(kunci);
+  const stale = ss?.status === "stale";
+  const takada = ss?.status === "unavailable";
+
+  let badgeCls: string = tipe;
+  let badge: string;
+  let tip: string;
+  if (takada) {
+    badgeCls = "takada";
+    badge = "Data tidak tersedia";
+    tip =
+      "Sumber ini sedang tidak dapat diakses dan belum ada data tersimpan sebelumnya" +
+      (ss?.reason ? `. ${ss.reason}` : "");
+  } else if (stale) {
+    badgeCls = "tertunda";
+    badge = "Pembaruan tertunda";
+    tip =
+      "Pembaruan otomatis sempat terkendala, yang ditampilkan adalah data terakhir yang valid dan tetap sahih sebagai referensi" +
+      (ss?.last_ok ? `. Terakhir berhasil ${tglID(ss.last_ok)}` : "");
+  } else {
+    [badge, tip] = FRESH_INFO[tipe];
+  }
+
   return (
     <div className="sumber-data">
       <span className="sd-src">
         Sumber: <strong>{sumber}</strong>
+        {takResmi && (
+          <InfoTip teks="Portal data publik tanpa API resmi terdokumentasi (OJK/DJPK), diakses dari antarmuka portalnya. Pembaruan bergantung ketersediaan portal" />
+        )}
         {periode ? ` · ${periode}` : ""}
       </span>
-      <span className={`sd-fresh ${tipe}`} data-tip={tip}>
+      <span className={`sd-fresh ${badgeCls}`} data-tip={tip}>
         {badge}
       </span>
-      {url && (
+      {url && !stale && !takada && (
         <a className="sd-link" href={url} target="_blank" rel="noopener">
           {urlLabel ?? "Lihat sumber"}
         </a>

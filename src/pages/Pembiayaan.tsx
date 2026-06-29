@@ -203,7 +203,7 @@ export function Pembiayaan() {
       <Card
         title="Porsi kredit usaha vs porsi PDRB per sektor"
         subtitle="Batang abu = porsi sektor dalam ekonomi (PDRB). Batang merah = porsi sektor dalam kredit usaha"
-        sumber={{ sumber: "OJK (kredit Bank Umum) dan BPS (PDRB)", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis" }}
+        sumber={{ sumber: "OJK (kredit Bank Umum) dan BPS (PDRB)", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis", kunci: "kredit_bu", takResmi: true }}
       >
         <div className="plain-summary">Bandingkan tinggi batang abu (porsi ekonomi) dengan batang merah (porsi kredit) tiap sektor untuk melihat sebaran pembiayaannya</div>
         <EChart option={gapOption()} height={Math.max(360, 28 * gapRows.length + 60)} noZoom />
@@ -227,10 +227,10 @@ export function Pembiayaan() {
         kembali disalurkan sebagai kredit di daerah
       </HeroNote>
       <div className="chart-grid-2">
-        <Card title="Total kredit Bank Umum per provinsi" subtitle="15 provinsi terbesar, dalam triliun rupiah" sumber={{ sumber: "OJK, statistik perbankan", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis" }}>
+        <Card title="Total kredit Bank Umum per provinsi" subtitle="15 provinsi terbesar, dalam triliun rupiah" sumber={{ sumber: "OJK, statistik perbankan", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis", kunci: "kredit_bu", takResmi: true }}>
           <EChart option={provOption("kredit")} height={420} noZoom />
         </Card>
-        <Card title="Rasio kredit terhadap DPK (LDR) per provinsi" subtitle="15 provinsi tertinggi. Garis putus-putus = rata-rata nasional" sumber={{ sumber: "OJK, statistik perbankan", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis" }}>
+        <Card title="Rasio kredit terhadap DPK (LDR) per provinsi" subtitle="15 provinsi tertinggi. Garis putus-putus = rata-rata nasional" sumber={{ sumber: "OJK, statistik perbankan", periode: `Posisi ${bulan ?? "-"}`, tipe: "otomatis", kunci: "kredit_bu", takResmi: true }}>
           <EChart option={provOption("ldr")} height={420} noZoom />
         </Card>
       </div>
@@ -243,7 +243,7 @@ export function Pembiayaan() {
           <> Di Kalsel, BPR dan BPRS menyalurkan kredit {rpT(bprKalsel.kredit)} ({pct1(bprKalselUmkmShare)} untuk UMKM), menghimpun DPK {rpT(bprKalsel.dpk)}, melalui {fmt0(bprKalsel.kantor)} kantor</>
         ) : null}
       </HeroNote>
-      <Card title="Kredit BPR dan BPRS per provinsi" subtitle="15 provinsi terbesar, dalam triliun rupiah" sumber={{ sumber: "OJK, statistik BPR/BPRS", periode: `Posisi ${bprBulan ?? "-"}`, tipe: "otomatis" }}>
+      <Card title="Kredit BPR dan BPRS per provinsi" subtitle="15 provinsi terbesar, dalam triliun rupiah" sumber={{ sumber: "OJK, statistik BPR/BPRS", periode: `Posisi ${bprBulan ?? "-"}`, tipe: "otomatis", kunci: "bpr_bprs", takResmi: true }}>
         <EChart option={bprOption()} height={420} noZoom />
       </Card>
     </div>

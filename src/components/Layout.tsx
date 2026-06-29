@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useFilters } from "../hooks/useFilters";
+import { DataStatusProvider } from "./DataStatus";
 
 const NAV = [
   { to: "/", label: "Ringkasan", end: true },
@@ -55,7 +56,9 @@ export function Layout() {
 
       <main className="app-main">
         <div className="accent-rule" />
-        <Outlet />
+        <DataStatusProvider>
+          <Outlet />
+        </DataStatusProvider>
       </main>
 
       <footer className="app-footer">

@@ -279,7 +279,7 @@ export function Ringkasan() {
               </>
             }
             subtitle={`Tahun ${tahun} · ${petaLabel}. Makin gelap warnanya, makin banyak sektor unggulannya. Klik daerah untuk melihat detailnya`}
-            sumber={{ sumber: "BPS, PDRB lapangan usaha kab/kota", periode: `Tahun ${tahun}`, tipe: "otomatis" }}
+            sumber={{ sumber: "BPS, PDRB lapangan usaha kab/kota", periode: `Tahun ${tahun}`, tipe: "otomatis", kunci: "wilayah" }}
           >
             {kalsel && (
               <KalselMap

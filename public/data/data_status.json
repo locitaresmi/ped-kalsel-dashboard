@@ -1,0 +1,107 @@
+{
+  "checked_at": "2026-06-29T06:21:53+00:00",
+  "sources": {
+    "apbd": {
+      "status": "ok",
+      "rows": 98,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "bpr_bprs": {
+      "status": "ok",
+      "rows": 61,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "dpk_bu": {
+      "status": "ok",
+      "rows": 35,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "ekspor": {
+      "status": "ok",
+      "rows": 98,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "exim_kalsel": {
+      "status": "ok",
+      "rows": 60,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "inflasi": {
+      "status": "ok",
+      "rows": 192,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "kesejahteraan": {
+      "status": "ok",
+      "rows": 60,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "ketenagakerjaan": {
+      "status": "ok",
+      "rows": 42,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "komoditas_provinsi": {
+      "status": "ok",
+      "rows": 1,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "kredit_bu": {
+      "status": "ok",
+      "rows": 623,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "linkage": {
+      "status": "ok",
+      "rows": 52,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "pdrb": {
+      "status": "ok",
+      "rows": 102,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "pdrb_kalimantan": {
+      "status": "ok",
+      "rows": 85,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "pdrb_provinsi": {
+      "status": "ok",
+      "rows": 148,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "produksi": {
+      "status": "ok",
+      "rows": 60,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "produksi_kabkota": {
+      "status": "ok",
+      "rows": 146,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    },
+    "wilayah": {
+      "status": "ok",
+      "rows": 1320,
+      "last_ok": "2026-06-29T06:21:53+00:00",
+      "reason": null
+    }
+  }
+}
