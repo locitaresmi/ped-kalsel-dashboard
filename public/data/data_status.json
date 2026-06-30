@@ -1,107 +1,107 @@
 {
-  "checked_at": "2026-06-29T06:21:53+00:00",
+  "checked_at": "2026-06-30T22:01:06+00:00",
   "sources": {
     "apbd": {
       "status": "ok",
       "rows": 98,
-      "last_ok": "2026-06-29T06:21:53+00:00",
+      "last_ok": "2026-06-30T21:21:37+00:00",
       "reason": null
     },
     "bpr_bprs": {
-      "status": "ok",
-      "rows": 61,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "loader gagal dijalankan: Command '['/opt/hostedtoolcache/Python/3.12.13/x64/bin/python', '/home/runner/work/ped-kalsel-dashboard/ped-kalsel-dashboard/pipeline/data/bpr_bprs.csv.py']' timed out after 900 seconds"
     },
     "dpk_bu": {
       "status": "ok",
       "rows": 35,
-      "last_ok": "2026-06-29T06:21:53+00:00",
+      "last_ok": "2026-06-30T21:46:06+00:00",
       "reason": null
     },
     "ekspor": {
-      "status": "ok",
-      "rows": 98,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "[ekspor] TIDAK ada data ekspor tertarik"
     },
     "exim_kalsel": {
-      "status": "ok",
-      "rows": 60,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "RuntimeError: BPS_API_KEY tidak diset di environment / .env"
     },
     "inflasi": {
-      "status": "ok",
-      "rows": 192,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "RuntimeError: BPS_API_KEY tidak diset di environment / .env"
     },
     "kesejahteraan": {
-      "status": "ok",
-      "rows": 60,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "RuntimeError: BPS_API_KEY tidak diset di environment / .env"
     },
     "ketenagakerjaan": {
-      "status": "ok",
-      "rows": 42,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "RuntimeError: BPS_API_KEY tidak diset di environment / .env"
     },
     "komoditas_provinsi": {
       "status": "ok",
       "rows": 1,
-      "last_ok": "2026-06-29T06:21:53+00:00",
+      "last_ok": "2026-06-30T21:47:07+00:00",
       "reason": null
     },
     "kredit_bu": {
       "status": "ok",
       "rows": 623,
-      "last_ok": "2026-06-29T06:21:53+00:00",
+      "last_ok": "2026-06-30T21:47:07+00:00",
       "reason": null
     },
     "linkage": {
-      "status": "ok",
-      "rows": 52,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "RuntimeError: BPS_API_KEY tidak diset di environment / .env"
     },
     "pdrb": {
-      "status": "ok",
-      "rows": 102,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "[pdrb] TIDAK ada data tertarik dari BPS"
     },
     "pdrb_kalimantan": {
-      "status": "ok",
-      "rows": 85,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "RuntimeError: BPS_API_KEY tidak diset di environment / .env"
     },
     "pdrb_provinsi": {
-      "status": "ok",
-      "rows": 148,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "[pdrb_prov] TIDAK ada data"
     },
     "produksi": {
-      "status": "ok",
-      "rows": 60,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "[produksi] TIDAK ada data tertarik dari BPS"
     },
     "produksi_kabkota": {
-      "status": "ok",
-      "rows": 146,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "RuntimeError: BPS_API_KEY tidak diset di environment / .env"
     },
     "wilayah": {
-      "status": "ok",
-      "rows": 1320,
+      "status": "stale",
+      "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": null
+      "reason": "[wilayah] TIDAK ada data tertarik dari BPS"
     }
   }
 }
