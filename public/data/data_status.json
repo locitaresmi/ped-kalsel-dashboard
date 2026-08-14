@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-08-13T21:07:59+00:00",
+  "checked_at": "2026-08-14T20:56:07+00:00",
   "sources": {
     "apbd": {
       "status": "ok",
       "rows": 98,
-      "last_ok": "2026-08-13T20:28:22+00:00",
+      "last_ok": "2026-08-14T20:19:51+00:00",
       "reason": null
     },
     "bpr_bprs": {
@@ -16,7 +16,7 @@
     "dpk_bu": {
       "status": "ok",
       "rows": 35,
-      "last_ok": "2026-08-13T20:51:56+00:00",
+      "last_ok": "2026-08-14T20:43:47+00:00",
       "reason": null
     },
     "ekspor": {
@@ -52,14 +52,14 @@
     "komoditas_provinsi": {
       "status": "ok",
       "rows": 1,
-      "last_ok": "2026-08-13T20:52:58+00:00",
+      "last_ok": "2026-08-14T20:44:33+00:00",
       "reason": null
     },
     "kredit_bu": {
-      "status": "stale",
-      "rows": null,
-      "last_ok": "2026-08-12T20:56:01+00:00",
-      "reason": "loader gagal dijalankan: Command '['/opt/hostedtoolcache/Python/3.12.13/x64/bin/python', '/home/runner/work/ped-kalsel-dashboard/ped-kalsel-dashboard/pipeline/data/kredit_bu.csv.py']' timed out after 900 seconds"
+      "status": "ok",
+      "rows": 624,
+      "last_ok": "2026-08-14T20:44:33+00:00",
+      "reason": null
     },
     "linkage": {
       "status": "stale",
