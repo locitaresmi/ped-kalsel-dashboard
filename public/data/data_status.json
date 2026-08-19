@@ -1,22 +1,22 @@
 {
-  "checked_at": "2026-08-18T20:46:11+00:00",
+  "checked_at": "2026-08-19T20:51:10+00:00",
   "sources": {
     "apbd": {
       "status": "ok",
       "rows": 98,
-      "last_ok": "2026-08-18T20:10:05+00:00",
+      "last_ok": "2026-08-19T20:13:18+00:00",
       "reason": null
     },
     "bpr_bprs": {
       "status": "stale",
       "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": "loader gagal dijalankan: Command '['/opt/hostedtoolcache/Python/3.12.13/x64/bin/python', '/home/runner/work/ped-kalsel-dashboard/ped-kalsel-dashboard/pipeline/data/bpr_bprs.csv.py']' timed out after 900 seconds"
+      "reason": "loader gagal dijalankan: Command '['/opt/hostedtoolcache/Python/3.12.14/x64/bin/python', '/home/runner/work/ped-kalsel-dashboard/ped-kalsel-dashboard/pipeline/data/bpr_bprs.csv.py']' timed out after 900 seconds"
     },
     "dpk_bu": {
       "status": "ok",
       "rows": 35,
-      "last_ok": "2026-08-18T20:36:55+00:00",
+      "last_ok": "2026-08-19T20:39:24+00:00",
       "reason": null
     },
     "ekspor": {
@@ -52,13 +52,13 @@
     "komoditas_provinsi": {
       "status": "ok",
       "rows": 1,
-      "last_ok": "2026-08-18T20:37:32+00:00",
+      "last_ok": "2026-08-19T20:40:19+00:00",
       "reason": null
     },
     "kredit_bu": {
       "status": "ok",
       "rows": 624,
-      "last_ok": "2026-08-18T20:37:32+00:00",
+      "last_ok": "2026-08-19T20:40:19+00:00",
       "reason": null
     },
     "linkage": {
