@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-09-19T22:28:19+00:00",
+  "checked_at": "2026-09-21T23:27:23+00:00",
   "sources": {
     "apbd": {
       "status": "ok",
       "rows": 98,
-      "last_ok": "2026-09-19T21:52:32+00:00",
+      "last_ok": "2026-09-21T22:54:33+00:00",
       "reason": null
     },
     "bpr_bprs": {
@@ -16,7 +16,7 @@
     "dpk_bu": {
       "status": "ok",
       "rows": 35,
-      "last_ok": "2026-09-19T22:18:43+00:00",
+      "last_ok": "2026-09-21T23:17:52+00:00",
       "reason": null
     },
     "ekspor": {
@@ -52,13 +52,13 @@
     "komoditas_provinsi": {
       "status": "ok",
       "rows": 1,
-      "last_ok": "2026-09-19T22:19:07+00:00",
+      "last_ok": "2026-09-21T23:18:40+00:00",
       "reason": null
     },
     "kredit_bu": {
       "status": "ok",
       "rows": 625,
-      "last_ok": "2026-09-19T22:19:07+00:00",
+      "last_ok": "2026-09-21T23:18:40+00:00",
       "reason": null
     },
     "linkage": {
