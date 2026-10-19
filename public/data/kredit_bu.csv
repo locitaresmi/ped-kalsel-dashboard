@@ -1,626 +1,626 @@
 provinsi,sektor_kode,sektor,nilai,npl,bulan
-Aceh,A,"Pertanian, Kehutanan, dan Perikanan",4092140437437,113275739358,2026-07
-Aceh,B,Pertambangan dan Penggalian,221279565186,7689333431,2026-07
-Aceh,C,Industri Pengolahan,1366996434851,101794568622,2026-07
-Aceh,D,Pengadaan Listrik dan Gas,61756365981,67544328,2026-07
-Aceh,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",45552823400,1260237619,2026-07
-Aceh,F,Konstruksi,471993561255,106121456502,2026-07
-Aceh,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,6117994782681,324652546903,2026-07
-Aceh,H,Transportasi dan Pergudangan,296309283327,23806753773,2026-07
-Aceh,I,Penyediaan Akomodasi dan Makan Minum,711992850274,32073669522,2026-07
-Aceh,J,Informasi dan Komunikasi,15412253804,225270132,2026-07
-Aceh,K,Jasa Keuangan dan Asuransi,67525059811,251178791,2026-07
-Aceh,L,Real Estat,77899601760,10560668330,2026-07
-Aceh,MN,Jasa Perusahaan,196000939589,9061359223,2026-07
-Aceh,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",103418532,0,2026-07
-Aceh,P,Jasa Pendidikan,99688822158,238918662,2026-07
-Aceh,Q,Jasa Kesehatan dan Kegiatan Sosial,451035569416,3110206955,2026-07
-Aceh,RSTU,Jasa Lainnya,860295836897,26543620890,2026-07
-Aceh,RT,Rumah Tangga (konsumsi),35346236601953,293893091861,2026-07
-Bali,A,"Pertanian, Kehutanan, dan Perikanan",7235065191742,76204000041,2026-07
-Bali,B,Pertambangan dan Penggalian,46210074161,0,2026-07
-Bali,C,Industri Pengolahan,5556816052755,73037383424,2026-07
-Bali,D,Pengadaan Listrik dan Gas,104468164744,8893442761,2026-07
-Bali,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",55157519191,581775126,2026-07
-Bali,F,Konstruksi,3492467900559,12557662889,2026-07
-Bali,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,30090936363518,470175106220,2026-07
-Bali,H,Transportasi dan Pergudangan,839699088916,7045211573,2026-07
-Bali,I,Penyediaan Akomodasi dan Makan Minum,15808501775058,260878653617,2026-07
-Bali,J,Informasi dan Komunikasi,182824542959,2334825378,2026-07
-Bali,K,Jasa Keuangan dan Asuransi,1433160288550,1854786173,2026-07
-Bali,L,Real Estat,2822257028937,9785702307,2026-07
-Bali,MN,Jasa Perusahaan,1894509241261,14820112976,2026-07
-Bali,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",21194937292,0,2026-07
-Bali,P,Jasa Pendidikan,587822069630,1504248646,2026-07
-Bali,Q,Jasa Kesehatan dan Kegiatan Sosial,1571233048532,3005680030,2026-07
-Bali,RSTU,Jasa Lainnya,4595271828276,37578803857,2026-07
-Bali,RT,Rumah Tangga (konsumsi),35597257661010,459702423238,2026-07
-Bangka Belitung,A,"Pertanian, Kehutanan, dan Perikanan",3210313310288,66482423004,2026-07
-Bangka Belitung,B,Pertambangan dan Penggalian,2263677195201,15447332954,2026-07
-Bangka Belitung,C,Industri Pengolahan,427162825115,8799154490,2026-07
-Bangka Belitung,D,Pengadaan Listrik dan Gas,9185034153,224587239,2026-07
-Bangka Belitung,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",4364371406,135309461,2026-07
-Bangka Belitung,F,Konstruksi,193164123153,19646682041,2026-07
-Bangka Belitung,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,2894607956289,95116926648,2026-07
-Bangka Belitung,H,Transportasi dan Pergudangan,145514727248,2331969784,2026-07
-Bangka Belitung,I,Penyediaan Akomodasi dan Makan Minum,198821364858,2274087177,2026-07
-Bangka Belitung,J,Informasi dan Komunikasi,1939999286,0,2026-07
-Bangka Belitung,K,Jasa Keuangan dan Asuransi,12938067610,518115230,2026-07
-Bangka Belitung,L,Real Estat,74820081507,341784252,2026-07
-Bangka Belitung,MN,Jasa Perusahaan,88910676674,3099760213,2026-07
-Bangka Belitung,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",99999947,0,2026-07
-Bangka Belitung,P,Jasa Pendidikan,50812556565,15947644,2026-07
-Bangka Belitung,Q,Jasa Kesehatan dan Kegiatan Sosial,112130972883,163437552,2026-07
-Bangka Belitung,RSTU,Jasa Lainnya,430620066125,14349028662,2026-07
-Bangka Belitung,RT,Rumah Tangga (konsumsi),9624844791585,144546523390,2026-07
-Banten,A,"Pertanian, Kehutanan, dan Perikanan",1196359893630,60661190786,2026-07
-Banten,B,Pertambangan dan Penggalian,536711639312,68046209245,2026-07
-Banten,C,Industri Pengolahan,25491021792710,517567012833,2026-07
-Banten,D,Pengadaan Listrik dan Gas,703927408067,32038445372,2026-07
-Banten,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",276040703102,4533168983,2026-07
-Banten,F,Konstruksi,11946703946274,973974144689,2026-07
-Banten,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,26500774600203,1275727173538,2026-07
-Banten,H,Transportasi dan Pergudangan,12478843207476,855464206458,2026-07
-Banten,I,Penyediaan Akomodasi dan Makan Minum,2835635230664,66903811412,2026-07
-Banten,J,Informasi dan Komunikasi,681787701526,14582668415,2026-07
-Banten,K,Jasa Keuangan dan Asuransi,4600216045646,53550220529,2026-07
-Banten,L,Real Estat,13386357362798,28993348195,2026-07
-Banten,MN,Jasa Perusahaan,2209315911249,73343981930,2026-07
-Banten,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",7267317725,0,2026-07
-Banten,P,Jasa Pendidikan,673400601161,4746759481,2026-07
-Banten,Q,Jasa Kesehatan dan Kegiatan Sosial,3549684716129,56306177477,2026-07
-Banten,RSTU,Jasa Lainnya,3078246587020,138109993911,2026-07
-Banten,RT,Rumah Tangga (konsumsi),119201742147381,3364666913663,2026-07
-Bengkulu,A,"Pertanian, Kehutanan, dan Perikanan",7274192327133,80124353803,2026-07
-Bengkulu,B,Pertambangan dan Penggalian,334178943576,440698766,2026-07
-Bengkulu,C,Industri Pengolahan,526118862798,114105148928,2026-07
-Bengkulu,D,Pengadaan Listrik dan Gas,6153254695,353327649,2026-07
-Bengkulu,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",3106290887,236358527,2026-07
-Bengkulu,F,Konstruksi,149023205625,28281729217,2026-07
-Bengkulu,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,4796120155096,147657185674,2026-07
-Bengkulu,H,Transportasi dan Pergudangan,223018327907,4617538950,2026-07
-Bengkulu,I,Penyediaan Akomodasi dan Makan Minum,688455242484,9450750408,2026-07
-Bengkulu,J,Informasi dan Komunikasi,5828121463,68217374,2026-07
-Bengkulu,K,Jasa Keuangan dan Asuransi,9315982505,1950728,2026-07
-Bengkulu,L,Real Estat,192441452076,1016027504,2026-07
-Bengkulu,MN,Jasa Perusahaan,156118369415,861426767,2026-07
-Bengkulu,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",249000000,0,2026-07
-Bengkulu,P,Jasa Pendidikan,54128091933,151021989,2026-07
-Bengkulu,Q,Jasa Kesehatan dan Kegiatan Sosial,135762689918,206853245,2026-07
-Bengkulu,RSTU,Jasa Lainnya,690415943324,21016067018,2026-07
-Bengkulu,RT,Rumah Tangga (konsumsi),17001853713123,219866982458,2026-07
-D.I Yogyakarta,A,"Pertanian, Kehutanan, dan Perikanan",3195659436005,142036062096,2026-07
-D.I Yogyakarta,B,Pertambangan dan Penggalian,95647574601,2191062772,2026-07
-D.I Yogyakarta,C,Industri Pengolahan,4034772389042,464948502580,2026-07
-D.I Yogyakarta,D,Pengadaan Listrik dan Gas,55570541662,697838752,2026-07
-D.I Yogyakarta,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",23657876730,652851488,2026-07
-D.I Yogyakarta,F,Konstruksi,7314964375883,134029719801,2026-07
-D.I Yogyakarta,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,11708748806863,705439160243,2026-07
-D.I Yogyakarta,H,Transportasi dan Pergudangan,555607580288,7580706637,2026-07
-D.I Yogyakarta,I,Penyediaan Akomodasi dan Makan Minum,3079150048111,60184893653,2026-07
-D.I Yogyakarta,J,Informasi dan Komunikasi,193509770917,23064454583,2026-07
-D.I Yogyakarta,K,Jasa Keuangan dan Asuransi,694618713719,10890245792,2026-07
-D.I Yogyakarta,L,Real Estat,1278892396591,6959358440,2026-07
-D.I Yogyakarta,MN,Jasa Perusahaan,938251762931,27900078958,2026-07
-D.I Yogyakarta,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",17254606321,0,2026-07
-D.I Yogyakarta,P,Jasa Pendidikan,1015222103459,10885469233,2026-07
-D.I Yogyakarta,Q,Jasa Kesehatan dan Kegiatan Sosial,1786831279343,24835268628,2026-07
-D.I Yogyakarta,RSTU,Jasa Lainnya,2374545008247,102940968535,2026-07
-D.I Yogyakarta,RT,Rumah Tangga (konsumsi),18549937051117,419211134393,2026-07
-DKI Jakarta,A,"Pertanian, Kehutanan, dan Perikanan",196423754252693,2779130597838,2026-07
-DKI Jakarta,B,Pertambangan dan Penggalian,334877856695129,2602803802269,2026-07
-DKI Jakarta,C,Industri Pengolahan,944623088483338,12367721850699,2026-07
-DKI Jakarta,D,Pengadaan Listrik dan Gas,262440790542130,514459781440,2026-07
-DKI Jakarta,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",9455550705044,38990274013,2026-07
-DKI Jakarta,F,Konstruksi,454751560177443,4375198175436,2026-07
-DKI Jakarta,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,505872423562767,10233387074947,2026-07
-DKI Jakarta,H,Transportasi dan Pergudangan,220606503532913,1381208100214,2026-07
-DKI Jakarta,I,Penyediaan Akomodasi dan Makan Minum,57706493387413,2046444293315,2026-07
-DKI Jakarta,J,Informasi dan Komunikasi,247592782619080,380164852755,2026-07
-DKI Jakarta,K,Jasa Keuangan dan Asuransi,564905261208781,1186191092306,2026-07
-DKI Jakarta,L,Real Estat,205972080317794,3599963274927,2026-07
-DKI Jakarta,MN,Jasa Perusahaan,108301944445215,1224480415711,2026-07
-DKI Jakarta,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",57231200830764,1946823611,2026-07
-DKI Jakarta,P,Jasa Pendidikan,8201681193502,193981291247,2026-07
-DKI Jakarta,Q,Jasa Kesehatan dan Kegiatan Sosial,20166153772320,185516728605,2026-07
-DKI Jakarta,RSTU,Jasa Lainnya,110354266461534,3901637748081,2026-07
-DKI Jakarta,RT,Rumah Tangga (konsumsi),714177825332383,20568844817961,2026-07
-Gorontalo,A,"Pertanian, Kehutanan, dan Perikanan",778311881191,89489496749,2026-07
-Gorontalo,B,Pertambangan dan Penggalian,34089706723,5186311298,2026-07
-Gorontalo,C,Industri Pengolahan,292166613024,22106681101,2026-07
-Gorontalo,D,Pengadaan Listrik dan Gas,1034926780184,41357468,2026-07
-Gorontalo,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",3564417208,131240309,2026-07
-Gorontalo,F,Konstruksi,149683402447,40137250043,2026-07
-Gorontalo,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,2497602380810,150063156028,2026-07
-Gorontalo,H,Transportasi dan Pergudangan,35369308827,2149889132,2026-07
-Gorontalo,I,Penyediaan Akomodasi dan Makan Minum,203523392869,25387677308,2026-07
-Gorontalo,J,Informasi dan Komunikasi,17846918867,111315299,2026-07
-Gorontalo,K,Jasa Keuangan dan Asuransi,1054014204,0,2026-07
-Gorontalo,L,Real Estat,66512752853,20391052214,2026-07
-Gorontalo,MN,Jasa Perusahaan,36805105724,417002848,2026-07
-Gorontalo,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",48570472,0,2026-07
-Gorontalo,P,Jasa Pendidikan,65798112498,0,2026-07
-Gorontalo,Q,Jasa Kesehatan dan Kegiatan Sosial,54206897045,36384424,2026-07
-Gorontalo,RSTU,Jasa Lainnya,352130155908,18912454746,2026-07
-Gorontalo,RT,Rumah Tangga (konsumsi),11711974895413,390928709226,2026-07
-Jambi,A,"Pertanian, Kehutanan, dan Perikanan",17028767679075,163207645684,2026-07
-Jambi,B,Pertambangan dan Penggalian,613608529417,2349037936,2026-07
-Jambi,C,Industri Pengolahan,3915670366054,59319761706,2026-07
-Jambi,D,Pengadaan Listrik dan Gas,14192533464,52378672,2026-07
-Jambi,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",12562872899,215203685,2026-07
-Jambi,F,Konstruksi,887257762735,43564220833,2026-07
-Jambi,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,8644746643802,273877960897,2026-07
-Jambi,H,Transportasi dan Pergudangan,444890665684,6585828803,2026-07
-Jambi,I,Penyediaan Akomodasi dan Makan Minum,1324029282640,30504634692,2026-07
-Jambi,J,Informasi dan Komunikasi,29586641274,5164345014,2026-07
-Jambi,K,Jasa Keuangan dan Asuransi,37800548416,13847513284,2026-07
-Jambi,L,Real Estat,569258341902,12009590373,2026-07
-Jambi,MN,Jasa Perusahaan,678828827581,12733724083,2026-07
-Jambi,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",8796002,0,2026-07
-Jambi,P,Jasa Pendidikan,61423590864,1324032970,2026-07
-Jambi,Q,Jasa Kesehatan dan Kegiatan Sosial,185245137975,3366492901,2026-07
-Jambi,RSTU,Jasa Lainnya,1185635489813,34901636489,2026-07
-Jambi,RT,Rumah Tangga (konsumsi),25406762919855,548596130024,2026-07
-Jawa Barat,A,"Pertanian, Kehutanan, dan Perikanan",20071053945427,1385385839276,2026-07
-Jawa Barat,B,Pertambangan dan Penggalian,5920989082546,17482363338,2026-07
-Jawa Barat,C,Industri Pengolahan,67764322378484,4224457286457,2026-07
-Jawa Barat,D,Pengadaan Listrik dan Gas,2924157252762,19906154380,2026-07
-Jawa Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",668597956223,21766348418,2026-07
-Jawa Barat,F,Konstruksi,20747654894897,1272267473292,2026-07
-Jawa Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,105094344623657,6604683282703,2026-07
-Jawa Barat,H,Transportasi dan Pergudangan,20142015014194,101825668253,2026-07
-Jawa Barat,I,Penyediaan Akomodasi dan Makan Minum,13379351471128,596681158183,2026-07
-Jawa Barat,J,Informasi dan Komunikasi,4108924575668,58122069852,2026-07
-Jawa Barat,K,Jasa Keuangan dan Asuransi,12484637593653,134122524043,2026-07
-Jawa Barat,L,Real Estat,20204461718529,513239195056,2026-07
-Jawa Barat,MN,Jasa Perusahaan,5222120244384,370909281684,2026-07
-Jawa Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",284902029902,161077117,2026-07
-Jawa Barat,P,Jasa Pendidikan,4141292523704,21235964623,2026-07
-Jawa Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,8525684750895,122838185820,2026-07
-Jawa Barat,RSTU,Jasa Lainnya,10928826727765,492035626123,2026-07
-Jawa Barat,RT,Rumah Tangga (konsumsi),331659975669251,10002558984498,2026-07
-Jawa Tengah,A,"Pertanian, Kehutanan, dan Perikanan",30134250308256,1167910936738,2026-07
-Jawa Tengah,B,Pertambangan dan Penggalian,504071193078,49758244149,2026-07
-Jawa Tengah,C,Industri Pengolahan,57886632692269,7578234196471,2026-07
-Jawa Tengah,D,Pengadaan Listrik dan Gas,289792120672,10385782253,2026-07
-Jawa Tengah,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",163406370010,10616879135,2026-07
-Jawa Tengah,F,Konstruksi,20130706246485,648459187604,2026-07
-Jawa Tengah,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,113257399797372,4765006219317,2026-07
-Jawa Tengah,H,Transportasi dan Pergudangan,4829352526378,250012755357,2026-07
-Jawa Tengah,I,Penyediaan Akomodasi dan Makan Minum,12748089545518,327583567380,2026-07
-Jawa Tengah,J,Informasi dan Komunikasi,510770906920,20550476015,2026-07
-Jawa Tengah,K,Jasa Keuangan dan Asuransi,4244053643248,278750303662,2026-07
-Jawa Tengah,L,Real Estat,7175419721691,88768898035,2026-07
-Jawa Tengah,MN,Jasa Perusahaan,3706746924060,186007832087,2026-07
-Jawa Tengah,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",252512020403,295648376,2026-07
-Jawa Tengah,P,Jasa Pendidikan,2107514148114,18365123581,2026-07
-Jawa Tengah,Q,Jasa Kesehatan dan Kegiatan Sosial,5802312472134,14029081943,2026-07
-Jawa Tengah,RSTU,Jasa Lainnya,10486317282251,320507864330,2026-07
-Jawa Tengah,RT,Rumah Tangga (konsumsi),119105550893896,2035278750481,2026-07
-Jawa Timur,A,"Pertanian, Kehutanan, dan Perikanan",49883460725067,2243496698063,2026-07
-Jawa Timur,B,Pertambangan dan Penggalian,2703236717368,49666493979,2026-07
-Jawa Timur,C,Industri Pengolahan,126069693839392,2311881323067,2026-07
-Jawa Timur,D,Pengadaan Listrik dan Gas,4726132283908,8536412240,2026-07
-Jawa Timur,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",636892705640,31249325203,2026-07
-Jawa Timur,F,Konstruksi,22700613104180,474474120337,2026-07
-Jawa Timur,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,153308115088509,9333654291517,2026-07
-Jawa Timur,H,Transportasi dan Pergudangan,14017138966355,243769962524,2026-07
-Jawa Timur,I,Penyediaan Akomodasi dan Makan Minum,12771548985578,473578950409,2026-07
-Jawa Timur,J,Informasi dan Komunikasi,978411994670,41801760501,2026-07
-Jawa Timur,K,Jasa Keuangan dan Asuransi,2932500833883,71573602953,2026-07
-Jawa Timur,L,Real Estat,8847313445517,422092597113,2026-07
-Jawa Timur,MN,Jasa Perusahaan,6245331351123,171828470424,2026-07
-Jawa Timur,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",509182170843,583334000,2026-07
-Jawa Timur,P,Jasa Pendidikan,2794834100716,21759901425,2026-07
-Jawa Timur,Q,Jasa Kesehatan dan Kegiatan Sosial,3916102990815,49436914581,2026-07
-Jawa Timur,RSTU,Jasa Lainnya,15220603757454,511660245033,2026-07
-Jawa Timur,RT,Rumah Tangga (konsumsi),194908327700474,5354709049213,2026-07
-Kalimantan Barat,A,"Pertanian, Kehutanan, dan Perikanan",22184801864772,205290604317,2026-07
-Kalimantan Barat,B,Pertambangan dan Penggalian,190132445169,642028799,2026-07
-Kalimantan Barat,C,Industri Pengolahan,2023515122010,64231086183,2026-07
-Kalimantan Barat,D,Pengadaan Listrik dan Gas,117215656750,239499378,2026-07
-Kalimantan Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",15684282729,984336003,2026-07
-Kalimantan Barat,F,Konstruksi,551514244556,60432132334,2026-07
-Kalimantan Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,12374604912408,484898056220,2026-07
-Kalimantan Barat,H,Transportasi dan Pergudangan,4213999662240,38828577089,2026-07
-Kalimantan Barat,I,Penyediaan Akomodasi dan Makan Minum,1609950449152,45105142091,2026-07
-Kalimantan Barat,J,Informasi dan Komunikasi,45384410514,4607694024,2026-07
-Kalimantan Barat,K,Jasa Keuangan dan Asuransi,949594978597,3145920692,2026-07
-Kalimantan Barat,L,Real Estat,461884189753,5079084680,2026-07
-Kalimantan Barat,MN,Jasa Perusahaan,1159003811184,25449277345,2026-07
-Kalimantan Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",11368629159,0,2026-07
-Kalimantan Barat,P,Jasa Pendidikan,96504914246,1382554227,2026-07
-Kalimantan Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,130504647104,1666297975,2026-07
-Kalimantan Barat,RSTU,Jasa Lainnya,1044445486198,35547346591,2026-07
-Kalimantan Barat,RT,Rumah Tangga (konsumsi),35514881988371,690803960533,2026-07
-Kalimantan Selatan,A,"Pertanian, Kehutanan, dan Perikanan",10733720827535,186905513564,2026-07
-Kalimantan Selatan,B,Pertambangan dan Penggalian,10686233018195,99396584582,2026-07
-Kalimantan Selatan,C,Industri Pengolahan,2811165601613,36856412217,2026-07
-Kalimantan Selatan,D,Pengadaan Listrik dan Gas,311913216725,545250648,2026-07
-Kalimantan Selatan,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",35461854692,760892543,2026-07
-Kalimantan Selatan,F,Konstruksi,967587211866,117537932330,2026-07
-Kalimantan Selatan,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,12244928354319,599112644147,2026-07
-Kalimantan Selatan,H,Transportasi dan Pergudangan,7519515046719,76062341260,2026-07
-Kalimantan Selatan,I,Penyediaan Akomodasi dan Makan Minum,1024087737924,54221075634,2026-07
-Kalimantan Selatan,J,Informasi dan Komunikasi,19586731722,170117835,2026-07
-Kalimantan Selatan,K,Jasa Keuangan dan Asuransi,432922843151,1551863494,2026-07
-Kalimantan Selatan,L,Real Estat,841136840997,7954698086,2026-07
-Kalimantan Selatan,MN,Jasa Perusahaan,1263432246676,50243155375,2026-07
-Kalimantan Selatan,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",2080056703,0,2026-07
-Kalimantan Selatan,P,Jasa Pendidikan,96395829516,4896704944,2026-07
-Kalimantan Selatan,Q,Jasa Kesehatan dan Kegiatan Sosial,170063951485,2208089298,2026-07
-Kalimantan Selatan,RSTU,Jasa Lainnya,1897443969317,104053347365,2026-07
-Kalimantan Selatan,RT,Rumah Tangga (konsumsi),33414589465176,1049098065290,2026-07
-Kalimantan Tengah,A,"Pertanian, Kehutanan, dan Perikanan",16670266064203,149551789428,2026-07
-Kalimantan Tengah,B,Pertambangan dan Penggalian,240603929334,14320873529,2026-07
-Kalimantan Tengah,C,Industri Pengolahan,1263620428452,10046315767,2026-07
-Kalimantan Tengah,D,Pengadaan Listrik dan Gas,99211829284,97231136,2026-07
-Kalimantan Tengah,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",9083500498,160875803,2026-07
-Kalimantan Tengah,F,Konstruksi,898860542224,143026713409,2026-07
-Kalimantan Tengah,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,9932244261545,276439676100,2026-07
-Kalimantan Tengah,H,Transportasi dan Pergudangan,831799689277,21395497140,2026-07
-Kalimantan Tengah,I,Penyediaan Akomodasi dan Makan Minum,897585347237,13570982199,2026-07
-Kalimantan Tengah,J,Informasi dan Komunikasi,62689027155,611728738,2026-07
-Kalimantan Tengah,K,Jasa Keuangan dan Asuransi,708832720769,2044574668,2026-07
-Kalimantan Tengah,L,Real Estat,235807565432,3332687195,2026-07
-Kalimantan Tengah,MN,Jasa Perusahaan,287848082973,7104544896,2026-07
-Kalimantan Tengah,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",10934147204,0,2026-07
-Kalimantan Tengah,P,Jasa Pendidikan,92932215171,76624109,2026-07
-Kalimantan Tengah,Q,Jasa Kesehatan dan Kegiatan Sosial,98963400156,1569051221,2026-07
-Kalimantan Tengah,RSTU,Jasa Lainnya,1015817258352,37254896222,2026-07
-Kalimantan Tengah,RT,Rumah Tangga (konsumsi),22177391295141,451052718143,2026-07
-Kalimantan Timur,A,"Pertanian, Kehutanan, dan Perikanan",16122554169921,88521944107,2026-07
-Kalimantan Timur,B,Pertambangan dan Penggalian,14614800342888,55752510491,2026-07
-Kalimantan Timur,C,Industri Pengolahan,2492307284671,154174408614,2026-07
-Kalimantan Timur,D,Pengadaan Listrik dan Gas,2897564194511,2676190824,2026-07
-Kalimantan Timur,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",150181190282,2713247928,2026-07
-Kalimantan Timur,F,Konstruksi,8985718016506,336726834910,2026-07
-Kalimantan Timur,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,14697293328290,632086744030,2026-07
-Kalimantan Timur,H,Transportasi dan Pergudangan,8018128253438,110267665857,2026-07
-Kalimantan Timur,I,Penyediaan Akomodasi dan Makan Minum,2600345596790,34705507460,2026-07
-Kalimantan Timur,J,Informasi dan Komunikasi,82943775159,2476213344,2026-07
-Kalimantan Timur,K,Jasa Keuangan dan Asuransi,232982492180,7967662038,2026-07
-Kalimantan Timur,L,Real Estat,1358434874576,27913672113,2026-07
-Kalimantan Timur,MN,Jasa Perusahaan,1966300835796,88377289077,2026-07
-Kalimantan Timur,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",484377368699,0,2026-07
-Kalimantan Timur,P,Jasa Pendidikan,216575956547,0,2026-07
-Kalimantan Timur,Q,Jasa Kesehatan dan Kegiatan Sosial,333990694864,6024719169,2026-07
-Kalimantan Timur,RSTU,Jasa Lainnya,2261423440141,82109145159,2026-07
-Kalimantan Timur,RT,Rumah Tangga (konsumsi),35443473138419,988630174516,2026-07
-Kalimantan Utara,A,"Pertanian, Kehutanan, dan Perikanan",1833083854515,22551714053,2026-07
-Kalimantan Utara,B,Pertambangan dan Penggalian,157226450384,2705604317,2026-07
-Kalimantan Utara,C,Industri Pengolahan,6099988226030,3612998258,2026-07
-Kalimantan Utara,D,Pengadaan Listrik dan Gas,7098267675,117059703,2026-07
-Kalimantan Utara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",6366098292,41838804,2026-07
-Kalimantan Utara,F,Konstruksi,332762192561,100355875578,2026-07
-Kalimantan Utara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,3007071008736,97985989276,2026-07
-Kalimantan Utara,H,Transportasi dan Pergudangan,743828077029,8847122186,2026-07
-Kalimantan Utara,I,Penyediaan Akomodasi dan Makan Minum,263592495207,6573603288,2026-07
-Kalimantan Utara,J,Informasi dan Komunikasi,2969089687,43746792,2026-07
-Kalimantan Utara,K,Jasa Keuangan dan Asuransi,2945457842,0,2026-07
-Kalimantan Utara,L,Real Estat,68056922267,11906685636,2026-07
-Kalimantan Utara,MN,Jasa Perusahaan,137078758634,11939196566,2026-07
-Kalimantan Utara,P,Jasa Pendidikan,9566907322,35912210,2026-07
-Kalimantan Utara,Q,Jasa Kesehatan dan Kegiatan Sosial,13064171487,485138047,2026-07
-Kalimantan Utara,RSTU,Jasa Lainnya,307642572374,9666317608,2026-07
-Kalimantan Utara,RT,Rumah Tangga (konsumsi),6156648467090,64731600085,2026-07
-Kepulauan Riau,A,"Pertanian, Kehutanan, dan Perikanan",694725067165,28562524302,2026-07
-Kepulauan Riau,B,Pertambangan dan Penggalian,868471301891,0,2026-07
-Kepulauan Riau,C,Industri Pengolahan,7008282590025,57979277781,2026-07
-Kepulauan Riau,D,Pengadaan Listrik dan Gas,7581032651444,107210742,2026-07
-Kepulauan Riau,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",85371399808,362483897,2026-07
-Kepulauan Riau,F,Konstruksi,1519268040779,178245511816,2026-07
-Kepulauan Riau,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,8086152490075,169282580626,2026-07
-Kepulauan Riau,H,Transportasi dan Pergudangan,9810537330128,5784636343,2026-07
-Kepulauan Riau,I,Penyediaan Akomodasi dan Makan Minum,1662537599967,64282482244,2026-07
-Kepulauan Riau,J,Informasi dan Komunikasi,97476711520,140029065,2026-07
-Kepulauan Riau,K,Jasa Keuangan dan Asuransi,468879334404,8188912365,2026-07
-Kepulauan Riau,L,Real Estat,3100294343049,8408669589,2026-07
-Kepulauan Riau,MN,Jasa Perusahaan,692634814676,8447242147,2026-07
-Kepulauan Riau,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",83719932943,0,2026-07
-Kepulauan Riau,P,Jasa Pendidikan,277618687821,145662089,2026-07
-Kepulauan Riau,Q,Jasa Kesehatan dan Kegiatan Sosial,270921734429,795722503,2026-07
-Kepulauan Riau,RSTU,Jasa Lainnya,1697909038139,21865028317,2026-07
-Kepulauan Riau,RT,Rumah Tangga (konsumsi),25350565570946,454130370329,2026-07
-Lainnya,A,"Pertanian, Kehutanan, dan Perikanan",2566596386979,0,2026-07
-Lainnya,B,Pertambangan dan Penggalian,33102327666445,0,2026-07
-Lainnya,C,Industri Pengolahan,45830416673725,0,2026-07
-Lainnya,D,Pengadaan Listrik dan Gas,16274264507502,0,2026-07
-Lainnya,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",117870923831,0,2026-07
-Lainnya,F,Konstruksi,1053035273080,0,2026-07
-Lainnya,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,28045355009335,308051879821,2026-07
-Lainnya,H,Transportasi dan Pergudangan,3819056265197,0,2026-07
-Lainnya,I,Penyediaan Akomodasi dan Makan Minum,585452372565,0,2026-07
-Lainnya,J,Informasi dan Komunikasi,680751771691,0,2026-07
-Lainnya,K,Jasa Keuangan dan Asuransi,8897981919363,0,2026-07
-Lainnya,L,Real Estat,1671631932965,0,2026-07
-Lainnya,MN,Jasa Perusahaan,3059422210879,0,2026-07
-Lainnya,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",125685860448247,0,2026-07
-Lainnya,Q,Jasa Kesehatan dan Kegiatan Sosial,694891746817,0,2026-07
-Lainnya,RSTU,Jasa Lainnya,5600758458,112588458,2026-07
-Lainnya,RT,Rumah Tangga (konsumsi),1623429336845,12940824531,2026-07
-Lampung,A,"Pertanian, Kehutanan, dan Perikanan",12315991932310,303777011887,2026-07
-Lampung,B,Pertambangan dan Penggalian,230583281794,4253553348,2026-07
-Lampung,C,Industri Pengolahan,5521660862539,273643891179,2026-07
-Lampung,D,Pengadaan Listrik dan Gas,124044054557,5680830910,2026-07
-Lampung,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",17578802495,748253300,2026-07
-Lampung,F,Konstruksi,801588527676,82080799799,2026-07
-Lampung,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,18377281168144,743402481647,2026-07
-Lampung,H,Transportasi dan Pergudangan,1989886005287,61194792426,2026-07
-Lampung,I,Penyediaan Akomodasi dan Makan Minum,1403088076424,23379849541,2026-07
-Lampung,J,Informasi dan Komunikasi,49933791920,3270670422,2026-07
-Lampung,K,Jasa Keuangan dan Asuransi,5141144862052,2678537272,2026-07
-Lampung,L,Real Estat,678223333647,1852117659,2026-07
-Lampung,MN,Jasa Perusahaan,526992522384,9512074317,2026-07
-Lampung,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",164103092454,0,2026-07
-Lampung,P,Jasa Pendidikan,244732921438,4582937706,2026-07
-Lampung,Q,Jasa Kesehatan dan Kegiatan Sosial,1024767676809,4998875260,2026-07
-Lampung,RSTU,Jasa Lainnya,1482871463517,83777392580,2026-07
-Lampung,RT,Rumah Tangga (konsumsi),25861813942863,474818984177,2026-07
-Maluku,A,"Pertanian, Kehutanan, dan Perikanan",696409854011,34069750578,2026-07
-Maluku,B,Pertambangan dan Penggalian,13807113968,4149932659,2026-07
-Maluku,C,Industri Pengolahan,203866793424,14657967848,2026-07
-Maluku,D,Pengadaan Listrik dan Gas,4977327266,0,2026-07
-Maluku,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",7817559693,192280222,2026-07
-Maluku,F,Konstruksi,302928169035,62390374246,2026-07
-Maluku,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,4039183757793,244035713364,2026-07
-Maluku,H,Transportasi dan Pergudangan,335144729169,11662910778,2026-07
-Maluku,I,Penyediaan Akomodasi dan Makan Minum,411405138905,20171265948,2026-07
-Maluku,J,Informasi dan Komunikasi,9358644558,555148150,2026-07
-Maluku,K,Jasa Keuangan dan Asuransi,26887141904,3600005,2026-07
-Maluku,L,Real Estat,89699836374,8522205778,2026-07
-Maluku,MN,Jasa Perusahaan,139992444665,3242812463,2026-07
-Maluku,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",83261315835,0,2026-07
-Maluku,P,Jasa Pendidikan,4764140346,0,2026-07
-Maluku,Q,Jasa Kesehatan dan Kegiatan Sosial,27129656626,558652038,2026-07
-Maluku,RSTU,Jasa Lainnya,440058163668,21557933629,2026-07
-Maluku,RT,Rumah Tangga (konsumsi),11709199906631,212955240342,2026-07
-Maluku Utara,A,"Pertanian, Kehutanan, dan Perikanan",278704530184,7794953309,2026-07
-Maluku Utara,B,Pertambangan dan Penggalian,1867622191033,8674512420,2026-07
-Maluku Utara,C,Industri Pengolahan,278705993868,2844165643,2026-07
-Maluku Utara,D,Pengadaan Listrik dan Gas,27749796309,0,2026-07
-Maluku Utara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",4304307424,101048978,2026-07
-Maluku Utara,F,Konstruksi,95456551493,8171700773,2026-07
-Maluku Utara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,2319343497700,71709677574,2026-07
-Maluku Utara,H,Transportasi dan Pergudangan,157728117690,1757522865,2026-07
-Maluku Utara,I,Penyediaan Akomodasi dan Makan Minum,397590506258,5651589801,2026-07
-Maluku Utara,J,Informasi dan Komunikasi,4134145326,0,2026-07
-Maluku Utara,K,Jasa Keuangan dan Asuransi,16483406736,20478483,2026-07
-Maluku Utara,L,Real Estat,44160956887,946576806,2026-07
-Maluku Utara,MN,Jasa Perusahaan,36237769333,1476831843,2026-07
-Maluku Utara,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",777828636,26895920,2026-07
-Maluku Utara,P,Jasa Pendidikan,7208422844,0,2026-07
-Maluku Utara,Q,Jasa Kesehatan dan Kegiatan Sosial,5721907363,241328469,2026-07
-Maluku Utara,RSTU,Jasa Lainnya,439659255304,10936182690,2026-07
-Maluku Utara,RT,Rumah Tangga (konsumsi),10639853881811,476415582206,2026-07
-Nusa Tenggara Barat,A,"Pertanian, Kehutanan, dan Perikanan",6406379629991,709776595465,2026-07
-Nusa Tenggara Barat,B,Pertambangan dan Penggalian,16654678383354,245471634,2026-07
-Nusa Tenggara Barat,C,Industri Pengolahan,1374655163276,34967220409,2026-07
-Nusa Tenggara Barat,D,Pengadaan Listrik dan Gas,7240768082,48326313,2026-07
-Nusa Tenggara Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",95027854467,316449781,2026-07
-Nusa Tenggara Barat,F,Konstruksi,975849170006,444480322896,2026-07
-Nusa Tenggara Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,12156254287814,406447911056,2026-07
-Nusa Tenggara Barat,H,Transportasi dan Pergudangan,417313518440,8455501668,2026-07
-Nusa Tenggara Barat,I,Penyediaan Akomodasi dan Makan Minum,1349727392001,47436847541,2026-07
-Nusa Tenggara Barat,J,Informasi dan Komunikasi,25888722754,448576274,2026-07
-Nusa Tenggara Barat,K,Jasa Keuangan dan Asuransi,637598939632,4940003627,2026-07
-Nusa Tenggara Barat,L,Real Estat,406567527551,25254883638,2026-07
-Nusa Tenggara Barat,MN,Jasa Perusahaan,248302260505,7053261547,2026-07
-Nusa Tenggara Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",95480194,0,2026-07
-Nusa Tenggara Barat,P,Jasa Pendidikan,147661583940,9841316757,2026-07
-Nusa Tenggara Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,251519087282,2671098610,2026-07
-Nusa Tenggara Barat,RSTU,Jasa Lainnya,1017072252507,31820630345,2026-07
-Nusa Tenggara Barat,RT,Rumah Tangga (konsumsi),34468317800853,422826277386,2026-07
-Nusa Tenggara Timur,A,"Pertanian, Kehutanan, dan Perikanan",2601338108072,181125761900,2026-07
-Nusa Tenggara Timur,B,Pertambangan dan Penggalian,83466581458,9795050832,2026-07
-Nusa Tenggara Timur,C,Industri Pengolahan,873456327917,68303576498,2026-07
-Nusa Tenggara Timur,D,Pengadaan Listrik dan Gas,36364172737,4987750000,2026-07
-Nusa Tenggara Timur,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",23121053785,663108295,2026-07
-Nusa Tenggara Timur,F,Konstruksi,714909199638,113420720083,2026-07
-Nusa Tenggara Timur,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,10233644879079,784553225620,2026-07
-Nusa Tenggara Timur,H,Transportasi dan Pergudangan,432019382034,31156271141,2026-07
-Nusa Tenggara Timur,I,Penyediaan Akomodasi dan Makan Minum,905842435228,49926628992,2026-07
-Nusa Tenggara Timur,J,Informasi dan Komunikasi,10892413799,94588613,2026-07
-Nusa Tenggara Timur,K,Jasa Keuangan dan Asuransi,269853317788,3803043271,2026-07
-Nusa Tenggara Timur,L,Real Estat,181151203177,10194788134,2026-07
-Nusa Tenggara Timur,MN,Jasa Perusahaan,201199384677,10291474568,2026-07
-Nusa Tenggara Timur,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",1122817429,0,2026-07
-Nusa Tenggara Timur,P,Jasa Pendidikan,53227758827,317630700,2026-07
-Nusa Tenggara Timur,Q,Jasa Kesehatan dan Kegiatan Sosial,128375002242,6282213503,2026-07
-Nusa Tenggara Timur,RSTU,Jasa Lainnya,899405726665,59588365842,2026-07
-Nusa Tenggara Timur,RT,Rumah Tangga (konsumsi),29279371975888,343000453547,2026-07
-Papua,A,"Pertanian, Kehutanan, dan Perikanan",3271323466905,46952733114,2026-07
-Papua,B,Pertambangan dan Penggalian,13293879428,38698248,2026-07
-Papua,C,Industri Pengolahan,565404519102,22178051779,2026-07
-Papua,D,Pengadaan Listrik dan Gas,39606315481,2620153198,2026-07
-Papua,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",18761654177,1451624306,2026-07
-Papua,F,Konstruksi,2288535036062,150696661809,2026-07
-Papua,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,7528065273154,311179597031,2026-07
-Papua,H,Transportasi dan Pergudangan,1577237478617,59310634042,2026-07
-Papua,I,Penyediaan Akomodasi dan Makan Minum,1148232673537,118314397888,2026-07
-Papua,J,Informasi dan Komunikasi,51401578881,1271170304,2026-07
-Papua,K,Jasa Keuangan dan Asuransi,14757746442,298222590,2026-07
-Papua,L,Real Estat,308601892178,16246582072,2026-07
-Papua,MN,Jasa Perusahaan,578956524874,18871306552,2026-07
-Papua,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",134814227752,0,2026-07
-Papua,P,Jasa Pendidikan,31501917997,397226084,2026-07
-Papua,Q,Jasa Kesehatan dan Kegiatan Sosial,80696262532,2417538098,2026-07
-Papua,RSTU,Jasa Lainnya,689541417956,24376159108,2026-07
-Papua,RT,Rumah Tangga (konsumsi),25642848321711,468357976540,2026-07
-Papua Barat,A,"Pertanian, Kehutanan, dan Perikanan",1346217458891,12869643178,2026-07
-Papua Barat,B,Pertambangan dan Penggalian,22168284875,603927309,2026-07
-Papua Barat,C,Industri Pengolahan,170844148058,9159694032,2026-07
-Papua Barat,D,Pengadaan Listrik dan Gas,8881397414,0,2026-07
-Papua Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",11015859671,751004135,2026-07
-Papua Barat,F,Konstruksi,469770302110,88490477005,2026-07
-Papua Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,3137741518050,141716606149,2026-07
-Papua Barat,H,Transportasi dan Pergudangan,330369196048,12132445859,2026-07
-Papua Barat,I,Penyediaan Akomodasi dan Makan Minum,528922312546,20851204830,2026-07
-Papua Barat,J,Informasi dan Komunikasi,4822499848,201715599,2026-07
-Papua Barat,K,Jasa Keuangan dan Asuransi,21547146476,11906415700,2026-07
-Papua Barat,L,Real Estat,131867503642,5223010619,2026-07
-Papua Barat,MN,Jasa Perusahaan,203059292837,3154145045,2026-07
-Papua Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",123231371088,0,2026-07
-Papua Barat,P,Jasa Pendidikan,12688291709,260000000,2026-07
-Papua Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,17719422280,342826515,2026-07
-Papua Barat,RSTU,Jasa Lainnya,437881236513,18965420109,2026-07
-Papua Barat,RT,Rumah Tangga (konsumsi),12432624718896,391737920724,2026-07
-Riau,A,"Pertanian, Kehutanan, dan Perikanan",26869864880528,437885211334,2026-07
-Riau,B,Pertambangan dan Penggalian,259384810077,4784741137,2026-07
-Riau,C,Industri Pengolahan,13348568323413,120769006382,2026-07
-Riau,D,Pengadaan Listrik dan Gas,54294422996,1619653,2026-07
-Riau,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",119533917724,1066987805,2026-07
-Riau,F,Konstruksi,2916000644727,124336996810,2026-07
-Riau,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,13580982465897,447404773083,2026-07
-Riau,H,Transportasi dan Pergudangan,3784211429583,139377679321,2026-07
-Riau,I,Penyediaan Akomodasi dan Makan Minum,2058179498108,268599056613,2026-07
-Riau,J,Informasi dan Komunikasi,95416257146,2175300343,2026-07
-Riau,K,Jasa Keuangan dan Asuransi,545371575613,69696702389,2026-07
-Riau,L,Real Estat,988608689113,10263133141,2026-07
-Riau,MN,Jasa Perusahaan,2843903704506,11762501472,2026-07
-Riau,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",27777777776,0,2026-07
-Riau,P,Jasa Pendidikan,162635930573,4258066636,2026-07
-Riau,Q,Jasa Kesehatan dan Kegiatan Sosial,1749137716773,34147957212,2026-07
-Riau,RSTU,Jasa Lainnya,2172329518019,43272670472,2026-07
-Riau,RT,Rumah Tangga (konsumsi),41806577386041,1059705646596,2026-07
-Sulawesi Barat,A,"Pertanian, Kehutanan, dan Perikanan",2680572701815,65839047726,2026-07
-Sulawesi Barat,B,Pertambangan dan Penggalian,13445897124,842456028,2026-07
-Sulawesi Barat,C,Industri Pengolahan,245396994386,37363554844,2026-07
-Sulawesi Barat,D,Pengadaan Listrik dan Gas,16177660725,22878744,2026-07
-Sulawesi Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",4348801100,254285448,2026-07
-Sulawesi Barat,F,Konstruksi,100286672407,8407542285,2026-07
-Sulawesi Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,2124520122305,122309125877,2026-07
-Sulawesi Barat,H,Transportasi dan Pergudangan,37204426531,2163795869,2026-07
-Sulawesi Barat,I,Penyediaan Akomodasi dan Makan Minum,124879458528,5107585533,2026-07
-Sulawesi Barat,J,Informasi dan Komunikasi,4030009356,21013264,2026-07
-Sulawesi Barat,K,Jasa Keuangan dan Asuransi,4544026737,2374843445,2026-07
-Sulawesi Barat,L,Real Estat,30990625601,986995329,2026-07
-Sulawesi Barat,MN,Jasa Perusahaan,35582563463,1906847524,2026-07
-Sulawesi Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",9938105463,0,2026-07
-Sulawesi Barat,P,Jasa Pendidikan,9617757495,8111658,2026-07
-Sulawesi Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,28604227600,181703648,2026-07
-Sulawesi Barat,RSTU,Jasa Lainnya,283914852812,9546089038,2026-07
-Sulawesi Barat,RT,Rumah Tangga (konsumsi),7665746733990,100754062694,2026-07
-Sulawesi Selatan,A,"Pertanian, Kehutanan, dan Perikanan",18752750687453,567084416915,2026-07
-Sulawesi Selatan,B,Pertambangan dan Penggalian,2118778276534,15379797004,2026-07
-Sulawesi Selatan,C,Industri Pengolahan,7493079560698,387218113978,2026-07
-Sulawesi Selatan,D,Pengadaan Listrik dan Gas,3251038083199,809154064,2026-07
-Sulawesi Selatan,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",71832288618,3053844967,2026-07
-Sulawesi Selatan,F,Konstruksi,4884711955534,205677063698,2026-07
-Sulawesi Selatan,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,37939375340404,3029577365153,2026-07
-Sulawesi Selatan,H,Transportasi dan Pergudangan,2877592103505,116684629819,2026-07
-Sulawesi Selatan,I,Penyediaan Akomodasi dan Makan Minum,3690483270470,234626329681,2026-07
-Sulawesi Selatan,J,Informasi dan Komunikasi,177317988978,2213956320,2026-07
-Sulawesi Selatan,K,Jasa Keuangan dan Asuransi,2014558677632,24351872516,2026-07
-Sulawesi Selatan,L,Real Estat,2097850683059,71650489423,2026-07
-Sulawesi Selatan,MN,Jasa Perusahaan,2615942116189,68055095759,2026-07
-Sulawesi Selatan,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",3458928529,0,2026-07
-Sulawesi Selatan,P,Jasa Pendidikan,779544732898,7030138756,2026-07
-Sulawesi Selatan,Q,Jasa Kesehatan dan Kegiatan Sosial,723380697760,32451640841,2026-07
-Sulawesi Selatan,RSTU,Jasa Lainnya,3914474432641,142464968900,2026-07
-Sulawesi Selatan,RT,Rumah Tangga (konsumsi),81772340792898,1467666373108,2026-07
-Sulawesi Tengah,A,"Pertanian, Kehutanan, dan Perikanan",6593052066425,114182296529,2026-07
-Sulawesi Tengah,B,Pertambangan dan Penggalian,5847634576190,13228148920,2026-07
-Sulawesi Tengah,C,Industri Pengolahan,12957702321441,29291778363,2026-07
-Sulawesi Tengah,D,Pengadaan Listrik dan Gas,35470380577,0,2026-07
-Sulawesi Tengah,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",9837381899,73507573,2026-07
-Sulawesi Tengah,F,Konstruksi,758847653694,90373974128,2026-07
-Sulawesi Tengah,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,8940749122373,435749632655,2026-07
-Sulawesi Tengah,H,Transportasi dan Pergudangan,964691631687,8214097789,2026-07
-Sulawesi Tengah,I,Penyediaan Akomodasi dan Makan Minum,849009952590,12209119924,2026-07
-Sulawesi Tengah,J,Informasi dan Komunikasi,30706657299,607438184,2026-07
-Sulawesi Tengah,K,Jasa Keuangan dan Asuransi,23730569870,17434123,2026-07
-Sulawesi Tengah,L,Real Estat,262974359991,12194180759,2026-07
-Sulawesi Tengah,MN,Jasa Perusahaan,929689054108,20957598331,2026-07
-Sulawesi Tengah,P,Jasa Pendidikan,48033291723,34677791,2026-07
-Sulawesi Tengah,Q,Jasa Kesehatan dan Kegiatan Sosial,46077329028,91377476,2026-07
-Sulawesi Tengah,RSTU,Jasa Lainnya,825062918561,29454301346,2026-07
-Sulawesi Tengah,RT,Rumah Tangga (konsumsi),26784046408794,443879554554,2026-07
-Sulawesi Tenggara,A,"Pertanian, Kehutanan, dan Perikanan",4631271908782,70583560660,2026-07
-Sulawesi Tenggara,B,Pertambangan dan Penggalian,1616293700597,14786764252,2026-07
-Sulawesi Tenggara,C,Industri Pengolahan,743303589865,21826611985,2026-07
-Sulawesi Tenggara,D,Pengadaan Listrik dan Gas,4909360672,220863162,2026-07
-Sulawesi Tenggara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",16723253473,587430162,2026-07
-Sulawesi Tenggara,F,Konstruksi,542812097138,43396836910,2026-07
-Sulawesi Tenggara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,7329353465638,301416121431,2026-07
-Sulawesi Tenggara,H,Transportasi dan Pergudangan,515550611834,17048892949,2026-07
-Sulawesi Tenggara,I,Penyediaan Akomodasi dan Makan Minum,659517742659,19204961540,2026-07
-Sulawesi Tenggara,J,Informasi dan Komunikasi,21047791686,920905419,2026-07
-Sulawesi Tenggara,K,Jasa Keuangan dan Asuransi,4196283995,44551366,2026-07
-Sulawesi Tenggara,L,Real Estat,180543559551,3217207726,2026-07
-Sulawesi Tenggara,MN,Jasa Perusahaan,1063918358855,36355195850,2026-07
-Sulawesi Tenggara,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",19944477231,0,2026-07
-Sulawesi Tenggara,P,Jasa Pendidikan,27966609636,2545431888,2026-07
-Sulawesi Tenggara,Q,Jasa Kesehatan dan Kegiatan Sosial,39723648639,201758711,2026-07
-Sulawesi Tenggara,RSTU,Jasa Lainnya,1016024173662,32032131513,2026-07
-Sulawesi Tenggara,RT,Rumah Tangga (konsumsi),24649862233459,330987163968,2026-07
-Sulawesi Utara,A,"Pertanian, Kehutanan, dan Perikanan",2420699314076,76049264416,2026-07
-Sulawesi Utara,B,Pertambangan dan Penggalian,4171795503595,4854064652,2026-07
-Sulawesi Utara,C,Industri Pengolahan,900017472238,22322647885,2026-07
-Sulawesi Utara,D,Pengadaan Listrik dan Gas,56669032233,89338605,2026-07
-Sulawesi Utara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",14606833094,137419916,2026-07
-Sulawesi Utara,F,Konstruksi,1495170087073,193205533654,2026-07
-Sulawesi Utara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,8180747540765,365261849860,2026-07
-Sulawesi Utara,H,Transportasi dan Pergudangan,385734424593,11631637101,2026-07
-Sulawesi Utara,I,Penyediaan Akomodasi dan Makan Minum,1002917801342,62270169759,2026-07
-Sulawesi Utara,J,Informasi dan Komunikasi,30321569318,50914722,2026-07
-Sulawesi Utara,K,Jasa Keuangan dan Asuransi,188196570732,10227938,2026-07
-Sulawesi Utara,L,Real Estat,452720179044,3022324300,2026-07
-Sulawesi Utara,MN,Jasa Perusahaan,1051612338336,9168995405,2026-07
-Sulawesi Utara,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",2727496904,0,2026-07
-Sulawesi Utara,P,Jasa Pendidikan,65467069332,10127915,2026-07
-Sulawesi Utara,Q,Jasa Kesehatan dan Kegiatan Sosial,185388861977,3293709757,2026-07
-Sulawesi Utara,RSTU,Jasa Lainnya,787032117963,44842553245,2026-07
-Sulawesi Utara,RT,Rumah Tangga (konsumsi),33104831520314,710889571064,2026-07
-Sumatera Barat,A,"Pertanian, Kehutanan, dan Perikanan",15505548149570,338834608870,2026-07
-Sumatera Barat,B,Pertambangan dan Penggalian,143950424940,6009968072,2026-07
-Sumatera Barat,C,Industri Pengolahan,2424648875988,182152404112,2026-07
-Sumatera Barat,D,Pengadaan Listrik dan Gas,90958680567,362025142,2026-07
-Sumatera Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",33597364684,4325765521,2026-07
-Sumatera Barat,F,Konstruksi,1056886028482,108312171571,2026-07
-Sumatera Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,15331732246654,799393829043,2026-07
-Sumatera Barat,H,Transportasi dan Pergudangan,831804356687,35401947701,2026-07
-Sumatera Barat,I,Penyediaan Akomodasi dan Makan Minum,1230536420964,36386829171,2026-07
-Sumatera Barat,J,Informasi dan Komunikasi,30652717322,1416211720,2026-07
-Sumatera Barat,K,Jasa Keuangan dan Asuransi,157420447876,3799123447,2026-07
-Sumatera Barat,L,Real Estat,306174180912,20290756332,2026-07
-Sumatera Barat,MN,Jasa Perusahaan,1535282576451,26148165507,2026-07
-Sumatera Barat,P,Jasa Pendidikan,291678577464,1357608260,2026-07
-Sumatera Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,476088850324,1542051943,2026-07
-Sumatera Barat,RSTU,Jasa Lainnya,1425092785297,64364984941,2026-07
-Sumatera Barat,RT,Rumah Tangga (konsumsi),34872162413594,454873315768,2026-07
-Sumatera Selatan,A,"Pertanian, Kehutanan, dan Perikanan",21601552464346,515318661466,2026-07
-Sumatera Selatan,B,Pertambangan dan Penggalian,2497518884518,1077494700,2026-07
-Sumatera Selatan,C,Industri Pengolahan,14992334544249,44555325860,2026-07
-Sumatera Selatan,D,Pengadaan Listrik dan Gas,139748839179,9371151521,2026-07
-Sumatera Selatan,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",214744883330,1139118687,2026-07
-Sumatera Selatan,F,Konstruksi,3700003412258,277676490392,2026-07
-Sumatera Selatan,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,18343871790524,833675267539,2026-07
-Sumatera Selatan,H,Transportasi dan Pergudangan,2279766900637,72135328360,2026-07
-Sumatera Selatan,I,Penyediaan Akomodasi dan Makan Minum,2075953118521,32466183247,2026-07
-Sumatera Selatan,J,Informasi dan Komunikasi,52418112496,869105579,2026-07
-Sumatera Selatan,K,Jasa Keuangan dan Asuransi,113948911150,3310412764,2026-07
-Sumatera Selatan,L,Real Estat,2199105355763,34706583162,2026-07
-Sumatera Selatan,MN,Jasa Perusahaan,1583828303612,56148744652,2026-07
-Sumatera Selatan,P,Jasa Pendidikan,472817467967,14008086646,2026-07
-Sumatera Selatan,Q,Jasa Kesehatan dan Kegiatan Sosial,583315929682,39031692805,2026-07
-Sumatera Selatan,RSTU,Jasa Lainnya,1403965655010,61444736497,2026-07
-Sumatera Selatan,RT,Rumah Tangga (konsumsi),55488556221309,1199881334585,2026-07
-Sumatera Utara,A,"Pertanian, Kehutanan, dan Perikanan",54805444423446,819287956740,2026-07
-Sumatera Utara,B,Pertambangan dan Penggalian,554828709753,7529165944,2026-07
-Sumatera Utara,C,Industri Pengolahan,80723894176240,721242638515,2026-07
-Sumatera Utara,D,Pengadaan Listrik dan Gas,546819294712,4479939332,2026-07
-Sumatera Utara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",283183556971,7868930078,2026-07
-Sumatera Utara,F,Konstruksi,6616143567222,412720536926,2026-07
-Sumatera Utara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,48923651141380,1855813387145,2026-07
-Sumatera Utara,H,Transportasi dan Pergudangan,4391142804485,93460432286,2026-07
-Sumatera Utara,I,Penyediaan Akomodasi dan Makan Minum,3251441698724,103954051639,2026-07
-Sumatera Utara,J,Informasi dan Komunikasi,154266013826,2988437345,2026-07
-Sumatera Utara,K,Jasa Keuangan dan Asuransi,1965316039791,21750808796,2026-07
-Sumatera Utara,L,Real Estat,4098267909376,43160434095,2026-07
-Sumatera Utara,MN,Jasa Perusahaan,2451897269509,42156812484,2026-07
-Sumatera Utara,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",6333106804,0,2026-07
-Sumatera Utara,P,Jasa Pendidikan,701965179793,7323917445,2026-07
-Sumatera Utara,Q,Jasa Kesehatan dan Kegiatan Sosial,3364723115822,89695440663,2026-07
-Sumatera Utara,RSTU,Jasa Lainnya,5022942385604,169623896431,2026-07
-Sumatera Utara,RT,Rumah Tangga (konsumsi),85898636674725,1897142080003,2026-07
+Aceh,A,"Pertanian, Kehutanan, dan Perikanan",4125936925407,110457129659,2026-08
+Aceh,B,Pertambangan dan Penggalian,226356185409,7687747899,2026-08
+Aceh,C,Industri Pengolahan,1384337058999,102151065943,2026-08
+Aceh,D,Pengadaan Listrik dan Gas,61222073385,65862514,2026-08
+Aceh,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",45401149038,36364742,2026-08
+Aceh,F,Konstruksi,498800033452,102325298782,2026-08
+Aceh,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,6113575836303,327870284570,2026-08
+Aceh,H,Transportasi dan Pergudangan,303515557948,24527468825,2026-08
+Aceh,I,Penyediaan Akomodasi dan Makan Minum,714815813806,30279918671,2026-08
+Aceh,J,Informasi dan Komunikasi,16706001986,245411192,2026-08
+Aceh,K,Jasa Keuangan dan Asuransi,65715051422,230782419,2026-08
+Aceh,L,Real Estat,74395263001,10380274302,2026-08
+Aceh,MN,Jasa Perusahaan,195135547154,9258824274,2026-08
+Aceh,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",102235504,0,2026-08
+Aceh,P,Jasa Pendidikan,99496935669,235403482,2026-08
+Aceh,Q,Jasa Kesehatan dan Kegiatan Sosial,448742264234,5385738639,2026-08
+Aceh,RSTU,Jasa Lainnya,881369997823,27843312436,2026-08
+Aceh,RT,Rumah Tangga (konsumsi),35491554668705,314169791848,2026-08
+Bali,A,"Pertanian, Kehutanan, dan Perikanan",7359923900354,76511326569,2026-08
+Bali,B,Pertambangan dan Penggalian,52389148664,0,2026-08
+Bali,C,Industri Pengolahan,5582110216907,65543286837,2026-08
+Bali,D,Pengadaan Listrik dan Gas,110987532963,8720011473,2026-08
+Bali,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",54370109758,510874223,2026-08
+Bali,F,Konstruksi,3565546293002,13234646932,2026-08
+Bali,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,30144455305712,471746827045,2026-08
+Bali,H,Transportasi dan Pergudangan,832916107870,6535837629,2026-08
+Bali,I,Penyediaan Akomodasi dan Makan Minum,15861185221070,262149901781,2026-08
+Bali,J,Informasi dan Komunikasi,146682408361,2334151286,2026-08
+Bali,K,Jasa Keuangan dan Asuransi,1322273376365,1872952793,2026-08
+Bali,L,Real Estat,2867671006261,9203588686,2026-08
+Bali,MN,Jasa Perusahaan,1895584741873,10740528910,2026-08
+Bali,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",25636794938,0,2026-08
+Bali,P,Jasa Pendidikan,574283647828,1402100473,2026-08
+Bali,Q,Jasa Kesehatan dan Kegiatan Sosial,1566947529942,3271972773,2026-08
+Bali,RSTU,Jasa Lainnya,4686215644538,37242890641,2026-08
+Bali,RT,Rumah Tangga (konsumsi),35573456360901,472149754547,2026-08
+Bangka Belitung,A,"Pertanian, Kehutanan, dan Perikanan",3275831794005,63419592611,2026-08
+Bangka Belitung,B,Pertambangan dan Penggalian,2755326200737,15730855892,2026-08
+Bangka Belitung,C,Industri Pengolahan,418197267745,9261932996,2026-08
+Bangka Belitung,D,Pengadaan Listrik dan Gas,9003695665,183747312,2026-08
+Bangka Belitung,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",4236344309,199886714,2026-08
+Bangka Belitung,F,Konstruksi,185185494678,19916780742,2026-08
+Bangka Belitung,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,2873709890321,98580284870,2026-08
+Bangka Belitung,H,Transportasi dan Pergudangan,143912492102,2322926847,2026-08
+Bangka Belitung,I,Penyediaan Akomodasi dan Makan Minum,199447416157,2312148241,2026-08
+Bangka Belitung,J,Informasi dan Komunikasi,1877726429,0,2026-08
+Bangka Belitung,K,Jasa Keuangan dan Asuransi,12675324131,517174315,2026-08
+Bangka Belitung,L,Real Estat,77299441142,437924281,2026-08
+Bangka Belitung,MN,Jasa Perusahaan,85414767727,3956097372,2026-08
+Bangka Belitung,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",97439496,0,2026-08
+Bangka Belitung,P,Jasa Pendidikan,50484938624,15947404,2026-08
+Bangka Belitung,Q,Jasa Kesehatan dan Kegiatan Sosial,109274979093,169125460,2026-08
+Bangka Belitung,RSTU,Jasa Lainnya,524875730604,11982973888,2026-08
+Bangka Belitung,RT,Rumah Tangga (konsumsi),9689537258173,147093330575,2026-08
+Banten,A,"Pertanian, Kehutanan, dan Perikanan",1208011105889,60733171067,2026-08
+Banten,B,Pertambangan dan Penggalian,531656096576,67706132973,2026-08
+Banten,C,Industri Pengolahan,25148480229264,528295638154,2026-08
+Banten,D,Pengadaan Listrik dan Gas,705023509703,32261656636,2026-08
+Banten,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",273293247314,6915400398,2026-08
+Banten,F,Konstruksi,12217440473590,976241387863,2026-08
+Banten,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,26488705779511,1315781198987,2026-08
+Banten,H,Transportasi dan Pergudangan,12374890127986,844990982799,2026-08
+Banten,I,Penyediaan Akomodasi dan Makan Minum,2888030070923,69514829334,2026-08
+Banten,J,Informasi dan Komunikasi,703964000934,13698514287,2026-08
+Banten,K,Jasa Keuangan dan Asuransi,4895510101587,49647529620,2026-08
+Banten,L,Real Estat,13577792081224,34549395049,2026-08
+Banten,MN,Jasa Perusahaan,2175344576440,72751664055,2026-08
+Banten,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",6982864108,0,2026-08
+Banten,P,Jasa Pendidikan,672977048071,5021601136,2026-08
+Banten,Q,Jasa Kesehatan dan Kegiatan Sosial,3795952197057,60589046762,2026-08
+Banten,RSTU,Jasa Lainnya,3107241172990,141126078050,2026-08
+Banten,RT,Rumah Tangga (konsumsi),119634106177805,3480859472812,2026-08
+Bengkulu,A,"Pertanian, Kehutanan, dan Perikanan",7358305971420,78465048626,2026-08
+Bengkulu,B,Pertambangan dan Penggalian,345927309886,440698538,2026-08
+Bengkulu,C,Industri Pengolahan,527514520992,113182584926,2026-08
+Bengkulu,D,Pengadaan Listrik dan Gas,8405210202,258576324,2026-08
+Bengkulu,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",3097024713,265110442,2026-08
+Bengkulu,F,Konstruksi,157475794870,27793005919,2026-08
+Bengkulu,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,4781521897799,166592593027,2026-08
+Bengkulu,H,Transportasi dan Pergudangan,222412871355,5017097021,2026-08
+Bengkulu,I,Penyediaan Akomodasi dan Makan Minum,688714992559,9226146805,2026-08
+Bengkulu,J,Informasi dan Komunikasi,6110154152,61177034,2026-08
+Bengkulu,K,Jasa Keuangan dan Asuransi,9113901373,0,2026-08
+Bengkulu,L,Real Estat,202935479145,1084639492,2026-08
+Bengkulu,MN,Jasa Perusahaan,154727106081,1062742718,2026-08
+Bengkulu,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",249000000,0,2026-08
+Bengkulu,P,Jasa Pendidikan,54529850158,151039134,2026-08
+Bengkulu,Q,Jasa Kesehatan dan Kegiatan Sosial,128352530357,244975394,2026-08
+Bengkulu,RSTU,Jasa Lainnya,687004524766,20225440631,2026-08
+Bengkulu,RT,Rumah Tangga (konsumsi),17054853620533,219983572880,2026-08
+D.I Yogyakarta,A,"Pertanian, Kehutanan, dan Perikanan",3128473067339,227060819813,2026-08
+D.I Yogyakarta,B,Pertambangan dan Penggalian,94673005065,2282651911,2026-08
+D.I Yogyakarta,C,Industri Pengolahan,3956691077336,448463314948,2026-08
+D.I Yogyakarta,D,Pengadaan Listrik dan Gas,55623894687,738643876,2026-08
+D.I Yogyakarta,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",22783435909,644747545,2026-08
+D.I Yogyakarta,F,Konstruksi,7657202540350,135486321726,2026-08
+D.I Yogyakarta,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,11742280767875,677985052176,2026-08
+D.I Yogyakarta,H,Transportasi dan Pergudangan,537951593802,8973696061,2026-08
+D.I Yogyakarta,I,Penyediaan Akomodasi dan Makan Minum,3083693272150,61312465899,2026-08
+D.I Yogyakarta,J,Informasi dan Komunikasi,196340451847,22915424676,2026-08
+D.I Yogyakarta,K,Jasa Keuangan dan Asuransi,641989309066,9980808775,2026-08
+D.I Yogyakarta,L,Real Estat,1304253593531,5544275588,2026-08
+D.I Yogyakarta,MN,Jasa Perusahaan,965765105443,28498353873,2026-08
+D.I Yogyakarta,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",21440485095,0,2026-08
+D.I Yogyakarta,P,Jasa Pendidikan,994468553479,15396623649,2026-08
+D.I Yogyakarta,Q,Jasa Kesehatan dan Kegiatan Sosial,1823899751682,24844545392,2026-08
+D.I Yogyakarta,RSTU,Jasa Lainnya,2394262152713,102913159555,2026-08
+D.I Yogyakarta,RT,Rumah Tangga (konsumsi),18599718921950,441994842406,2026-08
+DKI Jakarta,A,"Pertanian, Kehutanan, dan Perikanan",195507754270582,2757627183383,2026-08
+DKI Jakarta,B,Pertambangan dan Penggalian,347470610068675,2530942691551,2026-08
+DKI Jakarta,C,Industri Pengolahan,956391782510946,12361387032937,2026-08
+DKI Jakarta,D,Pengadaan Listrik dan Gas,265807577117630,510606814959,2026-08
+DKI Jakarta,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",9533809421600,26262246548,2026-08
+DKI Jakarta,F,Konstruksi,455524207417019,4148782932390,2026-08
+DKI Jakarta,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,513703335915945,10517252660144,2026-08
+DKI Jakarta,H,Transportasi dan Pergudangan,222371141221207,1405907914987,2026-08
+DKI Jakarta,I,Penyediaan Akomodasi dan Makan Minum,58121235044452,2042999146375,2026-08
+DKI Jakarta,J,Informasi dan Komunikasi,250922752255699,398979993095,2026-08
+DKI Jakarta,K,Jasa Keuangan dan Asuransi,557054931139319,1178982782995,2026-08
+DKI Jakarta,L,Real Estat,207016198067784,3720741300861,2026-08
+DKI Jakarta,MN,Jasa Perusahaan,111624271997199,1265527625416,2026-08
+DKI Jakarta,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",55816756104077,2073175175,2026-08
+DKI Jakarta,P,Jasa Pendidikan,8260996264277,193985524011,2026-08
+DKI Jakarta,Q,Jasa Kesehatan dan Kegiatan Sosial,20392662505932,181410378146,2026-08
+DKI Jakarta,RSTU,Jasa Lainnya,102302088483980,3912281479130,2026-08
+DKI Jakarta,RT,Rumah Tangga (konsumsi),717186129759961,20927095799341,2026-08
+Gorontalo,A,"Pertanian, Kehutanan, dan Perikanan",775435636268,87634101130,2026-08
+Gorontalo,B,Pertambangan dan Penggalian,33344063100,5162668422,2026-08
+Gorontalo,C,Industri Pengolahan,293025915924,50763949713,2026-08
+Gorontalo,D,Pengadaan Listrik dan Gas,988948916575,41343401,2026-08
+Gorontalo,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",3393023838,65465503,2026-08
+Gorontalo,F,Konstruksi,141004838121,40433720385,2026-08
+Gorontalo,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,2499568859735,151330116948,2026-08
+Gorontalo,H,Transportasi dan Pergudangan,35798139524,2054749535,2026-08
+Gorontalo,I,Penyediaan Akomodasi dan Makan Minum,207302000234,25203365386,2026-08
+Gorontalo,J,Informasi dan Komunikasi,17823674168,110356339,2026-08
+Gorontalo,K,Jasa Keuangan dan Asuransi,2093970062,0,2026-08
+Gorontalo,L,Real Estat,67577407229,20391026526,2026-08
+Gorontalo,MN,Jasa Perusahaan,37405315462,424386553,2026-08
+Gorontalo,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",47300724,0,2026-08
+Gorontalo,P,Jasa Pendidikan,68121231086,0,2026-08
+Gorontalo,Q,Jasa Kesehatan dan Kegiatan Sosial,53030914601,4334798,2026-08
+Gorontalo,RSTU,Jasa Lainnya,345920206622,19008926376,2026-08
+Gorontalo,RT,Rumah Tangga (konsumsi),11767017228486,394433428861,2026-08
+Jambi,A,"Pertanian, Kehutanan, dan Perikanan",17235846728116,165342542326,2026-08
+Jambi,B,Pertambangan dan Penggalian,594717994549,2274154406,2026-08
+Jambi,C,Industri Pengolahan,4127562831875,60772189682,2026-08
+Jambi,D,Pengadaan Listrik dan Gas,12794636692,37134503,2026-08
+Jambi,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",12459254986,288367506,2026-08
+Jambi,F,Konstruksi,856484566030,40103515859,2026-08
+Jambi,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,8796456265746,272816027355,2026-08
+Jambi,H,Transportasi dan Pergudangan,443320147639,7304399511,2026-08
+Jambi,I,Penyediaan Akomodasi dan Makan Minum,1334493902766,31618517635,2026-08
+Jambi,J,Informasi dan Komunikasi,28873204299,5154924252,2026-08
+Jambi,K,Jasa Keuangan dan Asuransi,37560773204,13837651855,2026-08
+Jambi,L,Real Estat,588954743088,5290286321,2026-08
+Jambi,MN,Jasa Perusahaan,620687387673,13014308777,2026-08
+Jambi,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",7842726,0,2026-08
+Jambi,P,Jasa Pendidikan,63501056495,1324032970,2026-08
+Jambi,Q,Jasa Kesehatan dan Kegiatan Sosial,182247312716,1247176179,2026-08
+Jambi,RSTU,Jasa Lainnya,1172037412000,35394134462,2026-08
+Jambi,RT,Rumah Tangga (konsumsi),25505955629387,551422890724,2026-08
+Jawa Barat,A,"Pertanian, Kehutanan, dan Perikanan",20231281903478,1385813869753,2026-08
+Jawa Barat,B,Pertambangan dan Penggalian,5680480987137,20639461039,2026-08
+Jawa Barat,C,Industri Pengolahan,68473333505349,4294809463900,2026-08
+Jawa Barat,D,Pengadaan Listrik dan Gas,2782050076989,21672733562,2026-08
+Jawa Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",626936707377,21579199449,2026-08
+Jawa Barat,F,Konstruksi,20778383082213,1256505220485,2026-08
+Jawa Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,105349068961128,6699873010090,2026-08
+Jawa Barat,H,Transportasi dan Pergudangan,20099464989315,101737927908,2026-08
+Jawa Barat,I,Penyediaan Akomodasi dan Makan Minum,13472860285097,591261323721,2026-08
+Jawa Barat,J,Informasi dan Komunikasi,4118565317637,58190533686,2026-08
+Jawa Barat,K,Jasa Keuangan dan Asuransi,12283839880607,133029210387,2026-08
+Jawa Barat,L,Real Estat,20291565121383,510926485828,2026-08
+Jawa Barat,MN,Jasa Perusahaan,5250329248054,363553785246,2026-08
+Jawa Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",252657049227,161077117,2026-08
+Jawa Barat,P,Jasa Pendidikan,4074909313394,18156376018,2026-08
+Jawa Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,8430399796685,116988339084,2026-08
+Jawa Barat,RSTU,Jasa Lainnya,11117070718091,491262520013,2026-08
+Jawa Barat,RT,Rumah Tangga (konsumsi),332266734037563,10127390742122,2026-08
+Jawa Tengah,A,"Pertanian, Kehutanan, dan Perikanan",30406075441019,1118955214439,2026-08
+Jawa Tengah,B,Pertambangan dan Penggalian,476051647230,50299892427,2026-08
+Jawa Tengah,C,Industri Pengolahan,57762338555778,7484277887388,2026-08
+Jawa Tengah,D,Pengadaan Listrik dan Gas,287405574034,9442570894,2026-08
+Jawa Tengah,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",159956962812,10343353743,2026-08
+Jawa Tengah,F,Konstruksi,20203998517048,618748337053,2026-08
+Jawa Tengah,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,113344494572712,4871576345662,2026-08
+Jawa Tengah,H,Transportasi dan Pergudangan,4821156265146,257056291190,2026-08
+Jawa Tengah,I,Penyediaan Akomodasi dan Makan Minum,12703179242533,285579046222,2026-08
+Jawa Tengah,J,Informasi dan Komunikasi,511313665394,19397336666,2026-08
+Jawa Tengah,K,Jasa Keuangan dan Asuransi,4422091043061,282425969273,2026-08
+Jawa Tengah,L,Real Estat,7257567992034,92245121654,2026-08
+Jawa Tengah,MN,Jasa Perusahaan,3671519652979,299334305067,2026-08
+Jawa Tengah,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",286312589194,288348952,2026-08
+Jawa Tengah,P,Jasa Pendidikan,2081434475316,18357078873,2026-08
+Jawa Tengah,Q,Jasa Kesehatan dan Kegiatan Sosial,6001830020024,15893425688,2026-08
+Jawa Tengah,RSTU,Jasa Lainnya,10516583433783,315195745126,2026-08
+Jawa Tengah,RT,Rumah Tangga (konsumsi),119499428417366,2087615201850,2026-08
+Jawa Timur,A,"Pertanian, Kehutanan, dan Perikanan",49207634055359,2271753916819,2026-08
+Jawa Timur,B,Pertambangan dan Penggalian,2689627147170,53607155921,2026-08
+Jawa Timur,C,Industri Pengolahan,128053888291069,2368305113276,2026-08
+Jawa Timur,D,Pengadaan Listrik dan Gas,4586843111104,8546874196,2026-08
+Jawa Timur,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",642602753913,38940003269,2026-08
+Jawa Timur,F,Konstruksi,22886822390498,434562363511,2026-08
+Jawa Timur,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,154466083728989,9463400730585,2026-08
+Jawa Timur,H,Transportasi dan Pergudangan,14213208398601,243745021065,2026-08
+Jawa Timur,I,Penyediaan Akomodasi dan Makan Minum,12729886402494,475810202323,2026-08
+Jawa Timur,J,Informasi dan Komunikasi,932609165574,45438176126,2026-08
+Jawa Timur,K,Jasa Keuangan dan Asuransi,3534149355299,73924865879,2026-08
+Jawa Timur,L,Real Estat,9020390266307,420420830200,2026-08
+Jawa Timur,MN,Jasa Perusahaan,6236594318756,156920119356,2026-08
+Jawa Timur,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",510270841548,583334000,2026-08
+Jawa Timur,P,Jasa Pendidikan,2788399984934,23628608994,2026-08
+Jawa Timur,Q,Jasa Kesehatan dan Kegiatan Sosial,3985722149879,54586992635,2026-08
+Jawa Timur,RSTU,Jasa Lainnya,15288453559746,517459666793,2026-08
+Jawa Timur,RT,Rumah Tangga (konsumsi),195004350925598,5416291642153,2026-08
+Kalimantan Barat,A,"Pertanian, Kehutanan, dan Perikanan",22230711805958,205808748708,2026-08
+Kalimantan Barat,B,Pertambangan dan Penggalian,209352936768,642250312,2026-08
+Kalimantan Barat,C,Industri Pengolahan,2014590937969,64468486685,2026-08
+Kalimantan Barat,D,Pengadaan Listrik dan Gas,51935078029,239432197,2026-08
+Kalimantan Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",15932183724,5585061238,2026-08
+Kalimantan Barat,F,Konstruksi,547466681472,60295302651,2026-08
+Kalimantan Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,12376412392006,495204871640,2026-08
+Kalimantan Barat,H,Transportasi dan Pergudangan,4483531938728,38435930069,2026-08
+Kalimantan Barat,I,Penyediaan Akomodasi dan Makan Minum,1566838614932,44206931425,2026-08
+Kalimantan Barat,J,Informasi dan Komunikasi,45443212375,4609304203,2026-08
+Kalimantan Barat,K,Jasa Keuangan dan Asuransi,947148722615,3145920692,2026-08
+Kalimantan Barat,L,Real Estat,474951688023,5063304935,2026-08
+Kalimantan Barat,MN,Jasa Perusahaan,1322942619836,25163477672,2026-08
+Kalimantan Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",15951841702,0,2026-08
+Kalimantan Barat,P,Jasa Pendidikan,114196239598,1371775564,2026-08
+Kalimantan Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,131110633752,994995529,2026-08
+Kalimantan Barat,RSTU,Jasa Lainnya,1129827974643,37240739103,2026-08
+Kalimantan Barat,RT,Rumah Tangga (konsumsi),35561808706401,712172375694,2026-08
+Kalimantan Selatan,A,"Pertanian, Kehutanan, dan Perikanan",10666221176414,191020127230,2026-08
+Kalimantan Selatan,B,Pertambangan dan Penggalian,10766762146176,101382237829,2026-08
+Kalimantan Selatan,C,Industri Pengolahan,2966462475627,38886708369,2026-08
+Kalimantan Selatan,D,Pengadaan Listrik dan Gas,307403536671,545246798,2026-08
+Kalimantan Selatan,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",34945053360,829551224,2026-08
+Kalimantan Selatan,F,Konstruksi,979982975999,104372623238,2026-08
+Kalimantan Selatan,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,12190716595187,603780923472,2026-08
+Kalimantan Selatan,H,Transportasi dan Pergudangan,7543552159756,72186659187,2026-08
+Kalimantan Selatan,I,Penyediaan Akomodasi dan Makan Minum,1038172211602,54812054960,2026-08
+Kalimantan Selatan,J,Informasi dan Komunikasi,19775140790,170075560,2026-08
+Kalimantan Selatan,K,Jasa Keuangan dan Asuransi,494408213791,1355339143,2026-08
+Kalimantan Selatan,L,Real Estat,838261675064,6908878621,2026-08
+Kalimantan Selatan,MN,Jasa Perusahaan,1307856889683,47497070644,2026-08
+Kalimantan Selatan,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",2335698167,0,2026-08
+Kalimantan Selatan,P,Jasa Pendidikan,95957509934,4893821479,2026-08
+Kalimantan Selatan,Q,Jasa Kesehatan dan Kegiatan Sosial,167076067878,1967724208,2026-08
+Kalimantan Selatan,RSTU,Jasa Lainnya,1932259552673,108727638237,2026-08
+Kalimantan Selatan,RT,Rumah Tangga (konsumsi),33524217640699,1089584904700,2026-08
+Kalimantan Tengah,A,"Pertanian, Kehutanan, dan Perikanan",16619171999661,148600975599,2026-08
+Kalimantan Tengah,B,Pertambangan dan Penggalian,236930968437,14483665917,2026-08
+Kalimantan Tengah,C,Industri Pengolahan,1212002701770,109414514606,2026-08
+Kalimantan Tengah,D,Pengadaan Listrik dan Gas,96952332970,104737778,2026-08
+Kalimantan Tengah,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",9298115299,190670483,2026-08
+Kalimantan Tengah,F,Konstruksi,905345818018,142217623507,2026-08
+Kalimantan Tengah,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,9937888921952,298474540365,2026-08
+Kalimantan Tengah,H,Transportasi dan Pergudangan,848383639005,21786459991,2026-08
+Kalimantan Tengah,I,Penyediaan Akomodasi dan Makan Minum,899103884231,14677498144,2026-08
+Kalimantan Tengah,J,Informasi dan Komunikasi,60489376187,603861124,2026-08
+Kalimantan Tengah,K,Jasa Keuangan dan Asuransi,677517559500,2059190746,2026-08
+Kalimantan Tengah,L,Real Estat,244522557129,4813890553,2026-08
+Kalimantan Tengah,MN,Jasa Perusahaan,285798289395,8263969587,2026-08
+Kalimantan Tengah,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",12569682555,0,2026-08
+Kalimantan Tengah,P,Jasa Pendidikan,92031982361,76584128,2026-08
+Kalimantan Tengah,Q,Jasa Kesehatan dan Kegiatan Sosial,99025359390,1598238573,2026-08
+Kalimantan Tengah,RSTU,Jasa Lainnya,1030329630761,39540337659,2026-08
+Kalimantan Tengah,RT,Rumah Tangga (konsumsi),22256089907022,467134405915,2026-08
+Kalimantan Timur,A,"Pertanian, Kehutanan, dan Perikanan",16225786128386,84902706267,2026-08
+Kalimantan Timur,B,Pertambangan dan Penggalian,14984193831013,51655264246,2026-08
+Kalimantan Timur,C,Industri Pengolahan,2349111269572,155376502171,2026-08
+Kalimantan Timur,D,Pengadaan Listrik dan Gas,2822134474125,2883151287,2026-08
+Kalimantan Timur,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",149070582084,2707640007,2026-08
+Kalimantan Timur,F,Konstruksi,9027019698704,312717991089,2026-08
+Kalimantan Timur,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,14755580396518,632678599936,2026-08
+Kalimantan Timur,H,Transportasi dan Pergudangan,7959826646195,108077753405,2026-08
+Kalimantan Timur,I,Penyediaan Akomodasi dan Makan Minum,2614271130282,33081514193,2026-08
+Kalimantan Timur,J,Informasi dan Komunikasi,78363071424,1980239282,2026-08
+Kalimantan Timur,K,Jasa Keuangan dan Asuransi,228504347107,7929621470,2026-08
+Kalimantan Timur,L,Real Estat,1357206433112,61512911830,2026-08
+Kalimantan Timur,MN,Jasa Perusahaan,1969322860996,85128458828,2026-08
+Kalimantan Timur,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",263763716123,0,2026-08
+Kalimantan Timur,P,Jasa Pendidikan,209609276816,0,2026-08
+Kalimantan Timur,Q,Jasa Kesehatan dan Kegiatan Sosial,331519469950,5780125189,2026-08
+Kalimantan Timur,RSTU,Jasa Lainnya,2302451484454,75495606119,2026-08
+Kalimantan Timur,RT,Rumah Tangga (konsumsi),35468627645028,1008710483190,2026-08
+Kalimantan Utara,A,"Pertanian, Kehutanan, dan Perikanan",1832757205358,27946688825,2026-08
+Kalimantan Utara,B,Pertambangan dan Penggalian,162663968626,2705964353,2026-08
+Kalimantan Utara,C,Industri Pengolahan,6022791730609,3726781844,2026-08
+Kalimantan Utara,D,Pengadaan Listrik dan Gas,7507124864,117027809,2026-08
+Kalimantan Utara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",6420568646,41733998,2026-08
+Kalimantan Utara,F,Konstruksi,341717918083,99784795864,2026-08
+Kalimantan Utara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,3024192531685,102230724205,2026-08
+Kalimantan Utara,H,Transportasi dan Pergudangan,730048384447,8838442600,2026-08
+Kalimantan Utara,I,Penyediaan Akomodasi dan Makan Minum,251906732755,8298984237,2026-08
+Kalimantan Utara,J,Informasi dan Komunikasi,3101097049,43746792,2026-08
+Kalimantan Utara,K,Jasa Keuangan dan Asuransi,7798758498,0,2026-08
+Kalimantan Utara,L,Real Estat,66413998586,12141981234,2026-08
+Kalimantan Utara,MN,Jasa Perusahaan,136123074307,14657785785,2026-08
+Kalimantan Utara,P,Jasa Pendidikan,16145577792,35912210,2026-08
+Kalimantan Utara,Q,Jasa Kesehatan dan Kegiatan Sosial,12570088844,485226605,2026-08
+Kalimantan Utara,RSTU,Jasa Lainnya,304071935386,9163344411,2026-08
+Kalimantan Utara,RT,Rumah Tangga (konsumsi),6166064193245,73265923709,2026-08
+Kepulauan Riau,A,"Pertanian, Kehutanan, dan Perikanan",703875523700,29236516965,2026-08
+Kepulauan Riau,B,Pertambangan dan Penggalian,868527118254,0,2026-08
+Kepulauan Riau,C,Industri Pengolahan,7143928846239,57742028992,2026-08
+Kepulauan Riau,D,Pengadaan Listrik dan Gas,7711470793191,104665620,2026-08
+Kepulauan Riau,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",83142350754,399299142,2026-08
+Kepulauan Riau,F,Konstruksi,1515967105327,178097300169,2026-08
+Kepulauan Riau,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,8192313021118,147367599366,2026-08
+Kepulauan Riau,H,Transportasi dan Pergudangan,9957675600039,5918875369,2026-08
+Kepulauan Riau,I,Penyediaan Akomodasi dan Makan Minum,1597124383750,64949184895,2026-08
+Kepulauan Riau,J,Informasi dan Komunikasi,102556287229,27619672,2026-08
+Kepulauan Riau,K,Jasa Keuangan dan Asuransi,501955821867,8130544046,2026-08
+Kepulauan Riau,L,Real Estat,3120309359032,7689413380,2026-08
+Kepulauan Riau,MN,Jasa Perusahaan,662162912684,7867283750,2026-08
+Kepulauan Riau,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",99215839346,0,2026-08
+Kepulauan Riau,P,Jasa Pendidikan,272251678927,102561391,2026-08
+Kepulauan Riau,Q,Jasa Kesehatan dan Kegiatan Sosial,267394306925,412093225,2026-08
+Kepulauan Riau,RSTU,Jasa Lainnya,2022030351202,23516817279,2026-08
+Kepulauan Riau,RT,Rumah Tangga (konsumsi),25372303019835,454691207332,2026-08
+Lainnya,A,"Pertanian, Kehutanan, dan Perikanan",2753469089846,0,2026-08
+Lainnya,B,Pertambangan dan Penggalian,31688397599715,0,2026-08
+Lainnya,C,Industri Pengolahan,43961937069857,0,2026-08
+Lainnya,D,Pengadaan Listrik dan Gas,15960497943730,0,2026-08
+Lainnya,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",116043315309,0,2026-08
+Lainnya,F,Konstruksi,929604311848,0,2026-08
+Lainnya,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,28260927438373,303275483552,2026-08
+Lainnya,H,Transportasi dan Pergudangan,4781305267616,0,2026-08
+Lainnya,I,Penyediaan Akomodasi dan Makan Minum,576250223768,0,2026-08
+Lainnya,J,Informasi dan Komunikasi,681622982191,0,2026-08
+Lainnya,K,Jasa Keuangan dan Asuransi,8589102301741,0,2026-08
+Lainnya,L,Real Estat,1671393415093,0,2026-08
+Lainnya,MN,Jasa Perusahaan,3073821131491,0,2026-08
+Lainnya,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",122209755858593,0,2026-08
+Lainnya,Q,Jasa Kesehatan dan Kegiatan Sosial,685979071616,0,2026-08
+Lainnya,RSTU,Jasa Lainnya,5513917755,110842755,2026-08
+Lainnya,RT,Rumah Tangga (konsumsi),1617960892648,13163158749,2026-08
+Lampung,A,"Pertanian, Kehutanan, dan Perikanan",12385982679441,301221268954,2026-08
+Lampung,B,Pertambangan dan Penggalian,226483198992,4241075153,2026-08
+Lampung,C,Industri Pengolahan,5830210177991,273243271481,2026-08
+Lampung,D,Pengadaan Listrik dan Gas,122444735435,6423835447,2026-08
+Lampung,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",17590339740,374100122,2026-08
+Lampung,F,Konstruksi,857483678215,84130307751,2026-08
+Lampung,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,18655386205235,722271548429,2026-08
+Lampung,H,Transportasi dan Pergudangan,1994682122850,28952306303,2026-08
+Lampung,I,Penyediaan Akomodasi dan Makan Minum,1398720752388,23912589549,2026-08
+Lampung,J,Informasi dan Komunikasi,47719053795,3263274535,2026-08
+Lampung,K,Jasa Keuangan dan Asuransi,5038085781459,2892304158,2026-08
+Lampung,L,Real Estat,685955615391,2124603422,2026-08
+Lampung,MN,Jasa Perusahaan,527169299085,9107407119,2026-08
+Lampung,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",176765006499,0,2026-08
+Lampung,P,Jasa Pendidikan,244670234255,4520096197,2026-08
+Lampung,Q,Jasa Kesehatan dan Kegiatan Sosial,1033152361001,4638068577,2026-08
+Lampung,RSTU,Jasa Lainnya,1500374065963,75827804136,2026-08
+Lampung,RT,Rumah Tangga (konsumsi),26060340302441,467374099351,2026-08
+Maluku,A,"Pertanian, Kehutanan, dan Perikanan",705170627669,33509157810,2026-08
+Maluku,B,Pertambangan dan Penggalian,13619676310,4150001490,2026-08
+Maluku,C,Industri Pengolahan,205401723905,14838204377,2026-08
+Maluku,D,Pengadaan Listrik dan Gas,4863553241,0,2026-08
+Maluku,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",7748998895,252384006,2026-08
+Maluku,F,Konstruksi,284849671778,63278651014,2026-08
+Maluku,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,4073643522791,251302089823,2026-08
+Maluku,H,Transportasi dan Pergudangan,325902575062,7874604940,2026-08
+Maluku,I,Penyediaan Akomodasi dan Makan Minum,412212670094,20505735941,2026-08
+Maluku,J,Informasi dan Komunikasi,9374658662,554678132,2026-08
+Maluku,K,Jasa Keuangan dan Asuransi,15505899060,3600005,2026-08
+Maluku,L,Real Estat,88017488166,8370374797,2026-08
+Maluku,MN,Jasa Perusahaan,141231815392,9325319557,2026-08
+Maluku,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",89305955870,0,2026-08
+Maluku,P,Jasa Pendidikan,4682910011,0,2026-08
+Maluku,Q,Jasa Kesehatan dan Kegiatan Sosial,26713907607,537558269,2026-08
+Maluku,RSTU,Jasa Lainnya,448478478365,21187470626,2026-08
+Maluku,RT,Rumah Tangga (konsumsi),11755069337618,215840803537,2026-08
+Maluku Utara,A,"Pertanian, Kehutanan, dan Perikanan",285261790496,7673211406,2026-08
+Maluku Utara,B,Pertambangan dan Penggalian,1771796376114,8683245779,2026-08
+Maluku Utara,C,Industri Pengolahan,284658018028,3089925165,2026-08
+Maluku Utara,D,Pengadaan Listrik dan Gas,27363668472,0,2026-08
+Maluku Utara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",4544280231,118329089,2026-08
+Maluku Utara,F,Konstruksi,90924487074,6336088252,2026-08
+Maluku Utara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,2385991864881,63365638367,2026-08
+Maluku Utara,H,Transportasi dan Pergudangan,156477204144,2274971261,2026-08
+Maluku Utara,I,Penyediaan Akomodasi dan Makan Minum,402146520189,6047782222,2026-08
+Maluku Utara,J,Informasi dan Komunikasi,4199050830,0,2026-08
+Maluku Utara,K,Jasa Keuangan dan Asuransi,16069614726,18986596,2026-08
+Maluku Utara,L,Real Estat,47898481537,1060906089,2026-08
+Maluku Utara,MN,Jasa Perusahaan,35417122654,1272381724,2026-08
+Maluku Utara,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",2427862652,27395920,2026-08
+Maluku Utara,P,Jasa Pendidikan,6710446648,0,2026-08
+Maluku Utara,Q,Jasa Kesehatan dan Kegiatan Sosial,10620437079,243874256,2026-08
+Maluku Utara,RSTU,Jasa Lainnya,433755442287,14219358719,2026-08
+Maluku Utara,RT,Rumah Tangga (konsumsi),10698177178074,485388567368,2026-08
+Nusa Tenggara Barat,A,"Pertanian, Kehutanan, dan Perikanan",6475506670383,697496329098,2026-08
+Nusa Tenggara Barat,B,Pertambangan dan Penggalian,16657169960171,117247439,2026-08
+Nusa Tenggara Barat,C,Industri Pengolahan,1416561783791,33794087298,2026-08
+Nusa Tenggara Barat,D,Pengadaan Listrik dan Gas,7095694767,90518885,2026-08
+Nusa Tenggara Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",95181149093,316395932,2026-08
+Nusa Tenggara Barat,F,Konstruksi,1024930318589,446175520630,2026-08
+Nusa Tenggara Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,12161501909225,408873230363,2026-08
+Nusa Tenggara Barat,H,Transportasi dan Pergudangan,410729146784,10666451209,2026-08
+Nusa Tenggara Barat,I,Penyediaan Akomodasi dan Makan Minum,1356156568712,44027170280,2026-08
+Nusa Tenggara Barat,J,Informasi dan Komunikasi,25875068283,475142346,2026-08
+Nusa Tenggara Barat,K,Jasa Keuangan dan Asuransi,707501831592,4936435560,2026-08
+Nusa Tenggara Barat,L,Real Estat,425356557635,25334833638,2026-08
+Nusa Tenggara Barat,MN,Jasa Perusahaan,259539398411,6955532888,2026-08
+Nusa Tenggara Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",96540554,0,2026-08
+Nusa Tenggara Barat,P,Jasa Pendidikan,147932993696,9636316757,2026-08
+Nusa Tenggara Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,246559280807,2630900756,2026-08
+Nusa Tenggara Barat,RSTU,Jasa Lainnya,1035682437779,30346946223,2026-08
+Nusa Tenggara Barat,RT,Rumah Tangga (konsumsi),34534662186643,443870363892,2026-08
+Nusa Tenggara Timur,A,"Pertanian, Kehutanan, dan Perikanan",2622009075398,178280654463,2026-08
+Nusa Tenggara Timur,B,Pertambangan dan Penggalian,87063767358,10315849089,2026-08
+Nusa Tenggara Timur,C,Industri Pengolahan,856190447852,70418540977,2026-08
+Nusa Tenggara Timur,D,Pengadaan Listrik dan Gas,36778629968,4987750000,2026-08
+Nusa Tenggara Timur,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",22169513393,596070791,2026-08
+Nusa Tenggara Timur,F,Konstruksi,751869874292,109150935316,2026-08
+Nusa Tenggara Timur,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,10229441452207,794734624059,2026-08
+Nusa Tenggara Timur,H,Transportasi dan Pergudangan,431268215351,31201628653,2026-08
+Nusa Tenggara Timur,I,Penyediaan Akomodasi dan Makan Minum,904310341181,50391444126,2026-08
+Nusa Tenggara Timur,J,Informasi dan Komunikasi,11470982584,74813077,2026-08
+Nusa Tenggara Timur,K,Jasa Keuangan dan Asuransi,279784110861,3797748001,2026-08
+Nusa Tenggara Timur,L,Real Estat,184465776611,10181006490,2026-08
+Nusa Tenggara Timur,MN,Jasa Perusahaan,198489903435,10311396674,2026-08
+Nusa Tenggara Timur,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",894985160,0,2026-08
+Nusa Tenggara Timur,P,Jasa Pendidikan,53311247084,317552252,2026-08
+Nusa Tenggara Timur,Q,Jasa Kesehatan dan Kegiatan Sosial,130141183965,4728889604,2026-08
+Nusa Tenggara Timur,RSTU,Jasa Lainnya,895585289004,60638806373,2026-08
+Nusa Tenggara Timur,RT,Rumah Tangga (konsumsi),29334095806339,355241492295,2026-08
+Papua,A,"Pertanian, Kehutanan, dan Perikanan",3294416623802,48828045342,2026-08
+Papua,B,Pertambangan dan Penggalian,15257831423,521293068,2026-08
+Papua,C,Industri Pengolahan,579508149351,21283986302,2026-08
+Papua,D,Pengadaan Listrik dan Gas,40320393505,2570153198,2026-08
+Papua,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",18661910301,1761353242,2026-08
+Papua,F,Konstruksi,2308374051669,149514432664,2026-08
+Papua,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,7504018773681,318121788395,2026-08
+Papua,H,Transportasi dan Pergudangan,1611853411363,58498593344,2026-08
+Papua,I,Penyediaan Akomodasi dan Makan Minum,1153650263877,147417871498,2026-08
+Papua,J,Informasi dan Komunikasi,52222901314,1271170304,2026-08
+Papua,K,Jasa Keuangan dan Asuransi,14599925117,219336375,2026-08
+Papua,L,Real Estat,315522409290,16432622593,2026-08
+Papua,MN,Jasa Perusahaan,596686305746,19709959334,2026-08
+Papua,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",135144226897,0,2026-08
+Papua,P,Jasa Pendidikan,30845157630,397226084,2026-08
+Papua,Q,Jasa Kesehatan dan Kegiatan Sosial,78219752797,2631144575,2026-08
+Papua,RSTU,Jasa Lainnya,723004162439,23011556850,2026-08
+Papua,RT,Rumah Tangga (konsumsi),25782339231541,470981973709,2026-08
+Papua Barat,A,"Pertanian, Kehutanan, dan Perikanan",1351690716767,12710833098,2026-08
+Papua Barat,B,Pertambangan dan Penggalian,10021820027,882346472,2026-08
+Papua Barat,C,Industri Pengolahan,170674422470,11046926025,2026-08
+Papua Barat,D,Pengadaan Listrik dan Gas,8089338090,0,2026-08
+Papua Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",12199956919,762575821,2026-08
+Papua Barat,F,Konstruksi,467257931278,88312776451,2026-08
+Papua Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,3153277464229,169843165716,2026-08
+Papua Barat,H,Transportasi dan Pergudangan,334915785964,12792119187,2026-08
+Papua Barat,I,Penyediaan Akomodasi dan Makan Minum,533912505668,21185901030,2026-08
+Papua Barat,J,Informasi dan Komunikasi,9852280148,201714998,2026-08
+Papua Barat,K,Jasa Keuangan dan Asuransi,20321088233,11933628521,2026-08
+Papua Barat,L,Real Estat,139727955522,5694942369,2026-08
+Papua Barat,MN,Jasa Perusahaan,204862104741,3064187879,2026-08
+Papua Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",114932147401,0,2026-08
+Papua Barat,P,Jasa Pendidikan,12465967074,260000000,2026-08
+Papua Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,18978751261,304664958,2026-08
+Papua Barat,RSTU,Jasa Lainnya,442543347528,18506096707,2026-08
+Papua Barat,RT,Rumah Tangga (konsumsi),12528065757675,402017785517,2026-08
+Riau,A,"Pertanian, Kehutanan, dan Perikanan",27357859848351,422821930856,2026-08
+Riau,B,Pertambangan dan Penggalian,248089549747,4747825998,2026-08
+Riau,C,Industri Pengolahan,13129348189916,119901912687,2026-08
+Riau,D,Pengadaan Listrik dan Gas,59238749489,1329292,2026-08
+Riau,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",121952764788,1044222287,2026-08
+Riau,F,Konstruksi,2808864863940,125165901676,2026-08
+Riau,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,13930014674834,403642293584,2026-08
+Riau,H,Transportasi dan Pergudangan,4383003786871,139763277021,2026-08
+Riau,I,Penyediaan Akomodasi dan Makan Minum,2067753975344,268946982359,2026-08
+Riau,J,Informasi dan Komunikasi,98666698516,2185219858,2026-08
+Riau,K,Jasa Keuangan dan Asuransi,533854665039,69810145346,2026-08
+Riau,L,Real Estat,989038381146,4930272699,2026-08
+Riau,MN,Jasa Perusahaan,2602945689928,10624661387,2026-08
+Riau,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",30152453360,0,2026-08
+Riau,P,Jasa Pendidikan,161494303111,4277460498,2026-08
+Riau,Q,Jasa Kesehatan dan Kegiatan Sosial,1736672576988,33961008192,2026-08
+Riau,RSTU,Jasa Lainnya,2211723970767,41934201612,2026-08
+Riau,RT,Rumah Tangga (konsumsi),41758689057175,1075228713649,2026-08
+Sulawesi Barat,A,"Pertanian, Kehutanan, dan Perikanan",2699503848715,65253283222,2026-08
+Sulawesi Barat,B,Pertambangan dan Penggalian,13844590125,1221827966,2026-08
+Sulawesi Barat,C,Industri Pengolahan,248206863209,37251601259,2026-08
+Sulawesi Barat,D,Pengadaan Listrik dan Gas,17967517089,17581435,2026-08
+Sulawesi Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",4311098324,254335551,2026-08
+Sulawesi Barat,F,Konstruksi,98873064306,9882492277,2026-08
+Sulawesi Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,2122196166172,119725982860,2026-08
+Sulawesi Barat,H,Transportasi dan Pergudangan,35287693374,965133644,2026-08
+Sulawesi Barat,I,Penyediaan Akomodasi dan Makan Minum,123741900833,5607544879,2026-08
+Sulawesi Barat,J,Informasi dan Komunikasi,4020822666,21008386,2026-08
+Sulawesi Barat,K,Jasa Keuangan dan Asuransi,4660851172,2361313952,2026-08
+Sulawesi Barat,L,Real Estat,32355150558,976995329,2026-08
+Sulawesi Barat,MN,Jasa Perusahaan,33012039842,2339429736,2026-08
+Sulawesi Barat,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",7587712360,0,2026-08
+Sulawesi Barat,P,Jasa Pendidikan,11752767291,8111658,2026-08
+Sulawesi Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,27985714927,179353076,2026-08
+Sulawesi Barat,RSTU,Jasa Lainnya,290363581221,10315505140,2026-08
+Sulawesi Barat,RT,Rumah Tangga (konsumsi),7738670150982,102299674915,2026-08
+Sulawesi Selatan,A,"Pertanian, Kehutanan, dan Perikanan",19049605692033,562089917408,2026-08
+Sulawesi Selatan,B,Pertambangan dan Penggalian,2170825268694,15211906909,2026-08
+Sulawesi Selatan,C,Industri Pengolahan,7690030377979,382820299037,2026-08
+Sulawesi Selatan,D,Pengadaan Listrik dan Gas,3172822290014,927006688,2026-08
+Sulawesi Selatan,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",74527851807,2935920110,2026-08
+Sulawesi Selatan,F,Konstruksi,4859590420465,198890626148,2026-08
+Sulawesi Selatan,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,38126703697302,2994070787441,2026-08
+Sulawesi Selatan,H,Transportasi dan Pergudangan,3018633730728,113975637507,2026-08
+Sulawesi Selatan,I,Penyediaan Akomodasi dan Makan Minum,3701232045494,229895660078,2026-08
+Sulawesi Selatan,J,Informasi dan Komunikasi,185944702284,1752643608,2026-08
+Sulawesi Selatan,K,Jasa Keuangan dan Asuransi,1958982776560,25858695709,2026-08
+Sulawesi Selatan,L,Real Estat,2124228104635,72123867479,2026-08
+Sulawesi Selatan,MN,Jasa Perusahaan,2687235371609,67595559087,2026-08
+Sulawesi Selatan,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",3516830723,0,2026-08
+Sulawesi Selatan,P,Jasa Pendidikan,791207321343,7039545928,2026-08
+Sulawesi Selatan,Q,Jasa Kesehatan dan Kegiatan Sosial,720558455531,30432993962,2026-08
+Sulawesi Selatan,RSTU,Jasa Lainnya,3940158208081,140069647408,2026-08
+Sulawesi Selatan,RT,Rumah Tangga (konsumsi),82209012214601,1522865371945,2026-08
+Sulawesi Tengah,A,"Pertanian, Kehutanan, dan Perikanan",6702724655921,115963311758,2026-08
+Sulawesi Tengah,B,Pertambangan dan Penggalian,5779075235064,21808770101,2026-08
+Sulawesi Tengah,C,Industri Pengolahan,12995332722099,29966117617,2026-08
+Sulawesi Tengah,D,Pengadaan Listrik dan Gas,31882115728,0,2026-08
+Sulawesi Tengah,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",9949749397,73135361,2026-08
+Sulawesi Tengah,F,Konstruksi,795210952550,91953859459,2026-08
+Sulawesi Tengah,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,9019507488523,435753055511,2026-08
+Sulawesi Tengah,H,Transportasi dan Pergudangan,990103973691,7447003569,2026-08
+Sulawesi Tengah,I,Penyediaan Akomodasi dan Makan Minum,852486928028,11425513335,2026-08
+Sulawesi Tengah,J,Informasi dan Komunikasi,29686188092,666751647,2026-08
+Sulawesi Tengah,K,Jasa Keuangan dan Asuransi,22915318244,17434123,2026-08
+Sulawesi Tengah,L,Real Estat,270092893164,12253515587,2026-08
+Sulawesi Tengah,MN,Jasa Perusahaan,931154788706,19202541033,2026-08
+Sulawesi Tengah,P,Jasa Pendidikan,45631175406,34673788,2026-08
+Sulawesi Tengah,Q,Jasa Kesehatan dan Kegiatan Sosial,46128570027,91366180,2026-08
+Sulawesi Tengah,RSTU,Jasa Lainnya,828688812571,31183795191,2026-08
+Sulawesi Tengah,RT,Rumah Tangga (konsumsi),26910568924893,464932944582,2026-08
+Sulawesi Tenggara,A,"Pertanian, Kehutanan, dan Perikanan",4668840084810,70213727457,2026-08
+Sulawesi Tenggara,B,Pertambangan dan Penggalian,1651983408304,18168415526,2026-08
+Sulawesi Tenggara,C,Industri Pengolahan,754098953161,21321359300,2026-08
+Sulawesi Tenggara,D,Pengadaan Listrik dan Gas,4117283433,216070314,2026-08
+Sulawesi Tenggara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",17189002410,584306964,2026-08
+Sulawesi Tenggara,F,Konstruksi,528598019541,39288450143,2026-08
+Sulawesi Tenggara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,7321555538419,306590604918,2026-08
+Sulawesi Tenggara,H,Transportasi dan Pergudangan,502896655337,14188370243,2026-08
+Sulawesi Tenggara,I,Penyediaan Akomodasi dan Makan Minum,669172128349,22665891083,2026-08
+Sulawesi Tenggara,J,Informasi dan Komunikasi,22267090445,975424157,2026-08
+Sulawesi Tenggara,K,Jasa Keuangan dan Asuransi,4125789442,44551366,2026-08
+Sulawesi Tenggara,L,Real Estat,190205263667,3038119373,2026-08
+Sulawesi Tenggara,MN,Jasa Perusahaan,1077747293503,34525159255,2026-08
+Sulawesi Tenggara,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",25761558046,0,2026-08
+Sulawesi Tenggara,P,Jasa Pendidikan,27482361674,2553318069,2026-08
+Sulawesi Tenggara,Q,Jasa Kesehatan dan Kegiatan Sosial,40136559605,201172561,2026-08
+Sulawesi Tenggara,RSTU,Jasa Lainnya,1011892233238,31270067740,2026-08
+Sulawesi Tenggara,RT,Rumah Tangga (konsumsi),24778765954273,339033434512,2026-08
+Sulawesi Utara,A,"Pertanian, Kehutanan, dan Perikanan",2449438049559,75433377099,2026-08
+Sulawesi Utara,B,Pertambangan dan Penggalian,4133364278808,5115289747,2026-08
+Sulawesi Utara,C,Industri Pengolahan,949710960954,23712817601,2026-08
+Sulawesi Utara,D,Pengadaan Listrik dan Gas,53840271283,88537193,2026-08
+Sulawesi Utara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",11635710090,206045965,2026-08
+Sulawesi Utara,F,Konstruksi,1546400705114,202560915098,2026-08
+Sulawesi Utara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,8133668696710,356606831630,2026-08
+Sulawesi Utara,H,Transportasi dan Pergudangan,404474386707,11274208828,2026-08
+Sulawesi Utara,I,Penyediaan Akomodasi dan Makan Minum,1006668617834,64416400089,2026-08
+Sulawesi Utara,J,Informasi dan Komunikasi,32106830003,69954187,2026-08
+Sulawesi Utara,K,Jasa Keuangan dan Asuransi,228768309077,32735472,2026-08
+Sulawesi Utara,L,Real Estat,474905468253,3021670557,2026-08
+Sulawesi Utara,MN,Jasa Perusahaan,1088810929738,9471885908,2026-08
+Sulawesi Utara,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",4855029478,0,2026-08
+Sulawesi Utara,P,Jasa Pendidikan,74545789036,7756227,2026-08
+Sulawesi Utara,Q,Jasa Kesehatan dan Kegiatan Sosial,211912821324,3946179023,2026-08
+Sulawesi Utara,RSTU,Jasa Lainnya,778782756527,44226085308,2026-08
+Sulawesi Utara,RT,Rumah Tangga (konsumsi),33251568036128,712175709093,2026-08
+Sumatera Barat,A,"Pertanian, Kehutanan, dan Perikanan",16316807477186,335273993207,2026-08
+Sumatera Barat,B,Pertambangan dan Penggalian,147007979110,6130873279,2026-08
+Sumatera Barat,C,Industri Pengolahan,2309452835996,181638572683,2026-08
+Sumatera Barat,D,Pengadaan Listrik dan Gas,94906042076,337038440,2026-08
+Sumatera Barat,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",33481485562,4574413407,2026-08
+Sumatera Barat,F,Konstruksi,1076315184244,107123277625,2026-08
+Sumatera Barat,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,15291732501667,806257978629,2026-08
+Sumatera Barat,H,Transportasi dan Pergudangan,828588420860,64671145745,2026-08
+Sumatera Barat,I,Penyediaan Akomodasi dan Makan Minum,1241077667244,35946264974,2026-08
+Sumatera Barat,J,Informasi dan Komunikasi,30911009087,1266827081,2026-08
+Sumatera Barat,K,Jasa Keuangan dan Asuransi,154008080593,3667202905,2026-08
+Sumatera Barat,L,Real Estat,320531979058,19737426493,2026-08
+Sumatera Barat,MN,Jasa Perusahaan,1419099678506,25733699030,2026-08
+Sumatera Barat,P,Jasa Pendidikan,288669403708,1359365465,2026-08
+Sumatera Barat,Q,Jasa Kesehatan dan Kegiatan Sosial,473988569008,1051070797,2026-08
+Sumatera Barat,RSTU,Jasa Lainnya,1426338552415,67757071020,2026-08
+Sumatera Barat,RT,Rumah Tangga (konsumsi),34938334566518,467193219298,2026-08
+Sumatera Selatan,A,"Pertanian, Kehutanan, dan Perikanan",21801986408138,515588882486,2026-08
+Sumatera Selatan,B,Pertambangan dan Penggalian,2628941043390,1050056998,2026-08
+Sumatera Selatan,C,Industri Pengolahan,15167670812116,46262031636,2026-08
+Sumatera Selatan,D,Pengadaan Listrik dan Gas,139447595414,9352314199,2026-08
+Sumatera Selatan,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",224554314464,1072178537,2026-08
+Sumatera Selatan,F,Konstruksi,3645947226616,279228899840,2026-08
+Sumatera Selatan,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,18241711925853,809571072278,2026-08
+Sumatera Selatan,H,Transportasi dan Pergudangan,2295704853644,71515841083,2026-08
+Sumatera Selatan,I,Penyediaan Akomodasi dan Makan Minum,2081313793190,32301706979,2026-08
+Sumatera Selatan,J,Informasi dan Komunikasi,50693180435,858969010,2026-08
+Sumatera Selatan,K,Jasa Keuangan dan Asuransi,116790165471,5577271659,2026-08
+Sumatera Selatan,L,Real Estat,2229157661679,33366322570,2026-08
+Sumatera Selatan,MN,Jasa Perusahaan,1581093707234,50635372562,2026-08
+Sumatera Selatan,P,Jasa Pendidikan,489160124179,13979423382,2026-08
+Sumatera Selatan,Q,Jasa Kesehatan dan Kegiatan Sosial,575086477636,38964476587,2026-08
+Sumatera Selatan,RSTU,Jasa Lainnya,1420680020491,61730912104,2026-08
+Sumatera Selatan,RT,Rumah Tangga (konsumsi),55565878442625,1224679543217,2026-08
+Sumatera Utara,A,"Pertanian, Kehutanan, dan Perikanan",55448660180779,854971524195,2026-08
+Sumatera Utara,B,Pertambangan dan Penggalian,369337738592,12721393009,2026-08
+Sumatera Utara,C,Industri Pengolahan,79314699675600,663265944574,2026-08
+Sumatera Utara,D,Pengadaan Listrik dan Gas,551700051409,4311894342,2026-08
+Sumatera Utara,E,"Pengadaan Air, Pengelolaan Sampah, Limbah & Daur Ulang",284580892405,7888001176,2026-08
+Sumatera Utara,F,Konstruksi,6556409665197,405161077627,2026-08
+Sumatera Utara,G,Perdagangan Besar & Eceran; Reparasi Mobil & Sepeda Motor,50968510180166,1872588922130,2026-08
+Sumatera Utara,H,Transportasi dan Pergudangan,4417297584874,93718946576,2026-08
+Sumatera Utara,I,Penyediaan Akomodasi dan Makan Minum,3227527777670,102046229385,2026-08
+Sumatera Utara,J,Informasi dan Komunikasi,175799879905,3162758923,2026-08
+Sumatera Utara,K,Jasa Keuangan dan Asuransi,1985342801243,20240070122,2026-08
+Sumatera Utara,L,Real Estat,4099757853062,42204141121,2026-08
+Sumatera Utara,MN,Jasa Perusahaan,2450536412368,42524594333,2026-08
+Sumatera Utara,O,"Administrasi Pemerintahan, Pertahanan & Jaminan Sosial",6138312147,0,2026-08
+Sumatera Utara,P,Jasa Pendidikan,745264449359,7224834703,2026-08
+Sumatera Utara,Q,Jasa Kesehatan dan Kegiatan Sosial,3425595434858,91054416215,2026-08
+Sumatera Utara,RSTU,Jasa Lainnya,5119304849402,171878185548,2026-08
+Sumatera Utara,RT,Rumah Tangga (konsumsi),86077849295039,1937159081217,2026-08
