@@ -1,23 +1,23 @@
 {
-  "checked_at": "2026-11-10T02:57:04+00:00",
+  "checked_at": "2026-11-11T00:23:43+00:00",
   "sources": {
     "apbd": {
       "status": "ok",
-      "rows": 93,
-      "last_ok": "2026-11-10T02:26:26+00:00",
+      "rows": 89,
+      "last_ok": "2026-11-11T00:16:58+00:00",
       "reason": null
     },
     "bpr_bprs": {
       "status": "stale",
       "rows": null,
       "last_ok": "2026-06-29T06:21:53+00:00",
-      "reason": "loader gagal dijalankan: Command '['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '/home/runner/work/ped-kalsel-dashboard/ped-kalsel-dashboard/pipeline/data/bpr_bprs.csv.py']' timed out after 900 seconds"
+      "reason": "RuntimeError: OJK get_grid gagal BPR_KreditPembiayaanEntitas/9: balasan non-JSON (kemungkinan tantangan WAF)"
     },
     "dpk_bu": {
       "status": "stale",
       "rows": null,
       "last_ok": "2026-10-30T00:03:39+00:00",
-      "reason": "[dpk_bu] tak menemukan bulan dengan data"
+      "reason": "RuntimeError: OJK get_grid gagal BU_DanaPihakKetiga/341: balasan non-JSON (kemungkinan tantangan WAF)"
     },
     "ekspor": {
       "status": "stale",
@@ -52,7 +52,7 @@
     "komoditas_provinsi": {
       "status": "ok",
       "rows": 1,
-      "last_ok": "2026-11-10T02:52:20+00:00",
+      "last_ok": "2026-11-11T00:23:12+00:00",
       "reason": null
     },
     "kredit_bu": {
