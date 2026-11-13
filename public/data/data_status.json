@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-11-12T01:55:50+00:00",
+  "checked_at": "2026-11-13T00:59:53+00:00",
   "sources": {
     "apbd": {
       "status": "ok",
       "rows": 98,
-      "last_ok": "2026-11-12T01:42:55+00:00",
+      "last_ok": "2026-11-13T00:45:59+00:00",
       "reason": null
     },
     "bpr_bprs": {
@@ -52,7 +52,7 @@
     "komoditas_provinsi": {
       "status": "ok",
       "rows": 1,
-      "last_ok": "2026-11-12T01:55:20+00:00",
+      "last_ok": "2026-11-13T00:59:22+00:00",
       "reason": null
     },
     "kredit_bu": {
